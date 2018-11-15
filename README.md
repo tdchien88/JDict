@@ -1,0 +1,2 @@
+# JDict
+base on rikaikun 
