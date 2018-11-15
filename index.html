@@ -3,33 +3,26 @@
 <head lang="jp">
 <meta charset="utf-8">
 <title>JDict</title>
-<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<style type="text/css">
-body {
-    background-image: url("img/bg.PNG");
-    background-position: top;
-    background-repeat: no-repeat;
-    white-space: pre; /* or pre-wrap or pre-line */
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/white-space */
-}
 
-#txt{
-margin: 0px 10px;
-height: 100px;
-width: 80%;
-}
+<script src="data/deinflect.js"></script>
+<script src="data/myDataIdx.js"></script>
+<script src="data/myData.js"></script>
+<script src="data/kanji.js"></script>
+<script src="data/radicals.js"></script>
+<script src="data/namesIdx.js"></script>
+<script src="data/names.js"></script>
 
-#contents{
+<script src="scripts/data.js"></script>
+<script src="scripts/rikaicontent.js"></script>
 
-    height: 650px;
-    overflow: scroll
+<script src="scripts/index.js"></script>
 
-    /*position: fixed;
-    top: 650px;*/
-}
-</style>
+
 </head>
 <body>
     <div ng-app="" >
@@ -43,56 +36,5 @@ width: 80%;
         <p id="contents" ng-bind="textContent"></p>
     </div>
 
-
-
-<script src="data/deinflect.js"></script>
-<script src="data/myDataIdx.js"></script>
-<script src="data/myData.js"></script>
-<script src="data/kanji.js"></script>
-<script src="data/radicals.js"></script>
-<script src="data/namesIdx.js"></script>
-<script src="data/names.js"></script>
-
-<script src="scripts/data.js"></script>
-<script src="scripts/rikaicontent.js"></script>
-
-<script>
-    var loadName = false;
-    var rcxMain = new rcxDict(loadName);
-    rcxMain.config = {
-        copySeparator: "tab",
-        css: "blue",
-        disablekeys: "false",
-        highlight: "true",
-        kanjicomponents: "true",
-        kanjiinfo: ["true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true"],
-        lineEnding: "n",
-        maxClipCopyEntries: "7",
-        minihelp: "true",
-        onlyreading: "false",
-        popupDelay: 150,
-        showOnKey: "",
-        textboxhl: "false",
-        doName: "false",
-    };
-    rcxContent.enableTab();
-
-    $(document).ready(function(){
-        $('#btnClear').click(function(e){
-            angular.element("#contents").scope().textContent = "";
-            angular.element("#contents").scope().$digest();
-        });
-
-        $('input[name="searchtype"]:radio').change(function(e){
-            if($(this).val() == "name"){
-                rcxMain.config.doName = "true";
-            }else if($(this).val() == "word"){
-                rcxMain.config.doName = "false";
-            }
-        });
-
-    });
-
-</script>
 </body>
 </html>
