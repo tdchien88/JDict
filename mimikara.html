@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0049)http://furigana.sourceforge.net/cgi-bin/index.cgi -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mimi kara N2 GOI - 1.1</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="mimi-unit1.js"></script>
+<script src="mimi-unit2.js"></script>
+
+<script>
+
+
+	var data = [];
+	var checked = 0;
+
+	function init(){
+
+		data = [
+			{code: "u1", name: "unit 1", cotent: u1}, 
+			{code: "u2", name: "unit 2", cotent: u2}
+		];
+
+		for(var i in data){
+			var unit = data[i];
+			$("#unit").append('<option value="'+i+'">'+unit.name+'</option>');
+		}
+		for(var i in data[0].cotent){
+			var lession = data[0].cotent[i];
+			$("#lesson").append('<option value="'+i+'">'+lession.name+'</option>');
+		}
+
+		loadConntent();
+	}
+
+	function loadConntent(){
+
+		var unitIdx = $("#unit").val();
+		var unit = data[unitIdx];
+		var lessonIdx = $("#lesson").val();
+		var lesson = unit.cotent[lessonIdx];
+
+		$("#content").empty();
+		for(var i in lesson.cotent){
+			$("#content").append(lesson.cotent[i]);
+		}
+
+		showRubi();
+
+		showHan();
+
+		showVD();
+	}
+	function showVD(){
+		    
+		    if(checked == 0){
+
+		    	$("#vidubox").prop("checked", false);
+		    	$("#vidubox").prop("indeterminate", false); 
+
+				$(".vidubox").hide();
+
+				$(".vidunotfirst").hide();
+
+		    }else if(checked ==1){
+		    	$("#vidubox").prop("checked", true);
+		    	$("#vidubox").prop("indeterminate", true); 
+
+				$(".vidubox").show();
+
+				$(".vidunotfirst").hide();
+				
+		    }else{
+		    	$("#vidubox").prop("indeterminate", false); 
+		    	$("#vidubox").prop("checked", true);
+
+				$(".vidubox").show();
+
+				$(".vidunotfirst").show();
+
+		    }
+	}
+
+	function showHan(){
+	    
+	    if($("#hanviet").is(':checked')){
+			$(".hanviet").show();
+			$(".hanviet1").show();
+			$(".hanviet2").show();
+			$(".hanviet3").show();
+
+			$(".nghia").show();
+			$(".nghia1").show();
+			$(".nghia2").show();
+			$(".nghia3").show();
+			$(".nghiavidu").show();
+	    
+	    }else{
+			$(".hanviet").hide();
+			$(".hanviet1").hide();
+			$(".hanviet2").hide();
+			$(".hanviet3").hide();
+
+			$(".nghia").hide();
+			$(".nghia1").hide();
+			$(".nghia2").hide();
+			$(".nghia3").hide();
+			$(".nghiavidu").hide();
+	    }
+	}
+
+	function showRubi(){
+
+	    if($("#checkffurigana").is(':checked')){
+	        $("rt").removeClass("hiddenfurigana");
+	    } else {
+	    	$("rt").addClass("hiddenfurigana");
+	    }
+	}
+
+	$(window).on('load', function() {
+
+		init();
+
+		$("#unit").change(function(){
+			var val = $(this).val();
+			$("#lesson").empty();
+			for(var i in data[val].cotent){
+				var lession = data[val].cotent[i];
+				$("#lesson").append('<option value="'+i+'">'+lession.name+'</option>');
+			}
+
+			loadConntent();
+		});
+
+		$("#lesson").change(function(){
+			loadConntent();
+		});
+
+		$("#checkffurigana").click(function(){
+			showRubi();
+		});
+
+		$("#vidubox").click(function(){
+
+			checked++;
+		    if(checked == 3) checked=0;
+
+			showVD();
+   
+		});
+
+		$("#content").on('click', ".boxtv", function(){
+			if($(this).find(".vidubox").is(':visible')){
+				$(this).find(".vidubox").hide();
+			}else{
+				$(this).find(".vidubox").show();
+			}		    
+		});
+
+		$("#hanviet").click(function(){
+		    showHan();
+		});
+	});
+</script>
+<style type="text/css">
+br {
+    content: " ";
+    display: block;
+    margin: 5px 0;
+}
+body{
+	background-color: #fafafa;
+	font-size: larger;
+}
+.hiddenfurigana{
+	display: none;
+}
+.btn-furigana {
+  background-color : #31b0d5a8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: #46b8da;
+}
+
+#mybutton {
+	position: fixed;
+	top: -4px;
+	right: 8px;
+}
+#mybutton span{
+margin-left: 15px;
+}
+
+</style>
+
+
+
+<style>
+.boxtv {
+	padding: 0.5em 0.5em;
+	margin: 0.5em 0;
+	background: #FFFFFF;
+	border-left: solid 2px #5bb7ae;
+	box-shadow: 0.5px 0px 0.5px 0.5px rgba(0, 0, 0, 0.33);
+	-webkit-box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.33);
+	-moz-box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.tuvung {
+	display: block;
+}
+
+.hanviet {
+	text-transform: uppercase;
+	margin-left: 37px;
+	display: none;
+}
+
+.nghia {
+	margin-left: 37px;
+	display: none;
+}
+
+.hanviet1 {
+	text-transform: uppercase;
+	margin-left: 17px;
+	display: none;
+}
+
+.nghia1 {
+	margin-left: 17px;
+	display: none;
+}
+
+.hanviet2 {
+	text-transform: uppercase;
+	margin-left: 27px;
+	display: none;
+}
+
+.nghia2 {
+	margin-left: 27px;
+	display: none;
+}
+
+.hanviet3 {
+	text-transform: uppercase;
+	margin-left: 40px;
+	display: none;
+}
+
+.nghia3 {
+	margin-left: 40px;
+	display: none;
+}
+
+.nghiavidu {
+	margin-left: 20px;
+	color: gray;
+	display: none;
+}
+
+.vidubox {
+	display: none;
+}
+
+.vidubox .tuvung {
+ color: black;
+}
+
+.lienquan {
+	display: inline;
+	padding: .2em .6em .3em;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em;
+	background-color: #5c90d2;
+}
+
+.hienbtn,
+.anbtn,
+.nghescriptbtn {
+	vertical-align: top;
+}
+
+.viduseq {
+	display: inline;
+}
+
+.linklienquan {
+	color: #0053f9;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="mybutton" class="btn-furigana">
+
+	<span>
+		<label for="lesson"></label>
+		<select id="unit">
+		</select>	
+		<select id="lesson">
+		</select>	
+	</span>
+
+	<span>
+		<label for="checkffurigana">Rubi</label>
+		<input id="checkffurigana" type="checkbox" name="checkffurigana"  checked>	
+	</span>
+
+	<span>
+		<label for="hanviet">Nghĩa</label>
+		<input id="hanviet" type="checkbox" name="hanviet"  >	
+	</span>
+
+	<span>
+		<label for="vidubox">Ví dụ</label>
+		<input id="vidubox" type="checkbox" name="vidubox"  >
+	</span>
+
+</div>
+
+
+<div id="content">
+</div>
+
+
+</body></html>
