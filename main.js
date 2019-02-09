@@ -14,23 +14,29 @@ function init(){
 		var unit = data[i];
 		$("#unit").append('<option value="'+i+'">'+unit.name+'</option>');
 	}
-	for(var i in data[0].cotent){
-		var lession = data[0].cotent[i];
-		$("#lesson").append('<option value="'+i+'">'+lession.name+'</option>');
-	}
 
 
 	if(localStorage.unitIdx == null){
 
 		localStorage.unitIdx = $("#unit").val();
+		for(var i in data[0].cotent){
+			var lession = data[0].cotent[i];
+			$("#lesson").append('<option value="'+i+'">'+lession.name+'</option>');
+		}
+
 		localStorage.lessonIdx = $("#lesson").val();
 		localStorage.rubi = $("#checkffurigana").is(':checked')? 1: 0;
 		localStorage.han = $("#hanviet").is(':checked')? 1: 0;
 		localStorage.vidu = vdchecked;
-		
+
 	}else{
 
 		$("#unit").val(localStorage.unitIdx);
+		for(var i in data[localStorage.unitIdx].cotent){
+			var lession = data[localStorage.unitIdx].cotent[i];
+			$("#lesson").append('<option value="'+i+'">'+lession.name+'</option>');
+		}
+		
 		$("#lesson").val(localStorage.lessonIdx);
 		if(localStorage.rubi === "1") {
 			$("#checkffurigana").prop('checked', true);
@@ -61,7 +67,7 @@ function loadConntent(){
 	$("#content").empty();
 	for(var i in lesson.cotent){
 		$("#content").append(lesson.cotent[i]);
-	}
+	}	
 
 	showRubi();
 
@@ -175,5 +181,14 @@ $(window).on('load', function() {
 
 	$("#hanviet").click(function(){
 	    showHan();
+	});
+
+	$("#reset").click(function(){
+		localStorage.unitIdx = 0;
+		localStorage.lessonIdx = 0;
+		localStorage.rubi = "1";
+		localStorage.han = "1";
+		localStorage.vidu = "1";
+
 	});
 });

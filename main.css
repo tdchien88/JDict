@@ -108,6 +108,9 @@ rt{
 
 .vidubox .tuvung {
  color: black;
+ margin-top: 20px;
+    padding-top: 25px;
+    border-top: #E0E0E0 1px solid;
 }
 
 .lienquan {
