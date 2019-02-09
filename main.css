@@ -19,6 +19,17 @@ body{
   border-color: #46b8da;
 }
 
+input[type=checkbox]
+{
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  padding: 10px;
+}
+select
+{
+  -webkit-transform: scale(1); /* Safari and Chrome */
+  padding: 10px;
+}
+
 #mybutton {
 	position: fixed;
 	top: -4px;
@@ -53,7 +64,7 @@ rt{
 }
 
 .fontnho{
-	font-size: large;
+	font-size: x-large;
 	color: gray;
 }
 
