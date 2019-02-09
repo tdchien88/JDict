@@ -69,6 +69,9 @@ function loadConntent(){
 		for(var i in lesson.cotent){
 			$("#content").append(lesson.cotent[i]);
 		}	
+
+		$("div:has(> span.lienquan)").removeClass("tuvung");
+		$("div:has(> span.lienquan)").addClass("fontnho");
 	}
 
 	showRubi();

@@ -49,7 +49,12 @@ rt{
 
 .tuvung {
 	display: block;
-	font-size: xx-large;
+	font-size: -webkit-xxx-large;
+}
+
+.fontnho{
+	font-size: large;
+	color: gray;
 }
 
 .hanviet {
