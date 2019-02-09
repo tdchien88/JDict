@@ -7,7 +7,18 @@ function init(){
 
 	data = [
 		{code: "u1", name: "unit 1", cotent: u1}, 
-		{code: "u2", name: "unit 2", cotent: u2}
+		{code: "u2", name: "unit 2", cotent: u2}, 
+		{code: "u3", name: "unit 3", cotent: u3}, 
+		{code: "u4", name: "unit 4", cotent: u4}, 
+		{code: "u5", name: "unit 5", cotent: u5},
+		{code: "u6", name: "unit 6", cotent: u6},
+		{code: "u7", name: "unit 7", cotent: u7},
+		{code: "u8", name: "unit 8", cotent: u8},
+		{code: "u9", name: "unit 9", cotent: u9},
+		{code: "u10", name: "unit 10", cotent: u10},
+		{code: "u11", name: "unit 11", cotent: u11},
+		{code: "u12", name: "unit 12", cotent: u12},
+		{code: "u13", name: "unit 13", cotent: u13}
 	];
 
 	for(var i in data){

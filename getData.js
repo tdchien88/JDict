@@ -1,6 +1,7 @@
+var code = "1";
 var x = `{
-code: "c4",
-name: "bai 4",
+code: "c`+code+`",
+name: "bai `+code+`",
 cotent: [`; 
 x += "`";
 for(var i=0; i< j$('.boxtv').length; i++)
