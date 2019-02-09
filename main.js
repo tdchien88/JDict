@@ -65,9 +65,11 @@ function loadConntent(){
 	localStorage.lessonIdx = lessonIdx;
 
 	$("#content").empty();
-	for(var i in lesson.cotent){
-		$("#content").append(lesson.cotent[i]);
-	}	
+	if(lesson){
+		for(var i in lesson.cotent){
+			$("#content").append(lesson.cotent[i]);
+		}	
+	}
 
 	showRubi();
 
