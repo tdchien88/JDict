@@ -21,12 +21,12 @@ body{
 
 input[type=checkbox]
 {
-  -webkit-transform: scale(2); /* Safari and Chrome */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
   padding: 10px;
 }
 select
 {
-  -webkit-transform: scale(1); /* Safari and Chrome */
+  -webkit-transform: scale(1.2); /* Safari and Chrome */
   padding: 10px;
 }
 
