@@ -1,7 +1,7 @@
 
 
 var data = [];
-var checked = 0;
+var vdchecked = 0;
 
 function init(){
 
@@ -19,6 +19,33 @@ function init(){
 		$("#lesson").append('<option value="'+i+'">'+lession.name+'</option>');
 	}
 
+
+	if(localStorage.unitIdx == null){
+
+		localStorage.unitIdx = $("#unit").val();
+		localStorage.lessonIdx = $("#lesson").val();
+		localStorage.rubi = $("#checkffurigana").is(':checked')? 1: 0;
+		localStorage.han = $("#hanviet").is(':checked')? 1: 0;
+		localStorage.vidu = vdchecked;
+		
+	}else{
+
+		$("#unit").val(localStorage.unitIdx);
+		$("#lesson").val(localStorage.lessonIdx);
+		if(localStorage.rubi === "1") {
+			$("#checkffurigana").prop('checked', true);
+		}else{
+			$("#checkffurigana").prop('checked', false);
+		}
+		if(localStorage.han === "1") {
+			$("#hanviet").prop('checked', true);
+		}else{
+			$("#hanviet").prop('checked', false);
+		}
+		vdchecked = localStorage.vidu;
+
+	}
+
 	loadConntent();
 }
 
@@ -28,6 +55,8 @@ function loadConntent(){
 	var unit = data[unitIdx];
 	var lessonIdx = $("#lesson").val();
 	var lesson = unit.cotent[lessonIdx];
+	localStorage.unitIdx = unitIdx;
+	localStorage.lessonIdx = lessonIdx;
 
 	$("#content").empty();
 	for(var i in lesson.cotent){
@@ -42,36 +71,32 @@ function loadConntent(){
 }
 function showVD(){
 	    
-	    if(checked == 0){
+	localStorage.vidu = vdchecked;
+    if(vdchecked == 0){
 
-	    	$("#vidubox").prop("checked", false);
-	    	$("#vidubox").prop("indeterminate", false); 
+    	$("#vidubox").prop("checked", false);
+    	$("#vidubox").prop("indeterminate", false); 
+		$(".vidubox").hide();
+		$(".vidunotfirst").hide();
 
-			$(".vidubox").hide();
+    }else if(vdchecked ==1){
+    	$("#vidubox").prop("checked", true);
+    	$("#vidubox").prop("indeterminate", true); 
+		$(".vidubox").show();
+		$(".vidunotfirst").hide();
+		
+    }else{
+    	$("#vidubox").prop("indeterminate", false); 
+    	$("#vidubox").prop("checked", true);
+		$(".vidubox").show();
+		$(".vidunotfirst").show();
 
-			$(".vidunotfirst").hide();
-
-	    }else if(checked ==1){
-	    	$("#vidubox").prop("checked", true);
-	    	$("#vidubox").prop("indeterminate", true); 
-
-			$(".vidubox").show();
-
-			$(".vidunotfirst").hide();
-			
-	    }else{
-	    	$("#vidubox").prop("indeterminate", false); 
-	    	$("#vidubox").prop("checked", true);
-
-			$(".vidubox").show();
-
-			$(".vidunotfirst").show();
-
-	    }
+    }
 }
 
 function showHan(){
     
+	localStorage.han = $("#hanviet").is(':checked')? 1: 0;
     if($("#hanviet").is(':checked')){
 		$(".hanviet").show();
 		$(".hanviet1").show();
@@ -100,6 +125,7 @@ function showHan(){
 
 function showRubi(){
 
+	localStorage.rubi = $("#checkffurigana").is(':checked')? 1: 0;
     if($("#checkffurigana").is(':checked')){
         $("rt").removeClass("hiddenfurigana");
     } else {
@@ -132,8 +158,8 @@ $(window).on('load', function() {
 
 	$("#vidubox").click(function(){
 
-		checked++;
-	    if(checked == 3) checked=0;
+		vdchecked++;
+	    if(vdchecked == 3) vdchecked=0;
 
 		showVD();
 
