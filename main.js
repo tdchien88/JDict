@@ -187,11 +187,12 @@ $(window).on('load', function() {
 
 	});
 
-	$("#content").on('click', ".boxtv", function(){
-		if($(this).find(".vidubox").is(':visible')){
-			$(this).find(".vidubox").hide();
+	$("#content").on('click', ".boxtv .tuvung", function(){
+		if($(this).parent().find(".vidubox").is(':visible')){
+			$(this).parent().find(".vidubox").hide();
 		}else{
-			$(this).find(".vidubox").show();
+			$(this).parent().find(".vidubox").show();
+			$(".vidunotfirst").show();
 		}		    
 	});
 
