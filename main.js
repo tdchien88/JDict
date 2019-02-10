@@ -208,4 +208,5 @@ $(window).on('load', function() {
 		localStorage.vidu = "1";
 
 	});
+
 });
