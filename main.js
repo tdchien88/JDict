@@ -209,4 +209,32 @@ $(window).on('load', function() {
 
 	});
 
+
+	$('.resizable').resizable({
+	    handles: {
+	        'nw': '.ui-resizable-nw',
+	        'ne': '.ui-resizable-ne',
+	        'sw': '.ui-resizable-sw',
+	        'se': '.ui-resizable-se',
+	        'n': '.ui-resizable-n',
+	        'e': '.ui-resizable-e',
+	        's': '.ui-resizable-s',
+	        'w': '.ui-resizable-w'
+	    }
+	});
+	$( '.draggable' ).draggable().on('click', function(){
+	    if ( $(this).is('.ui-draggable-dragging') ) {
+	        return;
+	    } else {
+	        $(this).draggable( 'option', 'disabled', true );
+	        $(this).prop('contenteditable','true');
+	        $(this).css('cursor', 'text');
+	    }
+	})
+	.on('blur', function(){
+	    $(this).draggable( 'option', 'disabled', false);
+	    $(this).prop('contenteditable','false');
+	    $(this).css('cursor', 'move');
+	});
+	
 });

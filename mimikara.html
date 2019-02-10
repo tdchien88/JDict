@@ -9,6 +9,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<script src="jquery-ui.min.js"></script>
+
 <script src="mimi-unit1.js"></script>
 <script src="mimi-unit2.js"></script>
 <script src="mimi-unit3.js"></script>
@@ -57,21 +59,24 @@
 -->
 </div>
 
-<div id="glass" class="glass crop">
+<div id="glass" class="glass crop resizable draggable">
 	
    <div class="crop-line crop-top-line"></div>
-   <div class="crop-line crop-right-line"></div>
-   <div class="crop-line crop-bottom-line"></div>
-   <div class="crop-line crop-left-line"></div>
-
-   <div class="crop-corner crop-top-left-corner"></div>
-   <div class="crop-corner crop-top-right-corner"></div>
-   <div class="crop-corner crop-bottom-right-corner"></div>
-   <div class="crop-corner crop-bottom-left-corner"></div>
+   
+    <div class="ui-resizable-handle ui-resizable-nw"></div>
+    <div class="ui-resizable-handle ui-resizable-ne"></div>
+    <div class="ui-resizable-handle ui-resizable-sw"></div>
+    <div class="ui-resizable-handle ui-resizable-se"></div>
+    <div class="ui-resizable-handle ui-resizable-n top-line"></div>
+    <div class="ui-resizable-handle ui-resizable-s"></div>
+    <div class="ui-resizable-handle ui-resizable-e"></div>
+    <div class="ui-resizable-handle ui-resizable-w"></div>
 </div>
 
 <div id="content">
 </div>
 
 
+<script type="text/javascript">
+</script>
 </body></html>
