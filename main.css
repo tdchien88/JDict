@@ -43,11 +43,12 @@ margin-left: 15px;
 
 rt{
 	color: #f44336;
+	font-size: x-large !important;
 }
 
 #content{
 	padding: 90% 0px;
-font-size: x-large;
+	font-size: x-large;
 }
 
 .boxtv {
@@ -63,6 +64,9 @@ font-size: x-large;
 .tuvung {
 	display: block;
 	font-size: -webkit-xxx-large;
+}
+.tuvung:first-child b{
+	font-size: 4em;
 }
 
 .fontnho{
