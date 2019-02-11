@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="main.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="jquery-ui.min.js"></script>
+
+<!-- <script src="https://unpkg.com/interactjs@1.3.4/dist/interact.min.js"></script> -->
+<script src="interact.min.js"></script>
 
 
 <script src="mimi-unit1.js"></script>
@@ -30,7 +32,7 @@
 </head>
 <body>
 
-<div id="mybutton" class="btn-furigana">
+<div id="mybutton" class="btn-furigana  drag-and-resize">
 
 	<span>
 		<label for="lesson"></label>
@@ -59,10 +61,8 @@
 -->
 </div>
 
-<div id="glass" class="glass crop resizable draggable">
+<div id="glass" class="glass crop resizable draggable ">
 	
-   <div class="crop-line crop-top-line"></div>
-   
     <div class="ui-resizable-handle ui-resizable-nw"></div>
     <div class="ui-resizable-handle ui-resizable-ne"></div>
     <div class="ui-resizable-handle ui-resizable-sw"></div>
@@ -73,10 +73,12 @@
     <div class="ui-resizable-handle ui-resizable-w"></div>
 </div>
 
+
 <div id="content">
 </div>
 
 
 <script type="text/javascript">
+
 </script>
 </body></html>
