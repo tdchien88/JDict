@@ -27,6 +27,28 @@ function init(){
 	}
 
 
+	if(localStorage.score == null){
+
+		var score = [];
+
+		for(var u in data){
+			var unit = data[u].cotent;
+			score[u] = [];
+			for (var l in unit) {
+				var lession = unit[l].cotent;
+					score[u][l] = [];
+				for (var w in lession) {
+					score[u][l][w] = 0;
+				}
+			}
+		}
+		
+		console.log(score)
+		localStorage.score = JSON.stringify(score);
+	}else{
+
+	}
+
 	if(localStorage.unitIdx == null){
 
 		localStorage.unitIdx = $("#unit").val();
@@ -81,8 +103,12 @@ function loadConntent(){
 			$("#content").append(lesson.cotent[i]);
 		}	
 
+
+		$( ".boxtv" ).prepend( `<div class="score"></div>` );
+
 		$("div:has(> span.lienquan)").removeClass("tuvung");
 		$("div:has(> span.lienquan)").addClass("fontnho");
+
 	}
 
 	showRubi();
@@ -90,7 +116,61 @@ function loadConntent(){
 	showHan();
 
 	showVD();
+
+	showStar();
 }
+
+function showStar(){
+	if(localStorage.score){
+
+		var unitIdx = $("#unit").val();
+		var unit = data[unitIdx];
+		var lessonIdx = $("#lesson").val();
+		var lesson = unit.cotent[lessonIdx];
+		try{
+			var ulw = JSON.parse(localStorage.score);
+			for (var w in ulw[unitIdx][lessonIdx]) {
+				var score = ulw[unitIdx][lessonIdx][w];
+				 updateStar(w, score);
+			}
+			
+		}catch(err){
+			console.log(err)
+		}
+	}
+}
+
+function updateStar(w, score){
+	$( $( ".score" )[w]).empty();
+	for (var i = 1; i < 6; i++) {
+		if(i <= score){
+			$( $( ".score" )[w]).append( `<span class="fa fa-star star checked" wordidx="`+w+`" score="`+i+`"></span>`);
+		}else{
+			$( $( ".score" )[w]).append( `<span class="fa fa-star star" wordidx="`+w+`" score="`+i+`"></span>`);
+		}
+	}
+
+}
+
+function setScore(element){
+	var score = $(element).attr("score");
+
+	var wordIdx = $(element).attr("wordidx");
+
+	var unitIdx = $("#unit").val();
+	var unit = data[unitIdx];
+	var lessonIdx = $("#lesson").val();
+	var lesson = unit.cotent[lessonIdx];
+
+	var ulw = JSON.parse(localStorage.score);
+	ulw[unitIdx][lessonIdx][wordIdx] = score;
+
+	localStorage.score = JSON.stringify(ulw);
+
+	updateStar(wordIdx, score);
+
+}
+
 function showVD(){
 	    
 	localStorage.vidu = vdchecked;
@@ -155,9 +235,14 @@ function showRubi(){
     }
 }
 
+
 $(window).on('load', function() {
 
 	init();
+
+	$("#content").on('click', ".score .star", function(){
+		setScore(this);
+	});
 
 	$("#unit").change(function(){
 		var val = $(this).val();

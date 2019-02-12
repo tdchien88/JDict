@@ -38,7 +38,7 @@ select
 	font-size: xx-large;
 }
 #mybutton span{
-margin-left: 15px;
+	margin-left: 15px;
 }
 
 rt{
@@ -64,8 +64,9 @@ rt{
 .tuvung {
 	display: block;
 	font-size: -webkit-xxx-large;
+	margin-top: 40px
 }
-.tuvung:first-child b{
+.tuvung b{
 	font-size: 4em;
 }
 
@@ -156,6 +157,18 @@ rt{
 	border-radius: .25em;
 	background-color: #5c90d2;
 }
+
+
+.score{
+	float: right;
+    cursor: pointer;
+}
+
+.score .checked{
+
+  color: orange;
+}
+
 
 .hienbtn,
 .anbtn,
