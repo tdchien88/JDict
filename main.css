@@ -162,6 +162,7 @@ rt{
 .score{
 	float: right;
     cursor: pointer;
+	font-size: -webkit-xxx-large;
 }
 
 .score .checked{
