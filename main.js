@@ -2,7 +2,7 @@
 
 var data = [];
 var vdchecked = 0;
-var isShowSetting = false;
+var isShowSetting = true;
 
 function init(){
 
@@ -28,7 +28,48 @@ function init(){
 	}
 
 
-	if(localStorage.score == null){
+	
+	try{
+		if(localStorage.score == null){
+
+			var score = [];
+
+			for(var u in data){
+				var unit = data[u].cotent;
+				score[u] = [];
+				for (var l in unit) {
+					var lession = unit[l].cotent;
+						score[u][l] = [];
+					for (var w in lession) {
+						score[u][l][w] = 0;
+					}
+				}
+			}
+			localStorage.score = JSON.stringify(score);
+			
+		}else{
+			var score = [];
+			var ulw = JSON.parse(localStorage.score);
+
+			for(var u in data){
+				var unit = data[u].cotent;
+				score[u] = [];
+				for (var l in unit) {
+					var lession = unit[l].cotent;
+						score[u][l] = [];
+					for (var w in lession) {
+						score[u][l][w] = ulw[u][l][w];
+					}
+				}
+			}
+
+			localStorage.score = JSON.stringify(score);
+		}
+
+
+	}
+	catch(err) {
+
 
 		var score = [];
 
@@ -43,12 +84,11 @@ function init(){
 				}
 			}
 		}
-		
-		console.log(score)
 		localStorage.score = JSON.stringify(score);
-	}else{
 
 	}
+
+
 
 	if(localStorage.unitIdx == null){
 
@@ -218,6 +258,8 @@ function setScore(element){
 	localStorage.score = JSON.stringify(ulw);
 
 	updateStar(wordIdx, score);
+
+	showDiem();
 
 }
 
