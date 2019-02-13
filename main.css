@@ -1,34 +1,37 @@
-
 br {
-    content: " ";
-    display: block;
-    margin: 5px 0;
+	content: " ";
+	display: block;
+	margin: 5px 0;
 }
-body{
+
+body {
 	background-color: #E0E0E0;
 	font-size: 18px;
 	margin: 0px 1%;
 }
-.hiddenfurigana{
+
+.hiddenfurigana {
 	display: none;
 }
+
 .btn-furigana {
-  background-color : #31b0d5a8;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  border-color: #46b8da;
+	background-color: #31b0d5a8;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 4px;
+	border-color: #46b8da;
 }
 
-input[type=checkbox]
-{
-  -webkit-transform: scale(1.5); /* Safari and Chrome */
-  padding: 10px;
+input[type=checkbox] {
+	-webkit-transform: scale(1.5);
+	/* Safari and Chrome */
+	padding: 10px;
 }
-select
-{
-  -webkit-transform: scale(1.2); /* Safari and Chrome */
-  padding: 10px;
+
+select {
+	-webkit-transform: scale(1.2);
+	/* Safari and Chrome */
+	padding: 10px;
 }
 
 #mybutton {
@@ -36,17 +39,65 @@ select
 	top: -4px;
 	right: 8px;
 	font-size: xx-large;
+	text-align: center;
+	height: 50px;
 }
-#mybutton span{
+
+#mybutton .satus{
+	display: none;
+	margin-top: 20px;
+}
+
+#mybutton .satus table{
+	width: 100%;
+}
+
+#mybutton .satus td span{
+	margin: 0px
+}
+#mybutton .satus span.star{
+	color: #000;
+}
+
+#mybutton .satus span.checked{
+	color: orange;
+}
+
+#mybutton .arrow{
+	position: absolute;
+    right: 50%;
+    bottom: 10px;
+}
+
+#mybutton .arrow::before {
+	font-family: FontAwesome;
+	content: "\f106";
+	vertical-align: middle;
+	font-weight: 900;
+	position: absolute;
+	margin-top: -15px;
+	color: #fff;
+}
+
+#mybutton .arrow::after {
+	font-family: FontAwesome;
+	content: "\f107";
+	vertical-align: middle;
+	font-weight: 900;
+	position: absolute;
+	color: #31b0d5a8;
+}
+
+#mybutton span {
 	margin-left: 15px;
 }
 
-rt{
+rt {
 	color: #f44336;
 	font-size: x-large !important;
 }
 
-#content{
+#content {
 	padding: 90% 0px;
 	font-size: x-large;
 }
@@ -64,13 +115,14 @@ rt{
 .tuvung {
 	display: block;
 	font-size: -webkit-xxx-large;
-	margin-top: 80px
-}
-.tuvung b{
-	font-size: 3.5em;
+	margin-top: 60px
 }
 
-.fontnho{
+.tuvung b {
+	font-size: 3em;
+}
+
+.fontnho {
 	font-size: x-large;
 	color: #f44336;
 }
@@ -138,10 +190,10 @@ rt{
 }
 
 .vidubox .tuvung {
- 	color: black;
- 	margin-top: 20px;
-    padding-top: 25px;
-    border-top: #E0E0E0 1px solid;
+	color: black;
+	margin-top: 20px;
+	padding-top: 25px;
+	border-top: #E0E0E0 1px solid;
 }
 
 .lienquan {
@@ -158,24 +210,15 @@ rt{
 	background-color: #5c90d2;
 }
 
-
-.score{
+.score {
 	float: right;
-    cursor: pointer;
+	cursor: pointer;
 	font-size: -webkit-xxx-large;
 }
 
-.score .checked{
-
-  color: orange;
-}
-
-
-.hienbtn,
-.anbtn,
-.nghescriptbtn {
-	vertical-align: top;
-}
+.score .checked {
+	color: orange;
+}s
 
 .viduseq {
 	display: inline;
@@ -185,82 +228,92 @@ rt{
 	color: #0053f9;
 }
 
-
-
 .draggable {
-    cursor: move;
-}
-.resizable {
-    border: 1px dashed #000000;
-    position: relative;
-    min-height: 50px;
-}
-.ui-resizable-handle {
-    width: 10px;
-    height: 10px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    position: absolute;
-}
-.ui-resizable-nw {
-    left: -5px;
-    top: -5px;
-    cursor: nw-resize;
-}
-.ui-resizable-ne {
-    top: -5px;
-    right: -5px;
-    cursor: ne-resize;
-}
-.ui-resizable-sw {
-    bottom: -5px;
-    left: -5px;
-    cursor: sw-resize;
-}
-.ui-resizable-se {
-    bottom: -5px;
-    right:-5px;
-    cursor: se-resize;
-}
-.ui-resizable-n {
-    top: -5px;
-    left:50%;
-    cursor: n-resize;
-}
-.ui-resizable-s {
-    bottom: -5px;
-    left: 50%;
-    cursor: s-resize;
-}
-.ui-resizable-w {
-    left:-5px;
-    top:calc(50% - 5px);
-    cursor: w-resize;
-}
-.ui-resizable-e {
-    right:-5px;
-    top:calc(50% - 5px);
-    cursor: e-resize;
+	cursor: move;
 }
 
-.glass{
+.resizable {
+	border: 1px dashed #000000;
+	position: relative;
+	min-height: 50px;
+}
+
+.ui-resizable-handle {
+	width: 10px;
+	height: 10px;
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	position: absolute;
+}
+
+.ui-resizable-nw {
+	left: -5px;
+	top: -5px;
+	cursor: nw-resize;
+}
+
+.ui-resizable-ne {
+	top: -5px;
+	right: -5px;
+	cursor: ne-resize;
+}
+
+.ui-resizable-sw {
+	bottom: -5px;
+	left: -5px;
+	cursor: sw-resize;
+}
+
+.ui-resizable-se {
+	bottom: -5px;
+	right: -5px;
+	cursor: se-resize;
+}
+
+.ui-resizable-n {
+	top: -5px;
+	left: 50%;
+	cursor: n-resize;
+}
+
+.ui-resizable-s {
+	bottom: -5px;
+	left: 50%;
+	cursor: s-resize;
+}
+
+.ui-resizable-w {
+	left: -5px;
+	top: calc(50% - 5px);
+	cursor: w-resize;
+}
+
+.ui-resizable-e {
+	right: -5px;
+	top: calc(50% - 5px);
+	cursor: e-resize;
+}
+
+.glass {
 	background-color: #f44336;
-    height: 50%;
-    width: 98%;
-    position: fixed;
-    mix-blend-mode: darken;
-    bottom: 0px;
-    resize: vertical;
+	height: 50%;
+	width: 98%;
+	position: fixed;
+	mix-blend-mode: darken;
+	bottom: 0px;
+	resize: vertical;
 }
 
 .top-line {
-  top: -5px;
-  left: 0px;
-  width: 100%;
-  height: 5px; /* 5px for the mouse cursor update size */
-  background-color: #a50000;
-  cursor: n-resize;
+	top: -5px;
+	left: 0px;
+	width: 100%;
+	height: 5px;
+	/* 5px for the mouse cursor update size */
+	background-color: #a50000;
+	cursor: n-resize;
 }
+
 .top-line:hover {
-  opacity: 1;
+	opacity: 1;
 }

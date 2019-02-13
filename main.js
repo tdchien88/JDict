@@ -2,6 +2,7 @@
 
 var data = [];
 var vdchecked = 0;
+var isShowSetting = false;
 
 function init(){
 
@@ -118,6 +119,55 @@ function loadConntent(){
 	showVD();
 
 	showStar();
+	showDiem();
+}
+
+
+function showDiem(){
+	var diem = [0,0,0,0,0,0];
+
+
+	if(localStorage.score){
+		var unitIdx = $("#unit").val();
+		var unit = data[unitIdx];
+		var lessonIdx = $("#lesson").val();
+
+		try{
+			var ulw = JSON.parse(localStorage.score);
+			for (var w in ulw[unitIdx][lessonIdx]) {
+				var score = ulw[unitIdx][lessonIdx][w];
+				switch(score.toString()){
+					case "0":
+						diem[0]++;
+						break;
+					case "1":
+						diem[1]++;
+						break;
+					case "2":
+						diem[2]++;
+						break;
+					case "3":
+						diem[3]++;
+						break;
+					case "4":
+						diem[4]++;
+						break;
+					case "5":
+						diem[5]++;
+					break;
+				}
+			}
+			
+		}catch(err){
+			console.log(err)
+		}
+	}
+	
+
+
+	for (var i = 0; i <= 5; i++) {
+		$($(".diem")[i]).text(diem[i]);
+	}
 }
 
 function showStar(){
@@ -242,6 +292,18 @@ $(window).on('load', function() {
 
 	$("#content").on('click', ".score .star", function(){
 		setScore(this);
+	});
+
+	$('.arrow').click(function () {
+		if(!isShowSetting){
+			$("#mybutton").animate({height:150});
+			$(".satus").show();
+		}else{
+			$("#mybutton").animate({height:50});
+			$(".satus").hide();
+
+		}
+		isShowSetting  = !isShowSetting;
 	});
 
 	$("#unit").change(function(){
