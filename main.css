@@ -40,11 +40,11 @@ select {
 	right: 8px;
 	font-size: xx-large;
 	text-align: center;
-	height: 50px;
+	height: 150px;
 }
 
 #mybutton .satus{
-	display: none;
+	display: block;
 	margin-top: 20px;
 }
 
