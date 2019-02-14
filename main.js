@@ -360,7 +360,9 @@ $(window).on('load', function() {
 	});
 	$(".mainstar").dblclick(function(){
 		loadConntent();
-	});
+	}).on('doubletap', function() { // Mobile browsers only
+	    window.location = this.href;
+	});;
 
 	$('.arrow').click(function () {
 		if(!isShowSetting){
