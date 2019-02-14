@@ -22,23 +22,12 @@ body {
 	border-color: #46b8da;
 }
 
-input[type=checkbox] {
-	-webkit-transform: scale(1.5);
-	/* Safari and Chrome */
-	padding: 10px;
-}
-
-select {
-	-webkit-transform: scale(1.2);
-	/* Safari and Chrome */
-	padding: 10px;
-}
 
 #mybutton {
 	position: fixed;
 	top: -4px;
 	right: 8px;
-	font-size: xx-large;
+	font-size: larger;
 	text-align: center;
 	height: 150px;
 }
@@ -61,6 +50,10 @@ select {
 
 #mybutton .satus span.checked{
 	color: orange;
+}
+.setting{
+	padding-right: 0px;
+	padding-left: 0px;
 }
 
 #mybutton .arrow{
@@ -89,17 +82,18 @@ select {
 }
 
 #mybutton span {
-	margin-left: 15px;
+	margin-left: 5px;
 }
-
+div {
+	display: inline-block;
+}
 rt {
 	color: #f44336;
-	font-size: x-large !important;
 }
 
 #content {
 	padding: 90% 0px;
-	font-size: x-large;
+	font-size: large;
 }
 
 .boxtv {
@@ -114,16 +108,16 @@ rt {
 
 .tuvung {
 	display: block;
-	font-size: -webkit-xxx-large;
+	font-size: x-large;
 	margin-top: 60px
 }
 
 .tuvung b {
-	font-size: 2.5em;
+	font-size: -webkit-xxx-large;
 }
 
 .fontnho {
-	font-size: x-large;
+	font-size: medium;
 	color: #f44336;
 }
 
@@ -213,7 +207,7 @@ rt {
 .score {
 	float: right;
 	cursor: pointer;
-	font-size: -webkit-xxx-large;
+	font-size: x-large;
 }
 
 .score .checked {
