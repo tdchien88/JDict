@@ -34,13 +34,13 @@ div {
 	right: 8px;
 	font-size: medium;
 	text-align: center;
-	height: 100px;
+	height: 80px;
 	width: fit-content;
 }
 
 #mybutton .satus{
 	display: block;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 #mybutton .satus table{
@@ -65,7 +65,8 @@ div {
 #mybutton .arrow{
 	position: absolute;
     right: 0px;
-    bottom: 5px;
+    bottom: -5px;
+    height: 10px
 }
 
 #mybutton .arrow::before {
@@ -294,7 +295,7 @@ rt {
 
 .glass {
 	background-color: #f44336;
-	height: 50%;
+	height: 70%;
 	width: 98%;
 	position: fixed;
 	mix-blend-mode: darken;

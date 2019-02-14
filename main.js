@@ -366,7 +366,7 @@ $(window).on('load', function() {
 
 	$('.arrow').click(function () {
 		if(!isShowSetting){
-			$("#mybutton").animate({height:100});
+			$("#mybutton").animate({height:80});
 			$(".satus").show();
 		}else{
 			$("#mybutton").animate({height:25});
