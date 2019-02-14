@@ -46,7 +46,7 @@ function init(){
 				}
 			}
 			localStorage.score = JSON.stringify(score);
-			
+
 		}else{
 			var score = [];
 			var ulw = JSON.parse(localStorage.score);
@@ -162,6 +162,24 @@ function loadConntent(){
 	showDiem();
 }
 
+function showOnly(diem){
+	if(localStorage.score){
+
+		var unitIdx = $("#unit").val();
+		var unit = data[unitIdx];
+		var lessonIdx = $("#lesson").val();
+		var ulw = JSON.parse(localStorage.score);
+
+		for (var w in ulw[unitIdx][lessonIdx]) {
+			var score = ulw[unitIdx][lessonIdx][w];	
+			if(score.toString() == diem.toString()){
+				$($( ".boxtv" )[w]).show();
+			}else{
+				$($( ".boxtv" )[w]).hide();
+			}
+		}
+	}
+}
 
 function showDiem(){
 	var diem = [0,0,0,0,0,0];
@@ -334,6 +352,14 @@ $(window).on('load', function() {
 
 	$("#content").on('click', ".score .star", function(){
 		setScore(this);
+	});
+
+	$(".mainstar").click(function(){
+		var d = $(this).attr("diem");
+		showOnly(d);
+	});
+	$(".mainstar").dblclick(function(){
+		loadConntent();
 	});
 
 	$('.arrow').click(function () {
