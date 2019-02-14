@@ -32,9 +32,9 @@ div {
 	position: fixed;
 	top: -4px;
 	right: 8px;
-	font-size: larger;
+	font-size: medium;
 	text-align: center;
-	height: 150px;
+	height: 100px;
 	width: fit-content;
 }
 
@@ -65,7 +65,7 @@ div {
 #mybutton .arrow{
 	position: absolute;
     right: 0px;
-    bottom: 10px;
+    bottom: 5px;
 }
 
 #mybutton .arrow::before {
@@ -74,7 +74,7 @@ div {
 	vertical-align: middle;
 	font-weight: 900;
 	position: absolute;
-	margin-top: -15px;
+	margin-top: -10px;
 	color: #fff;
 }
 
