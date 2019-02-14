@@ -211,11 +211,12 @@ rt {
 	float: right;
 	cursor: pointer;
 	font-size: x-large;
+	text-align: -webkit-right;
 }
 
 .score .checked {
 	color: orange;
-}s
+}
 
 .viduseq {
 	display: inline;
