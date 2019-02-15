@@ -160,6 +160,8 @@ function loadConntent(){
 
 	showStar();
 	showDiem();
+
+	$("html, body").animate({ scrollTop: 0 }, "slow");
 }
 
 function showOnly(diem){
@@ -181,6 +183,8 @@ function showOnly(diem){
 
 		$(".mainstar").removeClass("checked");
 		$($(".mainstar")[diem]).addClass("checked");
+
+		$("html, body").animate({ scrollTop: 0 }, "slow");
 	}
 }
 
@@ -357,8 +361,14 @@ $(window).on('load', function() {
 		setScore(this);
 	});
 
+	$(".banstar").click(function(){
+		loadConntent();
+		$(".banstar").addClass("checked");
+		$(".mainstar").removeClass("checked");
+	});
 	$(".mainstar").click(function(){
 		var d = $(this).attr("diem");
+		$(".banstar").removeClass("checked");
 		showOnly(d);
 	});
 	$(".mainstar").dblclick(function(){
