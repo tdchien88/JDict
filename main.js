@@ -178,6 +178,9 @@ function showOnly(diem){
 				$($( ".boxtv" )[w]).hide();
 			}
 		}
+
+		$(".mainstar").removeClass("checked");
+		$($(".mainstar")[diem]).addClass("checked");
 	}
 }
 

@@ -54,8 +54,17 @@ div {
 	color: #000;
 }
 
-#mybutton .satus span.checked{
-	color: orange;
+#mybutton .satus span.checked::after{
+	content: "";
+    background-color: #e0f7fa73;
+    height: 1px;
+    padding: 11px;
+    margin-top: -5px;
+    margin-left: -18px;
+    position: absolute;
+    z-index: -1;
+   -moz-border-radius: 15px;
+   -webkit-border-radius: 15px;
 }
 .setting{
 	padding-right: 0px;
@@ -113,7 +122,7 @@ rt {
 .tuvung {
 	display: block;
 	font-size: x-large;
-	margin-top: 60px
+	margin-top: 40px
 }
 
 .tuvung b {
@@ -122,7 +131,7 @@ rt {
 
 .fontnho {
 	font-size: medium;
-	color: #f44336;
+	color: #000;
 }
 
 .hanviet {
