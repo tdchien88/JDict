@@ -230,10 +230,11 @@ rt {
 	cursor: pointer;
 	font-size: x-large;
 	text-align: -webkit-right;
+	position: relative;
 }
 
 .score .checked {
-	color: orange;
+	color: #FFCC00;
 }
 
 .viduseq {
