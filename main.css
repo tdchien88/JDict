@@ -34,7 +34,7 @@ div {
 	right: 8px;
 	font-size: medium;
 	text-align: center;
-	height: 80px;
+	height: 120px;
 	z-index: 9999;
 	width: fit-content;
 }
@@ -90,8 +90,7 @@ div {
 }
 
 .setting{
-	padding-right: 0px;
-	padding-left: 0px;
+	padding: 0px 0px 5px 0px;
 }
 
 #mybutton .arrow{
@@ -353,12 +352,16 @@ rt {
 
 #audioplayer{
 	display: block;
-    position: fixed;
-    bottom: 5px;
+
 }
 #audioplayer div {
 	display: block;
 }
 #audioplayer div .time{
 	width: auto;
+}
+.audiojs {
+	width: 350px;
+}.audiojs .scrubber{
+	width: 180px;
 }

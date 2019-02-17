@@ -379,10 +379,10 @@ $(window).on('load', function() {
 
 	$('.arrow').click(function () {
 		if(!isShowSetting){
-			$("#mybutton").animate({height:80});
+			$("#mybutton").animate({height:120});
 			$(".satus").show();
 		}else{
-			$("#mybutton").animate({height:25});
+			$("#mybutton").animate({height:65});
 			$(".satus").hide();
 
 		}
