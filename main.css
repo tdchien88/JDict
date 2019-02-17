@@ -317,7 +317,7 @@ rt {
 	width: 98%;
 	position: fixed;
 	mix-blend-mode: darken;
-	bottom: 0px;
+	bottom: -50px;
 	resize: vertical;
 }
 
