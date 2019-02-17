@@ -35,6 +35,7 @@ div {
 	font-size: medium;
 	text-align: center;
 	height: 80px;
+	z-index: 9999;
 	width: fit-content;
 }
 
@@ -49,9 +50,6 @@ div {
 
 #mybutton .satus td span{
 	margin: 0px
-}
-#mybutton .satus span.star{
-	color: #000;
 }
 
 #mybutton .satus span.star.checked::after{
@@ -72,6 +70,23 @@ div {
 }
 #mybutton .satus span.banstar.checked{
 	color: #f44336;
+}
+
+.diem0{
+	color: #000;
+}
+.diem1{
+	color: #ab2c05;
+}
+.diem2{
+	color: #e65100;
+}.diem3{
+	color: #FF6600;
+}.diem4{
+	color: #FF9900;
+}
+.diem5{
+	color: #FFCC00;
 }
 
 .setting{
@@ -240,6 +255,7 @@ rt {
 .viduseq {
 	display: inline;
 }
+
 
 .linklienquan {
 	color: #0053f9;
