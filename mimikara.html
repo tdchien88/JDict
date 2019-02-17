@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="main.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<script src="./audiojs/audio.min.js"></script>
 <!-- <script src="https://unpkg.com/interactjs@1.3.4/dist/interact.min.js"></script> -->
 <script src="interact.min.js"></script>
 
@@ -30,14 +30,14 @@
 <script src="mimi-unit13.js"></script>
 <script src="main.js"></script>
 
-
+    <script>
+      audiojs.events.ready(function() {
+        audiojs.createAll();
+      });
+    </script>
 </head>
 <body>
-
 <div id="mybutton" class="btn-furigana  drag-and-resize">
-<audio controls>
-	<source src="https://drive.google.com/uc?id=1YiC2kcTXBDOxJ04yq9VqNaotaTvGa1zG&export=download" type="audio/mpeg">
-</audio>
 <div class="setting">
 	<span>
 		<label for="lesson"></label>
@@ -100,8 +100,14 @@
     <div class="ui-resizable-handle ui-resizable-s"></div>
     <div class="ui-resizable-handle ui-resizable-e"></div>
     <div class="ui-resizable-handle ui-resizable-w"></div>
+
+    
 </div>
 
+<div id="audioplayer">
+	<audio src="https://drive.google.com/uc?id=1YiC2kcTXBDOxJ04yq9VqNaotaTvGa1zG&export=download" preload="auto" >
+	</audio>
+</div>
 
 <div id="content">
 </div>

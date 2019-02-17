@@ -350,3 +350,15 @@ rt {
 .top-line:hover {
 	opacity: 1;
 }
+
+#audioplayer{
+	display: block;
+    position: fixed;
+    bottom: 5px;
+}
+#audioplayer div {
+	display: block;
+}
+#audioplayer div .time{
+	width: auto;
+}
