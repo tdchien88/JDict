@@ -3,6 +3,7 @@ var u6 = [
 {
 code: "c1",
 name: "bai 1",
+audiourl: './audio/cd1/39 1-39.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">511. <b><ruby>最<rp>（</rp><rt>もっと</rt><rp>）</rp></ruby>も</b></div><div class="hanviet">tối   </div>
 
 <div class="nghia">nhất, vô cùng</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> <ruby>世界<rp>（</rp><rt>せかい</rt><rp>）</rp></ruby>で<ruby>最<rp>（</rp><rt>もっと</rt><rp>）</rp></ruby>も<ruby>面積<rp>（</rp><rt>めんせき</rt><rp>）</rp></ruby>の<ruby>広<rp>（</rp><rt>ひろ</rt><rp>）</rp></ruby>い<ruby>国<rp>（</rp><rt>くに</rt><rp>）</rp></ruby>はロシアである。</div><div class="nghiavidu">Trên thế giới đất nước có diện tích lớn nhất là nước Nga.</div><div class="vidunotfirst"><br><div class="tuvung"><span class="lienquan">類</span> <ruby>一番<rp>（</rp><rt>いちばん</rt><rp>）</rp></ruby></div><div class="nghiavidu"></div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">512. <b>ほぼ</b></div><div class="hanviet">   </div>
@@ -37,6 +38,7 @@ cotent: [`<div class="boxtv"><div class="tuvung">511. <b><ruby>最<rp>（</rp><r
 {
 code: "c2",
 name: "bai 2",
+audiourl: './audio/cd1/40 1-40.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">525. <b><ruby>一段<rp>（</rp><rt>いちだん</rt><rp>）</rp></ruby>と</b></div><div class="hanviet">nhất đoạn  </div>
 
 <div class="nghia">hơn rất nhiều, hơn 1 bậc</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> 1<ruby>月<rp>（</rp><rt>がつ</rt><rp>）</rp></ruby>になると、<ruby>寒<rp>（</rp><rt>さむ</rt><rp>）</rp></ruby>さは<ruby>一段<rp>（</rp><rt>いちだん</rt><rp>）</rp></ruby>と<ruby>厳<rp>（</rp><rt>きび</rt><rp>）</rp></ruby>しくなった。</div><div class="nghiavidu">Bước vào tháng 1, cái lạnh sẽ khắc nghiệt hơn nhiều.</div><div class="vidunotfirst"><br><div class="tuvung"><div class="viduseq">2.</div> 「<ruby>今日<rp>（</rp><rt>きょう</rt><rp>）</rp></ruby>はまた、<ruby>一段<rp>（</rp><rt>いちだん</rt><rp>）</rp></ruby>とお<ruby>美<rp>（</rp><rt>うつく</rt><rp>）</rp></ruby>しいですね」</div><div class="nghiavidu">Hôm nay, chị lại đẹp hơn nữa nhỉ.</div><br><div class="tuvung"><span class="lienquan">類</span> さらに、<ruby>一層<rp>（</rp><rt>いっそう</rt><rp>）</rp></ruby>、もっと</div><div class="nghiavidu"></div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">526. <b>より</b></div><div class="hanviet">   </div>
@@ -73,6 +75,7 @@ cotent: [`<div class="boxtv"><div class="tuvung">525. <b><ruby>一段<rp>（</rp
 {
 code: "c3",
 name: "bai 3",
+audiourl: './audio/cd1/41 1-41.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">540. <b><ruby>既<rp>（</rp><rt>すで</rt><rp>）</rp></ruby>に</b></div><div class="hanviet">kí   </div>
 
 <div class="nghia">đã; đã rồi</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> <ruby>私<rp>（</rp><rt>わたし</rt><rp>）</rp></ruby>が<ruby>駅<rp>（</rp><rt>えき</rt><rp>）</rp></ruby>に<ruby>着<rp>（</rp><rt>つ</rt><rp>）</rp></ruby>いたとき、<ruby>終電<rp>（</rp><rt>しゅうでん</rt><rp>）</rp></ruby>はすでに<ruby>出<rp>（</rp><rt>で</rt><rp>）</rp></ruby>た<ruby>後<rp>（</rp><rt>あと</rt><rp>）</rp></ruby>だった。</div><div class="nghiavidu">Khi tôi đến nhà ga thì đã sau chuyến tàu cuối cùng rồi.</div><div class="vidunotfirst"><br><div class="tuvung"><div class="viduseq">2.</div> <ruby>彼女<rp>（</rp><rt>かのじょ</rt><rp>）</rp></ruby>が<ruby>出会<rp>（</rp><rt>であ</rt><rp>）</rp></ruby>ったとき、<ruby>彼<rp>（</rp><rt>かれ</rt><rp>）</rp></ruby>はすでに<ruby>結婚<rp>（</rp><rt>けっこん</rt><rp>）</rp></ruby>していたそうだ。</div><div class="nghiavidu">Khi gặp cô ấy, nghe nói anh ấy đã kết hôn rồi.</div><br><div class="tuvung"><span class="lienquan">類</span> もう</div><div class="nghiavidu"></div><br><div class="tuvung"><span class="lienquan">対</span> いまだに、まだ</div><div class="nghiavidu"></div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">541. <b><ruby>事前<rp>（</rp><rt>じぜん</rt><rp>）</rp></ruby>に</b></div><div class="hanviet">sự tiền  </div>
@@ -113,6 +116,7 @@ cotent: [`<div class="boxtv"><div class="tuvung">540. <b><ruby>既<rp>（</rp><r
 {
 code: "c4",
 name: "bai 4",
+audiourl: './audio/cd1/42 1-42.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">557. <b>にやにや・にやりと</b></div><div class="hanviet">   </div>
 
 <div class="nghia">cười khỉnh, cười nham hiểm</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> 「<ruby>何<rp>（</rp><rt>なに</rt><rp>）</rp></ruby>をニヤニヤしているんだ。<ruby>気持<rp>（</rp><rt>きも</rt><rp>）</rp></ruby>ち<ruby>悪<rp>（</rp><rt>わる</rt><rp>）</rp></ruby>い」</div><div class="nghiavidu">Có con gì kêu meo meo thê gì, bực mình quá.</div><div class="vidunotfirst"><br><div class="tuvung"><div class="viduseq">2.</div> <ruby>悪事<rp>（</rp><rt>あくじ</rt><rp>）</rp></ruby>が<ruby>成功<rp>（</rp><rt>せいこう</rt><rp>）</rp></ruby>したときのことを<ruby>想像<rp>（</rp><rt>そうぞう</rt><rp>）</rp></ruby>して、<ruby>彼<rp>（</rp><rt>かれ</rt><rp>）</rp></ruby>はにやりと<ruby>笑<rp>（</rp><rt>わら</rt><rp>）</rp></ruby>った。</div><div class="nghiavidu">Tưởng tưởng đến chuyện việc ác sẽ thành công, anh ta cười nhếch mép.</div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">558. <b>どきどき・どきりと</b></div><div class="hanviet">   </div>
@@ -151,6 +155,7 @@ cotent: [`<div class="boxtv"><div class="tuvung">557. <b>にやにや・にや�
 {
 code: "c5",
 name: "bai 5",
+audiourl: './audio/cd1/43 1-43.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">573. <b><ruby>要<rp>（</rp><rt>よう</rt><rp>）</rp></ruby>するに</b></div><div class="hanviet">yêu/yếu   </div>
 
 <div class="nghia">tóm lại, chủ yếu, căn bản là</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> <ruby>不合格<rp>（</rp><rt>ふごうかく</rt><rp>）</rp></ruby>になったということは、<ruby>要<rp>（</rp><rt>よう</rt><rp>）</rp></ruby>するに<ruby>実力<rp>（</rp><rt>じつりょく</rt><rp>）</rp></ruby>がなかったのだ。</div><div class="nghiavidu">Lí do trượt tóm lại là không có thực lực.</div><div class="vidunotfirst"><br><div class="tuvung"><div class="viduseq">2.</div> 「いろいろおっしゃいましたが、ようするに<ruby>反対<rp>（</rp><rt>はんたい</rt><rp>）</rp></ruby>なんですね」</div><div class="nghiavidu">Dù nói rất nhiều nhưng tóm lại là phản đối đúng không.</div><br><div class="tuvung"><span class="lienquan">類</span> つまり</div><div class="nghiavidu"></div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">574. <b><ruby>即<rp>（</rp><rt>すなわ</rt><rp>）</rp></ruby>ち</b></div><div class="hanviet">tức   </div>
