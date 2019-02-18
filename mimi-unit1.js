@@ -3,6 +3,7 @@ var u1 = [
 {
 code: "c1",
 name: "bai 1",
+audiourl: './audio/cd1/02 1-02.mp3',
 cotent: 
 [`
 <div class="boxtv"><div class="tuvung">1. <b><ruby>人生<rp>（</rp><rt>じんせい</rt><rp>）</rp></ruby></b></div>
@@ -310,6 +311,7 @@ cotent:
 {
 code: "c2",
 name: "bai 2",
+audiourl: './audio/cd1/03 1-03.mp3',
 cotent: 
 [`<div class="boxtv"><div class="tuvung">18. <b><ruby>能力<rp>（</rp><rt>のうりょく</rt><rp>）</rp></ruby></b></div><div class="hanviet2">năng lực  </div>
 
@@ -361,6 +363,7 @@ cotent:
 {
 code: "c3",
 name: "bai 3",
+audiourl: './audio/cd1/04 1-04.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">39. <b><ruby>服装<rp>（</rp><rt>ふくそう</rt><rp>）</rp></ruby></b></div><div class="hanviet2">phục trang  </div>
 
 <div class="nghia2">quần áo, trang phục</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> 「<ruby>面接<rp>（</rp><rt>めんせつ</rt><rp>）</rp></ruby>にはきちんとした<ruby>服装<rp>（</rp><rt>ふくそう</rt><rp>）</rp></ruby>で<ruby>行<rp>（</rp><rt>い</rt><rp>）</rp></ruby>きなさい」</div><div class="nghiavidu">Hãy mặc áo quần chỉnh tề để đi phỏng vấn nhé.</div><div class="vidunotfirst"><br><div class="tuvung"><div class="viduseq">2.</div> <ruby>父<rp>（</rp><rt>ちち</rt><rp>）</rp></ruby>は<ruby>服装<rp>（</rp><rt>ふくそう</rt><rp>）</rp></ruby>に<ruby>構<rp>（</rp><rt>かま</rt><rp>）</rp></ruby>わずどこへでも<ruby>出<rp>（</rp><rt>で</rt><rp>）</rp></ruby>かけるので、<ruby>一緒<rp>（</rp><rt>いっしょ</rt><rp>）</rp></ruby>に<ruby>歩<rp>（</rp><rt>ある</rt><rp>）</rp></ruby>くのが<ruby>恥<rp>（</rp><rt>は</rt><rp>）</rp></ruby>ずかしい。</div><div class="nghiavidu">Bố đi đâu cũng không chú ý gì đến trang phục nên đi cùng rất ngại.</div><br><div class="tuvung"><span class="lienquan">連</span> ＿に<ruby>構<rp>（</rp><rt>かま</rt><rp>）</rp></ruby>わない</div><div class="nghiavidu"></div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">40. <b><ruby>礼<rp>（</rp><rt>れい</rt><rp>）</rp></ruby></b></div><div class="hanviet2">lễ   </div>
@@ -392,6 +395,7 @@ cotent: [`<div class="boxtv"><div class="tuvung">39. <b><ruby>服装<rp>（</rp>
 {
 code: "c4",
 name: "bai 4",
+audiourl: './audio/cd1/05 1-05.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">51. <b><ruby>材料<rp>（</rp><rt>ざいりょう</rt><rp>）</rp></ruby></b></div><div class="hanviet2">tài liệu  </div>
 
 <div class="nghia2">nguyên liệu</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> スーパーへ<ruby>夕食<rp>（</rp><rt>ゆうしょく</rt><rp>）</rp></ruby>の<ruby>材料<rp>（</rp><rt>ざいりょう</rt><rp>）</rp></ruby>を<ruby>買<rp>（</rp><rt>か</rt><rp>）</rp></ruby>いに<ruby>行<rp>（</rp><rt>い</rt><rp>）</rp></ruby>った。</div><div class="nghiavidu">Đến siêu thị mua nguyên liệu cho bữa tối.</div><div class="vidunotfirst"><br><div class="tuvung"><div class="viduseq">2.</div> <ruby>伝統的<rp>（</rp><rt>でんとうてき</rt><rp>）</rp></ruby>な<ruby>日本<rp>（</rp><rt>にほん</rt><rp>）</rp></ruby>の<ruby>家<rp>（</rp><rt>いえ</rt><rp>）</rp></ruby>の<ruby>材料<rp>（</rp><rt>ざいりょう</rt><rp>）</rp></ruby>は、<ruby>木<rp>（</rp><rt>き</rt><rp>）</rp></ruby>・<ruby>竹<rp>（</rp><rt>たけ</rt><rp>）</rp></ruby>・<ruby>土<rp>（</rp><rt>つち</rt><rp>）</rp></ruby>など、<ruby>自然<rp>（</rp><rt>しぜん</rt><rp>）</rp></ruby>の<ruby>物<rp>（</rp><rt>もの</rt><rp>）</rp></ruby>が<ruby>多<rp>（</rp><rt>おお</rt><rp>）</rp></ruby>い。</div><div class="nghiavidu">Nguyên liệu cho những ngôi nhà truyền thống ở Nhật là gỗ, tre, đất… đa số là những thứ của tự nhiên.</div><br><div class="tuvung"><div class="viduseq">3.</div> A　<ruby>案<rp>（</rp><rt>あん</rt><rp>）</rp></ruby>がいいのかB　<ruby>案<rp>（</rp><rt>あん</rt><rp>）</rp></ruby>がいいのか、<ruby>判断<rp>（</rp><rt>はんだん</rt><rp>）</rp></ruby>の<ruby>材料<rp>（</rp><rt>ざいりょう</rt><rp>）</rp></ruby>が<ruby>足<rp>（</rp><rt>た</rt><rp>）</rp></ruby>りない。</div><div class="nghiavidu">Không đủ những tư liệu để phán đoán rằng dự án A hay dự án B tốt.</div><br><div class="tuvung"><span class="lienquan">関</span> <ruby>原料<rp>（</rp><rt>げんりょう</rt><rp>）</rp></ruby>、<ruby>素材<rp>（</rp><rt>そざい</rt><rp>）</rp></ruby></div><div class="nghiavidu"></div><br><div class="tuvung"><span class="lienquan">合</span> <ruby>判断<rp>（</rp><rt>はんだん</rt><rp>）</rp></ruby>＿、<ruby>不安<rp>（</rp><rt>ふあん</rt><rp>）</rp></ruby>＿</div><div class="nghiavidu"></div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">52. <b><ruby>石<rp>（</rp><rt>いし</rt><rp>）</rp></ruby></b></div><div class="hanviet2">thạch   </div>
@@ -437,6 +441,7 @@ cotent: [`<div class="boxtv"><div class="tuvung">51. <b><ruby>材料<rp>（</rp>
 {
 code: "c5",
 name: "bai 5",
+audiourl: './audio/cd1/06 1-06.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">70. <b><ruby>駐車<rp>（</rp><rt>ちゅうしゃ</rt><rp>）</rp></ruby></b></div><div class="hanviet2">trú xa  </div>
 
 <div class="nghia2">đỗ xe</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> <ruby>日曜日<rp>（</rp><rt>にちようび</rt><rp>）</rp></ruby>の<ruby>都心<rp>（</rp><rt>としん</rt><rp>）</rp></ruby>は<ruby>駐車<rp>（</rp><rt>ちゅうしゃ</rt><rp>）</rp></ruby>することがない。</div><div class="nghiavidu">Vào ngày chủ nhật của thành phố không thể đậu xe.</div><div class="vidunotfirst"><br><div class="tuvung"><div class="viduseq">2.</div> <ruby>駐車<rp>（</rp><rt>ちゅうしゃ</rt><rp>）</rp></ruby><ruby>違反<rp>（</rp><rt>いはん</rt><rp>）</rp></ruby>で<ruby>捕<rp>（</rp><rt>つか</rt><rp>）</rp></ruby>まった。</div><div class="nghiavidu">Bị bắt vì tội vi phạm đậu xe.</div><br><div class="tuvung"><span class="lienquan">関</span> <ruby>停車<rp>（</rp><rt>ていしゃ</rt><rp>）</rp></ruby></div><div class="nghiavidu"></div><br><div class="tuvung"><span class="lienquan">合</span> ＿<ruby>場<rp>（</rp><rt>じょう</rt><rp>）</rp></ruby>、＿<ruby>禁止<rp>（</rp><rt>きんし</rt><rp>）</rp></ruby>、＿<ruby>違反<rp>（</rp><rt>いはん</rt><rp>）</rp></ruby></div><div class="nghiavidu"></div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">71. <b><ruby>違反<rp>（</rp><rt>いはん</rt><rp>）</rp></ruby></b></div><div class="hanviet2">vi phản  </div>
@@ -479,6 +484,7 @@ cotent: [`<div class="boxtv"><div class="tuvung">70. <b><ruby>駐車<rp>（</rp>
 {
 code: "c6",
 name: "bai 6",
+audiourl: './audio/cd1/07 1-07.mp3',
 cotent: [`<div class="boxtv"><div class="tuvung">88. <b><ruby>収入<rp>（</rp><rt>しゅうにゅう</rt><rp>）</rp></ruby></b></div><div class="hanviet2">thu nhập  </div>
 
 <div class="nghia2">thu nhập</div><div class="vidubox"><br><div class="tuvung"><div class="viduseq">1.</div> <ruby>彼<rp>（</rp><rt>かれ</rt><rp>）</rp></ruby>は<ruby>喫茶店<rp>（</rp><rt>きっさてん</rt><rp>）</rp></ruby>を<ruby>経営<rp>（</rp><rt>けいえい</rt><rp>）</rp></ruby>して<ruby>収入<rp>（</rp><rt>しゅうにゅう</rt><rp>）</rp></ruby>を<ruby>得<rp>（</rp><rt>え</rt><rp>）</rp></ruby>ている。</div><div class="nghiavidu">Anh ấy thu nhập từ việc kinh doanh quán café.</div><div class="vidunotfirst"><br><div class="tuvung"><span class="lienquan">関</span> <ruby>年収<rp>（</rp><rt>ねんしゅう</rt><rp>）</rp></ruby>、<ruby>月収<rp>（</rp><rt>げっしゅう</rt><rp>）</rp></ruby>、<ruby>所得<rp>（</rp><rt>しょとく</rt><rp>）</rp></ruby></div><div class="nghiavidu"></div><br><div class="tuvung"><span class="lienquan">合</span> <ruby>臨時<rp>（</rp><rt>りんじ</rt><rp>）</rp></ruby>＿、＿<ruby>源<rp>（</rp><rt>げん</rt><rp>）</rp></ruby>、<ruby>高<rp>（</rp><rt>こう</rt><rp>）</rp></ruby>＿</div><div class="nghiavidu"></div><br><div class="tuvung"><span class="lienquan">対</span> <ruby>支出<rp>（</rp><rt>ししゅつ</rt><rp>）</rp></ruby></div><div class="nghiavidu"></div><br><div class="tuvung"><span class="lienquan">連</span> ＿がある＜＝＞ない、＿が<ruby>高<rp>（</rp><rt>たか</rt><rp>）</rp></ruby>い＜＝＞<ruby>低<rp>（</rp><rt>ひく</rt><rp>）</rp></ruby>い、＿が<ruby>上<rp>（</rp><rt>あ</rt><rp>）</rp></ruby>がる・＿をあげる、＿が<ruby>下<rp>（</rp><rt>さ</rt><rp>）</rp></ruby>がる、＿を<ruby>得<rp>（</rp><rt>え</rt><rp>）</rp></ruby>る</div><div class="nghiavidu"></div></div></div></div><div class="newline"></div>`,`<div class="boxtv"><div class="tuvung">89. <b><ruby>支出<rp>（</rp><rt>ししゅつ</rt><rp>）</rp></ruby></b></div><div class="hanviet2">chi xuất  </div>

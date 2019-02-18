@@ -3,6 +3,12 @@
 var data = [];
 var vdchecked = 0;
 var isShowSetting = true;
+var player = null;
+
+audiojs.events.ready(function() {
+	player = audiojs;
+	audiojs.createAll();
+});
 
 function init(){
 
@@ -151,6 +157,7 @@ function loadConntent(){
 		$("div:has(> span.lienquan)").addClass("fontnho");
 
 	}
+	loadAudio();
 
 	showRubi();
 
@@ -162,6 +169,21 @@ function loadConntent(){
 	showDiem();
 
 	$("html, body").animate({ scrollTop: 0 }, "slow");
+}
+
+function loadAudio(){
+    try{
+    	
+		var unitIdx = $("#unit").val();
+		var unit = data[unitIdx];
+		var lessonIdx = $("#lesson").val();
+		var lesson = unit.cotent[lessonIdx];	
+
+		audiojs.instances.audiojs0.load(lesson.audiourl);
+   
+    }catch(err){
+    	console.log(err);
+    }
 }
 
 function showOnly(diem){

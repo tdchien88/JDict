@@ -30,11 +30,6 @@
 <script src="mimi-unit13.js"></script>
 <script src="main.js"></script>
 
-    <script>
-      audiojs.events.ready(function() {
-        audiojs.createAll();
-      });
-    </script>
 </head>
 <body>
 <div id="mybutton" class="btn-furigana  drag-and-resize">
@@ -64,8 +59,7 @@
 </div>
 
 <div id="audioplayer">
-	<audio src="./audio/cd1/01 1-01.mp3" preload="auto" >
-	</audio>
+	<audio id="player" preload="auto" loop />
 </div>
 
 <div class="satus">
