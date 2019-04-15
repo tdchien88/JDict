@@ -109,7 +109,14 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
                 ansKatakana == wanakana.toKatakana($scope.curWord.word) ||
                 ansKatakana == wanakana.toKatakana($scope.curWord.kana1) ||
                 ansKatakana == wanakana.toKatakana($scope.curWord.kana2)){
-            $scope.wrongCount = $scope.wrongCountMax + 1;
+            
+            if($scope.wrongCount <= 2){
+                $scope.wrongCount = $scope.wrongCountMax + 1;
+        
+            }else {
+                $scope.wrongCount++;
+                $scope.ans = '';
+            }
         }
         else {
 
