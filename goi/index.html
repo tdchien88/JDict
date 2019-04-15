@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="jp">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="ChienTD">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>さすが Web </title>
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <link rel="import" href="cmn_header.html" />
+
+</head>
+<body  ng-cloak ng-controller="mainController" >
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li ng-repeat="menu in menulist">
+                <a ui-sref="{{menu.sref}}" class="ng-binding" ui-sref-active="active">{{menu.name}}</a>
+            </li>
+        </ul>
+    </nav>
+    <div  class="container">
+         <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+        <div ui-view style="height: 100%;"></div>
+    </div>
+
+</body>
+</html>
