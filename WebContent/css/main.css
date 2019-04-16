@@ -1,5 +1,5 @@
 body{
-	background:url("../img/bg.png") no-repeat;
+    background:url("../img/bg.png") no-repeat;
 }
 span::after {
   content: "\A";
@@ -8,6 +8,30 @@ span::after {
 
 .form-control:focus {
     box-shadow: 0 0 0 0.05rem rgba(32, 168, 216, 0.25); }
+
 .form-control:disabled, .form-control[readonly] {
-	background-color: #eeeeee;
+    background-color: #f8f8f8;
 }
+.navbar{
+    padding: 0.3rem 1rem;
+}
+
+.bg-light {
+    background-color: #56aed320 !important;
+}
+
+.navbar-light .navbar-brand {
+    color: #fff;
+}
+
+.w0 { width: 0px; }
+.w10 { width: 10px; }
+.w20 { width: 20px; }
+.w30 { width: 30px; }
+.w40 { width: 40px; }
+.w50 { width: 50px; }
+.w60 { width: 60px; }
+.w70 { width: 70px; }
+.w80 { width: 80px; }
+.w90 { width: 90px; }
+.w100 { width: 100px; }

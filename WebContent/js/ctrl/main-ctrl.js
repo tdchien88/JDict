@@ -13,6 +13,7 @@ myApp.controller("mainController", ["$scope", function($scope){
                 {sref:"home", link:"home", name:"Home"},
                 {sref:"sample", link:"about", name:"Sample"},
                 {sref:"n2goi", link:"n2goi", name:"N2GOI"},
+                {sref:"mimikara", link:"mimikara", name:"Mimi Kara"},
                 {sref:"about", link:"about", name:"About"},
                 ];
 
