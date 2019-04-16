@@ -1,2 +1,6 @@
 #ignore all mp3 file
 *.mp3
+
+#ignore all img file
+WebContent/img
+WebContent/mimikara/images
