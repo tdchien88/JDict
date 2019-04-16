@@ -147,9 +147,10 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
             if($scope.wrongCount ==  $scope.wrongCount_GOI || $scope.wrongCount ==  $scope.wrongCount_Kana1 || $scope.wrongCount ==  $scope.wrongCount_Kana2){
                 $scope.ans = '';
             }
+ if($scope.wrongCount < $scope.wrongCountMax){
 
             $scope.wrongCount++;
-
+ }
         }
 
     }
