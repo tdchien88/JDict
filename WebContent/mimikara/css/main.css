@@ -1,0 +1,23 @@
+
+body {
+    background-image: url("../images/background.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    white-space: pre-wrap; /* or pre-wrap or pre-line */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/white-space */
+}
+
+#txt{
+margin: 0px 10px;
+height: 100px;
+width: 80%;
+}
+
+#contents{
+
+    height: 650px;
+    overflow: scroll
+
+    /*position: fixed;
+    top: 650px;*/
+}

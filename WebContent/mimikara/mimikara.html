@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0049)http://furigana.sourceforge.net/cgi-bin/index.cgi -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name='viewport'  content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+<title>Mimi kara N2 GOI</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="main.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./audiojs/audio.min.js"></script>
+<!-- <script src="https://unpkg.com/interactjs@1.3.4/dist/interact.min.js"></script> -->
+<script src="interact.min.js"></script>
+
+
+<script src="mimi-unit1.js"></script>
+<script src="mimi-unit2.js"></script>
+<script src="mimi-unit3.js"></script>
+<script src="mimi-unit4.js"></script>
+<script src="mimi-unit5.js"></script>
+<script src="mimi-unit6.js"></script>
+<script src="mimi-unit7.js"></script>
+<script src="mimi-unit8.js"></script>
+<script src="mimi-unit9.js"></script>
+<script src="mimi-unit10.js"></script>
+<script src="mimi-unit11.js"></script>
+<script src="mimi-unit12.js"></script>
+<script src="mimi-unit13.js"></script>
+<script src="main.js"></script>
+
+</head>
+<body>
+<div id="mybutton" class="btn-furigana  drag-and-resize">
+<div class="setting">
+	<span>
+		<label for="lesson"></label>
+		<select id="unit"></select>	
+	</span>
+	<span>
+		<select id="lesson"></select>	
+	</span>
+
+	<span>
+		<label for="checkffurigana">Rubi</label>
+		<input id="checkffurigana" type="checkbox" name="checkffurigana"  checked>	
+	</span>
+
+	<span>
+		<label for="hanviet">Nghĩa</label>
+		<input id="hanviet" type="checkbox" name="hanviet"  >	
+	</span>
+
+	<span>
+		<label for="vidubox">Ví dụ</label>
+		<input id="vidubox" type="checkbox" name="vidubox"  >
+	</span>
+</div>
+
+<div id="audioplayer">
+	<audio id="player" preload="auto" loop="true" />
+</div>
+
+<div class="satus">
+	<table>
+		<tr>
+			<td><span class="fa fa-ban banstar checked" diem="0"></span></td>
+			<td><span class="mainstar fa fa-star star diem0" diem="0"></span></td>
+			<td><span class="mainstar fa fa-star star diem1" diem="1"></span></td>
+			<td><span class="mainstar fa fa-star star diem2"  diem="2"></span></td>
+			<td><span class="mainstar fa fa-star star diem3"  diem="3"></span></td>
+			<td><span class="mainstar fa fa-star star diem4"  diem="4"></span></td>
+			<td><span class="mainstar fa fa-star star diem5"  diem="5"></span></td>
+		</tr>
+		<tr>
+			<td><span class="" diem="99">All</span></td>
+			<td><span class="mainstar diem diem0" diem="0"></span></td>
+			<td><span class="mainstar diem diem1" diem="1"></span></td>
+			<td><span class="mainstar diem diem2" diem="2"></span></td>
+			<td><span class="mainstar diem diem3" diem="3"></span></td>
+			<td><span class="mainstar diem diem4" diem="4"></span></td>
+			<td><span class="mainstar diem diem5" diem="5"></span></td>
+		</tr>
+	</table>
+</div>
+
+
+<!--
+	<input id="reset" type="button" value="Reset">
+-->
+	<div class="arrow"></div>
+</div>
+
+<div id="glass" class="glass crop resizable draggable ">
+	
+    <div class="ui-resizable-handle ui-resizable-nw"></div>
+    <div class="ui-resizable-handle ui-resizable-ne"></div>
+    <div class="ui-resizable-handle ui-resizable-sw"></div>
+    <div class="ui-resizable-handle ui-resizable-se"></div>
+    <div class="ui-resizable-handle ui-resizable-n top-line"></div>
+    <div class="ui-resizable-handle ui-resizable-s"></div>
+    <div class="ui-resizable-handle ui-resizable-e"></div>
+    <div class="ui-resizable-handle ui-resizable-w"></div>
+
+
+</div>
+
+
+<div id="content">
+</div>
+
+
+<script type="text/javascript">
+
+</script>
+</body></html>

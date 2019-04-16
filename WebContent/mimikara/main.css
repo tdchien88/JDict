@@ -1,0 +1,369 @@
+br {
+	content: " ";
+	display: block;
+	margin: 5px 0;
+}
+
+body {
+	background-color: #E0E0E0;
+	font-size: 18px;
+	font-family: Arial, "ヒラギノ明朝", "Yu Gothic";
+	margin: 0px 1%;
+}
+
+div {
+	display: inline-block;
+	width: -webkit-fill-available;
+}
+
+.hiddenfurigana {
+	display: none;
+}
+
+.btn-furigana {
+	background-color: #31b0d5a8;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 4px;
+	border-color: #46b8da;
+}
+
+
+#mybutton {
+	position: fixed;
+	top: -4px;
+	right: 8px;
+	font-size: medium;
+	text-align: center;
+	height: 120px;
+	z-index: 9999;
+	width: fit-content;
+}
+
+#mybutton .satus{
+	display: block;
+	margin-top: 10px;
+}
+
+#mybutton .satus table{
+	width: 100%;
+}
+
+#mybutton .satus td span{
+	margin: 0px
+}
+
+#mybutton .satus span.star.checked::after{
+	content: "";
+    background-color: #e0f7fa73;
+    height: 1px;
+    padding: 11px;
+    margin-top: -5px;
+    margin-left: -18px;
+    position: absolute;
+    z-index: -1;
+   -moz-border-radius: 15px;
+   -webkit-border-radius: 15px;
+}
+
+#mybutton .satus span.banstar{
+	color: #00bcd4;
+}
+#mybutton .satus span.banstar.checked{
+	color: #f44336;
+}
+
+.diem0{
+	color: #000;
+}
+.diem1{
+	color: #ab2c05;
+}
+.diem2{
+	color: #e65100;
+}.diem3{
+	color: #FF6600;
+}.diem4{
+	color: #FF9900;
+}
+.diem5{
+	color: #FFCC00;
+}
+
+.setting{
+	padding: 0px 0px 5px 0px;
+}
+
+#mybutton .arrow{
+	position: absolute;
+    right: 0px;
+    bottom: -5px;
+    height: 10px
+}
+
+#mybutton .arrow::before {
+	font-family: FontAwesome;
+	content: "\f106";
+	vertical-align: middle;
+	font-weight: 900;
+	position: absolute;
+	margin-top: -10px;
+	color: #fff;
+}
+
+#mybutton .arrow::after {
+	font-family: FontAwesome;
+	content: "\f107";
+	vertical-align: middle;
+	font-weight: 900;
+	position: absolute;
+	color: #31b0d5a8;
+}
+
+#mybutton span {
+	margin-left: 5px;
+}
+rt {
+	color: #f44336;
+}
+
+#content {
+	padding: 90% 0px;
+	font-size: large;
+}
+
+.boxtv {
+	padding: 0.5em 0.5em;
+	margin: 0.5em 0;
+	background: #FFFFFF;
+	border-left: solid 2px #5bb7ae;
+	box-shadow: 0.5px 0px 0.5px 0.5px rgba(0, 0, 0, 0.33);
+	-webkit-box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.33);
+	-moz-box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.tuvung {
+	display: block;
+	font-size: x-large;
+	margin-top: 40px
+}
+
+.tuvung b {
+	font-size: -webkit-xxx-large;
+	font-weight: 500;
+}
+
+.fontnho {
+	font-size: medium;
+	color: #000;
+}
+
+.hanviet {
+	text-transform: uppercase;
+	margin-left: 37px;
+	display: none;
+	color: #f44336;
+}
+
+.nghia {
+	margin-left: 37px;
+	display: none;
+	color: #f44336;
+}
+
+.hanviet1 {
+	text-transform: uppercase;
+	margin-left: 17px;
+	display: none;
+	color: #f44336;
+}
+
+.nghia1 {
+	margin-left: 17px;
+	display: none;
+	color: #f44336;
+}
+
+.hanviet2 {
+	text-transform: uppercase;
+	margin-left: 27px;
+	display: none;
+	color: #f44336;
+}
+
+.nghia2 {
+	margin-left: 27px;
+	display: none;
+	color: #f44336;
+}
+
+.hanviet3 {
+	text-transform: uppercase;
+	margin-left: 40px;
+	display: none;
+	color: #f44336;
+}
+
+.nghia3 {
+	margin-left: 40px;
+	display: none;
+	color: #f44336;
+}
+
+.nghiavidu {
+	margin-left: 20px;
+	color: #f44336;
+	display: none;
+}
+
+.vidubox {
+	display: none;
+}
+
+.vidubox .tuvung {
+	color: black;
+	margin-top: 20px;
+	padding-top: 25px;
+	border-top: #E0E0E0 1px solid;
+}
+
+.lienquan {
+	display: inline;
+	padding: .2em .6em .3em;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em;
+	background-color: #5c90d2;
+}
+
+.score {
+	float: right;
+	cursor: pointer;
+	font-size: x-large;
+	text-align: -webkit-right;
+	position: relative;
+}
+
+.score .checked {
+	color: #FFCC00;
+}
+
+.viduseq {
+	display: inline;
+}
+
+
+.linklienquan {
+	color: #0053f9;
+}
+
+.draggable {
+	cursor: move;
+}
+
+.resizable {
+	border: 1px dashed #000000;
+	position: relative;
+	min-height: 50px;
+}
+
+.ui-resizable-handle {
+	width: 10px;
+	height: 10px;
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	position: absolute;
+}
+
+.ui-resizable-nw {
+	left: -5px;
+	top: -5px;
+	cursor: nw-resize;
+}
+
+.ui-resizable-ne {
+	top: -5px;
+	right: -5px;
+	cursor: ne-resize;
+}
+
+.ui-resizable-sw {
+	bottom: -5px;
+	left: -5px;
+	cursor: sw-resize;
+}
+
+.ui-resizable-se {
+	bottom: -5px;
+	right: -5px;
+	cursor: se-resize;
+}
+
+.ui-resizable-n {
+	top: -5px;
+	left: 50%;
+	cursor: n-resize;
+}
+
+.ui-resizable-s {
+	bottom: -5px;
+	left: 50%;
+	cursor: s-resize;
+}
+
+.ui-resizable-w {
+	left: -5px;
+	top: calc(50% - 5px);
+	cursor: w-resize;
+}
+
+.ui-resizable-e {
+	right: -5px;
+	top: calc(50% - 5px);
+	cursor: e-resize;
+}
+
+.glass {
+	background-color: #f44336;
+	height: 70%;
+	width: 98%;
+	position: fixed;
+	mix-blend-mode: darken;
+	bottom: -50px;
+	resize: vertical;
+}
+
+.top-line {
+	top: -5px;
+	left: 0px;
+	width: 100%;
+	height: 5px;
+	/* 5px for the mouse cursor update size */
+	background-color: #a50000;
+	cursor: n-resize;
+}
+
+.top-line:hover {
+	opacity: 1;
+}
+
+#audioplayer{
+	display: block;
+
+}
+#audioplayer div {
+	display: block;
+}
+#audioplayer div .time{
+	width: auto;
+}
+.audiojs {
+	width: 350px;
+}.audiojs .scrubber{
+	width: 180px;
+}
