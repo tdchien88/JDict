@@ -14,6 +14,7 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         $scope.listCurrentWords = [];//danh sach cac tu trong bai
         $scope.listNotRemember = [];//danh sach cac tu chua thuoc
         $scope.listRemember = [];//danh sach cac tu da thuoc
+        $scope.listNewWords = [];//danh sach cac tu chua hoc
 
         //tu hien tai
         $scope.curIdx = -1;
@@ -32,7 +33,7 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         var seen = {};
         var listtemp = $scope.listWords.filter(function (e) {
             return seen[e.unit] ? false : (seen[e.unit] = true);
-        });;
+        });
 
         $.each(listtemp, function(i,e){
             $scope.listUnit.push({code:e.unit, name: "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ")"});
@@ -61,16 +62,27 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         $scope.isCorrect = true;
         $scope.wrongCount = 0;
         $scope.curIdx++;
-
+        
+        var temp =[];
         if($scope.learnType == 'all'){
-            $scope.curWord = $scope.listCurrentWords[$scope.curIdx];
+            temp = $scope.listCurrentWords;
         }
         else if($scope.learnType == 'wrong'){
-            $scope.curWord = $scope.listNotRemember[$scope.curIdx];
+            temp = $scope.listNotRemember;
         }
         else if($scope.learnType == 'rememberd'){
-            $scope.curWord = $scope.listRemember[$scope.curIdx];
+            temp = $scope.listRemember;
         }
+        else if($scope.learnType == 'newwords'){
+            temp = $scope.listNewWords;
+        }
+
+        if($scope.curIdx >= temp.length ){
+            $scope.curIdx = 0;
+        }
+
+        $scope.curWord = temp[$scope.curIdx];
+
     }
 
     function markScore(){
@@ -104,10 +116,16 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         $scope.listCurrentWords = [];
         $scope.listNotRemember = [];
         $scope.listRemember = [];
+        $scope.listNewWords = [];
 
         $scope.listCurrentWords = $scope.listWords.filter(function (e) {
             return e.unit == $scope.unit ;
         });
+
+        $scope.listNewWords = $scope.listWords.filter(function (e) {
+            return e.unit == $scope.unit ;
+        });
+
         nextWord();
     }
 
@@ -172,9 +190,7 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
                 $scope.wrongCount++;
                 $scope.ans = '';
             }
-
         }
-
         //tra loi sai
         else {
             $scope.isCorrect = false;
@@ -189,6 +205,15 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
             }
         }
 
+        
+        if($scope.listRemember.indexOf($scope.curWord) != -1) ||
+           $scope.listNotRemember.indexOf($scope.curWord) != -1)){
+                $scope.listNewWords = $.grep($scope.listNewWords, function(e){
+                   return e.no != $scope.curWord.no;
+                });
+        }
+        
+        
     }
 
     $scope.reset = function(){
@@ -208,5 +233,3 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
 
     init();
 }]);
-
-
