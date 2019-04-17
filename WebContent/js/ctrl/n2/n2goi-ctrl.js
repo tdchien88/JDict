@@ -206,8 +206,8 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         }
 
         
-        if($scope.listRemember.indexOf($scope.curWord) != -1) ||
-           $scope.listNotRemember.indexOf($scope.curWord) != -1)){
+        if(($scope.listRemember.indexOf($scope.curWord) != -1) ||
+           ($scope.listNotRemember.indexOf($scope.curWord) != -1)){
                 $scope.listNewWords = $.grep($scope.listNewWords, function(e){
                    return e.no != $scope.curWord.no;
                 });
