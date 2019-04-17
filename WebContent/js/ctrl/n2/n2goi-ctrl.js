@@ -13,10 +13,14 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         $scope.listUnit = [];//danh sach tat ca cac bai
         $scope.listCurrentWords = [];//danh sach cac tu trong bai
         $scope.listNotRemember = [];//danh sach cac tu chua thuoc
+        $scope.listRemember = [];//danh sach cac tu da thuoc
 
         //tu hien tai
         $scope.curIdx = -1;
         $scope.curWord = {};
+        $scope.isCorrect = false;
+
+        $scope.learnType = 'all';
 
         $scope.wrongCount = 0;
         $scope.wrongCount_GOI = 2;
@@ -53,8 +57,20 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
             week: 1
             word: "３階建て"
          */
+
+        $scope.isCorrect = true;
+        $scope.wrongCount = 0;
         $scope.curIdx++;
-        $scope.curWord = $scope.listCurrentWords[$scope.curIdx];
+
+        if($scope.learnType == 'all'){
+            $scope.curWord = $scope.listCurrentWords[$scope.curIdx];
+        }
+        else if($scope.learnType == 'wrong'){
+            $scope.curWord = $scope.listNotRemember[$scope.curIdx];
+        }
+        else if($scope.learnType == 'rememberd'){
+            $scope.curWord = $scope.listRemember[$scope.curIdx];
+        }
     }
 
     function markScore(){
@@ -87,6 +103,7 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         $scope.wrongCount = 0;
         $scope.listCurrentWords = [];
         $scope.listNotRemember = [];
+        $scope.listRemember = [];
 
         $scope.listCurrentWords = $scope.listWords.filter(function (e) {
             return e.unit == $scope.unit ;
@@ -102,16 +119,8 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         var ansKatakana = wanakana.toKatakana($scope.ans);
         var ansHiragana = wanakana.toHiragana($scope.ans);
 
-        if($scope.wrongCount >= $scope.wrongCountMax){
-
-            $scope.wrongCount = 0;
-            $scope.ans = '';
-            markScore();
-            nextWord();
-        }
-
         //tra loi dung
-        else if($scope.ans == $scope.curWord.word ||
+        if($scope.ans == $scope.curWord.word ||
                 $scope.ans == $scope.curWord.kana1 ||
                 $scope.ans == $scope.curWord.kana2 ||
 
@@ -123,35 +132,78 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
                 isEqual(ansKatakana, wanakana.toKatakana($scope.curWord.kana1)) ||
                 isEqual(ansKatakana, wanakana.toKatakana($scope.curWord.kana2)) ){
 
-            // neu tra loi dung trong lan dau
-            if($scope.wrongCount <= $scope.wrongCountMin){
-                $scope.wrongCount = $scope.wrongCountMax + 1;
-            }
+            $scope.isCorrect = true;
+
+
+
             // neu la tra loi dung trong lan cuoi
-            else if($scope.wrongCount == $scope.wrongCountMax-1 ) {
+             if($scope.wrongCount >= $scope.wrongCountMax ) {
+
+
                 // neu tu chua ton tai moi add vao
-                if($scope.listNotRemember.indexOf($scope.curWord) === -1){
+                if($scope.listRemember.indexOf($scope.curWord) === -1 &&
+                        $scope.listNotRemember.indexOf($scope.curWord) === -1){
                     $scope.listNotRemember.push($scope.curWord) ;
                 }
-                $scope.wrongCount++;
+
+                $scope.wrongCount = 0;
+                $scope.ans = '';
+                markScore();
+                nextWord();
+
+            }
+            // neu tra loi dung trong lan dau
+            else if($scope.wrongCount <= $scope.wrongCountMin){
+                $scope.wrongCount = $scope.wrongCountMax ;
+
+                // neu tu chua ton tai moi add vao
+                if($scope.listRemember.indexOf($scope.curWord) === -1){
+                    $scope.listRemember.push($scope.curWord) ;
+                }
+
+                if($scope.listNotRemember.indexOf($scope.curWord) != -1){
+                    $scope.listNotRemember = $.grep($scope.listNotRemember, function(e){
+                        return e.no != $scope.curWord.no;
+                   });
+                }
+
             }
             else {
                 $scope.wrongCount++;
                 $scope.ans = '';
             }
+
         }
 
         //tra loi sai
         else {
-
-            if($scope.wrongCount ==  $scope.wrongCount_GOI || $scope.wrongCount ==  $scope.wrongCount_Kana1 || $scope.wrongCount ==  $scope.wrongCount_Kana2){
+            $scope.isCorrect = false;
+            if($scope.wrongCount ==  $scope.wrongCount_GOI ||
+                    $scope.wrongCount ==  $scope.wrongCount_Kana1 ||
+                    $scope.wrongCount ==  $scope.wrongCount_Kana2){
                 $scope.ans = '';
             }
-            if($scope.wrongCount < $scope.wrongCountMax - 1){
+
+            if($scope.wrongCount <= $scope.wrongCount_Kana2){
                 $scope.wrongCount++;
             }
         }
 
+    }
+
+    $scope.reset = function(){
+
+        $scope.curIdx = -1;
+        $scope.curWord = {};
+        $scope.listNotRemember = [];
+        $scope.listRemember = [];
+
+        nextWord();
+    }
+
+    $scope.changeLearnType = function(){
+        $scope.curIdx = -1;
+        nextWord();
     }
 
     init();
