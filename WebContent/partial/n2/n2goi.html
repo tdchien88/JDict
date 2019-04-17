@@ -19,7 +19,7 @@
         <div class="mr-2"> | </div>
         <div class="text-danger font-weight-bold mr-2">{{listNotRemember.length}}</div>
         <div class="mr-2">】</div>
-        <div class="text-primary mr-2">{{curIdx + 1}}/{{listCurrentWords.length}}</div>
+        <div class="text-primary mr-2">{{listRemember.length + listNotRemember.length + 1}}/{{listCurrentWords.length}}</div>
         <div class="text-muted small">({{(listRemember.length + listNotRemember.length  + 1) * 100 / listCurrentWords.length | number : 0}}%)</div>
       </div>
       <div class="progress-group-bars">
