@@ -229,7 +229,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
                         $scope.data.listNotRemember.indexOf($scope.data.curWord) === -1){
                     $scope.data.listNotRemember.push($scope.data.curWord) ;
                 }
-                $scope.data.isFirstCorrect = true;
+
                 $scope.data.wrongCount = 0;
                 $scope.data.ans = '';
                 markScore();
@@ -238,6 +238,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
             }
             // neu tra loi dung trong lan dau
             else if($scope.data.wrongCount <= $scope.data.wrongCountMin){
+                $scope.data.isFirstCorrect = true;
                 $scope.data.wrongCount = $scope.data.wrongCountMax ;
 
                 // neu tu chua ton tai moi add vao
