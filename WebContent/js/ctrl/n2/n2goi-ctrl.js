@@ -6,47 +6,73 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2goiCtrl", ["$scope","$timeout", "goin2", function($scope, $timeout, goin2){
+myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService', "$timeout", "goin2", function($scope, localStorageService, dialogService, $timeout, goin2){
 
     function init(){
-        $scope.listWords = goin2;//danh sach tat ca cac tu
-        $scope.listUnit = [];//danh sach tat ca cac bai
-        $scope.listCurrentWords = [];//danh sach cac tu trong bai
-        $scope.listNotRemember = [];//danh sach cac tu chua thuoc
-        $scope.listRemember = [];//danh sach cac tu da thuoc
-        $scope.listNewWords = [];//danh sach cac tu chua hoc
+        localStorageService.setPrefix('jdict.n2goi');
+
+        $scope.data = {};
+        $scope.data.listWords = goin2;//danh sach tat ca cac tu
+        $scope.data.listUnit = [];//danh sach tat ca cac bai
+        $scope.data.listCurrentWords = [];//danh sach cac tu trong bai
+        $scope.data.listNotRemember = [];//danh sach cac tu chua thuoc
+        $scope.data.listRemember = [];//danh sach cac tu da thuoc
+        $scope.data.listNewWords = [];//danh sach cac tu chua hoc
 
         //tu hien tai
-        $scope.curIdx = -1;
-        $scope.curWord = {};
-        $scope.isCorrect = false;
+        $scope.data.curIdx = -1;
+        $scope.data.curWord = {};
+        $scope.data.isCorrect = false;
 
-        $scope.learnType = 'all';
+        $scope.data.learnType = 'newwords';
 
-        $scope.wrongCount = 0;
-        $scope.wrongCount_GOI = 2;
-        $scope.wrongCount_Kana1 = 4;
-        $scope.wrongCount_Kana2 = 6;
-        $scope.wrongCountMin = 2;
-        $scope.wrongCountMax = 10;
+        $scope.data.wrongCount = 0;
+        $scope.data.wrongCount_GOI = 2;
+        $scope.data.wrongCount_Kana1 = 4;
+        $scope.data.wrongCount_Kana2 = 6;
+        $scope.data.wrongCountMin = 2;
+        $scope.data.wrongCountMax = 10;
 
         var seen = {};
-        var listtemp = $scope.listWords.filter(function (e) {
+        var listtemp = $scope.data.listWords.filter(function (e) {
             return seen[e.unit] ? false : (seen[e.unit] = true);
         });
 
         $.each(listtemp, function(i,e){
-            $scope.listUnit.push({code:e.unit, name: "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ")"});
+            $scope.data.listUnit.push({code:e.unit, name: "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ")"});
         })
 
+
         $timeout(function(){
+            var data = localStorageService.get("data");
+            if(data){
+                $scope.data.unit = data.unit;
+            }
 
             $scope.changeUnit();
+
+            if(data){
+                $scope.data.listNotRemember = data.listNotRemember;
+                $scope.data.listRemember = data.listRemember;
+                $scope.data.listNewWords = data.listNewWords;
+
+                //tu hien tai
+                $scope.data.curIdx = data.curIdx;
+                $scope.data.curWord = data.curWord;
+                $scope.data.isCorrect = data.isCorrect;
+
+                $scope.data.learnType = data.learnType;
+                $scope.data.unit = data.unit;
+
+            }
+
         }, 100);
 
         wanakana.bind($("#ans")[0] /* options */);
 
     }
+
+
 
     function nextWord(){
         /*
@@ -62,53 +88,59 @@ myApp.controller("n2goiCtrl", ["$scope","$timeout", "goin2", function($scope, $t
             word: "３階建て"
          */
 
-         if(($scope.listRemember.indexOf($scope.curWord) != -1) ||
-           ($scope.listNotRemember.indexOf($scope.curWord) != -1)){
-                $scope.listNewWords = $.grep($scope.listNewWords, function(e){
-                   return e.no != $scope.curWord.no;
+         if(($scope.data.listRemember.indexOf($scope.data.curWord) != -1) ||
+           ($scope.data.listNotRemember.indexOf($scope.data.curWord) != -1)){
+                $scope.data.listNewWords = $.grep($scope.data.listNewWords, function(e){
+                   return e.no != $scope.data.curWord.no;
                 });
          }
 
-        $scope.isCorrect = true;
-        $scope.wrongCount = 0;
-        $scope.ans = "";
+        $scope.data.isCorrect = true;
+        $scope.data.wrongCount = 0;
+        $scope.data.ans = "";
 
         var temp =[];
-        if($scope.learnType == 'all'){
-            temp = $scope.listCurrentWords;
-        $scope.curIdx++;
+        if($scope.data.learnType == 'all'){
+            temp = $scope.data.listCurrentWords;
+        $scope.data.curIdx++;
         }
-        else if($scope.learnType == 'wrong'){
-            temp = $scope.listNotRemember;
-        $scope.curIdx = 0;
+        else if($scope.data.learnType == 'wrong'){
+            temp = $scope.data.listNotRemember;
+        $scope.data.curIdx = 0;
         }
-        else if($scope.learnType == 'rememberd'){
-            temp = $scope.listRemember;
-        $scope.curIdx++;
+        else if($scope.data.learnType == 'rememberd'){
+            temp = $scope.data.listRemember;
+        $scope.data.curIdx++;
         }
-        else if($scope.learnType == 'newwords'){
-            temp = $scope.listNewWords;
-        $scope.curIdx = 0;
-        }
-
-        if($scope.curIdx >= temp.length ){
-            $scope.curIdx = 0;
+        else if($scope.data.learnType == 'newwords'){
+            temp = $scope.data.listNewWords;
+        $scope.data.curIdx = 0;
         }
 
-        $scope.curWord = temp[$scope.curIdx];
+        if($scope.data.curIdx >= temp.length ){
+            $scope.data.curIdx = 0;
+        }
 
+        $scope.data.curWord = temp[$scope.data.curIdx];
+
+        saveStore();
+    }
+
+    function saveStore(){
+        localStorageService.remove("data");
+        localStorageService.set("data", $scope.data);
     }
 
     function markScore(){
-        if($scope.wrongCount > $scope.wrongCountMin){
+        if($scope.data.wrongCount > $scope.data.wrongCountMin){
             // chua thuoc
-            $scope.curWord.difficult = "1";
+            $scope.data.curWord.difficult = "1";
 
         }else{
             // da thuoc
-            $scope.curWord.difficult = "";
-            if($scope.curWord.score <= 5){
-                $scope.curWord.score++;
+            $scope.data.curWord.difficult = "";
+            if($scope.data.curWord.score <= 5){
+                $scope.data.curWord.score++;
             }
 
         }
@@ -144,117 +176,131 @@ myApp.controller("n2goiCtrl", ["$scope","$timeout", "goin2", function($scope, $t
 
     $scope.changeUnit = function(){
 
-        $scope.curIdx = -1;
-        $scope.curWord = {};
-        $scope.wrongCount = 0;
-        $scope.listCurrentWords = [];
-        $scope.listNotRemember = [];
-        $scope.listRemember = [];
-        $scope.listNewWords = [];
+        $scope.data.curIdx = -1;
+        $scope.data.curWord = {};
+        $scope.data.wrongCount = 0;
+        $scope.data.listCurrentWords = [];
+        $scope.data.listNotRemember = [];
+        $scope.data.listRemember = [];
+        $scope.data.listNewWords = [];
 
-        $scope.listCurrentWords = $scope.listWords.filter(function (e) {
-            return e.unit == $scope.unit ;
+        $scope.data.listCurrentWords = $scope.data.listWords.filter(function (e) {
+            return e.unit == $scope.data.unit ;
         });
 
-        $scope.listNewWords = $scope.listWords.filter(function (e) {
-            return e.unit == $scope.unit ;
+        $scope.data.listNewWords = $scope.data.listWords.filter(function (e) {
+            return e.unit == $scope.data.unit ;
         });
 
         nextWord();
     }
 
     $scope.ansKeydown = function(event){
-        if(event.key != "Enter" || isEmpty($scope.ans)){
+        if(event.key != "Enter" || isEmpty($scope.data.ans)){
             return;
         }
-        var ansRomaji = wanakana.toRomaji($scope.ans);
-        var ansKatakana = wanakana.toKatakana($scope.ans);
-        var ansHiragana = wanakana.toHiragana($scope.ans);
+        var ansRomaji = wanakana.toRomaji($scope.data.ans);
+        var ansKatakana = wanakana.toKatakana($scope.data.ans);
+        var ansHiragana = wanakana.toHiragana($scope.data.ans);
 
         //tra loi dung
-        if($scope.ans == $scope.curWord.word ||
-                $scope.ans == $scope.curWord.kana1 ||
-                $scope.ans == $scope.curWord.kana2 ||
+        if($scope.data.ans == $scope.data.curWord.word ||
+                $scope.data.ans == $scope.data.curWord.kana1 ||
+                $scope.data.ans == $scope.data.curWord.kana2 ||
 
-                isEqual($scope.ans, $scope.curWord.word) ||
-                isEqual($scope.ans, $scope.curWord.kana1) ||
-                isEqual($scope.ans, $scope.curWord.kana2)){
+                isEqual($scope.data.ans, $scope.data.curWord.word) ||
+                isEqual($scope.data.ans, $scope.data.curWord.kana1) ||
+                isEqual($scope.data.ans, $scope.data.curWord.kana2)){
 
-            $scope.isCorrect = true;
+            $scope.data.isCorrect = true;
 
             // neu la tra loi dung trong lan cuoi
-             if($scope.wrongCount >= $scope.wrongCountMax ) {
+             if($scope.data.wrongCount >= $scope.data.wrongCountMax ) {
                 // neu tu chua ton tai moi add vao
-                if($scope.listRemember.indexOf($scope.curWord) === -1 &&
-                        $scope.listNotRemember.indexOf($scope.curWord) === -1){
-                    $scope.listNotRemember.push($scope.curWord) ;
+                if($scope.data.listRemember.indexOf($scope.data.curWord) === -1 &&
+                        $scope.data.listNotRemember.indexOf($scope.data.curWord) === -1){
+                    $scope.data.listNotRemember.push($scope.data.curWord) ;
                 }
 
-                $scope.wrongCount = 0;
-                $scope.ans = '';
+                $scope.data.wrongCount = 0;
+                $scope.data.ans = '';
                 markScore();
                 nextWord();
 
             }
             // neu tra loi dung trong lan dau
-            else if($scope.wrongCount <= $scope.wrongCountMin){
-                $scope.wrongCount = $scope.wrongCountMax ;
+            else if($scope.data.wrongCount <= $scope.data.wrongCountMin){
+                $scope.data.wrongCount = $scope.data.wrongCountMax ;
 
                 // neu tu chua ton tai moi add vao
-                if($scope.listRemember.indexOf($scope.curWord) === -1){
-                    $scope.listRemember.push($scope.curWord) ;
+                if($scope.data.listRemember.indexOf($scope.data.curWord) === -1){
+                    $scope.data.listRemember.push($scope.data.curWord) ;
                 }
 
-                if($scope.listNotRemember.indexOf($scope.curWord) != -1){
-                    $scope.listNotRemember = $.grep($scope.listNotRemember, function(e){
-                        return e.no != $scope.curWord.no;
+                if($scope.data.listNotRemember.indexOf($scope.data.curWord) != -1){
+                    $scope.data.listNotRemember = $.grep($scope.data.listNotRemember, function(e){
+                        return e.no != $scope.data.curWord.no;
                    });
                 }
 
             }
             else {
-                $scope.wrongCount++;
-                $scope.ans = '';
+                $scope.data.wrongCount++;
+                $scope.data.ans = '';
             }
         }
         //tra loi sai
         else {
-            $scope.isCorrect = false;
-            if($scope.wrongCount ==  $scope.wrongCount_GOI ||
-                    $scope.wrongCount ==  $scope.wrongCount_Kana1 ||
-                    $scope.wrongCount ==  $scope.wrongCount_Kana2){
-                $scope.ans = '';
+            $scope.data.isCorrect = false;
+            if($scope.data.wrongCount ==  $scope.data.wrongCount_GOI ||
+                    $scope.data.wrongCount ==  $scope.data.wrongCount_Kana1 ||
+                    $scope.data.wrongCount ==  $scope.data.wrongCount_Kana2){
+                $scope.data.ans = '';
             }
 
-            if($scope.wrongCount <= $scope.wrongCount_Kana2){
-                $scope.wrongCount++;
+            if($scope.data.wrongCount <= $scope.data.wrongCount_Kana2){
+                $scope.data.wrongCount++;
             }
         }
-
-        
-
 
     }
 
     $scope.reset = function(){
-
-        $scope.curIdx = -1;
-        $scope.curWord = {};
-        $scope.listNotRemember = [];
-        $scope.listRemember = [];
-        $scope.listNewWords = [];
-
-        nextWord();
+//        $scope.openModal = function () {
+//            $uibModal.open({
+//              templateUrl: 'partial/dialog/myModal.html',
+//              controller: function ($scope, $uibModalInstance) {
+//                $scope.ok = function () {
+//                  $uibModalInstance.close();
+//                };
+//
+//                $scope.cancel = function () {
+//                  $uibModalInstance.dismiss('cancel');
+//                };
+//              }
+//            })
+//          };
+//        dialogService.confirmDialog("WCMN0060", "WCMN0060",  function() {
+//
+//            console.log("ok")
+//            localStorageService.clearAll();
+//            init();
+//        }, function() {
+//            console.log("cancel")
+//        });
+          localStorageService.clearAll();
+          init();
     }
+
     $scope.reZero = function(){
-        $scope.curIdx = -1;
-        $scope.curWord = {};
+        $scope.data.curIdx = -1;
+        $scope.data.curWord = {};
 
         nextWord();
     }
 
     $scope.changeLearnType = function(){
-        $scope.curIdx = -1;
+        $scope.data.curIdx = -1;
         nextWord();
     }
 

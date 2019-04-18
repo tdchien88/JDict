@@ -1,1 +1,2 @@
-var myApp = angular.module("myApp", ['ui.router']);
+var myApp = angular.module("myApp", ['ui.router', 'LocalStorageModule',
+    "ui.bootstrap", "ui.bootstrap.datepicker", "ui.bootstrap.datepickerPopup", "ui.bootstrap.dateparser", "ui.bootstrap.isClass", "ui.bootstrap.tabs"]);

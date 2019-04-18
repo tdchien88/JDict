@@ -1,0 +1,17 @@
+<form>
+<div class="error-dialog">
+    <div class="modal-header">
+        <h4 align="center">{{title}}</h4>
+    </div>
+    <div class="modal-body" id="modal-body" align="left">
+        {{message}}
+    </div>
+    <div class="modal-footer" id="modal-body" align="right">
+            <!-- okDialogボタン -->
+            <isd-button class="btn btn-primary msg-dialog-btn" type="button" ng-click="confirm()" ng-if="cancelIsHide" ng-hide="okIsHide" autofocus>{{okView}}</isd-button>
+            <!-- confirmDialogボタン -->
+            <isd-button class="btn btn-primary msg-dialog-btn" type="button" ng-click="confirm()" ng-if="!cancelIsHide">{{okView}}</isd-button>
+            <isd-button class="btn btn-warning msg-dialog-btn" type="button" ng-click="cancel()" ng-hide="cancelIsHide" autofocus>{{cancelView}}</isd-button>
+    </div>
+</div>
+</form>
