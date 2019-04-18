@@ -65,6 +65,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
                 $scope.data.learnType = data.learnType;
                 $scope.data.unit = data.unit;
 
+                saveStore();
             }
 
         }, 100);
