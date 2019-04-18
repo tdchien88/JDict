@@ -48,56 +48,24 @@ myApp.directive("myInput", function() {
 }).directive("myDropdown", function() {
     return {
         restrict : "E",
-        scope: {}, // 分離スコープ
-        template : '<select focusmove class="form-control">'
-                    + '    <option ng-repeat="worklist in worklists" value={{worklist.code}}  > {{worklist.name}} </option>'
+        scope: {
+            items: '=',
+            defaultItemIdx: '=',
+            changeEvent: '&'
+          },
+        template : '<select focusmove class="form-control" selected-item="">'
+                    + '    <option ng-repeat="item in items" ng-value="item.code"  > {{item.name}} </option>'
                     + '</select>' ,
         replace : true,
         link : function(scope, element, attr) {
-            function init() {
+            function init(){
 
-                // combonameの値が一致するisd-textbox要素を取得
-                var combotext = $('[comboname="' + attr['comboname'] + '"][type="text"]')[0];
-
-                // combonameの値が一致するisd-selectbox要素を取得
-                var combo = $('select[comboname="' + attr['comboname'] + '"]')[0];
-
-                scope.worklists = getValueByKey(attr.kbnvalue, scope.$parent);
-
-                // リスト長
-                var length = scope.worklists.length;
-                if(length === 0) return;
-                if(!isEmpty(attr.maxdropdownitems) && Number(attr.maxdropdownitems) > 0 && Number(attr.maxdropdownitems) < length) {
-                    length = Number(attr.maxdropdownitems);
-                }
-
-                // 未選択有の場合、先頭に空の選択肢を追加
-                if(isNotUndefined(attr.isInsertEmpty)) {
-                    scope.worklists.unshift({"code" : "", "name" : ""});
-                }
-
-                // 選択値設定処理
-                var setSelect = function(code) {
-                    if(!!combotext) {
-                        setValueByKey(combotext.getAttribute("ng-model"), scope.$parent, code);
-                    }
-                    setValueByKey(attr.ngModel, scope.$parent, code);
-                };
-
-
-                // 先頭の選択肢で初期化
-                var def = scope.worklists[0].code;
-
-                // 選択値初期化
-                setSelect(def);
+                var selectedItem = scope.items[scope.defaultItemIdx].code;
+                setValueByKey(attr.ngModel, scope.$parent, selectedItem);
             }
+            scope.$parent.$watch(attr.items, init);
 
-            // kbnvalueが変更されたらデ初期処理を再実行
-            scope.$parent.$watch(attr.kbnvalue, init);
-
-            // フォーカスインした時
             element.on("focus", function(event) {
-                // nameの値を保持する
                 beforeFocus = attr.name;
             });
         }

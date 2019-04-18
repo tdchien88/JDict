@@ -4,7 +4,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text w70">Unit</span>
         </div>
-        <my-dropdown ctrlproptype="alphanum" ng-model="unit" kbnvalue="listUnit"  ng-change="changeUnit()"></my-dropdown>
+        <my-dropdown name="unit" ng-model="unit" default-item-idx="0" items="listUnit" ng-change="changeUnit()"></my-dropdown>
         <span class="input-group-append">
             <button class="btn btn-sm btn-danger" type="button" ng-click="reset()">Reset</button>
         </span>
@@ -19,7 +19,7 @@
         <div class="mr-2"> | </div>
         <div class="text-danger font-weight-bold mr-2">{{listNotRemember.length}}</div>
         <div class="mr-2">】</div>
-        <div class="text-primary mr-2">{{listRemember.length + listNotRemember.length + 1}}/{{listCurrentWords.length}}</div>
+        <div class="mr-2">{{listRemember.length + listNotRemember.length + 1}}/{{listCurrentWords.length}}</div>
         <div class="text-muted small">({{(listRemember.length + listNotRemember.length  + 1) * 100 / listCurrentWords.length | number : 0}}%)</div>
       </div>
       <div class="progress-group-bars">
@@ -36,62 +36,62 @@
     </div>
 
     <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text w70">Type:</span>
-        </div>
-        <div class="col-md-9 col-form-label bg-while ">
-            <div class="form-check form-check-inline mr-1">
+        <div class="form-control">
+            <div class="form-check form-check-inline ml-2">
                 <input class="form-check-input" id="inline-all" ng-model="learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label" for="inline-all">All</label>
+                <label class="form-check-label" for="inline-all">All ({{listCurrentWords.length}})</label>
             </div>
-            <div class="form-check form-check-inline mr-1">
+            <div class="form-check form-check-inline mr-2">
                 <input class="form-check-input" id="inline-rememberd" ng-model="learnType"  type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label" for="inline-rememberd">Remembered</label>
+                <label class="form-check-label text-success" for="inline-rememberd">OK ({{listRemember.length}})</label>
             </div>
-            <div class="form-check form-check-inline mr-1">
+            <div class="form-check form-check-inline mr-2">
                 <input class="form-check-input" id="inline-wrong" ng-model="learnType"  type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label" for="inline-wrong">Wrong</label>
+                <label class="form-check-label text-danger" for="inline-wrong">NG ({{listNotRemember.length}})</label>
             </div>
-            <div class="form-check form-check-inline mr-1">
+            <div class="form-check form-check-inline mr-2">
                 <input class="form-check-input" id="inline-newwords" ng-model="learnType"  type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label" for="inline-newwords">NewWords</label>
+                <label class="form-check-label text-primary" for="inline-newwords">New ({{listNewWords.length}})</label>
             </div>
         </div>
-    </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">Nghĩa</span>
+        <div class=" input-group-append">
+            <button class="btn btn-sm btn-primary" type="button" ng-click="reZero()"><i class="fas fa-angle-double-left"></i> Re:Zero</button>
         </div>
-        <my-textbox ctrlproptype="alphanum" ng-model="curWord.mean" class="text-uppercase text-dark" disabled ></my-textbox>
-    </div>
-
-    <div class="input-group mb-3" ng-show="wrongCount > wrongCount_GOI">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">語彙</span>
-        </div>
-        <my-textbox ctrlproptype="japan" ng-model="curWord.word" class="text-dark" disabled></my-textbox>
-    </div>
-
-    <div class="input-group mb-3" ng-show="wrongCount > wrongCount_Kana1">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">かな1</span>
-        </div>
-        <my-textbox ctrlproptype="japan" ng-model="curWord.kana1" class="text-dark" disabled></my-textbox>
     </div>
 
     <div class="input-group mb-3" ng-show="wrongCount > wrongCount_Kana2">
         <div class="input-group-prepend">
           <span class="input-group-text w70">かな2</span>
         </div>
-        <my-textbox ctrlproptype="japan" ng-model="curWord.kana2" class="text-dark" disabled></my-textbox>
+        <my-textbox ctrlproptype="japan" ng-model="curWord.kana2" class="text-dark" readonly></my-textbox>
+    </div>
+
+    <div class="input-group mb-3" ng-show="wrongCount > wrongCount_Kana1">
+        <div class="input-group-prepend">
+          <span class="input-group-text w70">かな1</span>
+        </div>
+        <my-textbox ctrlproptype="japan" ng-model="curWord.kana1" class="text-dark" readonly></my-textbox>
+    </div>
+
+    <div class="input-group mb-3" ng-show="wrongCount > wrongCount_GOI">
+        <div class="input-group-prepend">
+          <span class="input-group-text w70">語彙</span>
+        </div>
+        <my-textbox ctrlproptype="japan" ng-model="curWord.word" class="text-dark" readonly></my-textbox>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text w70">Nghĩa</span>
+        </div>
+        <my-textbox ctrlproptype="alphanum" ng-model="curWord.mean" class="text-uppercase text-danger font-weight-bold " readonly ></my-textbox>
     </div>
 
     <div class="input-group mb-3" >
         <div class="input-group-prepend">
           <span class="input-group-text w70">Ans {{wrongCount}}</span>
         </div>
-        <my-textbox id="ans" ctrlproptype="japan" ng-model="ans" class="text-dark" ng-class="{'is-invalid': !isCorrect}" ng-keydown="ansKeydown($event)"></my-textbox>
+        <my-textbox id="ans" ctrlproptype="japan" ng-model="ans" class="text-dark" ng-class="{'is-invalid': !isCorrect}" ng-keydown="ansKeydown($event)" autofocus></my-textbox>
     </div>
 
 </form>

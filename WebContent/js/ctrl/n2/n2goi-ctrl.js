@@ -6,7 +6,7 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
+myApp.controller("n2goiCtrl", ["$scope","$timeout", "goin2", function($scope, $timeout, goin2){
 
     function init(){
         $scope.listWords = goin2;//danh sach tat ca cac tu
@@ -39,7 +39,10 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
             $scope.listUnit.push({code:e.unit, name: "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ")"});
         })
 
-        nextWord();
+        $timeout(function(){
+
+            $scope.changeUnit();
+        }, 100);
 
         wanakana.bind($("#ans")[0] /* options */);
 
@@ -62,7 +65,8 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         $scope.isCorrect = true;
         $scope.wrongCount = 0;
         $scope.curIdx++;
-        
+        $scope.ans = "";
+
         var temp =[];
         if($scope.learnType == 'all'){
             temp = $scope.listCurrentWords;
@@ -101,11 +105,31 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
     }
 
     function isEqual(a, b){
-        var regex = /[　 ０-９！＂＃＄％＆＇（）＊＋，－．／：；＜＝＞？＠［＼］＾＿｀｛｜｝～0-9`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
-        a = a.replace(regex,'');
-        b = b.replace(regex,'');
+        var regex = /[〜’”【】「」。、　 ０-９！＂＃＄％＆＇（）＊＋，－．／：；＜＝＞？＠［＼］＾＿｀｛｜｝～0-9`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
 
-        return a == b;
+        a = a.replace(regex,'');
+        var aR = wanakana.toRomaji(a);
+        var aH = wanakana.toHiragana(a);
+        var aK = wanakana.toKatakana(a);
+
+        b = b.replace(regex,'');
+        var bR = wanakana.toRomaji(b);
+        var bH = wanakana.toHiragana(b);
+        var bK= wanakana.toKatakana(b);
+
+        return a == b ||
+
+                aR == bR ||
+                aR == bH ||
+                aR == bK ||
+
+                aH == bR ||
+                aH == bH ||
+                aH == bK ||
+
+                aK == bR ||
+                aK == bH ||
+                aK == bK;
     }
 
     $scope.changeUnit = function(){
@@ -142,22 +166,14 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
                 $scope.ans == $scope.curWord.kana1 ||
                 $scope.ans == $scope.curWord.kana2 ||
 
-                isEqual(ansHiragana, wanakana.toHiragana($scope.curWord.word)) ||
-                isEqual(ansHiragana, wanakana.toHiragana($scope.curWord.kana1)) ||
-                isEqual(ansHiragana, wanakana.toHiragana($scope.curWord.kana2)) ||
-
-                isEqual(ansKatakana, wanakana.toKatakana($scope.curWord.word)) ||
-                isEqual(ansKatakana, wanakana.toKatakana($scope.curWord.kana1)) ||
-                isEqual(ansKatakana, wanakana.toKatakana($scope.curWord.kana2)) ){
+                isEqual($scope.ans, $scope.curWord.word) ||
+                isEqual($scope.ans, $scope.curWord.kana1) ||
+                isEqual($scope.ans, $scope.curWord.kana2)){
 
             $scope.isCorrect = true;
 
-
-
             // neu la tra loi dung trong lan cuoi
              if($scope.wrongCount >= $scope.wrongCountMax ) {
-
-
                 // neu tu chua ton tai moi add vao
                 if($scope.listRemember.indexOf($scope.curWord) === -1 &&
                         $scope.listNotRemember.indexOf($scope.curWord) === -1){
@@ -205,15 +221,14 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
             }
         }
 
-        
         if(($scope.listRemember.indexOf($scope.curWord) != -1) ||
            ($scope.listNotRemember.indexOf($scope.curWord) != -1)){
                 $scope.listNewWords = $.grep($scope.listNewWords, function(e){
                    return e.no != $scope.curWord.no;
                 });
         }
-        
-        
+
+
     }
 
     $scope.reset = function(){
@@ -222,6 +237,13 @@ myApp.controller("n2goiCtrl", ["$scope", "goin2", function($scope, goin2){
         $scope.curWord = {};
         $scope.listNotRemember = [];
         $scope.listRemember = [];
+        $scope.listNewWords = [];
+
+        nextWord();
+    }
+    $scope.reZero = function(){
+        $scope.curIdx = -1;
+        $scope.curWord = {};
 
         nextWord();
     }

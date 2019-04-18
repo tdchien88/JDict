@@ -9,8 +9,11 @@ span::after {
 .form-control:focus {
     box-shadow: 0 0 0 0.05rem rgba(32, 168, 216, 0.25); }
 
-.form-control:disabled, .form-control[readonly] {
+.form-control:disabled {
     background-color: #f8f8f8;
+}
+.form-control[readonly] {
+    background-color: #fff;
 }
 .navbar{
     padding: 0.3rem 1rem;
