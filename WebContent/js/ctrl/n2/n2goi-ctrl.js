@@ -135,7 +135,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
     }
 
     function saveStore(){
-        localStorageService.remove("data");
+      
         localStorageService.set("data", $scope.data);
     }
 
