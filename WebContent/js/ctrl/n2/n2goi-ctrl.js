@@ -310,6 +310,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
 
     $scope.changeLearnType = function(){
         $scope.data.curIdx = -1;
+        $scope.data.isFirstCorrect = false;
         nextWord();
     }
 
