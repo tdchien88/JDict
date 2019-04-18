@@ -62,23 +62,33 @@ myApp.controller("n2goiCtrl", ["$scope","$timeout", "goin2", function($scope, $t
             word: "３階建て"
          */
 
+         if(($scope.listRemember.indexOf($scope.curWord) != -1) ||
+           ($scope.listNotRemember.indexOf($scope.curWord) != -1)){
+                $scope.listNewWords = $.grep($scope.listNewWords, function(e){
+                   return e.no != $scope.curWord.no;
+                });
+         }
+
         $scope.isCorrect = true;
         $scope.wrongCount = 0;
-        $scope.curIdx++;
         $scope.ans = "";
 
         var temp =[];
         if($scope.learnType == 'all'){
             temp = $scope.listCurrentWords;
+        $scope.curIdx++;
         }
         else if($scope.learnType == 'wrong'){
             temp = $scope.listNotRemember;
+        $scope.curIdx = 0;
         }
         else if($scope.learnType == 'rememberd'){
             temp = $scope.listRemember;
+        $scope.curIdx++;
         }
         else if($scope.learnType == 'newwords'){
             temp = $scope.listNewWords;
+        $scope.curIdx = 0;
         }
 
         if($scope.curIdx >= temp.length ){
@@ -221,12 +231,7 @@ myApp.controller("n2goiCtrl", ["$scope","$timeout", "goin2", function($scope, $t
             }
         }
 
-        if(($scope.listRemember.indexOf($scope.curWord) != -1) ||
-           ($scope.listNotRemember.indexOf($scope.curWord) != -1)){
-                $scope.listNewWords = $.grep($scope.listNewWords, function(e){
-                   return e.no != $scope.curWord.no;
-                });
-        }
+        
 
 
     }
