@@ -23,6 +23,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
         $scope.data.curIdx = -1;
         $scope.data.curWord = {};
         $scope.data.isCorrect = false;
+        $scope.data.isFirstCorrect = false;
 
         $scope.data.learnType = 'newwords';
 
@@ -106,15 +107,20 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
         }
         else if($scope.data.learnType == 'wrong'){
             temp = $scope.data.listNotRemember;
-        $scope.data.curIdx = 0;
+
+            if($scope.data.isFirstCorrect){
+                $scope.data.curIdx = 0;
+            } else {
+                $scope.data.curIdx++;
+            }
         }
         else if($scope.data.learnType == 'rememberd'){
             temp = $scope.data.listRemember;
-        $scope.data.curIdx++;
+            $scope.data.curIdx++;
         }
         else if($scope.data.learnType == 'newwords'){
             temp = $scope.data.listNewWords;
-        $scope.data.curIdx = 0;
+            $scope.data.curIdx = 0;
         }
 
         if($scope.data.curIdx >= temp.length ){
@@ -122,6 +128,8 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
         }
 
         $scope.data.curWord = temp[$scope.data.curIdx];
+
+        $scope.data.isFirstCorrect = false;
 
         saveStore();
     }
@@ -221,7 +229,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
                         $scope.data.listNotRemember.indexOf($scope.data.curWord) === -1){
                     $scope.data.listNotRemember.push($scope.data.curWord) ;
                 }
-
+                $scope.data.isFirstCorrect = true;
                 $scope.data.wrongCount = 0;
                 $scope.data.ans = '';
                 markScore();
