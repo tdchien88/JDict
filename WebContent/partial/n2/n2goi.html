@@ -37,21 +37,21 @@
 
     <div class="input-group mb-3">
         <div class="form-control">
-            <div class="form-check form-check-inline ml-1">
-                <input class="form-check-input" id="inline-all" ng-model="learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label" for="inline-all">All</label>
+            <div class="form-check form-check-inline mr-1">
+                <input class="form-check-input" id="inline-newwords" ng-model="learnType"  type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
+                <label class="form-check-label text-primary" for="inline-newwords">New ({{listNewWords.length}})</label>
             </div>
-            <div class="form-check form-check-inline mr-2">
+            <div class="form-check form-check-inline mr-1">
                 <input class="form-check-input" id="inline-rememberd" ng-model="learnType"  type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
                 <label class="form-check-label text-success" for="inline-rememberd">OK ({{listRemember.length}})</label>
             </div>
-            <div class="form-check form-check-inline mr-2">
+            <div class="form-check form-check-inline mr-1">
                 <input class="form-check-input" id="inline-wrong" ng-model="learnType"  type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
                 <label class="form-check-label text-danger" for="inline-wrong">NG ({{listNotRemember.length}})</label>
             </div>
-            <div class="form-check form-check-inline mr-2">
-                <input class="form-check-input" id="inline-newwords" ng-model="learnType"  type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label text-primary" for="inline-newwords">New ({{listNewWords.length}})</label>
+            <div class="form-check form-check-inline ml-1">
+                <input class="form-check-input" id="inline-all" ng-model="learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
+                <label class="form-check-label" for="inline-all">All</label>
             </div>
         </div>
         <div class=" input-group-append">
