@@ -304,7 +304,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
     $scope.reZero = function(){
         $scope.data.curIdx = -1;
         $scope.data.curWord = {};
-
+        $scope.data.isFirstCorrect = false;
         nextWord();
     }
 
