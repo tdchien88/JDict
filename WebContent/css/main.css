@@ -38,3 +38,7 @@ span::after {
 .w80 { width: 80px; }
 .w90 { width: 90px; }
 .w100 { width: 100px; }
+
+.hidden {
+	display: none !important;
+}

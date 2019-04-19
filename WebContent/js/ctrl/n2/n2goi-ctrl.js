@@ -14,13 +14,10 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
         $scope.data = {};
         $scope.data.listWords = goin2;//danh sach tat ca cac tu
         $scope.data.listUnit = [];//danh sach tat ca cac bai
-        $scope.data.listCurrentWords = [];//danh sach cac tu trong bai
-        $scope.data.listNotRemember = [];//danh sach cac tu chua thuoc
-        $scope.data.listRemember = [];//danh sach cac tu da thuoc
-        $scope.data.listNewWords = [];//danh sach cac tu chua hoc
 
         //tu hien tai
         $scope.data.curIdx = -1;
+        $scope.data.curUnit = {};
         $scope.data.curWord = {};
         $scope.data.isCorrect = false;
         $scope.data.isFirstCorrect = false;
@@ -40,33 +37,34 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
         });
 
         $.each(listtemp, function(i,e){
-            $scope.data.listUnit.push({code:e.unit, name: "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ")"});
+            $scope.data.listUnit.push({
+                code: e.unit,
+                name: "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ")",
+                listCurrentWords: [],//danh sach cac tu trong bai
+                listNotRemember: [],//danh sach cac tu chua thuoc
+                listRemember: [],//danh sach cac tu da thuoc
+                listNewWords: [],//danh sach cac tu chua hoc
+           });
         })
 
 
         $timeout(function(){
             var data = localStorageService.get("data");
-            if(data){
+            if (data){
                 $scope.data.unit = data.unit;
+
+                $scope.data.listUnit.forEach(e => {
+                    var listUnit = data.listUnit.find(x=> x.code === e.code);
+
+                    e.listNotRemember = listUnit.listNotRemember;
+                    e.listRemember = listUnit.listRemember;
+                    e.listNewWords = listUnit.listNewWords;
+
+                });
             }
 
             $scope.changeUnit();
 
-            if(data){
-                $scope.data.listNotRemember = data.listNotRemember;
-                $scope.data.listRemember = data.listRemember;
-                $scope.data.listNewWords = data.listNewWords;
-
-                //tu hien tai
-                $scope.data.curIdx = data.curIdx;
-                $scope.data.curWord = data.curWord;
-                $scope.data.isCorrect = data.isCorrect;
-
-                $scope.data.learnType = data.learnType;
-                $scope.data.unit = data.unit;
-
-                saveStore();
-            }
 
         }, 100);
 
@@ -90,11 +88,11 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
             word: "３階建て"
          */
 
-         if(($scope.data.listRemember.indexOf($scope.data.curWord) != -1) ||
-           ($scope.data.listNotRemember.indexOf($scope.data.curWord) != -1)){
-                $scope.data.listNewWords = $.grep($scope.data.listNewWords, function(e){
-                   return e.no != $scope.data.curWord.no;
-                });
+         if(($scope.data.curUnit.listRemember.indexOf($scope.data.curWord) != -1) ||
+                   ($scope.data.curUnit.listNotRemember.indexOf($scope.data.curWord) != -1)){
+            $scope.data.curUnit.listNewWords = $.grep($scope.data.curUnit.listNewWords, function(e){
+               return e.no != $scope.data.curWord.no;
+            });
          }
 
         $scope.data.isCorrect = true;
@@ -103,11 +101,11 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
 
         var temp =[];
         if($scope.data.learnType == 'all'){
-            temp = $scope.data.listCurrentWords;
-        $scope.data.curIdx++;
+            temp = $scope.data.curUnit.listCurrentWords;
+            $scope.data.curIdx++;
         }
         else if($scope.data.learnType == 'wrong'){
-            temp = $scope.data.listNotRemember;
+            temp = $scope.data.curUnit.listNotRemember;
 
             if($scope.data.isFirstCorrect){
                 $scope.data.curIdx = 0;
@@ -116,11 +114,11 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
             }
         }
         else if($scope.data.learnType == 'rememberd'){
-            temp = $scope.data.listRemember;
+            temp = $scope.data.curUnit.listRemember;
             $scope.data.curIdx++;
         }
         else if($scope.data.learnType == 'newwords'){
-            temp = $scope.data.listNewWords;
+            temp = $scope.data.curUnit.listNewWords;
             $scope.data.curIdx = 0;
         }
 
@@ -136,7 +134,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
     }
 
     function saveStore(){
-      
+
         localStorageService.set("data", $scope.data);
     }
 
@@ -185,21 +183,38 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
 
     $scope.changeUnit = function(){
 
+        $scope.data.curUnit = $scope.data.listUnit.find(x=> x.code === $scope.data.unit);
         $scope.data.curIdx = -1;
         $scope.data.curWord = {};
         $scope.data.wrongCount = 0;
-        $scope.data.listCurrentWords = [];
-        $scope.data.listNotRemember = [];
-        $scope.data.listRemember = [];
-        $scope.data.listNewWords = [];
 
-        $scope.data.listCurrentWords = $scope.data.listWords.filter(function (e) {
+        $scope.data.curUnit.listCurrentWords = $scope.data.listWords.filter(function (e) {
             return e.unit == $scope.data.unit ;
         });
 
-        $scope.data.listNewWords = $scope.data.listWords.filter(function (e) {
-            return e.unit == $scope.data.unit ;
-        });
+        var data = localStorageService.get("data");
+        if(data){
+            var listUnit = data.listUnit.find(x=> x.code === $scope.data.unit);
+            if(listUnit.listNotRemember)
+                $scope.data.curUnit.listNotRemember = listUnit.listNotRemember;
+
+            if(listUnit.listRemember)
+                $scope.data.curUnit.listRemember = listUnit.listRemember;
+
+            if(listUnit.listNewWords && listUnit.listNewWords.length != 0)
+                $scope.data.curUnit.listNewWords = listUnit.listNewWords;
+
+        } else {
+            $scope.data.curUnit.listNotRemember = [];
+            $scope.data.curUnit.listRemember = [];
+
+        }
+
+        if($scope.data.curUnit.listNewWords.length == 0){
+            $scope.data.curUnit.listNewWords = $scope.data.listWords.filter(function (e) {
+                return e.unit == $scope.data.unit ;
+            });
+        }
 
         nextWord();
     }
@@ -226,9 +241,9 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
             // neu la tra loi dung trong lan cuoi
              if($scope.data.wrongCount >= $scope.data.wrongCountMax ) {
                 // neu tu chua ton tai moi add vao
-                if($scope.data.listRemember.indexOf($scope.data.curWord) === -1 &&
-                        $scope.data.listNotRemember.indexOf($scope.data.curWord) === -1){
-                    $scope.data.listNotRemember.push($scope.data.curWord) ;
+                if(!$scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no) &&
+                        !$scope.data.curUnit.listNotRemember.find(x => x.no === $scope.data.curWord.no)){
+                    $scope.data.curUnit.listNotRemember.push($scope.data.curWord) ;
                 }
 
                 $scope.data.wrongCount = 0;
@@ -243,12 +258,12 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
                 $scope.data.wrongCount = $scope.data.wrongCountMax ;
 
                 // neu tu chua ton tai moi add vao
-                if($scope.data.listRemember.indexOf($scope.data.curWord) === -1){
-                    $scope.data.listRemember.push($scope.data.curWord) ;
+                if(!$scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)){
+                    $scope.data.curUnit.listRemember.push($scope.data.curWord) ;
                 }
 
-                if($scope.data.listNotRemember.indexOf($scope.data.curWord) != -1){
-                    $scope.data.listNotRemember = $.grep($scope.data.listNotRemember, function(e){
+                if($scope.data.curUnit.listNotRemember.find(x => x.no === $scope.data.curWord.no)){
+                    $scope.data.curUnit.listNotRemember = $.grep($scope.data.curUnit.listNotRemember, function(e){
                         return e.no != $scope.data.curWord.no;
                    });
                 }

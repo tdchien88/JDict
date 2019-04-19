@@ -11,53 +11,37 @@
     </div>
 
     <div class="progress-group mb-4">
-      <div class="progress-group-header align-items-end">
-        <i class="cui-globe progress-group-icon"></i>
-        <div>Status</div>
-        <div class="ml-auto mr-2">【</div>
-        <div class="text-success font-weight-bold mr-2">{{data.listRemember.length}}</div>
-        <div class="mr-2"> | </div>
-        <div class="text-danger font-weight-bold mr-2">{{data.listNotRemember.length}}</div>
-        <div class="mr-2">】</div>
-        <div class="mr-2">{{data.listRemember.length + data.listNotRemember.length + 1}}/{{data.listCurrentWords.length}}</div>
-        <div class="text-muted small">({{(data.listRemember.length + data.listNotRemember.length  + 1) * 100 / data.listCurrentWords.length | number : 0}}%)</div>
-      </div>
-      <div class="progress-group-bars">
-        <div class="progress progress-xs">
-          <div class="progress-bar bg-success" role="progressbar" style="width: {{(data.listRemember.length) * 100 / data.listCurrentWords.length}}%" aria-valuenow="{{data.listRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.listCurrentWords.length}}"></div>
+        <div class="progress-group-header align-items-end">
+            <div>Progress</div>
+
+            <input class="form-check-input hidden" id="inline-rememberd" ng-model="data.learnType"  type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label text-success ml-auto" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == 'rememberd'}"  for="inline-rememberd">OK ({{data.curUnit.listRemember.length}})</label>
+
+            <input class="form-check-input hidden" id="inline-wrong" ng-model="data.learnType"  type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label text-danger ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.learnType == 'wrong'}" for="inline-wrong">NG ({{data.curUnit.listNotRemember.length}})</label>
+
+            <input class="form-check-input hidden" id="inline-newwords" ng-model="data.learnType"  type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label text-primary ml-2" ng-class="{'font-weight-bold border-bottom border-primary': data.learnType == 'newwords'}" for="inline-newwords">New ({{data.curUnit.listNewWords.length}})</label>
+
+            <input class="form-check-input hidden" id="inline-all" ng-model="data.learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-dark': data.learnType == 'all'}" for="inline-all">All ({{data.curUnit.listCurrentWords.length}})</label>
+
+            <div class="text-muted small ml-2">({{(data.curUnit.listRemember.length + data.curUnit.listNotRemember.length) * 100 / data.curUnit.listCurrentWords.length | number : 0}}%)</div>
         </div>
-        <div class="progress progress-xs">
-          <div class="progress-bar bg-danger" role="progressbar" style="width: {{(data.listNotRemember.length ) * 100 / data.listCurrentWords.length}}%" aria-valuenow="{{data.listNotRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.listCurrentWords.length}}"></div>
+
+        <div class="input-group mb-3">
+            <div class="progress-group-bars">
+              <div class="progress bg-primary">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: {{(data.curUnit.listRemember.length) * 100 / data.curUnit.listCurrentWords.length}}%" aria-valuenow="{{data.curUnit.listRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.curUnit.listCurrentWords.length}}"></div>
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: {{(data.curUnit.listNotRemember.length ) * 100 / data.curUnit.listCurrentWords.length}}%" aria-valuenow="{{data.curUnit.listNotRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.curUnit.listCurrentWords.length}}"></div>
+              </div>
+            </div>
+                <button class="btn btn-link ml-2" type="button" ng-click="reZero()"><i class="fas fa-angle-double-left"></i> Re:Zero</button>
         </div>
-        <div class="progress progress-xs">
-          <div class="progress-bar bg-info" role="progressbar" style="width: {{(data.listRemember.length + data.listNotRemember.length + 1) * 100 / data.listCurrentWords.length}}%" aria-valuenow="{{data.listRemember.length + data.listNotRemember.length  + 1}}" aria-valuemin="0" aria-valuemax="{{data.listCurrentWords.length}}"></div>
-        </div>
-      </div>
+
     </div>
 
-    <div class="input-group mb-3">
-        <div class="form-control">
-            <div class="form-check form-check-inline mr-1">
-                <input class="form-check-input" id="inline-newwords" ng-model="data.learnType"  type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label text-primary" for="inline-newwords">New ({{data.listNewWords.length}})</label>
-            </div>
-            <div class="form-check form-check-inline mr-1">
-                <input class="form-check-input" id="inline-rememberd" ng-model="data.learnType"  type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label text-success" for="inline-rememberd">OK ({{data.listRemember.length}})</label>
-            </div>
-            <div class="form-check form-check-inline mr-1">
-                <input class="form-check-input" id="inline-wrong" ng-model="data.learnType"  type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label text-danger" for="inline-wrong">NG ({{data.listNotRemember.length}})</label>
-            </div>
-            <div class="form-check form-check-inline ml-1">
-                <input class="form-check-input" id="inline-all" ng-model="data.learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
-                <label class="form-check-label" for="inline-all">All</label>
-            </div>
-        </div>
-        <div class=" input-group-append">
-            <button class="btn btn-sm btn-primary" type="button" ng-click="reZero()"><i class="fas fa-angle-double-left"></i> Re:0</button>
-        </div>
-    </div>
+
 
     <div class="input-group mb-3" ng-show="data.wrongCount > data.wrongCount_Kana2">
         <div class="input-group-prepend">
@@ -91,7 +75,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text w70">Ans {{data.wrongCount}}</span>
         </div>
-        <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" class="text-dark" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus></my-textbox>
+        <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" ng-disabled="!data.curWord.mean" class="text-dark" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus></my-textbox>
     </div>
 
 </form>
