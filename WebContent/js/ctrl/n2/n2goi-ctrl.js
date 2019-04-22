@@ -61,6 +61,12 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
                     e.listNewWords = listUnit.listNewWords;
 
                 });
+            } else {
+                $scope.data.listUnit.forEach(eUnit => {
+                    eUnit.listNewWords = $scope.data.listWords.filter(function (word) {
+                        return eUnit.code == word.unit ;
+                    });
+                });
             }
 
             $scope.changeUnit();
@@ -208,12 +214,6 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
             $scope.data.curUnit.listNotRemember = [];
             $scope.data.curUnit.listRemember = [];
 
-        }
-
-        if($scope.data.curUnit.listNewWords.length == 0){
-            $scope.data.curUnit.listNewWords = $scope.data.listWords.filter(function (e) {
-                return e.unit == $scope.data.unit ;
-            });
         }
 
         nextWord();

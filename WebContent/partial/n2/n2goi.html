@@ -75,7 +75,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text w70">Ans {{data.wrongCount}}</span>
         </div>
-        <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" ng-disabled="!data.curWord.mean" class="text-dark" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus></my-textbox>
+        <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="text-dark" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
     </div>
 
 </form>
