@@ -105,12 +105,12 @@
             <div class="card-body p-2" >
             <div class="fcard ">
                 <label class="fcard-inner" >
-                 <input type="checkbox"  class="fcard-input" onblur="javascript:this.checked=false" />
+                 <input type="checkbox"  class="fcard-input" onblur="$(this).prop('checked', false);" />
                  <div class="fcard-card">
                      <div class="fcard-front">
                           <div class="card h-100 justify-content-center p-2" ><h4>{{data.curWord.mean}}</h4></div>
                         </div>
-                     <div class="fcard-back">
+                     <div class="fcard-back">Nghĩa
                         <div class="card h-100 justify-content-center p-2" >
 
                             <dl class="row">
