@@ -32,6 +32,8 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
         $scope.data.wrongCountMin = 2;
         $scope.data.wrongCountMax = 10;
 
+        $scope.fcardChecked = false;
+
         var seen = {};
         var listtemp = $scope.data.listWords.filter(function (e) {
             return seen[e.unit] ? false : (seen[e.unit] = true);
@@ -105,6 +107,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
         $scope.data.isCorrect = true;
         $scope.data.wrongCount = 0;
         $scope.data.ans = "";
+        $scope.fcardChecked = false;
 
         $scope.data.curList = [];
         if($scope.data.learnType == 'all'){
@@ -194,6 +197,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
         $scope.data.curIdx = -1;
         $scope.data.curWord = {};
         $scope.data.wrongCount = 0;
+        $scope.fcardChecked = false;
 
         $scope.data.curUnit.listCurrentWords = $scope.data.listWords.filter(function (e) {
             return e.unit == $scope.data.unit ;

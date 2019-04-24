@@ -53,6 +53,7 @@ span::after {
   background-color: transparent;
   height: 300px;
 }
+
 .fcard-inner {
     display: block;
     width: 100%;
@@ -63,6 +64,12 @@ span::after {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     cursor: pointer;
+}
+
+.fcard-input {
+    width:0px;
+    height:0px;
+    position: absolute;
 }
 
 .fcard-card {
@@ -82,8 +89,10 @@ span::after {
     width: 100%;
     background: #FFF;
     text-align: center;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
     border-radius: 2px;
 }
 
@@ -94,12 +103,6 @@ span::after {
 
 .fcard-inner:hover .fcard-card {
     box-shadow: 0 20px 20px rgba(50,50,50,.2);
-}
-
-.fcard-input {
-    width:0px;
-    height:0px;
-    position: absolute;
 }
 
 :checked + .fcard-card {
