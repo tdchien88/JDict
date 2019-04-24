@@ -69,7 +69,9 @@ span::after {
 .fcard-input {
     width:0px;
     height:0px;
-    position: absolute;
+    position: absolute; 
+top: -999px;
+
 }
 
 .fcard-card {
