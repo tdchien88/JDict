@@ -38,6 +38,7 @@ span::after {
 .w80 { width: 80px; }
 .w90 { width: 90px; }
 .w100 { width: 100px; }
+.w150 { width: 150px; }
 
 .text-gray-500 {
   color: #8f9ba6 !important;
@@ -69,7 +70,7 @@ span::after {
 .fcard-input {
     width:0px;
     height:0px;
-    position: fixed; 
+    position: fixed;
 top: -999px;
 
 }
@@ -115,5 +116,4 @@ top: -999px;
 .fcard-inner:hover :checked + .fcard-card {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
-    box-shadow: 0 20px 20px rgba(255,255,255,.2);
 }

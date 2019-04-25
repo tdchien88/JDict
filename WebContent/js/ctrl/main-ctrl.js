@@ -10,14 +10,17 @@ myApp.controller("mainController", ["$scope", function($scope){
 
 
     $scope.menulist = [
-                {sref:"home", link:"home", name:"Home"},
-                {sref:"sample", link:"about", name:"Sample"},
-                {sref:"n2goi", link:"n2goi", name:"N2GOI"},
-                {sref:"mimikara", link:"mimikara", name:"Mimi Kara"},
-                {sref:"about", link:"about", name:"About"},
+                {sref:"home", name:"Home"},
+                {sref:"sample", name:"Sample"},
+                {sref:"n2goi", name:"N2 GOI", param:"{type: 'GOI'}"},
+                {sref:"n2goi", name:"N2 KANJI", param:"{type: 'KANJI'}"},
+                {sref:"mimikara", name:"Mimi Kara"},
+                {sref:"about", name:"About"},
                 ];
 
-
+    $scope.createLink = function(menu){
+        return menu.sref+'('+menu.param+')';
+    }
 }]);
 
 

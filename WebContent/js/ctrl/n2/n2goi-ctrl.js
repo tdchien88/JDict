@@ -6,13 +6,24 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService', "$timeout", "goin2", function($scope, localStorageService, dialogService, $timeout, goin2){
+myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 'dialogService', "$timeout", "goin2", "kanjin2",
+                function($scope, $stateParams, localStorageService, dialogService, $timeout, goin2, kanjin2){
 
     function init(){
         localStorageService.setPrefix('jdict.n2goi');
 
         $scope.data = {};
-        $scope.data.listWords = goin2;//danh sach tat ca cac tu
+        if($stateParams.type){
+            if($stateParams.type == "GOI"){
+                $scope.data.listWords = goin2;//danh sach tat ca cac tu
+
+            }
+            else if($stateParams.type == "KANJI"){
+                $scope.data.listWords = kanjin2;//danh sach tat ca cac tu
+            }
+        }else{
+            $scope.data.listWords = goin2;//danh sach tat ca cac tu
+        }
         $scope.data.listUnit = [];//danh sach tat ca cac bai
 
         //tu hien tai
@@ -52,7 +63,8 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
 
 
         $timeout(function(){
-            var data = localStorageService.get("data");
+            var data = getStore();
+
             if (data){
                 $scope.data.unit = data.unit;
 
@@ -145,7 +157,23 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
 
     function saveStore(){
 
-        localStorageService.set("data", $scope.data);
+        if($stateParams.type == "GOI"){
+           localStorageService.set("dataGOI", $scope.data);
+        }
+        else if($stateParams.type == "KANJI"){
+            localStorageService.set("dataKANJI", $scope.data);
+        }
+    }
+
+    function getStore(){
+
+        if($stateParams.type == "GOI"){
+            return  localStorageService.get("dataGOI");
+        }
+        else if($stateParams.type == "KANJI"){
+            return  localStorageService.get("dataKANJI");
+        }
+
     }
 
     function markScore(){
@@ -203,7 +231,7 @@ myApp.controller("n2goiCtrl", ["$scope", 'localStorageService', 'dialogService',
             return e.unit == $scope.data.unit ;
         });
 
-        var data = localStorageService.get("data");
+        var data = getStore();
         if(data){
             var listUnit = data.listUnit.find(x=> x.code === $scope.data.unit);
             if(listUnit.listNotRemember)
