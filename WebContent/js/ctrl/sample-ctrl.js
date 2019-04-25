@@ -6,8 +6,8 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("sampleCtrl", ["$scope", "helloWorld", "helloWorldService" , "helloWorldFactory", "goin2",
-                    function($scope, helloWorld, helloWorldService, helloWorldFactory, goin2){
+myApp.controller("sampleCtrl", ["$scope", "dialogService", "helloWorld", "helloWorldService" , "helloWorldFactory", "goin2",
+                    function($scope, dialogService, helloWorld, helloWorldService, helloWorldFactory, goin2){
 
     // helloWorld Provider
     $scope.provider = helloWorld.title;
@@ -20,6 +20,13 @@ myApp.controller("sampleCtrl", ["$scope", "helloWorld", "helloWorldService" , "h
 
     //$scope.constant = goin2;
 
+    $scope.showPopup = function(){
+        dialogService.confirmDialog("ttile", "content",  function() {
+          console.log("ok")
+      }, function() {
+          console.log("cancel")
+      });
+    }
 }]);
 
 

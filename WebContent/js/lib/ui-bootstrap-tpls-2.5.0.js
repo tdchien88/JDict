@@ -4237,7 +4237,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.multiMap', 'ui.bootstrap.sta
         topModalIndex = previousTopOpenedModal ? parseInt(previousTopOpenedModal.value.modalDomEl.attr('index'), 10) + 1 : 0;
         var angularDomEl = angular.element('<div uib-modal-window="modal-window"></div>');
         angularDomEl.attr({
-          'class': 'modal',
+          'class': 'modal show',
           'template-url': modal.windowTemplateUrl,
           'window-top-class': modal.windowTopClass,
           'role': 'dialog',

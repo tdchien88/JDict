@@ -72,21 +72,15 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li ng-repeat="menu in menulist" class="nav-item" ui-sref-active="active">
-          <a ui-sref="{{createLink(menu)}}" class="nav-link" >{{menu.name}}</a>
+      <li ng-repeat="menu in menulist" class="nav-item dropdown" >
+          <a ng-if="!menu.sub" ui-sref="{{createLink(menu)}}" ui-sref-active="active" class="nav-link" >{{menu.name}}</a>
+
+          <a ng-if="menu.sub" class="nav-link dropdown-toggle" ui-sref="{{createLink(menu)}}" ui-sref-active="active" id="{{menu.name}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menu.name}}</a>
+            <div ng-if="menu.sub" class="dropdown-menu" aria-labelledby="{{menu.name}}">
+              <a ng-repeat="sub in menu.sub" class="dropdown-item" ui-sref="{{createLink(sub)}}"  ui-sref-active="active">{{sub.name}}</a>
+            </div>
       </li>
 <!--
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

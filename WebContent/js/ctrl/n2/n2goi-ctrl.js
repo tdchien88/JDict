@@ -324,30 +324,13 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
     }
 
     $scope.reset = function(){
-//        $scope.openModal = function () {
-//            $uibModal.open({
-//              templateUrl: 'partial/dialog/myModal.html',
-//              controller: function ($scope, $uibModalInstance) {
-//                $scope.ok = function () {
-//                  $uibModalInstance.close();
-//                };
-//
-//                $scope.cancel = function () {
-//                  $uibModalInstance.dismiss('cancel');
-//                };
-//              }
-//            })
-//          };
-//        dialogService.confirmDialog("WCMN0060", "WCMN0060",  function() {
-//
-//            console.log("ok")
-//            localStorageService.clearAll();
-//            init();
-//        }, function() {
-//            console.log("cancel")
-//        });
-          localStorageService.clearAll();
-          init();
+        dialogService.confirmDialog("Reset All Data", "Do you want to reset data",  function() {
+            console.log("ok")
+            localStorageService.clearAll();
+            init();
+        }, function() {
+            console.log("cancel")
+        });
     }
 
     $scope.reZero = function(){

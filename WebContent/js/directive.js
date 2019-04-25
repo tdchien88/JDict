@@ -329,7 +329,7 @@ myApp.directive("myInput", function() {
                     + ' is-allow-onlypad="" '
                     + ' defvalue="" '
                     + ' focusmove '
-                    + ' isd-maxlength="" '
+                    + ' maxlength="" '
                     + ' size="">'
         },
     };

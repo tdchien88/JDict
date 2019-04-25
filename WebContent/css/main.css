@@ -23,6 +23,9 @@ span::after {
     background-color: #56aed320 !important;
 }
 
+.my-modal-popup .modal{
+    background-color: #00000055;
+}
 .navbar-light .navbar-brand {
     color: #fff;
 }

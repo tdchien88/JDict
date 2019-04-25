@@ -45,9 +45,10 @@ myApp.factory('helloWorldFactory', function() {
             return instance;
         },
         confirmDialog: function(title, message, okFunc, cancelFunc) {
-
-            return $uibModal.open({
+            var modalInstance = $uibModal.open({
                 templateUrl: 'partial/dialog/myModal.html',
+                openedClass : 'my-modal-popup',
+                'class': 'modal show',
                 controller: function ($scope, $uibModalInstance) {
                     $scope.title = title;
                     $scope.message = message;
@@ -73,6 +74,15 @@ myApp.factory('helloWorldFactory', function() {
                     $scope.cancelView =  "Cancel";
                 }
             });
+
+            modalInstance.result.then(function(){
+                console.log("a");
+            }, function(res){
+                console.log("b");
+
+            });
+
+            return modalInstance;
         }
     };
 
