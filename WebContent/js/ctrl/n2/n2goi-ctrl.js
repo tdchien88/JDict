@@ -33,7 +33,8 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         $scope.data.isCorrect = false;
         $scope.data.isFirstCorrect = false;
 
-        $scope.data.learnType = 'newwords';
+        $scope.data.learnType = 'newwords';//[all wrong rememberd newwords]
+        $scope.data.cardType = 'word';//[word mean]
         $scope.data.curList = [];
 
         $scope.data.wrongCount = 0;
