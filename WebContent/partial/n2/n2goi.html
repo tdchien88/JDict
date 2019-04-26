@@ -103,12 +103,11 @@
 
         <div class="card ">
             <div class="card-header" >
-                <label class=" " for="">Front: </label>
                 <div class="form-check  form-check-inline">
-		            <input class="form-check-input" id="card-mean" ng-model="data.cardType"  type="radio" value="mean" name="card-type" >
-		            <label class="form-check-label " for="card-mean">mean</label>
-		            <input class="form-check-input " id="card-word" ng-model="data.cardType"  type="radio" value="word" name="card-type" >
-		            <label class="form-check-label " for="card-word">word</label>
+		            <input class="form-check-input hidden" id="card-mean" ng-model="data.cardType"  type="radio" value="mean" name="card-type" >
+		            <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'mean'}" for="card-mean">mean</label>
+		            <input class="form-check-input hidden" id="card-word" ng-model="data.cardType"  type="radio" value="word" name="card-type" >
+		            <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'word'}" for="card-word">word</label>
                 </div>
 
             </div>
