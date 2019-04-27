@@ -26,7 +26,7 @@
             <input class="form-check-input hidden" id="inline-all" ng-model="data.learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
             <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-dark': data.learnType == 'all'}" for="inline-all">All ({{data.curUnit.listCurrentWords.length}})</label>
 
-            <div class="text-muted small ml-2">{{(data.curIdx}} / </div>
+            <div class="text-muted small ml-2">{{data.curIdx}} / </div>
 
             <div class="text-muted small ml-2">({{(data.curUnit.listRemember.length + data.curUnit.listNotRemember.length) * 100 / data.curUnit.listCurrentWords.length | number : 0}}%)</div>
         </div>
