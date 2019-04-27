@@ -131,14 +131,18 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
             $scope.data.curList = $scope.data.curUnit.listNotRemember;
 
             if($scope.data.isFirstCorrect){
-                $scope.data.curIdx = 0;
+                //$scope.data.curIdx = 0;
             } else {
                 $scope.data.curIdx++;
             }
         }
         else if($scope.data.learnType == 'rememberd'){
             $scope.data.curList = $scope.data.curUnit.listRemember;
-            $scope.data.curIdx++;
+            if($scope.data.isFirstCorrect){
+                //$scope.data.curIdx = 0;
+            } else {
+                $scope.data.curIdx++;
+            }
         }
         else if($scope.data.learnType == 'newwords'){
             $scope.data.curList = $scope.data.curUnit.listNewWords;
