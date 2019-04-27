@@ -103,7 +103,7 @@ myApp.constant('kanjin2',  [
 {no:94, week:1, day:3, unit:3, difficult:``, word:`Thịnh hành, mốt`, kana1:`りゅうこう`, kana2:`LƯU HÀNH`, mean:`流行`, score:`0`},
 {no:95, week:1, day:3, unit:3, difficult:``, word:`Trôi theo (tự động từ)`, kana1:`ながれる`, kana2:`LƯU`, mean:`流れる`, score:`0`},
 {no:96, week:1, day:3, unit:3, difficult:``, word:`Thả trôi, xả theo (tha động từ)`, kana1:`ながす`, kana2:`LƯU`, mean:`流す`, score:`0`},
-{no:97, week:1, day:3, unit:3, difficult:``, word:`Bản chín/bản copu sạch`, kana1:`せいしょ`, kana2:`THANH THƯ`, mean:`清書`, score:`0`},
+{no:97, week:1, day:3, unit:3, difficult:``, word:`Bản chín`, kana1:`せいしょ`, kana2:`THANH THƯ`, mean:`清書`, score:`0`},
 {no:98, week:1, day:3, unit:3, difficult:``, word:`Dòng nước sạch`, kana1:`せいりゅう`, kana2:`THANH LƯU`, mean:`清流`, score:`0`},
 {no:99, week:1, day:3, unit:3, difficult:``, word:`Dòng nước sạch`, kana1:`きよいながれ`, kana2:`THANH LƯU`, mean:`清い流れ`, score:`0`},
 {no:100, week:1, day:3, unit:3, difficult:``, word:`Sạch sẽ, thanh khiết`, kana1:`きよい`, kana2:`THANH`, mean:`清い`, score:`0`},
