@@ -383,6 +383,14 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
 
             break;
         case "ng":
+
+           // neu co trong tu da hoc thi xoa
+           if($scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)) {
+                   $scope.data.curUnit.listRemember = $.grep($scope.data.curUnit.listRemember, function(e){
+                       return e.no != $scope.data.curWord.no;
+                   });  
+            }
+
             // neu tu chua ton tai moi add vao
             if(!$scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no) &&
                     !$scope.data.curUnit.listNotRemember.find(x => x.no === $scope.data.curWord.no)){
