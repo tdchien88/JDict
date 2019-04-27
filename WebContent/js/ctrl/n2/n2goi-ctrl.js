@@ -274,8 +274,8 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
 
             // neu la tra loi dung trong lan cuoi
              if($scope.data.wrongCount >= $scope.data.wrongCountMax ) {
-                // neu co trong tu da hoc thi xoa
-                if($scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)) {
+                // neu k phai dung lan dau va co trong tu da hoc thi xoa
+                if(!$scope.data.isFirstCorrect && $scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)) {
                    $scope.data.curUnit.listRemember = $.grep($scope.data.curUnit.listRemember, function(e){
                        return e.no != $scope.data.curWord.no;
                    });  
