@@ -68,7 +68,7 @@ myApp.constant('kanjin2',  [
 {no:59, week:1, day:2, unit:2, difficult:``, word:`Bên trong`, kana1:`うち`, kana2:`NỘI`, mean:`内`, score:`0`},
 {no:60, week:1, day:2, unit:2, difficult:``, word:`Phòng họp, Phòng hội nghị`, kana1:`かいぎしつ`, kana2:`HỘI NGHỊ THẤT`, mean:`会議室`, score:`0`},
 {no:61, week:1, day:2, unit:2, difficult:``, word:`Lạ kỳ, kỳ quặc`, kana1:`ふしぎ（な）`, kana2:`BẤT TƯ NGHỊ`, mean:`不思議（な）`, score:`0`},
-{no:62, week:1, day:2, unit:2, difficult:``, word:`Tranh luận, nghị luận`, kana1:`ぎろん`, kana2:`NGHỊ LUẬN`, mean:`木論`, score:`0`},
+{no:62, week:1, day:2, unit:2, difficult:``, word:`Tranh luận, nghị luận`, kana1:`ぎろん`, kana2:`NGHỊ LUẬN`, mean:`議論`, score:`0`},
 {no:63, week:1, day:2, unit:2, difficult:``, word:`Đại biểu quốc hội, nghị sĩ`, kana1:`ぎいん`, kana2:`NGHỊ VIÊN`, mean:`議員`, score:`0`},
 {no:64, week:1, day:2, unit:2, difficult:``, word:`Văn hóa`, kana1:`ぶんか`, kana2:`VĂN HÓA`, mean:`文化`, score:`0`},
 {no:65, week:1, day:2, unit:2, difficult:``, word:`Hóa học`, kana1:`かがく`, kana2:`HÓA HỌC`, mean:`化学`, score:`0`},
