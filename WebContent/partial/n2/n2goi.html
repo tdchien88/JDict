@@ -15,10 +15,10 @@
         <div class="progress-group-header align-items-end">
 
             <input class="form-check-input hidden" id="inline-hardwords" ng-model="data.learnType"  type="radio" value="hardwords" name="inline-radios" ng-change="changeLearnType()">
-            <label class="form-check-label text-warning ml-auto" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == 'hardwords'}"  for="inline-hardwords">★ ({{data.curUnit.listHardWords.length}})</label>
+            <label class="form-check-label text-warning ml-auto" ng-class="{'font-weight-bold border-bottom border-warning': data.learnType == 'hardwords'}"  for="inline-hardwords">★ ({{data.curUnit.listHardWords.length}})</label>
 
             <input class="form-check-input hidden" id="inline-rememberd" ng-model="data.learnType"  type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
-            <label class="form-check-label text-success ml-auto" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == 'rememberd'}"  for="inline-rememberd">OK ({{data.curUnit.listRemember.length}})</label>
+            <label class="form-check-label text-success ml-2" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == 'rememberd'}"  for="inline-rememberd">OK ({{data.curUnit.listRemember.length}})</label>
 
             <input class="form-check-input hidden" id="inline-wrong" ng-model="data.learnType"  type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
             <label class="form-check-label text-danger ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.learnType == 'wrong'}" for="inline-wrong">NG ({{data.curUnit.listNotRemember.length}})</label>
