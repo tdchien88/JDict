@@ -33,7 +33,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         $scope.data.isCorrect = false;
         $scope.data.isFirstCorrect = false;
 
-        $scope.data.learnType = 'newwords';//[all wrong rememberd newwords]
+        $scope.data.learnType = 'newwords';//[all wrong rememberd newwords hardwords]
         $scope.data.cardType = 'word';//[word mean]
         $scope.data.curList = [];
 
@@ -59,6 +59,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
                 listNotRemember: [],//danh sach cac tu chua thuoc
                 listRemember: [],//danh sach cac tu da thuoc
                 listNewWords: [],//danh sach cac tu chua hoc
+                listHardWords: [],//ds cac tu kho
            });
         })
 
@@ -75,6 +76,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
                     e.listNotRemember = listUnit.listNotRemember;
                     e.listRemember = listUnit.listRemember;
                     e.listNewWords = listUnit.listNewWords;
+                    e.listHardWords = listUnit.listHardWords;
 
                 });
             } else {
@@ -147,6 +149,10 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         else if($scope.data.learnType == 'newwords'){
             $scope.data.curList = $scope.data.curUnit.listNewWords;
             $scope.data.curIdx = 0;
+        }
+        else if($scope.data.learnType == 'hardwords'){
+            $scope.data.curList = $scope.data.curUnit.listHardWords;
+            $scope.data.curIdx++;
         }
 
         if($scope.data.curIdx >= $scope.data.curList.length ){
@@ -278,6 +284,13 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
 
             // neu la tra loi dung trong lan cuoi
              if($scope.data.wrongCount >= $scope.data.wrongCountMax ) {
+
+
+                // neu k phai dung trong lan fai va tu chua ton tai moi add vao
+               if(!$scope.data.isFirstCorrect && !$scope.data.curUnit.listHardWords.find(x => x.no === $scope.data.curWord.no)){
+                    $scope.data.curUnit.listHardWords.push($scope.data.curWord) ;
+               }
+
                 // neu k phai dung lan dau va co trong tu da hoc thi xoa
                 if(!$scope.data.isFirstCorrect && $scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)) {
                    $scope.data.curUnit.listRemember = $.grep($scope.data.curUnit.listRemember, function(e){
@@ -399,6 +412,11 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
             if(!$scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no) &&
                     !$scope.data.curUnit.listNotRemember.find(x => x.no === $scope.data.curWord.no)){
                 $scope.data.curUnit.listNotRemember.push($scope.data.curWord) ;
+            }
+
+            // neu tu chua ton tai moi add vao
+            if(!$scope.data.curUnit.listHardWords.find(x => x.no === $scope.data.curWord.no)){
+                $scope.data.curUnit.listHardWords.push($scope.data.curWord) ;
             }
 
             markScore();
