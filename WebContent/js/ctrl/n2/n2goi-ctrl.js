@@ -53,6 +53,9 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
 
         $.each(listtemp, function(i,e){
             $scope.data.listUnit.push({
+                unit: e.unit,
+                week: e.week,
+                day: e.day,
                 code: e.unit,
                 name: "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ")",
                 listCurrentWords: [],//danh sach cac tu trong bai
@@ -78,7 +81,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
                     e.listNewWords = listUnit.listNewWords;
                     e.listHardWords = listUnit.listHardWords;
 
-                    //e.name = "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ") NG:" + e.listNotRemember.length;
+                    e.name = "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") NG:" + e.listNotRemember.length;
                 });
             } else {
                 $scope.data.listUnit.forEach(eUnit => {
