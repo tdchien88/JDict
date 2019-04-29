@@ -81,7 +81,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
                     e.listNewWords = listUnit.listNewWords;
                     e.listHardWords = listUnit.listHardWords;
 
-                    e.name = "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") NG:" + e.listNotRemember.length;
+                    e.name = "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") [NG:" + e.listNotRemember.length + “ - ★:” +e.listNotRemember.length + ]“”;
                 });
             } else {
                 $scope.data.listUnit.forEach(eUnit => {
