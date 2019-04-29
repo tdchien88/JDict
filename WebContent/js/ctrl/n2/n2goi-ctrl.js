@@ -57,7 +57,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
                 week: e.week,
                 day: e.day,
                 code: e.unit,
-                name: "Unit " + e.unit + " (Week "+e.week+ " - Day "+e.day + ")",
+                name: "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") NG:0",
                 listCurrentWords: [],//danh sach cac tu trong bai
                 listNotRemember: [],//danh sach cac tu chua thuoc
                 listRemember: [],//danh sach cac tu da thuoc
