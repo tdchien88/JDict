@@ -1,4 +1,4 @@
-
+T
 /**
 * @param $scope
 * @param helloWorld (provider)
@@ -34,7 +34,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         $scope.data.isFirstCorrect = false;
 
         $scope.data.learnType = 'newwords';//[all wrong rememberd newwords hardwords]
-        $scope.data.cardType = 'word';//[word mean]
+        $scope.data.cardType = 'mean';//[word mean]
         $scope.data.curList = [];
 
         $scope.data.wrongCount = 0;
