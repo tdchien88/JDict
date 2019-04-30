@@ -227,7 +227,7 @@ myApp.constant('kanjin2',  [
 {no:218, week:1, day:6, unit:6, difficult:``, word:`Vợ`, kana1:`しゅふ`, kana2:`CHỦ PHỤ`, mean:`主婦`, score:`0`},
 {no:219, week:1, day:6, unit:6, difficult:``, word:`Người phụ nữ`, kana1:`ふじん`, kana2:`PHỤ NHÂN`, mean:`婦人`, score:`0`},
 {no:220, week:1, day:6, unit:6, difficult:``, word:`Giễu cợt, châm chọc`, kana1:`ひにく（な）`, kana2:`BỈ NHỤC`, mean:`皮肉（な）`, score:`0`},
-{no:221, week:1, day:6, unit:6, difficult:``, word:`Da, vỏ`, kana1:`かわ`, kana2:`BÌ`, mean:`皮肉（な）`, score:`0`},
+{no:221, week:1, day:6, unit:6, difficult:``, word:`Da, vỏ`, kana1:`かわ`, kana2:`BÌ`, mean:`皮`, score:`0`},
 {no:222, week:1, day:6, unit:6, difficult:``, word:`Da`, kana1:`ひふ`, kana2:`BÌ PHU`, mean:`皮膚`, score:`0`},
 {no:223, week:1, day:6, unit:6, difficult:``, word:`Cấp cứu`, kana1:`きゅうきゅう`, kana2:`CẤP CỨU`, mean:`救急`, score:`0`},
 {no:224, week:1, day:6, unit:6, difficult:``, word:`Cứu, hỗ trợ, giúp đỡ`, kana1:`すくう`, kana2:`CỨU`, mean:`救う`, score:`0`},
