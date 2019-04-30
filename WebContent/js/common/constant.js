@@ -250,7 +250,7 @@ myApp.constant('kanjin2',  [
 {no:241, week:2, day:2, unit:8, difficult:``, word:`Tập vé, cuốn sổ vé`, kana1:`かいすうけん`, kana2:`HỒI SỐ KHOÁN`, mean:`回数券`, score:`0`},
 {no:242, week:2, day:2, unit:8, difficult:``, word:`Vé lên tàu`, kana1:`じょうしゃけん`, kana2:`THỪA XA KHOÁN`, mean:`乗車券`, score:`0`},
 {no:243, week:2, day:2, unit:8, difficult:``, word:`Hộ chiếu`, kana1:`りょけん`, kana2:`LỮ KHOÁN`, mean:`旅券`, score:`0`},
-{no:244, week:2, day:2, unit:8, difficult:``, word:`Phát hành vé`, kana1:`はっけん`, kana2:`PHÁT KHOÁN`, mean:`発見`, score:`0`},
+{no:244, week:2, day:2, unit:8, difficult:``, word:`Phát hành trái phiếu`, kana1:`はっけん`, kana2:`PHÁT KHOÁN`, mean:`発券`, score:`0`},
 {no:245, week:2, day:2, unit:8, difficult:``, word:`Con số`, kana1:`すうじ`, kana2:`SỐ TỰ`, mean:`数字`, score:`0`},
 {no:246, week:2, day:2, unit:8, difficult:``, word:`Toán`, kana1:`すうがく`, kana2:`SỐ HỌC`, mean:`数学`, score:`0`},
 {no:247, week:2, day:2, unit:8, difficult:``, word:`Điểm số`, kana1:`てんすう`, kana2:`ĐIỂM SỐ`, mean:`点数`, score:`0`},
