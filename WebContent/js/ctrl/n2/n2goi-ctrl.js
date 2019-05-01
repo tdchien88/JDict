@@ -359,6 +359,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
             }
         }
 
+        $scope.data.ans = '';
     }
 
     $scope.reset = function(){
