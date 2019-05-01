@@ -41,7 +41,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         $scope.data.wrongCount_Kana1 = 4;
         $scope.data.wrongCount_Kana2 = 6;
         $scope.data.wrongCountMin = 2;
-        $scope.data.wrongCountMax = 20;
+        $scope.data.wrongCountMax = 30;
 
         $scope.fcardChecked = false;
 
@@ -137,9 +137,14 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
 
             if($scope.data.isFirstCorrect){
                 //$scope.data.curIdx = 0;
-            } else {
+            }  else {
                 $scope.data.curIdx++;
             }
+
+            if($scope.data.curIdx >= 7){
+                $scope.data.curIdx = 0;
+            } 
+
         }
         else if($scope.data.learnType == 'rememberd'){
             $scope.data.curList = $scope.data.curUnit.listRemember;
