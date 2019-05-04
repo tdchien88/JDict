@@ -51,7 +51,9 @@ span::after {
 	display: none !important;
 }
 
-
+input {
+font-size: 13rem
+}
 
 .fcard {
   background-color: transparent;
