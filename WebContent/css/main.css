@@ -50,11 +50,12 @@ span::after {
 .hidden {
 	display: none !important;
 }
-
+/*
 input[type=text] {
 font-size: 1.3rem;
 padding: 3px;
 }
+*/
 
 .fcard {
   background-color: transparent;
