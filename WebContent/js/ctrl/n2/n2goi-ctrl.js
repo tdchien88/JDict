@@ -427,6 +427,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
             if(!$scope.data.curUnit.listHardWords.find(x => x.no === $scope.data.curWord.no)){
                 $scope.data.curUnit.listHardWords.push($scope.data.curWord) ;
             }
+            $scope.data.isFirstCorrect = true;
 
             markScore();
             nextWord();
