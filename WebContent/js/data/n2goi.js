@@ -1,4 +1,5 @@
-var words = [
+
+myApp.constant('goin2',  [
 {no:1, week:1, day:1, unit:1, difficult:``, word:`チラシ`, kana1:``, kana2:`チラシ`, mean:`tờ rơi`, score:`0`},
 {no:2, week:1, day:1, unit:1, difficult:``, word:`びら`, kana1:``, kana2:`びら`, mean:`tờ rơi`, score:`0`},
 {no:3, week:1, day:1, unit:1, difficult:``, word:`賃貸アパート`, kana1:`ちんたいアパート`, kana2:`ちんたいアパート`, mean:`căn hộ cho thuê`, score:`0`},
@@ -2175,4 +2176,4 @@ var words = [
 {no:2174, week:8, day:6, unit:48, difficult:``, word:`うざい`, kana1:``, kana2:`うざい`, mean:`phiền hà, khó chịu`, score:`0`},
 {no:2175, week:8, day:6, unit:48, difficult:``, word:`毎日のように電話してくる友達がうざい`, kana1:`まいにちのようにでんわしてくるともだちがうざい`, kana2:`まいにちのようにでんわしてくるともだちがうざい`, mean:`mấy đứa bạn điện thoại hầu như mỗi ngày thật là phiền toái`, score:`0`},
 
-];
+]);

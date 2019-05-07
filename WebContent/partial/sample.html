@@ -1,3 +1,25 @@
+
+Swipe1
+
+<div>
+      <div class="panel panel-default swipe" swipe-left="onSwipeLeft" swipe-right="onSwipeRight">
+        <div class="panel-body">
+          Swipe left or right this beautiful panel!
+        </div>
+      </div>
+      <p>
+        {{swipeAction}}
+      </p>
+</div>
+Swipe2
+<div class="panel panel-default swipe" swipe-left="delayedClose" left-template="partial/leftTemplate.html" right-template="partial/rightTemplate.html">
+        <div class="panel-body">
+          Again with some template customization!
+        </div>
+</div>
+
+popup
+
 <button class="btn btn-success btn-interval" ng-click="showPopup()">show popup</button>
 <div >
 
