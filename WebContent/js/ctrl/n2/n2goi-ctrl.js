@@ -46,11 +46,11 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         $scope.fcardChecked = false;
 
         var seen = {};
-        var listtemp = $scope.data.listWords.filter(function (e) {
+        var listUnit = $scope.data.listWords.filter(function (e) {
             return seen[e.unit] ? false : (seen[e.unit] = true);
         });
 
-        $.each(listtemp, function(i,e){
+        $.each(listUnit, function(i,e){
             $scope.data.listUnit.push({
                 unit: e.unit,
                 week: e.week,
@@ -143,15 +143,15 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
 
             if($scope.data.curIdx >= 7){
                 $scope.data.curIdx = 0;
-            } 
+            }
 
         }
         else if($scope.data.learnType == 'rememberd'){
             $scope.data.curList = $scope.data.curUnit.listRemember;
             if($scope.data.isFirstCorrect){
-                //$scope.data.curIdx = 0;
-            } else {
                 $scope.data.curIdx++;
+            } else {
+                $scope.data.curIdx = 0;
             }
         }
         else if($scope.data.learnType == 'newwords'){
@@ -303,7 +303,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
                 if(!$scope.data.isFirstCorrect && $scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)) {
                    $scope.data.curUnit.listRemember = $.grep($scope.data.curUnit.listRemember, function(e){
                        return e.no != $scope.data.curWord.no;
-                   });  
+                   });
                 }
 
                 // neu tu chua ton tai moi add vao
@@ -416,7 +416,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
            if($scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)) {
                    $scope.data.curUnit.listRemember = $.grep($scope.data.curUnit.listRemember, function(e){
                        return e.no != $scope.data.curWord.no;
-                   });  
+                   });
             }
 
             // neu tu chua ton tai moi add vao
@@ -429,7 +429,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
             if(!$scope.data.curUnit.listHardWords.find(x => x.no === $scope.data.curWord.no)){
                 $scope.data.curUnit.listHardWords.push($scope.data.curWord) ;
             }
-           
+
 
             markScore();
             nextWord();
@@ -437,6 +437,10 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
             break;
         }
     }
+
+    $scope.delayedClose = function() {
+        $timeout($scope.swipeClose, 1000);
+      }
 
     init();
 }]);

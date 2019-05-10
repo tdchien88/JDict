@@ -11,8 +11,8 @@
         </span>
     </div>
 
-    <div class="progress-group mb-2">
-        <div class="progress-group-header align-items-end">
+    <div class="input-group">
+            <div class="font-weight-bold " ng-class="{'hidden': data.learnType == 'newwords'}">【Idx: {{data.curIdx + 1}}】</div>
 
             <input class="form-check-input hidden" id="inline-hardwords" ng-model="data.learnType"  type="radio" value="hardwords" name="inline-radios" ng-change="changeLearnType()">
             <label class="form-check-label text-warning ml-auto" ng-class="{'font-weight-bold border-bottom border-warning': data.learnType == 'hardwords'}"  for="inline-hardwords">★ ({{data.curUnit.listHardWords.length}})</label>
@@ -29,40 +29,48 @@
             <input class="form-check-input hidden" id="inline-all" ng-model="data.learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
             <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-dark': data.learnType == 'all'}" for="inline-all">All ({{data.curUnit.listCurrentWords.length}})</label>
 
-            <div class="text-muted small ml-2"> / {{data.curIdx + 1}} - </div>
-
+<!--
             <div class="text-muted small ml-2">({{(data.curUnit.listRemember.length + data.curUnit.listNotRemember.length) * 100 / data.curUnit.listCurrentWords.length | number : 0}}%)</div>
+ -->
         </div>
+<div class="row">
+    <div class="col-4">
+       <div class="btn-group btn-group-sm mb-4" role="group" aria-label="Basic example">
 
-        <div class="input-group ">
-            <div class="progress-group-bars">
-              <div class="progress bg-primary">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: {{(data.curUnit.listRemember.length) * 100 / data.curUnit.listCurrentWords.length}}%" aria-valuenow="{{data.curUnit.listRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.curUnit.listCurrentWords.length}}"></div>
-                  <div class="progress-bar bg-danger" role="progressbar" style="width: {{(data.curUnit.listNotRemember.length ) * 100 / data.curUnit.listCurrentWords.length}}%" aria-valuenow="{{data.curUnit.listNotRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.curUnit.listCurrentWords.length}}"></div>
-              </div>
-            </div>
-                <button class="btn btn-link ml-2" type="button" ng-click="reZero()"><i class="fas fa-angle-double-left"></i> Re:Zero</button>
-        </div>
+           <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+           Type
+           </button>
 
+           <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+           Card
+           </button>
+
+           <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           All
+           </button>
+
+       </div>
     </div>
+
+    <div class="col-8">
+        <div class="progress-group mb-2">
+            <div class="input-group ">
+                <div class="progress-group-bars">
+                  <div class="progress bg-primary">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: {{(data.curUnit.listRemember.length) * 100 / data.curUnit.listCurrentWords.length}}%" aria-valuenow="{{data.curUnit.listRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.curUnit.listCurrentWords.length}}"></div>
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{(data.curUnit.listNotRemember.length ) * 100 / data.curUnit.listCurrentWords.length}}%" aria-valuenow="{{data.curUnit.listNotRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.curUnit.listCurrentWords.length}}"></div>
+                  </div>
+                </div>
+                <button class="btn btn-link ml-2" type="button" ng-click="reZero()"><i class="fas fa-angle-double-left"></i> Re:Zero</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
 <div class="accordion" id="accordion">
-   <div class="btn-group btn-group-sm mb-4" role="group" aria-label="Basic example">
 
-       <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-       Type
-       </button>
-
-       <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-       Card
-       </button>
-
-       <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-       All
-       </button>
-
-   </div>
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 
@@ -91,14 +99,14 @@
         <div class="input-group-prepend">
           <span class="input-group-text w70">Nghĩa</span>
         </div>
-        <my-textbox ctrlproptype="alphanum" ng-model="data.curWord.mean" class="text-uppercase text-danger font-weight-bold " readonly ></my-textbox>
+        <my-textbox ctrlproptype="alphanum" ng-model="data.curWord.mean" class="form-control form-control-lg text-uppercase text-danger font-weight-bold " readonly ></my-textbox>
     </div>
 
     <div class="input-group mb-3" >
         <div class="input-group-prepend">
           <span class="input-group-text w70">Ans {{data.wrongCount}}</span>
         </div>
-        <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="text-dark" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
+        <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-dark form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
     </div>
 
 
@@ -109,10 +117,10 @@
         <div class="card ">
             <div class="card-header" >
                 <div class="form-check  form-check-inline">
-		            <input class="form-check-input hidden" id="card-mean" ng-model="data.cardType"  type="radio" value="mean" name="card-type" >
-		            <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'mean'}" for="card-mean">Mean</label>
-		            <input class="form-check-input hidden" id="card-word" ng-model="data.cardType"  type="radio" value="word" name="card-type" >
-		            <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'word'}" for="card-word">Word</label>
+                    <input class="form-check-input hidden" id="card-mean" ng-model="data.cardType"  type="radio" value="mean" name="card-type" >
+                    <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'mean'}" for="card-mean">Mean</label>
+                    <input class="form-check-input hidden" id="card-word" ng-model="data.cardType"  type="radio" value="word" name="card-type" >
+                    <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'word'}" for="card-word">Word</label>
                 </div>
 
             </div>
@@ -125,7 +133,7 @@
                           <div class="card h-100 justify-content-center p-2" >
 
                                 <h1 ng-if="data.cardType == 'mean'">{{data.curWord.mean}}</h1>
-                                <h1 ng-if="data.cardType == 'word'">{{data.curWord.word}}</h1> 
+                                <h1 ng-if="data.cardType == 'word'">{{data.curWord.word}}</h1>
 
                           </div>
                      </div>
@@ -167,6 +175,13 @@
     </div>
 
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+    <div ng-repeat="item in [1,2]">
+        <div  class="swipe" swipe-right="delayedClose" swipe-left="delayedClose" left-template="partial/leftTemplate.html" right-template="partial/rightTemplate.html">
+            <div class="panel-body">
+              Again with some template customization!
+            </div>
+        </div>
+    </div>
         <table class="table table-responsive-sm table-striped">
             <thead>
             <tr>
@@ -177,6 +192,14 @@
             </tr>
             </thead>
             <tbody>
+            <!--
+            <tr class="panel panel-default swipe" ng-repeat="item in data.curList" swipe-left="delayedClose" left-template="partial/leftTemplate.html" right-template="partial/rightTemplate.html">
+                <td class="panel-body">{{item.mean}}</td>
+                <td>{{item.word}}</td>
+                <td>{{item.kana1}}</td>
+                <td>{{item.kana2}}</td>
+            </tr>
+             -->
             <tr ng-repeat="item in data.curList" >
                 <td>{{item.mean}}</td>
                 <td>{{item.word}}</td>
