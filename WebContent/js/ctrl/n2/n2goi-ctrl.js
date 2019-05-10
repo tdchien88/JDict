@@ -73,14 +73,17 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
                 $scope.data.unit = data.unit;
 
                 $scope.data.listUnit.forEach(e => {
-                    var listUnit = data.listUnit.find(x=> x.code === e.code);
+                    var unit = data.listUnit.find(x=> x.code === e.code);
 
-                    e.listNotRemember = listUnit.listNotRemember;
-                    e.listRemember = listUnit.listRemember;
-                    e.listNewWords = listUnit.listNewWords;
-                    e.listHardWords = listUnit.listHardWords;
-
+                    e.listNotRemember = isEmpty(unit.listNotRemember) ? [] : unit.listNotRemember;
+                    e.listRemember = isEmpty(unit.listRemember) ? [] : unit.listRemember;
+                    e.listNewWords = isEmpty(unit.listNewWords) ? [] : unit.listNewWords;
+                    e.listHardWords = isEmpty(unit.listHardWords) ? [] : unit.listHardWords;
+                    $.each(e.listHardWords, function(i,w){
+                        e.listHardWords[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
+                    });
                     e.name = "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") [NG:" + e.listNotRemember.length + " - ★:" +e.listHardWords.length + "]";
+
                 });
             } else {
                 $scope.data.listUnit.forEach(eUnit => {
@@ -253,14 +256,24 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         var data = getStore();
         if(data){
             var listUnit = data.listUnit.find(x=> x.code === $scope.data.unit);
-            if(listUnit.listNotRemember)
-                $scope.data.curUnit.listNotRemember = listUnit.listNotRemember;
+            if(listUnit.listNotRemember && listUnit.listNotRemember.length != 0){
+                $.each(listUnit.listNotRemember, function(i,w){
+                    $scope.data.curUnit.listNotRemember[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
+                });
+            }
 
-            if(listUnit.listRemember)
-                $scope.data.curUnit.listRemember = listUnit.listRemember;
+            if(listUnit.listRemember && listUnit.listRemember.length != 0){
+                $.each(listUnit.listRemember, function(i,w){
+                    $scope.data.curUnit.listRemember[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
+                });
+            }
 
-            if(listUnit.listNewWords && listUnit.listNewWords.length != 0)
-                $scope.data.curUnit.listNewWords = listUnit.listNewWords;
+            if(listUnit.listNewWords && listUnit.listNewWords.length != 0){
+                $.each(listUnit.listNewWords, function(i,w){
+                    $scope.data.curUnit.listNewWords[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
+                });
+            }
+
 
         } else {
             $scope.data.curUnit.listNotRemember = [];
