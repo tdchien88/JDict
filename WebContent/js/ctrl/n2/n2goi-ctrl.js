@@ -41,7 +41,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         $scope.data.wrongCount_Kana1 = 4;
         $scope.data.wrongCount_Kana2 = 6;
         $scope.data.wrongCountMin = 2;
-        $scope.data.wrongCountMax = 30;
+        $scope.data.wrongCountMax = 20;
 
         $scope.fcardChecked = false;
 
