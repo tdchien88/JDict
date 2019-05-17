@@ -498,7 +498,7 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
         compile : function(element, attr) {
             return function link (scope, element, attr, ngModel) {
                 scope.goi = goin2.map((item, index, items) => {
-                           return {item.word, item.mean, item.kana1, item.kana2}
+                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
                           });
 
                 function searchText (scope){
