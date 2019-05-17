@@ -525,6 +525,25 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
             };
         },
         templateUrl : "./partial/search.html",
+        /*
+        template : `
+<form name="search-form">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text w70">検索</span>
+    </div>
+    <my-textbox ctrlproptype="japan" ng-model="searchStr" placeholder="さあ、今日も頑張ろう！"></my-textbox>
+    <span class="input-group-append">
+      <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
+    </span>
+  </div>
+  <div>
+  <pre class="ng-binding">{{returnValue}}
+  </pre>
+  </div>
+</form>
+        `,
+        */
     };
 }]);
 
