@@ -3,7 +3,7 @@
     <div class="input-group-prepend">
       <span class="input-group-text w70">検索</span>
     </div>
-    <my-textbox ctrlproptype="japan" ng-model="searchStr" placeholder="さあ、今日も頑張ろう！"></my-textbox>
+    <my-textbox ctrlproptype="japan" ng-model="searchStr" ng-change='textChange()' placeholder="さあ、今日も頑張ろう！"></my-textbox>
     <span class="input-group-append">
       <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
     </span>
