@@ -1,3 +1,32 @@
+function isEqual(a, b){
+    var regex = /[〜’”【】「」。、　 ０-９！＂＃＄％＆＇（）＊＋，－．／：；＜＝＞？＠［＼］＾＿｀｛｜｝～0-9`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
+
+    a = a.replace(regex,'');
+    var aR = wanakana.toRomaji(a);
+    var aH = wanakana.toHiragana(a);
+    var aK = wanakana.toKatakana(a);
+
+    b = b.replace(regex,'');
+    var bR = wanakana.toRomaji(b);
+    var bH = wanakana.toHiragana(b);
+    var bK= wanakana.toKatakana(b);
+
+    return a == b ||
+
+            aR == bR ||
+            aR == bH ||
+            aR == bK ||
+
+            aH == bR ||
+            aH == bH ||
+            aH == bK ||
+
+            aK == bR ||
+            aK == bH ||
+            aK == bK;
+}
+
+
 var formatDate = function (date, format) {
     // 値が「空 or 日付型ではない or 日付変換エラー」の場合、値をそのまま返す
     if(isEmpty(date) || !isType(date, "Date") || date.toString() === "Invalid Date") return date;

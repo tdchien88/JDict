@@ -489,3 +489,42 @@ myApp.directive("myInput", function() {
         }
     }
 });
+
+//search box
+myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
+    return {
+        restrict : "E", // A:属性
+        require: "?ngModel",
+        compile : function(element, attr) {
+            return function link (scope, element, attr, ngModel) {
+
+                function searchText (scope){
+                    console.log("search: "+scope.searchStr);
+                    console.log(goin2);
+
+                    var res = JSON.stringify(jQuery.grep(goin2, (x, i) => (
+                            isEqual(x.word, scope.searchStr) ||
+                            isEqual(x.kana1, scope.searchStr) ||
+                            isEqual(x.kana2, scope.searchStr) ||
+                            x.mean.indexOf(scope.searchStr) > -1
+                        )
+                    ),null,2);
+                    res += JSON.stringify(jQuery.grep(kanjin2, (x, i) => (
+                            isEqual(x.word, scope.searchStr) ||
+                            isEqual(x.kana1, scope.searchStr) ||
+                            isEqual(x.kana2, scope.searchStr) ||
+                            x.mean.indexOf(scope.searchStr) > -1
+                        )
+                    ),null,2);
+                    scope.returnValue =  res;
+                }
+
+                scope.search = function() {
+                    searchText(scope);
+                }
+            };
+        },
+        templateUrl : "./partial/search.html",
+    };
+}]);
+
