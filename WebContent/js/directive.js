@@ -524,7 +524,10 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
                     scope.returnValue =  res;
                 }
 
-                scope.textChange = function() {
+                scope.enterSearch = function(e) {
+
+                    if (e.which !== 13) return;
+
                     searchText(scope);
                 }
 
