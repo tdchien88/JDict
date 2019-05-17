@@ -504,15 +504,23 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
 
                     var res = JSON.stringify(jQuery.grep(goin2, (x, i) => (
                             isEqual(x.word, scope.searchStr) ||
+                            isEqual(x.mean, scope.searchStr) ||
                             isEqual(x.kana1, scope.searchStr) ||
                             isEqual(x.kana2, scope.searchStr) ||
+                            x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            x.kana1.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            x.kana2.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
                             x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         )
                     ),null,2);
                     res += JSON.stringify(jQuery.grep(kanjin2, (x, i) => (
                             isEqual(x.word, scope.searchStr) ||
+                            isEqual(x.mean, scope.searchStr) ||
                             isEqual(x.kana1, scope.searchStr) ||
                             isEqual(x.kana2, scope.searchStr) ||
+                            x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            x.kana1.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            x.kana2.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
                             x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         )
                     ),null,2);
