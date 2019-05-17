@@ -506,14 +506,14 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
                             isEqual(x.word, scope.searchStr) ||
                             isEqual(x.kana1, scope.searchStr) ||
                             isEqual(x.kana2, scope.searchStr) ||
-                            x.mean.indexOf(scope.searchStr) > -1
+                            x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         )
                     ),null,2);
                     res += JSON.stringify(jQuery.grep(kanjin2, (x, i) => (
                             isEqual(x.word, scope.searchStr) ||
                             isEqual(x.kana1, scope.searchStr) ||
                             isEqual(x.kana2, scope.searchStr) ||
-                            x.mean.indexOf(scope.searchStr) > -1
+                            x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         )
                     ),null,2);
                     scope.returnValue =  res;
@@ -546,4 +546,3 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
         */
     };
 }]);
-
