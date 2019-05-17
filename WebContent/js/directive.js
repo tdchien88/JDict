@@ -524,6 +524,10 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
                     scope.returnValue =  res;
                 }
 
+                scope.textChange = function() {
+                    searchText(scope);
+                }
+
                 scope.search = function() {
                     searchText(scope);
                 }
