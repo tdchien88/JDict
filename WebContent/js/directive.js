@@ -497,12 +497,15 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
         require: "?ngModel",
         compile : function(element, attr) {
             return function link (scope, element, attr, ngModel) {
+                scope.goi = goin2.map((item, index, items) => {
+                           return {item.word, item.mean, item.kana1, item.kana2}
+                          });
 
                 function searchText (scope){
                     console.log("search: "+scope.searchStr);
                     console.log(goin2);
 
-                    var res = JSON.stringify(jQuery.grep(goin2, (x, i) => (
+                    var res = JSON.stringify(jQuery.grep(scope.goi, (x, i) => (
                             isEqual(x.word, scope.searchStr) ||
                             isEqual(x.mean, scope.searchStr) ||
                             isEqual(x.kana1, scope.searchStr) ||
