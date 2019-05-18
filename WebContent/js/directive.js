@@ -40,7 +40,7 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
                         ));
 
                     if (!res || res.length == 0)
-                        res = 'no data';
+                        res = 'not found';
                     else
                         res = JSON.stringify(res,null,2);
 
