@@ -6,6 +6,86 @@ The legal restrict values are:
     M for Comment
 By default the value is EA, meaning that both Element names and attribute names can invoke the directive.
 */
+
+
+
+//search box
+myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
+    return {
+        restrict : "E", // A:属性
+        require: "?ngModel",
+        compile : function(element, attr) {
+            return function link (scope, element, attr, ngModel) {
+                var goi = goin2.map((item, index, items) => {
+                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
+                          });
+                var kanji = kanjin2.map((item, index, items) => {
+                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
+                          });
+                var list = $.merge(goi, kanji);
+
+                function searchText (scope){
+                    console.log("search: "+scope.searchStr);
+                    console.log(goin2);
+
+                    var res = jQuery.grep(list, (x, i) => (
+                            isEqual(x.word, scope.searchStr) ||
+                            isEqual(x.mean, scope.searchStr) ||
+                            isEqual(x.kana1, scope.searchStr) ||
+                            isEqual(x.kana2, scope.searchStr) ||
+                            x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            x.kana1.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            x.kana2.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
+                        ));
+
+                    if (!res || res.length == 0)
+                        res = 'no data';
+                    else
+                        res = JSON.stringify(res,null,2);
+
+                    
+                    
+                    scope.returnValue =  res;
+                }
+
+                scope.enterSearch = function(e) {
+
+                    if (e.which !== 13) return;
+
+                    searchText(scope);
+                }
+
+                scope.search = function() {
+                    searchText(scope);
+                }
+            };
+        },
+        templateUrl : "./partial/search.html",
+        /*
+        template : `
+<form name="search-form">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text w70">検索</span>
+    </div>
+    <my-textbox ctrlproptype="japan" ng-model="searchStr" placeholder="さあ、今日も頑張ろう！"></my-textbox>
+    <span class="input-group-append">
+      <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
+    </span>
+  </div>
+  <div>
+  <pre class="ng-binding">{{returnValue}}
+  </pre>
+  </div>
+</form>
+        `,
+        */
+    };
+}]);
+
+
+
 // 入力文字タイプを定義
 var proptypes = {
     NUM : "num"
@@ -489,72 +569,3 @@ myApp.directive("myInput", function() {
         }
     }
 });
-
-//search box
-myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
-    return {
-        restrict : "E", // A:属性
-        require: "?ngModel",
-        compile : function(element, attr) {
-            return function link (scope, element, attr, ngModel) {
-                var goi = goin2.map((item, index, items) => {
-                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
-                          });
-                var kanji = kanjin2.map((item, index, items) => {
-                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
-                          });
-                var list = $.merge(goi, kanji);
-
-                function searchText (scope){
-                    console.log("search: "+scope.searchStr);
-                    console.log(goin2);
-
-                    var res = JSON.stringify(jQuery.grep(list, (x, i) => (
-                            isEqual(x.word, scope.searchStr) ||
-                            isEqual(x.mean, scope.searchStr) ||
-                            isEqual(x.kana1, scope.searchStr) ||
-                            isEqual(x.kana2, scope.searchStr) ||
-                            x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
-                            x.kana1.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
-                            x.kana2.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
-                            x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
-                        )
-                    ),null,2);
-                    
-                    scope.returnValue =  res;
-                }
-
-                scope.enterSearch = function(e) {
-
-                    if (e.which !== 13) return;
-
-                    searchText(scope);
-                }
-
-                scope.search = function() {
-                    searchText(scope);
-                }
-            };
-        },
-        templateUrl : "./partial/search.html",
-        /*
-        template : `
-<form name="search-form">
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text w70">検索</span>
-    </div>
-    <my-textbox ctrlproptype="japan" ng-model="searchStr" placeholder="さあ、今日も頑張ろう！"></my-textbox>
-    <span class="input-group-append">
-      <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
-    </span>
-  </div>
-  <div>
-  <pre class="ng-binding">{{returnValue}}
-  </pre>
-  </div>
-</form>
-        `,
-        */
-    };
-}]);
