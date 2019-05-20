@@ -70,7 +70,7 @@
 
 <div class="accordion" id="accordion">
 
-
+<!—-
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 
     <div class="input-group mb-3" ng-show="data.wrongCount > data.wrongCount_Kana2">
@@ -100,12 +100,12 @@
         </div>
         <my-textbox ctrlproptype="alphanum" ng-model="data.curWord.mean" class="form-control form-control-lg text-uppercase text-danger font-weight-bold font-4xl " readonly ></my-textbox>
     </div>
-
+—->
    <p>
-        <strong class="text-danger" ng-show="data.wrongCount > data.wrongCount_Kana2" >{{data.curWord.kana2}}</strong>
-        <strong class="text-danger" ng-show="data.wrongCount > data.wrongCount_Kana1" >{{data.curWord.kana1}}</strong>
-        <strong class="text-uppercase text-danger font-weight-bold font-3xl " ng-show="data.wrongCount > data.wrongCount_GOI" >{{data.curWord.word}}</strong>
-        <strong class="text-uppercase text-danger font-weight-bold font-4xl " >{{data.curWord.mean}}</strong>
+        <h5 class="text-danger" ng-show="data.wrongCount > data.wrongCount_Kana2" >{{data.curWord.kana2}}</h5>
+        <h5 class="text-danger" ng-show="data.wrongCount > data.wrongCount_Kana1" >{{data.curWord.kana1}}</h5>
+        <h3 class="text-uppercase text-danger " ng-show="data.wrongCount > data.wrongCount_GOI" >{{data.curWord.word}}</h3>
+        <h2 class="text-uppercase text-danger " >{{data.curWord.mean}}</h2>
         
 
    </p>
