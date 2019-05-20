@@ -10,25 +10,44 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
+myApp.directive("searchBox", ["goin2", "kanjin2", 'localStorageService',  function(goin2, kanjin2, localStorageService) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
         compile : function(element, attr) {
             return function link (scope, element, attr, ngModel) {
-                var goi = goin2.map((item, index, items) => {
-                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
-                          });
-                var kanji = kanjin2.map((item, index, items) => {
-                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
-                          });
-                var list = $.merge(goi, kanji);
+//                var goi = goin2.map((item, index, items) => {
+//                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
+//                          });
+//                var kanji = kanjin2.map((item, index, items) => {
+//                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
+//                          });
+//               var list = $.merge(goin2, kanjin2);
 
-                function searchText (scope){
-                    console.log("search: "+scope.searchStr);
-                    console.log(goin2);
+                function saveStore(isClear){
+                    if(isClear){
+                        scope.listHistory = [];
+                        localStorageService.set("SEARCHHISTORY", scope.listHistory);
+                        return;
+                    }
 
-                    var res = jQuery.grep(list, (x, i) => (
+                    if(isEmpty(scope.searchStr)) return;
+                    var today = formatDate(new Date());
+                    //Add new items to the beginning of an array:
+                    scope.listHistory.unshift({word: scope.searchStr, time:today})
+                    localStorageService.set("SEARCHHISTORY", scope.listHistory);
+                }
+
+                function getStore(){
+                        var x =  localStorageService.get("SEARCHHISTORY");
+                        return (x)? x : [];
+                }
+
+
+                scope.listHistory = getStore();
+
+                function searchInList(list){
+                    return jQuery.grep(list, (x, i) => (
                             isEqual(x.word, scope.searchStr) ||
                             isEqual(x.mean, scope.searchStr) ||
                             isEqual(x.kana1, scope.searchStr) ||
@@ -38,15 +57,25 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
                             x.kana2.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
                             x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         ));
+                }
 
-                    if (!res || res.length == 0)
-                        res = 'not found';
-                    else
-                        res = JSON.stringify(res,null,2);
+                function searchText (scope){
+                    //console.log("search: "+scope.searchStr);
+                   // console.log(goin2);
+                    if(isEmpty(scope.searchStr)){
+                        scope.returnGOI = [];
+                        scope.returnKANJI = [];
+                        return;
+                    }
 
-                    
-                    
-                    scope.returnValue =  res;
+                    saveStore();
+
+                    var res = searchInList(goin2);
+                    scope.returnGOI =  (res) ? res : [];
+
+                    var res = searchInList(kanjin2);
+                    scope.returnKANJI =  (res) ? res : [];
+
                 }
 
                 scope.enterSearch = function(e) {
@@ -56,31 +85,18 @@ myApp.directive("searchBox", ["goin2", "kanjin2",  function(goin2, kanjin2) {
                     searchText(scope);
                 }
 
-                scope.search = function() {
+                scope.search = function(str) {
+                    if(isNotEmpty(str))
+                        scope.searchStr = str;
                     searchText(scope);
+                }
+
+                scope.clearHistory = function(){
+                    saveStore(true);
                 }
             };
         },
         templateUrl : "./partial/search.html",
-        /*
-        template : `
-<form name="search-form">
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text w70">検索</span>
-    </div>
-    <my-textbox ctrlproptype="japan" ng-model="searchStr" placeholder="さあ、今日も頑張ろう！"></my-textbox>
-    <span class="input-group-append">
-      <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
-    </span>
-  </div>
-  <div>
-  <pre class="ng-binding">{{returnValue}}
-  </pre>
-  </div>
-</form>
-        `,
-        */
     };
 }]);
 

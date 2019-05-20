@@ -8,8 +8,65 @@
       <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
     </span>
   </div>
-  <div>
-  <pre class="ng-binding">{{returnValue}}
-  </pre>
+
+<div class="mb10">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+    <label class="nav-link active show mb-0" data-toggle="tab" role="tab" href="#goi" aria-controls="goi" aria-selected="true">GOI</label>
+    </li>
+    <li class="nav-item">
+    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#kanji" aria-controls="kanji" aria-selected="false">KANJI</label>
+    </li>
+    <li class="nav-item">
+    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">BUNPO</label>
+    </li>
+    <li class="nav-item">
+    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#history" aria-controls="history" aria-selected="false">RIREKI</label>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active show" id="goi" role="tabpanel">
+      <div ng-repeat="item in returnGOI" class="card">
+        <div class="card-body">
+            <p><strong>{{item.word}}</strong></p>
+            <p>{{item.mean}}</p>
+            <p>{{item.kana1}}</p>
+            <p>{{item.kana2}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="kanji" role="tabpanel">
+      <div ng-repeat="item in returnKANJI" class="card">
+        <div class="card-body">
+            <p><strong>{{item.mean}}</strong></p>
+            <p>{{item.word}}</p>
+            <p>{{item.kana1}}</p>
+            <p>{{item.kana2}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-pane" id="bunpo" role="tabpanel">
+
+    </div>
+
+    <div class="tab-pane" id="history" role="tabpanel">
+       <button class="btn btn-danger float-right" ng-click="clearHistory()" type="button"><i class="fa fa-trash"></i></button>
+       <div class="clearfix"> </div>
+       <ul class="list-group">
+       <li ng-repeat="item in listHistory track by $index" class="list-group-item"  ng-click="search(item.word)">
+         {{item.word}}
+         <small class="float-right">{{item.time}}</small>
+       </li>
+       </ul>
+
+    </div>
+
+
   </div>
+</div>
+
 </form>
