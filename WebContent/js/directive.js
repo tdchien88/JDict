@@ -10,7 +10,8 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["goin2", "kanjin2", 'localStorageService',  function(goin2, kanjin2, localStorageService) {
+myApp.directive("searchBox", ["goin2", "kanjin2", 'localStorageService', '$timeout',
+    function(goin2, kanjin2, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -32,8 +33,14 @@ myApp.directive("searchBox", ["goin2", "kanjin2", 'localStorageService',  functi
                     }
 
                     if(isEmpty(scope.searchStr)) return;
-                    var today = formatDate(new Date());
+
+                    // xoa tu trong ds cu
+                    scope.listHistory = $.grep(scope.listHistory, function(e){
+                        return e.word != scope.searchStr;
+                    });
+
                     //Add new items to the beginning of an array:
+                    var today = formatDate(new Date());
                     scope.listHistory.unshift({word: scope.searchStr, time:today})
                     localStorageService.set("SEARCHHISTORY", scope.listHistory);
                 }
@@ -70,11 +77,17 @@ myApp.directive("searchBox", ["goin2", "kanjin2", 'localStorageService',  functi
 
                     saveStore();
 
-                    var res = searchInList(goin2);
-                    scope.returnGOI =  (res) ? res : [];
+                    $timeout(function(){
+                        var res = searchInList(goin2);
+                        scope.returnGOI =  (res) ? res : [];
 
-                    var res = searchInList(kanjin2);
-                    scope.returnKANJI =  (res) ? res : [];
+                    }, 0);
+
+                    $timeout(function(){
+                        var res = searchInList(kanjin2);
+                        scope.returnKANJI =  (res) ? res : [];
+
+                    }, 0);
 
                 }
 

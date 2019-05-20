@@ -41,9 +41,9 @@
       <div ng-repeat="item in returnKANJI" class="card">
         <div class="card-body">
             <p><strong>{{item.mean}}</strong></p>
+            <p><strong>{{item.kana2}}</strong></p>
             <p>{{item.word}}</p>
             <p>{{item.kana1}}</p>
-            <p>{{item.kana2}}</p>
         </div>
       </div>
 
@@ -56,12 +56,18 @@
     <div class="tab-pane" id="history" role="tabpanel">
        <button class="btn btn-danger float-right" ng-click="clearHistory()" type="button"><i class="fa fa-trash"></i></button>
        <div class="clearfix"> </div>
-       <ul class="list-group">
-       <li ng-repeat="item in listHistory track by $index" class="list-group-item"  ng-click="search(item.word)">
-         {{item.word}}
-         <small class="float-right">{{item.time}}</small>
-       </li>
-       </ul>
+       <div class="list-group mt-3">
+        <a ng-repeat="item in listHistory track by $index" ng-click="search(item.word)" class="list-group-item list-group-item-action flex-column align-items-start" href="">
+			<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1">{{item.word}}</h5>
+			<small>{{item.time}}</small>
+			</div>
+			<!--
+			<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+			<small>Donec id elit non mi porta.</small>
+			 -->
+		</a>
+       </div>
 
     </div>
 
