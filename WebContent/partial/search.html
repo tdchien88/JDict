@@ -30,10 +30,9 @@
       <div ng-repeat="item in returnGOI" class="card">
         <div class="card-body">
           <p class="text-wrap">
-            <h4>{{item.word}}</h4>
+            <h4 class="text-danger">{{item.word}}</h4>
             <h5>{{item.mean}}</h5>
             <span>{{item.kana1}}</span>
-            <span>{{item.kana2}}</span>
           </p>
         </div>
       </div>
@@ -43,10 +42,10 @@
       <div ng-repeat="item in returnKANJI" class="card">
         <div class="card-body">
           <p class="text-wrap">
-            <h4>{{item.mean}}</h4>
+            <h4 class="text-danger">{{item.mean}}</h4>
+            <span>{{item.kana1}}</span>
             <h5>{{item.kana2}}</h5>
             <span>{{item.word}}</span>
-            <span>{{item.kana1}}</span>
           </p>
         </div>
       </div>
