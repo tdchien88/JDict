@@ -103,7 +103,7 @@
  -->
 <div class="card">
   <div class="card-body">
-   <p class="mb2 text-wrap">
+   <p class="text-center text-wrap">
         <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana2" >{{data.curWord.kana2}}</h5>
         <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana1" >{{data.curWord.kana1}}</h5>
         <h2 class="text-danger " ng-show="data.wrongCount > data.wrongCount_GOI" >{{data.curWord.word}}</h2>
@@ -113,12 +113,16 @@
    </p>
   </div>
   <div class="card-footer">
+    <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-dark form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
+    <small class="float-right">Ans {{data.wrongCount}}</small>
+<!-- 
     <div class="input-group mb-3" >
         <div class="input-group-prepend">
           <span class="input-group-text w70">Ans {{data.wrongCount}}</span>
         </div>
         <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-dark form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
     </div>
+-->
   </div>
 </div>
     </div>
