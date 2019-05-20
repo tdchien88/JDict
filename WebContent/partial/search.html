@@ -40,10 +40,12 @@
     <div class="tab-pane" id="kanji" role="tabpanel">
       <div ng-repeat="item in returnKANJI" class="card">
         <div class="card-body">
-            <p><strong>{{item.mean}}</strong></p>
-            <p><strong>{{item.kana2}}</strong></p>
-            <p>{{item.word}}</p>
-            <p>{{item.kana1}}</p>
+          <p class="text-wrap">
+            <span><h4>{{item.mean}}</h4></span>
+            <span><h5>{{item.kana2}}</h5></span>
+            <span>{{item.word}}</span>
+            <span>{{item.kana1}}</span>
+          </p>
         </div>
       </div>
 
