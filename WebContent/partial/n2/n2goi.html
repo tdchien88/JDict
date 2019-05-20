@@ -101,6 +101,15 @@
         <my-textbox ctrlproptype="alphanum" ng-model="data.curWord.mean" class="form-control form-control-lg text-uppercase text-danger font-weight-bold font-4xl " readonly ></my-textbox>
     </div>
 
+   <p>
+        <strong class="text-danger" ng-show="data.wrongCount > data.wrongCount_Kana2" >{{data.curWord.kana2}}</strong>
+        <strong class="text-danger" ng-show="data.wrongCount > data.wrongCount_Kana1" >{{data.curWord.kana1}}</strong>
+        <strong class="text-uppercase text-danger font-weight-bold font-3xl " ng-show="data.wrongCount > data.wrongCount_GOI" >{{data.curWord.word}}</strong>
+        <strong class="text-uppercase text-danger font-weight-bold font-4xl " >{{data.curWord.mean}}</strong>
+        
+
+   </p>
+
     <div class="input-group mb-3" >
         <div class="input-group-prepend">
           <span class="input-group-text w70">Ans {{data.wrongCount}}</span>
