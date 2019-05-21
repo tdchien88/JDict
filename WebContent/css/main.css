@@ -56,6 +56,34 @@ span::after {
   background-color: #f5f5f5;
 }
 
+.tag{
+  color: #ffffff;
+  padding: 0px 2px;
+  font-size: 0.8rem;
+  background-color: #9e9e9e;
+  border: 1px solid #757575;
+  border-radius: 0.25rem;
+}
+.tag.tag-jlpt-N1{
+  background-color: #e83e8c;
+  border-color: f86c6b;
+}
+.tag.tag-jlpt-N2{
+  background-color: #ffc107;
+  border-color: #f8cb00;
+}
+.tag.tag-jlpt-N3{
+  background-color: #4dbd74;
+  border-color: #20c997;
+}
+.tag.tag-jlpt-N4{
+  background-color: #63c2de;
+  border-color:     #20a8d8;
+}
+.tag.tag-jlpt-N5{
+  background-color: #6f42c1;
+  border-color: #6610f2;
+}
 
 
 /*

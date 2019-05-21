@@ -18,7 +18,7 @@
     <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#kanji" aria-controls="kanji" aria-selected="false">KANJI({{returnKANJI.length}})</label>
     </li>
     <li class="nav-item">
-    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">BUNPO</label>
+    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">BUNPO({{returnBUNPO.length}})</label>
     </li>
     <li class="nav-item">
     <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#history" aria-controls="history" aria-selected="false">RIREKI</label>
@@ -53,6 +53,30 @@
     </div>
 
     <div class="tab-pane" id="bunpo" role="tabpanel">
+      <div ng-repeat="item in returnBUNPO" class="card">
+        <div class="card-body">
+          <p class="text-wrap">
+            <h4 class="text-danger">{{item.word}}</h4>
+            <table class="w-100">
+              <tbody>
+              <tr>
+                <td class="text-muted w40">Mean:</td>
+                <td class="font-sm"><strong>{{item.mean}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-muted w40">JLPT:</td>
+                <td class="font-sm"><span class="tag tag-jlpt-{{item.jlpt}}">{{item.jlpt}}</span></td>
+              </tr>
+              <tr>
+                <td class="text-muted w40">TAG:</td>
+                <td class="font-sm"><span class="tag tag-bunpo">{{item.tag}}</span></td>
+              </tr>
+            </tbody></table>
+
+          </p>
+          <a class="float-right" target="_blank"  href="{{item.link}}">detail</a>
+        </div>
+      </div>
 
     </div>
 
@@ -61,15 +85,15 @@
        <div class="clearfix"> </div>
        <div class="list-group mt-3">
         <a ng-repeat="item in listHistory track by $index" ng-click="search(item.word)" class="list-group-item list-group-item-action flex-column align-items-start" href="">
-			<div class="d-flex w-100 justify-content-between">
-			<h5 class="mb-1">{{item.word}}</h5>
-			<small>{{item.time}}</small>
-			</div>
-			<!--
-			<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			<small>Donec id elit non mi porta.</small>
-			 -->
-		</a>
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{item.word}}</h5>
+            <small>{{item.time}}</small>
+            </div>
+            <!--
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small>Donec id elit non mi porta.</small>
+             -->
+        </a>
        </div>
 
     </div>

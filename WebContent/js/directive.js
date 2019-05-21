@@ -10,8 +10,8 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["goin2", "kanjin2", 'localStorageService', '$timeout',
-    function(goin2, kanjin2, localStorageService, $timeout) {
+myApp.directive("searchBox", ["goin2", "kanjin2", "bunpo", 'localStorageService', '$timeout',
+    function(goin2, kanjin2, bunpo, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -86,6 +86,12 @@ myApp.directive("searchBox", ["goin2", "kanjin2", 'localStorageService', '$timeo
                     $timeout(function(){
                         var res = searchInList(kanjin2);
                         scope.returnKANJI =  (res) ? res : [];
+
+                    }, 0);
+
+                    $timeout(function(){
+                        var res = searchInList(bunpo);
+                        scope.returnBUNPO =  (res) ? res : [];
 
                     }, 0);
 
