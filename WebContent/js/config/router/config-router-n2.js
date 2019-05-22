@@ -8,4 +8,9 @@ myApp.config(function() {
         templateUrl: 'partial/n2/n2goi.html',
         controller: 'n2goiCtrl'
     })
+    .state('shadowing', {
+        url: '/shadowing',
+        templateUrl: 'partial/n2/shadowing.html',
+        controller: 'shadowingCtrl'
+    })
 });
