@@ -18,6 +18,9 @@
     <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#kanji" aria-controls="kanji" aria-selected="false">KANJI({{returnKANJI.length}})</label>
     </li>
     <li class="nav-item">
+    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#vd" aria-controls="vd" aria-selected="false">VD({{returnVD.length}})</label>
+    </li>
+    <li class="nav-item">
     <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">BUNPO({{returnBUNPO.length}})</label>
     </li>
     <li class="nav-item">
@@ -49,7 +52,17 @@
           </p>
         </div>
       </div>
+    </div>
 
+    <div class="tab-pane" id="vd" role="tabpanel">
+      <div ng-repeat="item in returnVD" class="card">
+        <div class="card-body">
+          <p class="text-wrap">
+            <h4 class="text-danger multi-lines">{{item.mean}}</h4>
+            <h5 class="multi-lines">{{item.word}}</h5>
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="tab-pane" id="bunpo" role="tabpanel">

@@ -10,8 +10,8 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["goin2", "kanjin2", "bunpo", 'localStorageService', '$timeout',
-    function(goin2, kanjin2, bunpo, localStorageService, $timeout) {
+myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", 'localStorageService', '$timeout',
+    function(goin2, kanjin2, shadowing2, bunpo, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -66,6 +66,15 @@ myApp.directive("searchBox", ["goin2", "kanjin2", "bunpo", 'localStorageService'
                         ));
                 }
 
+                function searchInList2(list){
+                    return jQuery.grep(list, (x, i) => (
+                            isEqual(x.word, scope.searchStr) ||
+                            isEqual(x.mean, scope.searchStr) ||
+                            x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
+                        ));
+                }
+
                 function searchText (scope){
                     //console.log("search: "+scope.searchStr);
                    // console.log(goin2);
@@ -90,7 +99,13 @@ myApp.directive("searchBox", ["goin2", "kanjin2", "bunpo", 'localStorageService'
                     }, 0);
 
                     $timeout(function(){
-                        var res = searchInList(bunpo);
+                        var res = searchInList2(shadowing2);
+                        scope.returnVD =  (res) ? res : [];
+
+                    }, 0);
+
+                    $timeout(function(){
+                        var res = searchInList2(bunpo);
                         scope.returnBUNPO =  (res) ? res : [];
 
                     }, 0);

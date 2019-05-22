@@ -5,7 +5,10 @@ span::after {
   content: "\A";
   white-space: pre;
 }
-
+.multi-lines {
+  white-space: pre-line;
+  line-height: 1.5rem;
+}
 .form-control:focus {
     box-shadow: 0 0 0 0.05rem rgba(32, 168, 216, 0.25); }
 
