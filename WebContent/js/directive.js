@@ -10,8 +10,8 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", 'localStorageService', '$timeout',
-    function(goin2, kanjin2, shadowing2, bunpo, localStorageService, $timeout) {
+myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", "bunpovd", 'localStorageService', '$timeout',
+    function(goin2, kanjin2, shadowing2, bunpo, bunpovd, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -107,7 +107,12 @@ myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", 'localSt
                     $timeout(function(){
                         var res = searchInList2(bunpo);
                         scope.returnBUNPO =  (res) ? res : [];
-
+                        $timeout(function(){
+                            $.each(scope.returnBUNPO, function(idx,e){
+                                console.log(idx +e);
+                                e.ex = bunpovd.find(x => x.no === e.no).result;
+                            });
+                        }, 0);
                     }, 0);
 
                 }
@@ -134,7 +139,18 @@ myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", 'localSt
     };
 }]);
 
-
+myApp.directive('dynamic', ['$compile', function ($compile) {
+    return {
+      restrict: 'A',
+      replace: true,
+      link: function (scope, ele, attrs) {
+        scope.$watch(attrs.dynamic, function (html) {
+          ele.html(html);
+          $compile(ele.contents())(scope);
+        });
+      }
+    };
+  }]);
 
 // 入力文字タイプを定義
 var proptypes = {
