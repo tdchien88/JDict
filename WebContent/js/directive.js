@@ -139,12 +139,12 @@ myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", "bunpovd
     };
 }]);
 
-myApp.directive('dynamic', ['$compile', function ($compile) {
+myApp.directive('dynamicHtml', ['$compile', function ($compile) {
     return {
       restrict: 'A',
       replace: true,
       link: function (scope, ele, attrs) {
-        scope.$watch(attrs.dynamic, function (html) {
+        scope.$watch(attrs.dynamicHtml, function (html) {
           ele.html(html);
           $compile(ele.contents())(scope);
         });

@@ -1,38 +1,38 @@
 <form name="n2goi-form" class="animated fadeIn">
 <div class="row justify-content-center">
 <div class="col-md-12">
-    <div class="input-group  mb-2 ">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">Unit</span>
-        </div>
-        <my-dropdown name="unit" ng-model="data.unit" default-item-idx="0" items="data.listUnit" ng-change="changeUnit()"></my-dropdown>
-        <span class="input-group-append">
-            <button class="btn btn-danger" type="button" ng-click="reset()">Reset</button>
-        </span>
+<div class="input-group  mb-2 ">
+    <div class="input-group-prepend">
+      <span class="input-group-text w70">Unit</span>
     </div>
+    <my-dropdown name="unit" ng-model="data.unit" default-item-idx="0" items="data.listUnit" ng-change="changeUnit()"></my-dropdown>
+    <span class="input-group-append">
+        <button class="btn btn-danger" type="button" ng-click="reset()">Reset</button>
+    </span>
+</div><!-- input-group  mb-2 -->
 
-    <div class="input-group">
-            <div class="font-weight-bold " ng-class="{'hidden': data.learnType == 'newwords'}">【Idx: {{data.curIdx + 1}}】</div>
+<div class="input-group">
+    <div class="font-weight-bold " ng-class="{'hidden': data.learnType == 'newwords'}">【Idx: {{data.curIdx + 1}}】</div>
 
-            <input class="form-check-input hidden" id="inline-hardwords" ng-model="data.learnType"  type="radio" value="hardwords" name="inline-radios" ng-change="changeLearnType()">
-            <label class="form-check-label text-warning ml-auto" ng-class="{'font-weight-bold border-bottom border-warning': data.learnType == 'hardwords'}"  for="inline-hardwords">★ ({{data.curUnit.listHardWords.length}})</label>
+    <input class="form-check-input hidden" id="inline-hardwords" ng-model="data.learnType"  type="radio" value="hardwords" name="inline-radios" ng-change="changeLearnType()">
+    <label class="form-check-label text-warning ml-auto" ng-class="{'font-weight-bold border-bottom border-warning': data.learnType == 'hardwords'}"  for="inline-hardwords">★ ({{data.curUnit.listHardWords.length}})</label>
 
-            <input class="form-check-input hidden" id="inline-rememberd" ng-model="data.learnType"  type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
-            <label class="form-check-label text-success ml-2" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == 'rememberd'}"  for="inline-rememberd">OK ({{data.curUnit.listRemember.length}})</label>
+    <input class="form-check-input hidden" id="inline-rememberd" ng-model="data.learnType"  type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
+    <label class="form-check-label text-success ml-2" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == 'rememberd'}"  for="inline-rememberd">OK ({{data.curUnit.listRemember.length}})</label>
 
-            <input class="form-check-input hidden" id="inline-wrong" ng-model="data.learnType"  type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
-            <label class="form-check-label text-danger ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.learnType == 'wrong'}" for="inline-wrong">NG ({{data.curUnit.listNotRemember.length}})</label>
+    <input class="form-check-input hidden" id="inline-wrong" ng-model="data.learnType"  type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
+    <label class="form-check-label text-danger ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.learnType == 'wrong'}" for="inline-wrong">NG ({{data.curUnit.listNotRemember.length}})</label>
 
-            <input class="form-check-input hidden" id="inline-newwords" ng-model="data.learnType"  type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
-            <label class="form-check-label text-primary ml-2" ng-class="{'font-weight-bold border-bottom border-primary': data.learnType == 'newwords'}" for="inline-newwords">New ({{data.curUnit.listNewWords.length}})</label>
+    <input class="form-check-input hidden" id="inline-newwords" ng-model="data.learnType"  type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
+    <label class="form-check-label text-primary ml-2" ng-class="{'font-weight-bold border-bottom border-primary': data.learnType == 'newwords'}" for="inline-newwords">New ({{data.curUnit.listNewWords.length}})</label>
 
-            <input class="form-check-input hidden" id="inline-all" ng-model="data.learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
-            <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-dark': data.learnType == 'all'}" for="inline-all">All ({{data.curUnit.listCurrentWords.length}})</label>
+    <input class="form-check-input hidden" id="inline-all" ng-model="data.learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
+    <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-dark': data.learnType == 'all'}" for="inline-all">All ({{data.curUnit.listCurrentWords.length}})</label>
 
 <!--
             <div class="text-muted small ml-2">({{(data.curUnit.listRemember.length + data.curUnit.listNotRemember.length) * 100 / data.curUnit.listCurrentWords.length | number : 0}}%)</div>
  -->
-        </div>
+</div>
 <div class="row">
     <div class="col-4">
         <!-- accordion -->
@@ -101,30 +101,30 @@
         <my-textbox ctrlproptype="alphanum" ng-model="data.curWord.mean" class="form-control form-control-lg text-uppercase text-danger font-weight-bold font-4xl " readonly ></my-textbox>
     </div>
  -->
-<div class="card">
-  <div class="card-body">
-   <p class="text-center text-wrap">
-        <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana2" >{{data.curWord.kana2}}</h5>
-        <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana1" >{{data.curWord.kana1}}</h5>
-        <h2 class="text-danger " ng-show="data.wrongCount > data.wrongCount_GOI" >{{data.curWord.word}}</h2>
-        <h1 class="text-uppercase text-danger " >{{data.curWord.mean}}</h1>
+        <div class="card">
+          <div class="card-body">
+           <p class="text-center text-wrap">
+                <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana2" >{{data.curWord.kana2}}</h5>
+                <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana1" >{{data.curWord.kana1}}</h5>
+                <h2 class="text-danger " ng-show="data.wrongCount > data.wrongCount_GOI" >{{data.curWord.word}}</h2>
+                <h1 class="text-uppercase text-danger " >{{data.curWord.mean}}</h1>
 
 
-   </p>
-  </div>
-  <div class="card-footer">
-    <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-danger form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
-    <small class="float-right">Ans {{data.wrongCount}}</small>
-<!--
-    <div class="input-group mb-3" >
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">Ans {{data.wrongCount}}</span>
+           </p>
+          </div>
+          <div class="card-footer">
+            <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-danger form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
+            <small class="float-right">Ans {{data.wrongCount}}</small>
+        <!--
+            <div class="input-group mb-3" >
+                <div class="input-group-prepend">
+                  <span class="input-group-text w70">Ans {{data.wrongCount}}</span>
+                </div>
+                <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-dark form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
+            </div>
+        -->
+          </div>
         </div>
-        <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-dark form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
-    </div>
--->
-  </div>
-</div>
     </div>
 
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -198,7 +198,6 @@
             </div>
         </div>
     -->
-    </div>
         <table class="table table-responsive-sm table-striped">
             <thead>
             <tr>
@@ -225,12 +224,10 @@
             </tr>
             </tbody>
         </table>
+
     </div>
-
 </div>
 
-
-</div>
-
-</div>
+</div><!-- col-md-12 -->
+</div><!-- row justify-content-center -->
 </form>

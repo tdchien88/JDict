@@ -78,17 +78,17 @@
                 <td class="font-sm"><strong>{{item.mean}}</strong></td>
               </tr>
               <tr>
-                <td class="text-muted w40">JLPT:</td>
-                <td class="font-sm"><span class="tag tag-jlpt-{{item.jlpt}}">{{item.jlpt}}</span></td>
-              </tr>
-              <tr>
                 <td class="text-muted w40">TAG:</td>
-                <td class="font-sm"><span class="tag tag-bunpo">{{item.tag}}</span></td>
+                <td class="font-sm">
+                    <span class="tag tag-jlpt-{{item.jlpt}} mr-1">{{item.jlpt}}</span>
+                    <span class="tag tag-bunpo  mr-1">{{item.tag}}</span>
+                </td>
               </tr>
             </tbody></table>
           </p>
 
-            <div class="GrammarDetail" dynamic="item.ex"></div>
+          <div class="GrammarDetail multi-lines" dynamic-html="item.ex"></div>
+
           <!-- <a class="float-right" target="_blank"  href="{{item.link}}">detail</a> -->
         </div>
       </div>
@@ -96,10 +96,10 @@
     </div>
 
     <div class="tab-pane" id="history" role="tabpanel">
-       <button class="btn btn-danger float-right" ng-click="clearHistory()" type="button"><i class="fa fa-trash"></i></button>
+       <button class="btn btn-outline-danger float-right mr-3" ng-click="clearHistory()" type="button"><i class="fa fa-trash"></i> Clear History</button>
        <div class="clearfix"> </div>
        <div class="list-group mt-3">
-        <a ng-repeat="item in listHistory track by $index" ng-click="search(item.word)" class="list-group-item list-group-item-action flex-column align-items-start" href="">
+        <div ng-repeat="item in listHistory track by $index" ng-click="search(item.word)" class="list-group-item list-group-item-action flex-column align-items-start" href="">
             <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{item.word}}</h5>
             <small>{{item.time}}</small>
@@ -108,7 +108,7 @@
             <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             <small>Donec id elit non mi porta.</small>
              -->
-        </a>
+        </div>
        </div>
 
     </div>
