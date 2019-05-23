@@ -60,7 +60,7 @@
           <p class="text-wrap">
             <h4 class="text-danger multi-lines">{{item.word}}</h4>
             <span class="multi-lines">{{item.mean}}</span>
-            <span class="float-right tag tag-bunpo">Unit: {{item.unit}}</span>
+            <span class="float-right tag tag-bunpo" ng-if="item.unit">Unit: {{item.unit}}</span>
           </p>
         </div>
       </div>

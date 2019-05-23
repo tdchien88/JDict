@@ -10,8 +10,8 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", "bunpovd", 'localStorageService', '$timeout',
-    function(goin2, kanjin2, shadowing2, bunpo, bunpovd, localStorageService, $timeout) {
+myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
+    function(goin2, kanjin2, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -23,7 +23,7 @@ myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", "bunpovd
 //                var kanji = kanjin2.map((item, index, items) => {
 //                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
 //                          });
-//               var list = $.merge(goin2, kanjin2);
+               var listVD = $.merge(iword, shadowing2 );
 
                 function saveStore(isClear){
                     if(isClear){
@@ -99,7 +99,7 @@ myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "bunpo", "bunpovd
                     }, 0);
 
                     $timeout(function(){
-                        var res = searchInList2(shadowing2);
+                        var res = searchInList2(listVD);
                         scope.returnVD =  (res) ? res : [];
 
                     }, 0);
