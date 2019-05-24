@@ -48,6 +48,10 @@ span::after {
 .w100 { width: 100px; }
 .w150 { width: 150px; }
 
+.wp5 { width: 5%; }
+.wp40 { width: 40%; }
+.wp55 { width: 55%; }
+
 .text-gray-500 {
   color: #8f9ba6 !important;
 }
