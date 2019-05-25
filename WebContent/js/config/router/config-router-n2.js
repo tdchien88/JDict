@@ -13,4 +13,9 @@ myApp.config(function() {
         templateUrl: 'partial/n2/shadowing.html',
         controller: 'shadowingCtrl'
     })
+    .state('n2try', {
+        url: '/n2try',
+        templateUrl: 'partial/n2/n2try.html',
+        controller: 'n2tryCtrl'
+    })
 });
