@@ -1,9 +1,9 @@
 myApp.constant('n2try',  [
-{no:1, unit:1, vd:0, word: `N＋につき `, mean: `Vì ...........
+N＋につき `, mean: `Vì ...........
 nêu lý do
 (Hay dùng trong thông báo.)`},
 {no:1, unit:1, vd:1, word: `清掃中につき、お足元にご注意ください。 `, mean: `Vì đang trong chiến tranh, hãy cẩn thận.`},
-{no:2, unit:1, vd:0, word: `N + をとわず (問わず) `, mean: `Không phân biệt, bất kể N..........
+{no:1, unit:1, vd:1, word: `N + をとわず (問わず) `, mean: `Không phân biệt, bất kể N..........
 (N: thường là các cặp đối nghĩa VD: nam nữ, già trẻ)
 dùng trong văn bản thông báo
 ý nghĩa: bất cứ cứ lúc nào, bất cứ đâu bất kỳ ai`},
@@ -531,6 +531,5 @@ Aな、
 N の ＋あまり `, mean: `Vì quá .... nên kết quả là (thường dùng khi kết quả không tốt)
 弟の病気を心配するあまり母は食欲がなくなり、すっかりやせてしまった。
 Vì quá lo lắng cho em trai bị ốm, mẹ không ăn uống gì, gầy đi trông thấy.`},
-
-
+{no:1, unit:1, vd:1, word: `
 ]);
