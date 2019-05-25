@@ -113,7 +113,7 @@
            </p>
           </div>
           <div class="card-footer">
-            <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-danger form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
+            <my-textbox auto-focus id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-danger form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
             <small class="float-right">Ans {{data.wrongCount}}</small>
         <!--
             <div class="input-group mb-3" >
