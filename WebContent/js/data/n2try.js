@@ -2,151 +2,151 @@ myApp.constant('n2try',  [
 {no:1, unit:1, subno:1, vd:1, word:`N＋につき `, mean: `Vì ...........
 nêu lý do
 (Hay dùng trong thông báo.)`},
-{no:1, unit:1, subno:1, vd:1, word:`清掃中につき、お足元にご注意ください。 `, mean: `Vì đang dọn vệ sinh, hãy cẩn thận.`},
-{no:1, unit:1, subno:1, vd:1, word:`N + をとわず (問わず) `, mean: `Không phân biệt, bất kể N..........
+{no:2, unit:1, subno:1, vd:1, word:`清掃中につき、お足元にご注意ください。 `, mean: `Vì đang dọn vệ sinh, hãy cẩn thận.`},
+{no:3, unit:1, subno:1, vd:1, word:`N + をとわず (問わず) `, mean: `Không phân biệt, bất kể N..........
 (N: thường là các cặp đối nghĩa VD: nam nữ, già trẻ)
 dùng trong văn bản thông báo
 ý nghĩa: bất cứ cứ lúc nào, bất cứ đâu bất kỳ ai`},
-{no:1, unit:1, subno:1, vd:1, word:`このスポーツセンターは、年齢を問わず、どなたでも利用できます。 `, mean: `Trung tâm thể thao này không chỉ dành cho người cao tuổi, bất cứ ai cũng có thể sử dụng được.`},
-{no:1, unit:1, subno:1, vd:1, word:`N + に限り
+{no:4, unit:1, subno:1, vd:1, word:`このスポーツセンターは、年齢を問わず、どなたでも利用できます。 `, mean: `Trung tâm thể thao này không chỉ dành cho người cao tuổi, bất cứ ai cũng có thể sử dụng được.`},
+{no:5, unit:1, subno:1, vd:1, word:`N + に限り
 N + に限る. `, mean: `Chỉ N. (= だけ)
 thường dúng trong văn bản thông báo`},
-{no:1, unit:1, subno:1, vd:1, word:`工場の見学は予約された方に限る。 `, mean: `Việc kiến tập tại nhà máy chỉ dành cho người đã đăng ký.`},
-{no:1, unit:1, subno:1, vd:1, word:`N + に応じ
+{no:6, unit:1, subno:1, vd:1, word:`工場の見学は予約された方に限る。 `, mean: `Việc kiến tập tại nhà máy chỉ dành cho người đã đăng ký.`},
+{no:7, unit:1, subno:1, vd:1, word:`N + に応じ
 N + に応じて
 N + に応じた + N `, mean: `.......ứng với, dựa vào, dựa theo .......
 khi muốn nói rằng sẽ làm gì đó ứng với nguyện vong, sự thay đổi, khu vục, tình huống ,tuổi tác, năng lực, kinh nghiêm.`},
-{no:1, unit:1, subno:1, vd:1, word:`給料は能力や経験に応じ、決めさせ ていただきます。 `, mean: `Tiền lương được quyết định phụ thuộc vào năng lực và kinh nghiệm.`},
-{no:1, unit:1, subno:1, vd:1, word:`N, Vる、Vない +にかかわらず `, mean: `Không liên quan, xét đến .......,
+{no:8, unit:1, subno:1, vd:1, word:`給料は能力や経験に応じ、決めさせ ていただきます。 `, mean: `Tiền lương được quyết định phụ thuộc vào năng lực và kinh nghiệm.`},
+{no:9, unit:1, subno:1, vd:1, word:`N, Vる、Vない +にかかわらず `, mean: `Không liên quan, xét đến .......,
 những điều kiện như khí hậu, sở thích, địa vị
 có khi kết hơp với 2 danh từ tính từ đối lập nhau`},
-{no:1, unit:1, subno:1, vd:1, word:`今回の旅行は晴雨にかかわらず、じっしします。 `, mean: `Lần này dù nắng hay mưa vẫn đi du lịch.`},
-{no:1, unit:1, subno:1, vd:1, word:`内容分かるかわからないにかからわず、毎日聞き続けば、３か月後に必ず効果が表れます。 `, mean: `không nhất thiết có hiểu hay không chỉ cần nghe liên tục trong 3 tháng nhất định sẻ thấy hiệu quả`},
-{no:1, unit:1, subno:1, vd:1, word:`N + において
+{no:10, unit:1, subno:1, vd:1, word:`今回の旅行は晴雨にかかわらず、じっしします。 `, mean: `Lần này dù nắng hay mưa vẫn đi du lịch.`},
+{no:11, unit:1, subno:1, vd:1, word:`内容分かるかわからないにかからわず、毎日聞き続けば、３か月後に必ず効果が表れます。 `, mean: `không nhất thiết có hiểu hay không chỉ cần nghe liên tục trong 3 tháng nhất định sẻ thấy hiệu quả`},
+{no:12, unit:1, subno:1, vd:1, word:`N + において
 N + における + N `, mean: `tại, ở, trong....... (=で)
 Dùng khi muốn nói rằng ở thời điểm, thời đại, lĩnh vực..
 -Thường dùng trong thông báo, tin tức chẳng hạn.`},
-{no:1, unit:1, subno:1, vd:1, word:`入学式は、３階のホールにおいて行われます。 `, mean: `Lễ khai giảng, được tiến hành tại hội trường tầng 3.`},
-{no:1, unit:1, subno:1, vd:1, word:`Vる、Vた＋ 際に
+{no:13, unit:1, subno:1, vd:1, word:`入学式は、３階のホールにおいて行われます。 `, mean: `Lễ khai giảng, được tiến hành tại hội trường tầng 3.`},
+{no:14, unit:1, subno:1, vd:1, word:`Vる、Vた＋ 際に
 Nの `, mean: `Trong lúc, trong khi.........
 sử dụng trong văn bản giải thích hoặc hướng dẫn
 -chú ý" phía sau thường đi kèm với してください、必要です、お願いします
 mở rộng; dùng trong văn bản chú ý, giải thích hoắc xin lỗi.`},
-{no:1, unit:1, subno:1, vd:1, word:`カードを紛失した際にサービスセンターにご連絡ください。 `, mean: `Trong trường hợp đánh mất thể, phiền bạn liên lạc với trung tâm dịch vụ.`},
-{no:1, unit:1, subno:1, vd:1, word:`Vる、Vない ＋こと
+{no:15, unit:1, subno:1, vd:1, word:`カードを紛失した際にサービスセンターにご連絡ください。 `, mean: `Trong trường hợp đánh mất thể, phiền bạn liên lạc với trung tâm dịch vụ.`},
+{no:16, unit:1, subno:1, vd:1, word:`Vる、Vない ＋こと
 Nの `, mean: `Được, không được làm .....
 Giải thích quy tắc hoặc điểm cần chú ý`},
-{no:1, unit:1, subno:1, vd:1, word:`寮のシャワーは夜１１時以降、使用しないこと。 `, mean: `Phòng tắm hoa sen của kí túc xá, sau 11h không sử dụng được`},
-{no:1, unit:1, subno:1, vd:1, word:`試験中は携帯電話の電源を切ること、筆記用具以外は机の上に置かないこと。 `, mean: `tắt nguồn điện thoại trong lúc làm bài thi,ngoại trừ những vật dụng để ghi chép thì được phép bỏ trên bàn.`},
-{no:1, unit:1, subno:1, vd:1, word:`Vて + 以来
+{no:17, unit:1, subno:1, vd:1, word:`寮のシャワーは夜１１時以降、使用しないこと。 `, mean: `Phòng tắm hoa sen của kí túc xá, sau 11h không sử dụng được`},
+{no:18, unit:1, subno:1, vd:1, word:`試験中は携帯電話の電源を切ること、筆記用具以外は机の上に置かないこと。 `, mean: `tắt nguồn điện thoại trong lúc làm bài thi,ngoại trừ những vật dụng để ghi chép thì được phép bỏ trên bàn.`},
+{no:19, unit:1, subno:1, vd:1, word:`Vて + 以来
 N `, mean: `Kể từ sau khi V..........
 Trạng thái vẫn được tiếp diễn cho tới tận bây giờ.`},
-{no:1, unit:1, subno:1, vd:1, word:`母が入院して以来、家事はすべて私がしています。 `, mean: `Khi mẹ ốm, tôi làm toàn bộ việc nhà.`},
-{no:1, unit:1, subno:1, vd:1, word:`N + をはじめ
+{no:20, unit:1, subno:1, vd:1, word:`母が入院して以来、家事はすべて私がしています。 `, mean: `Khi mẹ ốm, tôi làm toàn bộ việc nhà.`},
+{no:21, unit:1, subno:1, vd:1, word:`N + をはじめ
 N + をはじめとして
 N + をはじめとする + N `, mean: `sử dụng khi muốn nói rằng không chỉ... mà còn nhiều cái khác...
 tiêu biểu là, điển hình là........
 Khi nêu lên 1 ví dụ tiêu biểu, đại điện.`},
-{no:1, unit:1, subno:1, vd:1, word:`日本には富士山をはじめ、たくさんの美しい山がある。 `, mean: `Không chỉ núi phú sĩ, tại Nhật Bản còn rất nhiều ngọn núi đẹp.`},
-{no:1, unit:1, subno:1, vd:1, word:`N + のもとで
+{no:22, unit:1, subno:1, vd:1, word:`日本には富士山をはじめ、たくさんの美しい山がある。 `, mean: `Không chỉ núi phú sĩ, tại Nhật Bản còn rất nhiều ngọn núi đẹp.`},
+{no:23, unit:1, subno:1, vd:1, word:`N + のもとで
 N + のもとに `, mean: `Lấy N làm cơ sở.......
 dưới sự....(Trong phạm vi ảnh hưởng, trong điều kiện...mà một việc được tiến hành)`},
-{no:1, unit:1, subno:1, vd:1, word:`子供の人権は法のもとに守られている。 `, mean: `Quyền lợi của trẻ em được pháp luật bảo vệ.`},
-{no:1, unit:1, subno:1, vd:1, word:`N + はもとより `, mean: `N thì tất nhiên, ngoài ra còn .......
+{no:24, unit:1, subno:1, vd:1, word:`子供の人権は法のもとに守られている。 `, mean: `Quyền lợi của trẻ em được pháp luật bảo vệ.`},
+{no:25, unit:1, subno:1, vd:1, word:`N + はもとより `, mean: `N thì tất nhiên, ngoài ra còn .......
 Không chỉ N mà còn ......
 ...là tất nhiên, không chỉ...mà còn..
 sử dụng khi muốn giải thích trong bài phát biểu, đàm thoại`},
-{no:1, unit:1, subno:1, vd:1, word:`この温泉は、日本人はもとより、外国人にもたいへん人気があります。 `, mean: `Xông hơi không chỉ được người Nhật yêu thích, mà còn cả người nước ngoài nữa.`},
-{no:1, unit:1, subno:1, vd:1, word:`Vる、Vない ＋ ものだ
+{no:26, unit:1, subno:1, vd:1, word:`この温泉は、日本人はもとより、外国人にもたいへん人気があります。 `, mean: `Xông hơi không chỉ được người Nhật yêu thích, mà còn cả người nước ngoài nữa.`},
+{no:27, unit:1, subno:1, vd:1, word:`Vる、Vない ＋ ものだ
 Vる、Vない ＋ もんだ `, mean: `......thì là đương nhiên.
 bày tỏ sự phán đoàn của người nói cho rắng ai cũng nói như thế này, hoặc nghĩ rằng nó hoàn toàn đúng.
 có khi là sự nhắc nhở hay mệnh lệnh. 
 chú ý không sử dụng với người trên mình vì ra vẻ thượng trịch`},
-{no:1, unit:1, subno:1, vd:1, word:`さっきのお前の態度は何だ。人が話しているときには、ちゃんと聞くもんだぞ。 `, mean: `Bày tỏ sự phán đoán của người nói cho rằng ai cũng nghĩ như thế hay là nghĩ rằng nó hoàn toàn đúng.`},
-{no:1, unit:1, subno:1, vd:1, word:`Vる ＋上で `, mean: `Khi làm V thì ..... là cần thiết, không thể thiếu.`},
-{no:1, unit:1, subno:1, vd:1, word:`国際関係を考える上で、宗教問題は避けられない。 `, mean: `Khi quan hệ ngoại giao, thì không thể tránh được những vấn đề về tôn giáo.`},
-{no:1, unit:1, subno:1, vd:1, word:`V（bỏ masu）、Vない ＋ ながらも
+{no:28, unit:1, subno:1, vd:1, word:`さっきのお前の態度は何だ。人が話しているときには、ちゃんと聞くもんだぞ。 `, mean: `Bày tỏ sự phán đoán của người nói cho rằng ai cũng nghĩ như thế hay là nghĩ rằng nó hoàn toàn đúng.`},
+{no:29, unit:1, subno:1, vd:1, word:`Vる ＋上で `, mean: `Khi làm V thì ..... là cần thiết, không thể thiếu.`},
+{no:30, unit:1, subno:1, vd:1, word:`国際関係を考える上で、宗教問題は避けられない。 `, mean: `Khi quan hệ ngoại giao, thì không thể tránh được những vấn đề về tôn giáo.`},
+{no:31, unit:1, subno:1, vd:1, word:`V（bỏ masu）、Vない ＋ ながらも
 いA
 なA
 N `, mean: `Mặc dù ...... thế mà, ấy thế mà........`},
-{no:1, unit:1, subno:1, vd:1, word:`彼とは同じ寮に住んでいながら、ほとんど話をしたことがなかった。 `, mean: `Mặc dù sống cùng phòng anh ấy, nhưng hầu như không bao giờ nói chuyện.`},
-{no:1, unit:1, subno:1, vd:1, word:`A を B + とした + N3
+{no:32, unit:1, subno:1, vd:1, word:`彼とは同じ寮に住んでいながら、ほとんど話をしたことがなかった。 `, mean: `Mặc dù sống cùng phòng anh ấy, nhưng hầu như không bao giờ nói chuyện.`},
+{no:33, unit:1, subno:1, vd:1, word:`A を B + とした + N3
 A を B + とする
 A を B + としてに `, mean: `Xem A như là B...
 Lấy A làm B 
 thường dùng với 目的、中心、対象、手本、前提。。。`},
-{no:1, unit:1, subno:1, vd:1, word:`[みどりの会] は環境保護活動を目的とする市民の組織です。 `, mean: `lễ hội xanh lấy hoạt động bảo vệ môi trường làm mục đích để nâng cao ý thức người dân.`},
-{no:1, unit:1, subno:1, vd:1, word:`N を きっかけに `, mean: `Một khi đã làm V..... thì...........`},
-{no:1, unit:1, subno:1, vd:1, word:`彼の発言をきっかけとして、事件の真相が明らかになった。 `, mean: `Dựa vào lời nói của anh ấy, nguyên nhân(chân tướng) của vụ tại nạn dần trở lên sáng tỏ.`},
-{no:1, unit:1, subno:1, vd:1, word:`Vる、Vた ＋ からには `, mean: `Một khi đã làm V..... thì...........`},
-{no:1, unit:1, subno:1, vd:1, word:`冬、山に登るからには、日頃からトレーニングを続ける必要がある。 `, mean: `Mùa đông, một khi mà đã leo núi thì, phải tập luyện thường xuyên`},
-{no:1, unit:1, subno:1, vd:1, word:`わけではない
+{no:34, unit:1, subno:1, vd:1, word:`[みどりの会] は環境保護活動を目的とする市民の組織です。 `, mean: `lễ hội xanh lấy hoạt động bảo vệ môi trường làm mục đích để nâng cao ý thức người dân.`},
+{no:35, unit:1, subno:1, vd:1, word:`N を きっかけに `, mean: `Một khi đã làm V..... thì...........`},
+{no:36, unit:1, subno:1, vd:1, word:`彼の発言をきっかけとして、事件の真相が明らかになった。 `, mean: `Dựa vào lời nói của anh ấy, nguyên nhân(chân tướng) của vụ tại nạn dần trở lên sáng tỏ.`},
+{no:37, unit:1, subno:1, vd:1, word:`Vる、Vた ＋ からには `, mean: `Một khi đã làm V..... thì...........`},
+{no:38, unit:1, subno:1, vd:1, word:`冬、山に登るからには、日頃からトレーニングを続ける必要がある。 `, mean: `Mùa đông, một khi mà đã leo núi thì, phải tập luyện thường xuyên`},
+{no:39, unit:1, subno:1, vd:1, word:`わけではない
 わけじゃない `, mean: `Không hẳn là .........
 - Phủ định lại suy nghĩ của đói phương hoặc sự suy đoán thông thường`},
-{no:1, unit:1, subno:1, vd:1, word:`病気が治ったわけではない `, mean: `- Không muốn nói điều gì chắc chắn 100%
+{no:40, unit:1, subno:1, vd:1, word:`病気が治ったわけではない `, mean: `- Không muốn nói điều gì chắc chắn 100%
 không hẳn là đã hoàn toàn khỏi bệnh`},
-{no:1, unit:1, subno:1, vd:1, word:`あのレストランはおいしいわけでもないのに、いつも混んでいる。 `, mean: `Quán ăn này không hẳn là ngon lắm, vậy mà lúc nào cũng đông.`},
-{no:1, unit:1, subno:1, vd:1, word:`Vる ＋ ことなく `, mean: `Không làm V mà.........
+{no:41, unit:1, subno:1, vd:1, word:`あのレストランはおいしいわけでもないのに、いつも混んでいる。 `, mean: `Quán ăn này không hẳn là ngon lắm, vậy mà lúc nào cũng đông.`},
+{no:42, unit:1, subno:1, vd:1, word:`Vる ＋ ことなく `, mean: `Không làm V mà.........
 Hành động sau tiếp tục trong trạng thái không làm gì đó.`},
-{no:1, unit:1, subno:1, vd:1, word:`彼は一言も文句を言うことなく、重荷物を運んでいった。 `, mean: `Một lời cũng không nói, anh ấy đã chuyển hành lý nặng đi.`},
-{no:1, unit:1, subno:1, vd:1, word:`Vている＋にもかかわらず
+{no:43, unit:1, subno:1, vd:1, word:`彼は一言も文句を言うことなく、重荷物を運んでいった。 `, mean: `Một lời cũng không nói, anh ấy đã chuyển hành lý nặng đi.`},
+{no:44, unit:1, subno:1, vd:1, word:`Vている＋にもかかわらず
 N `, mean: `Mặc dù...... thế nhưng........(=~のに)
 Thực tế khác so mới mình dự đoán`},
-{no:1, unit:1, subno:1, vd:1, word:`彼の努力にもかかわらず、業績はよくならなかった。 `, mean: `Mặc dù đã dốc toàn lực, thế nhưng thành tích ko tốt lắm`},
-{no:1, unit:1, subno:1, vd:1, word:`として `, mean: `Với tư cách là........`},
-{no:1, unit:1, subno:1, vd:1, word:`入社後は企業人としての自覚を持って行動してください。 `, mean: `Sau khi vào công ty, nhân viên hãy làm việc 1 cách tự giác.`},
-{no:1, unit:1, subno:1, vd:1, word:`かぎり `, mean: `trong lúc còn là trạng thái ~`},
-{no:1, unit:1, subno:1, vd:1, word:`高齢者でも、働ける限りは働きたいと思っている人が多い。 `, mean: `Mặc dù cao tuổi, có nhiều người muốn làm việc trong khả năng của mình`},
-{no:1, unit:1, subno:1, vd:1, word:`ざるを得ない `, mean: `Không thích nhưng phải làm ~`},
-{no:1, unit:1, subno:1, vd:1, word:`台風接近のため、野外コンサートは中止さざるを得なくなった。 `, mean: `Vì bão sắp đến, không có lựa chọn nào khác phải dừng buổi biểu diễn ngoài trời`},
-{no:1, unit:1, subno:1, vd:1, word:`というものではない `, mean: `Mặc dù ngta thường nghĩ như thế nhưng
+{no:45, unit:1, subno:1, vd:1, word:`彼の努力にもかかわらず、業績はよくならなかった。 `, mean: `Mặc dù đã dốc toàn lực, thế nhưng thành tích ko tốt lắm`},
+{no:46, unit:1, subno:1, vd:1, word:`として `, mean: `Với tư cách là........`},
+{no:47, unit:1, subno:1, vd:1, word:`入社後は企業人としての自覚を持って行動してください。 `, mean: `Sau khi vào công ty, nhân viên hãy làm việc 1 cách tự giác.`},
+{no:48, unit:1, subno:1, vd:1, word:`かぎり `, mean: `trong lúc còn là trạng thái ~`},
+{no:49, unit:1, subno:1, vd:1, word:`高齢者でも、働ける限りは働きたいと思っている人が多い。 `, mean: `Mặc dù cao tuổi, có nhiều người muốn làm việc trong khả năng của mình`},
+{no:50, unit:1, subno:1, vd:1, word:`ざるを得ない `, mean: `Không thích nhưng phải làm ~`},
+{no:51, unit:1, subno:1, vd:1, word:`台風接近のため、野外コンサートは中止さざるを得なくなった。 `, mean: `Vì bão sắp đến, không có lựa chọn nào khác phải dừng buổi biểu diễn ngoài trời`},
+{no:52, unit:1, subno:1, vd:1, word:`というものではない `, mean: `Mặc dù ngta thường nghĩ như thế nhưng
 không thể nói rằng tuyệt đối là như thế ~`},
-{no:1, unit:1, subno:1, vd:1, word:`勉強は今日はやれば明日やらなくていいというものではない。 `, mean: `Không có gì đảm bảo rằng, ngày hôm nay học, ngày mai không học cũng được`},
-{no:1, unit:1, subno:1, vd:1, word:`はともかく（として） `, mean: `Tạm thời không nghĩ đến ~`},
-{no:1, unit:1, subno:1, vd:1, word:`彼が行くかどうかはともかく、初めの計画どおり旅行しよう。 `, mean: `Bất kể anh ấy có đến hay không, chúng ta vẫn sẽ đi du lịch theo kế hoạch`},
-{no:1, unit:1, subno:1, vd:1, word:`かねない `, mean: `Lo ngại ~, có lẽ ~`},
-{no:1, unit:1, subno:1, vd:1, word:`今のような経営方法では、２、３年のうちに倒産しかねない。 `, mean: `Với cách thức kinh doanh hiện tại, trong khoảng 2, 3 năm nữa có thể bị phá sản`},
-{no:1, unit:1, subno:1, vd:1, word:`というより `, mean: `Nói là B hơn nói là A ~`},
-{no:1, unit:1, subno:1, vd:1, word:`この絵は絵というより、まるで写真のようだ `, mean: `Bức tranh này giống như 1 bức ảnh thì đúng hơn`},
-{no:1, unit:1, subno:1, vd:1, word:`はいられない
+{no:53, unit:1, subno:1, vd:1, word:`勉強は今日はやれば明日やらなくていいというものではない。 `, mean: `Không có gì đảm bảo rằng, ngày hôm nay học, ngày mai không học cũng được`},
+{no:54, unit:1, subno:1, vd:1, word:`はともかく（として） `, mean: `Tạm thời không nghĩ đến ~`},
+{no:55, unit:1, subno:1, vd:1, word:`彼が行くかどうかはともかく、初めの計画どおり旅行しよう。 `, mean: `Bất kể anh ấy có đến hay không, chúng ta vẫn sẽ đi du lịch theo kế hoạch`},
+{no:56, unit:1, subno:1, vd:1, word:`かねない `, mean: `Lo ngại ~, có lẽ ~`},
+{no:57, unit:1, subno:1, vd:1, word:`今のような経営方法では、２、３年のうちに倒産しかねない。 `, mean: `Với cách thức kinh doanh hiện tại, trong khoảng 2, 3 năm nữa có thể bị phá sản`},
+{no:58, unit:1, subno:1, vd:1, word:`というより `, mean: `Nói là B hơn nói là A ~`},
+{no:59, unit:1, subno:1, vd:1, word:`この絵は絵というより、まるで写真のようだ `, mean: `Bức tranh này giống như 1 bức ảnh thì đúng hơn`},
+{no:60, unit:1, subno:1, vd:1, word:`はいられない
 ちゃいられない `, mean: `Không thể tiếp tục trạng thái ~`},
-{no:1, unit:1, subno:1, vd:1, word:`明日は早く起きるので、いつものように遅くまでテレビを見てはいられない。 `, mean: `Tôi phải dạy sớm vào ngày mai, vì vậy không thể xem TV muộn như mọi khi`},
-{no:1, unit:1, subno:1, vd:1, word:`Vます ＋ つつ `, mean: `Vừa ~ Vừa ~`},
-{no:1, unit:1, subno:1, vd:1, word:`この会議では各部署の問題検討しつつ、今後の方針を決定していきたいと思います。 `, mean: `Trong cuộc họp này, vừa thảo luận về các vấn đề của từng bộ phân, vừa bàn bạc để quyết định phương châm cuối cùng.`},
-{no:1, unit:1, subno:1, vd:1, word:`にわたって
+{no:61, unit:1, subno:1, vd:1, word:`明日は早く起きるので、いつものように遅くまでテレビを見てはいられない。 `, mean: `Tôi phải dạy sớm vào ngày mai, vì vậy không thể xem TV muộn như mọi khi`},
+{no:62, unit:1, subno:1, vd:1, word:`Vます ＋ つつ `, mean: `Vừa ~ Vừa ~`},
+{no:63, unit:1, subno:1, vd:1, word:`この会議では各部署の問題検討しつつ、今後の方針を決定していきたいと思います。 `, mean: `Trong cuộc họp này, vừa thảo luận về các vấn đề của từng bộ phân, vừa bàn bạc để quyết định phương châm cuối cùng.`},
+{no:64, unit:1, subno:1, vd:1, word:`にわたって
 にわたり
 にわたる + N
 にわたった + N `, mean: `Suốt thời gian dài, trải khắp ~`},
-{no:1, unit:1, subno:1, vd:1, word:`台風で電線が切れ、この町は全域にわたって停電した。 `, mean: `Trong phạm vi toàn bộ thành phố, tàu dừng hoạt động vì đường ray bị đứt do bão`},
-{no:1, unit:1, subno:1, vd:1, word:`N１ ＋ から ＋ N２ ＋ にかけて `, mean: `Từ khoảng ~ đến ~`},
-{no:1, unit:1, subno:1, vd:1, word:`日本、九州から四国地方にかけて、梅雨いりしました。 `, mean: `Ở Nhật từ Kyushyu đến vùng Shikoku, mùa mưa đã bắt đầu`},
-{no:1, unit:1, subno:1, vd:1, word:`にともなつて
+{no:65, unit:1, subno:1, vd:1, word:`台風で電線が切れ、この町は全域にわたって停電した。 `, mean: `Trong phạm vi toàn bộ thành phố, tàu dừng hoạt động vì đường ray bị đứt do bão`},
+{no:66, unit:1, subno:1, vd:1, word:`N１ ＋ から ＋ N２ ＋ にかけて `, mean: `Từ khoảng ~ đến ~`},
+{no:67, unit:1, subno:1, vd:1, word:`日本、九州から四国地方にかけて、梅雨いりしました。 `, mean: `Ở Nhật từ Kyushyu đến vùng Shikoku, mùa mưa đã bắt đầu`},
+{no:68, unit:1, subno:1, vd:1, word:`にともなつて
 にともない
 にともなう + N `, mean: `Cùng với, xảy ra đồng thời`},
-{no:1, unit:1, subno:1, vd:1, word:`経済の不況に伴って、失業した人が増えている。 `, mean: `Vì khủng hoảng kinh tế, tỷ lệ thất nghiệp đang tăng`},
-{no:1, unit:1, subno:1, vd:1, word:`おそれがある `, mean: `Khả năng cao là sẽ bị ~(việc nguy hiểm)`},
-{no:1, unit:1, subno:1, vd:1, word:`噴火のおそれがありますので、避難してください。 `, mean: `Núi lửa sợ rằng sẽ phun, hãy sơ tán`},
-{no:1, unit:1, subno:1, vd:1, word:`とともに `, mean: `Cùng với ~`},
-{no:1, unit:1, subno:1, vd:1, word:`彼女は家族と共に、アメリカに行くことになった。 `, mean: `Cô ấy sẽ đi du lịch Mỹ cùng với gia đình mình`},
-{no:1, unit:1, subno:1, vd:1, word:`Vます
+{no:69, unit:1, subno:1, vd:1, word:`経済の不況に伴って、失業した人が増えている。 `, mean: `Vì khủng hoảng kinh tế, tỷ lệ thất nghiệp đang tăng`},
+{no:70, unit:1, subno:1, vd:1, word:`おそれがある `, mean: `Khả năng cao là sẽ bị ~(việc nguy hiểm)`},
+{no:71, unit:1, subno:1, vd:1, word:`噴火のおそれがありますので、避難してください。 `, mean: `Núi lửa sợ rằng sẽ phun, hãy sơ tán`},
+{no:72, unit:1, subno:1, vd:1, word:`とともに `, mean: `Cùng với ~`},
+{no:73, unit:1, subno:1, vd:1, word:`彼女は家族と共に、アメリカに行くことになった。 `, mean: `Cô ấy sẽ đi du lịch Mỹ cùng với gia đình mình`},
+{no:74, unit:1, subno:1, vd:1, word:`Vます
 N 次第 `, mean: `Sẽ làm ngay sau khi~`},
-{no:1, unit:1, subno:1, vd:1, word:`雨がやみ次第、出発しましょう。 `, mean: `Khi mưa tạnh, hãy cùng xuất phát`},
-{no:1, unit:1, subno:1, vd:1, word:`V(た)
+{no:75, unit:1, subno:1, vd:1, word:`雨がやみ次第、出発しましょう。 `, mean: `Khi mưa tạnh, hãy cùng xuất phát`},
+{no:76, unit:1, subno:1, vd:1, word:`V(た)
 きり `, mean: `37.1 Kể từ khi, sau khi ~(cứ y như thế)
 37.2: Trạng thái ~ liên tục kéo dài.
 37.3: Chỉ~`},
-{no:1, unit:1, subno:1, vd:1, word:`家は２、３回使ったきりの健康器具がいくつむある。 `, mean: `Ở nhà, chỉ dùng có 2, 3 lần, nhưng có rất nhiều dụng cụ tập thể dục.`},
-{no:1, unit:1, subno:1, vd:1, word:`N,Vる
+{no:77, unit:1, subno:1, vd:1, word:`家は２、３回使ったきりの健康器具がいくつむある。 `, mean: `Ở nhà, chỉ dùng có 2, 3 lần, nhưng có rất nhiều dụng cụ tập thể dục.`},
+{no:78, unit:1, subno:1, vd:1, word:`N,Vる
 どころではない、どころじゃない `, mean: `Không phải lúc để~
 Không thể ~
 Dùng cho tâm trạng tiếc nối`},
-{no:1, unit:1, subno:1, vd:1, word:`A: 学校が終わったらカラオケいかない？
+{no:79, unit:1, subno:1, vd:1, word:`A: 学校が終わったらカラオケいかない？
 B: カラオケどころじゃないよ ！レポート、かかなきゃ。明日締め切りなんだ。 `, mean: `A: Này có thời gian đi hát karaoke ko ?
 B: Tiếc là t ko có thời gian ! Ngày mai là hạn nộp báo cáo rồi.`},
-{no:1, unit:1, subno:1, vd:1, word:`PI, Adj + ものの
+{no:80, unit:1, subno:1, vd:1, word:`PI, Adj + ものの
 N + であるものの `, mean: `~là sự thật, nhưng mà ~
 Dùng mới mục đích nhấn mạnh`},
-{no:1, unit:1, subno:1, vd:1, word:`この靴、デザインが気に入って買ったものの、履く機会が全然ないんだ。 `, mean: `Chiêc giày này, tôi hài lòng vs design của nó, nhưng chưa có cơ hội đi lần nào cả.`},
+{no:81, unit:1, subno:1, vd:1, word:`この靴、デザインが気に入って買ったものの、履く機会が全然ないんだ。 `, mean: `Chiêc giày này, tôi hài lòng vs design của nó, nhưng chưa có cơ hội đi lần nào cả.`},
 {no:1, unit:1, subno:1, vd:1, word:`Vた、Adj ＋ ことに `, mean: `Dùng vs mục đích nhấn mạnh`},
 {no:1, unit:1, subno:1, vd:1, word:`N ＋ にしては `, mean: `Khác với những gì dự đoán.`},
 {no:1, unit:1, subno:1, vd:1, word:`このお弁当は300円にして量も多い味もいい。 `, mean: `Hộp cơm này, với giá 300 Yên vừa rẻ lại vừa nhiều`},
