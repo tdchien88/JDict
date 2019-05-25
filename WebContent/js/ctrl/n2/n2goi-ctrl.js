@@ -38,10 +38,10 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
 
         $scope.data.wrongCount = 0;
         $scope.data.wrongCount_GOI = 2;
-        $scope.data.wrongCount_Kana1 = 4;
-        $scope.data.wrongCount_Kana2 = 6;
+        $scope.data.wrongCount_Kana1 = 3;
+        $scope.data.wrongCount_Kana2 = 4;
         $scope.data.wrongCountMin = 2;
-        $scope.data.wrongCountMax = 20;
+        $scope.data.wrongCountMax = 10;
 
         $scope.fcardChecked = false;
 
