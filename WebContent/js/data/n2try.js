@@ -1,5 +1,5 @@
 myApp.constant('n2try',  [
-N＋につき `, mean: `Vì ...........
+{no:1, unit:1, vd:1, word: `N＋につき `, mean: `Vì ...........
 nêu lý do
 (Hay dùng trong thông báo.)`},
 {no:1, unit:1, vd:1, word: `清掃中につき、お足元にご注意ください。 `, mean: `Vì đang trong chiến tranh, hãy cẩn thận.`},
@@ -531,5 +531,5 @@ Aな、
 N の ＋あまり `, mean: `Vì quá .... nên kết quả là (thường dùng khi kết quả không tốt)
 弟の病気を心配するあまり母は食欲がなくなり、すっかりやせてしまった。
 Vì quá lo lắng cho em trai bị ốm, mẹ không ăn uống gì, gầy đi trông thấy.`},
-{no:1, unit:1, vd:1, word: `
+
 ]);
