@@ -16,6 +16,7 @@ myApp.controller("mainController", ["$scope", function($scope){
                     {sref:"n2goi", name:"N2 GOI", param:"{type: 'GOI'}"},
                     {sref:"n2goi", name:"N2 KANJI", param:"{type: 'KANJI'}"},
                 ]},
+                {sref:"n2try", name:"TRY N2"},
                 {sref:"shadowing", name:"Shadowing"},
                 {sref:"mimikara", name:"Mimi Kara"},
                 {sref:"about", name:"About"},
@@ -25,5 +26,4 @@ myApp.controller("mainController", ["$scope", function($scope){
         return menu.sref+'('+menu.param+')';
     }
 }]);
-
 
