@@ -1,0 +1,147 @@
+<form name="try-form" class="animated fadeIn">
+<div class="row justify-content-center">
+<div class="col-md-12">
+    <div class="input-group  mb-2 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text w70">Unit</span>
+        </div>
+        <my-dropdown name="unit" ng-model="data.unit" default-item-idx="0" items="data.listUnit" ng-change="changeUnit()"></my-dropdown>
+        <span class="input-group-append">
+            <button class="btn btn-danger" type="button" ng-click="reset()">Reset</button>
+        </span>
+    </div>
+
+    <div class="input-group">
+            <div class="font-weight-bold " ng-class="{'hidden': data.learnType == 'newwords'}">【Idx: {{data.curIdx + 1}}】</div>
+
+            <input class="form-check-input hidden" id="inline-hardwords" ng-model="data.learnType"  type="radio" value="hardwords" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label text-warning ml-auto" ng-class="{'font-weight-bold border-bottom border-warning': data.learnType == 'hardwords'}"  for="inline-hardwords">★ ({{data.curUnit.listHardWords.length}})</label>
+
+            <input class="form-check-input hidden" id="inline-rememberd" ng-model="data.learnType"  type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label text-success ml-2" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == 'rememberd'}"  for="inline-rememberd">OK ({{data.curUnit.listRemember.length}})</label>
+
+            <input class="form-check-input hidden" id="inline-wrong" ng-model="data.learnType"  type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label text-danger ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.learnType == 'wrong'}" for="inline-wrong">NG ({{data.curUnit.listNotRemember.length}})</label>
+
+            <input class="form-check-input hidden" id="inline-newwords" ng-model="data.learnType"  type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label text-primary ml-2" ng-class="{'font-weight-bold border-bottom border-primary': data.learnType == 'newwords'}" for="inline-newwords">New ({{data.curUnit.listNewWords.length}})</label>
+
+            <input class="form-check-input hidden" id="inline-all" ng-model="data.learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
+            <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-dark': data.learnType == 'all'}" for="inline-all">All ({{data.curUnit.listCurrentWords.length}})</label>
+
+        </div>
+<div class="row">
+    <div class="col-4">
+        <!-- accordion -->
+       <div class="btn-group btn-group-sm mb-4" role="group" aria-label="Basic example">
+
+           <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+           Card
+           </button>
+
+           <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           All
+           </button>
+       </div><!-- END accordion -->
+    </div>
+
+    <div class="col-8">
+        <div class="progress-group mb-2">
+            <div class="input-group ">
+                <div class="progress-group-bars">
+                  <div class="progress bg-primary">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: {{(data.curUnit.listRemember.length) * 100 / data.curUnit.listCurrentWords.length}}%" aria-valuenow="{{data.curUnit.listRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.curUnit.listCurrentWords.length}}"></div>
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{(data.curUnit.listNotRemember.length ) * 100 / data.curUnit.listCurrentWords.length}}%" aria-valuenow="{{data.curUnit.listNotRemember.length}}" aria-valuemin="0" aria-valuemax="{{data.curUnit.listCurrentWords.length}}"></div>
+                  </div>
+                </div>
+                <button class="btn btn-link ml-2" type="button" ng-click="reZero()"><i class="fas fa-angle-double-left"></i> Re:Zero</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="accordion" id="accordion">
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+
+        <div class="card ">
+            <div class="card-header" >
+                <div class="form-check  form-check-inline">
+                    <input class="form-check-input hidden" id="card-mean" ng-model="data.cardType"  type="radio" value="mean" name="card-type" >
+                    <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'mean'}" for="card-mean">Mean</label>
+                    <input class="form-check-input hidden" id="card-word" ng-model="data.cardType"  type="radio" value="word" name="card-type" >
+                    <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'word'}" for="card-word">Word</label>
+                </div>
+
+            </div>
+            <div class="card-body p-2" >
+            <div class="fcard ">
+                <label class="fcard-inner" >
+                 <input ng-model="fcardChecked" type="checkbox"  class="fcard-input"  />
+                 <div class="fcard-card">
+                     <div class="fcard-front" ng-if="!fcardChecked">
+                          <div class="card h-100 justify-content-center p-2" >
+
+                                <h1 class="multi-lines" ng-if="data.cardType == 'mean'">{{data.curWord.mean}}</h1>
+                                <h1 class="multi-lines" ng-if="data.cardType == 'word'">{{data.curWord.word}}</h1>
+
+                          </div>
+                     </div>
+                     <div class="fcard-back" ng-if="fcardChecked">
+                        <div class="card h-100 justify-content-center p-2" >
+
+                            <dl >
+                            <dt class="col-sm-2 text-gray-500">語彙</dt>
+                            <dd class="col-sm-10"><h4 class="multi-lines">{{data.curWord.word}}</h4></dd>
+                            <dt class="col-sm-2 text-gray-500">Nghĩa</dt>
+                            <dd class="col-sm-10 text-danger"><h4 class="text-danger multi-lines">{{data.curWord.mean}}</h4></dd>
+                            </dl>
+
+                        </div>
+                     </div>
+                 </div>
+             </label>
+             </div>
+            </div>
+
+            <div class="card-footer">
+
+                <div class="row justify-content-center">
+                    <div class="btn-group btn-group-lg" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-success w150" ng-disabled="!fcardChecked || !data.curWord.mean" ng-click="itemCardClick('ok')">OK</button>
+                        <button type="button" class="btn btn-danger w150" ng-disabled="!fcardChecked || !data.curWord.mean" ng-click="itemCardClick('ng')">NG</button>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+
+        <table class="table table-sm table-hover table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="w50" >No</th>
+                <th scope="col" class="wp55">Nghĩa</th>
+                <th scope="col" class="">語彙</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in data.curList" >
+                <th class="wp5" scope="row">{{$index+1}}</th>
+                <td class="wp55 font-lg multi-lines">{{item.word}}</td>
+                <td class="wp40 text-danger multi-lines">{{item.mean}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+</form>
