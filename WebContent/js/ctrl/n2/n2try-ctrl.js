@@ -24,7 +24,7 @@ myApp.controller("n2tryCtrl", ["$scope", "$stateParams", 'localStorageService', 
         $scope.data.isFirstCorrect = false;
 
         $scope.data.learnType = 'all';//[all wrong rememberd newwords hardwords]
-        $scope.data.cardType = 'mean';//[word mean]
+        $scope.data.cardType = 'word';//[word mean]
         $scope.data.curList = [];
 
         $scope.data.wrongCount = 0;
