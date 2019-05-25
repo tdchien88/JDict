@@ -201,10 +201,11 @@
         <table class="table table-responsive-sm table-striped">
             <thead>
             <tr>
-                <th>Nghĩa</th>
-                <th>語彙</th>
-                <th>かな1</th>
-                <th>かな2</th>
+                <th class="col w50">#</th>
+                <th class="col ">Nghĩa</th>
+                <th class="col wp20">語彙</th>
+                <th class="col wp40">かな1</th>
+                <th class="col wp40">かな2</th>
             </tr>
             </thead>
             <tbody>
@@ -217,10 +218,11 @@
             </tr>
              -->
             <tr ng-repeat="item in data.curList" >
-                <td>{{item.mean}}</td>
-                <td>{{item.word}}</td>
-                <td>{{item.kana1}}</td>
-                <td>{{item.kana2}}</td>
+                <th class="row w50">{{$index}}</th>
+                <td class=" ">{{item.mean}}</td>
+                <td class="wp20">{{item.word}}</td>
+                <td class="wp40">{{item.kana1}}</td>
+                <td class="wp40">{{item.kana2}}</td>
             </tr>
             </tbody>
         </table>
