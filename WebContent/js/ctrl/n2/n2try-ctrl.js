@@ -9,7 +9,7 @@ myApp.controller("n2tryCtrl", ["$scope", "$stateParams", 'localStorageService', 
                 function($scope, $stateParams, localStorageService, dialogService, $timeout, n2try){
 
     function init(){
-        localStorageService.setPrefix('jdict.shadowing2');
+        localStorageService.setPrefix('jdict.n2try');
 
         $scope.data = {};
 
@@ -160,12 +160,12 @@ myApp.controller("n2tryCtrl", ["$scope", "$stateParams", 'localStorageService', 
 
     function saveStore(){
 
-        localStorageService.set("dataSHADOWING", $scope.data);
+        localStorageService.set("dataN2TRY", $scope.data);
     }
 
     function getStore(){
 
-        return  localStorageService.get("dataSHADOWING");
+        return  localStorageService.get("dataN2TRY");
 
     }
 
