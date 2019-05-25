@@ -2,7 +2,7 @@ myApp.constant('n2try',  [
 {no:1, unit:1, vd:1, word: `N＋につき `, mean: `Vì ...........
 nêu lý do
 (Hay dùng trong thông báo.)`},
-{no:1, unit:1, vd:1, word: `清掃中につき、お足元にご注意ください。 `, mean: `Vì đang trong chiến tranh, hãy cẩn thận.`},
+{no:1, unit:1, vd:1, word: `清掃中につき、お足元にご注意ください。 `, mean: `Vì đang trong dọn vệ sinh, hãy cẩn thận.`},
 {no:1, unit:1, vd:1, word: `N + をとわず (問わず) `, mean: `Không phân biệt, bất kể N..........
 (N: thường là các cặp đối nghĩa VD: nam nữ, già trẻ)
 dùng trong văn bản thông báo
