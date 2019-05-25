@@ -154,7 +154,7 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
             if($scope.data.isFirstCorrect){
                 $scope.data.curIdx++;
             } else {
-                //$scope.data.curIdx = 0;
+                $scope.data.curIdx = 0;
             }
         }
         else if($scope.data.learnType == 'newwords'){
