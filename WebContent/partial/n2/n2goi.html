@@ -199,7 +199,7 @@
         </div>
     -->
         <table class="table table-sm  table-hover table-striped">
-            <thead>
+            <thead class="thead-dark">
             <tr>
                 <th class="col wp5">#</th>
                 <th class="col wp20">Nghĩa</th>
@@ -218,8 +218,8 @@
             </tr>
              -->
             <tr ng-repeat="item in data.curList" >
-                <th class="row wp5">{{$index+1}}</th>
-                <td class=" wp20">{{item.mean}}</td>
+                <th class="wp5">{{$index+1}}</th>
+                <td class="wp20">{{item.mean}}</td>
                 <td class="wp25">{{item.word}}</td>
                 <td class="wp25">{{item.kana1}}</td>
                 <td class="wp25">{{item.kana2}}</td>
