@@ -354,7 +354,7 @@ Sáng nay ngủ thêm 30 phút, suýt chút nữa bị muộn giờ làm.`},
 上司と飲みに行くくらいなら、残業のほうがいいよ。
 Thời gian đi nhậu với sếp, thà OT còn hơn`},
 {no:144, unit:9, subno:91, vd:0, word:`まし `, mean: `Sử dụng khi muốn nói là không thể nói là tốt khi thử so sánh với những cái khác, nhưng không phải là tệ nhất`},
-{no:144, unit:9, subno:91, vd:1, word:`頑張ったほうがずっとましだ。`, mean: `Cố gắng bao giờ cũng tốt cả`},
+{no:145, unit:9, subno:91, vd:1, word:`頑張ったほうがずっとましだ。`, mean: `Cố gắng bao giờ cũng tốt cả`},
 {no:146, unit:10, subno:92, vd:0, word:`PI ＋
 ものがある `, mean: `Có cảm giác
 校長のスピーチには人々を感動させるものがあった。
