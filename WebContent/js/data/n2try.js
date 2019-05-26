@@ -1,5 +1,5 @@
 myApp.constant('n2try',  [
-/*
+
 {no:1, unit:1, subno:1, vd:0, word:`N＋につき `, mean: `Vì ...........
 nêu lý do
 (Hay dùng trong thông báo.)`},
@@ -203,7 +203,6 @@ Nói tôi ko thể trượt tuyết là không đúng, chỉ là đã lâu khôn
 だけ `, mean: `Làm ¬ đến hết mức có thể
 頑張れるだけがんばろう
 Hãy cố gắng hết mức có thể`},
-*/
 {no:100, unit:6, subno:56, vd:0, word:`もん `, mean: `Sử dụng khi giải thích lý do hoặc biện minh
 A:どして食べないの
 B:だって、全然美味しいくないんだもん。
