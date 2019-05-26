@@ -372,159 +372,157 @@ Mỗi lần nghe về sự thảm khốc của chiến tranh, lại thấu hiể
 わりに `, mean: `so với ~ thì(2 vế trái ngc vs snghi bthuong)(nếu so sánh vs cái mức thì người ta đương nhiên sẽ nghĩ từ)
 祖父は年齢のわりに若く見える。
 Ông trông trẻ hơn so với tuổi của mình.`},
-{no:150, unit:1, subno:1, vd:96, word:`Vる、Vた ＋
+{no:150, unit:10, subno:96, vd:0, word:`Vる、Vた ＋
 か ＋
 Vない ＋
 かのうちに `, mean: `Việc này chưa qua, việc khác đã xảy ra
 ５時になるかならないかのうちに、彼はさっさと帰り仕度を始めた。
 Đến 5h, anh ấy nhanh chóng thu xếp hành lý để ra về.`},
-{no:151, unit:1, subno:1, vd:1, word:`げ ～ そうだ `, mean: `Sử dụng nói lên ấn tượng mà bạn đã nhìn và cảm thấy dùng chúng với các từ thể hiện cảm xúc
+{no:151, unit:10, subno:97, vd:0, word:`げ ～ そうだ `, mean: `Sử dụng nói lên ấn tượng mà bạn đã nhìn và cảm thấy dùng chúng với các từ thể hiện cảm xúc
 プロジェクトメンバーは、誇らしげな表情で成功したことを報告した。
 Vẻ mặt mừng rỡ của các thành viên chứng tỏ project đã thành công.`},
-{no:152, unit:1, subno:1, vd:1, word:`やら ～ やら `, mean: `Đưa ra ví dụ để bày tỏ cảm xúc kinh ngạc hoặc mệt mỏi vì nhiều lý do khác nhau.
+{no:152, unit:10, subno:98, vd:0, word:`やら ～ やら `, mean: `Đưa ra ví dụ để bày tỏ cảm xúc kinh ngạc hoặc mệt mỏi vì nhiều lý do khác nhau.
 部屋代やら、交通やら、日本はとにかくお金がかかる。
 Tiền nhà rồi tiền phí đi lại, sống ở Nhật nói chung khá là tốn kém.`},
-{no:153, unit:1, subno:1, vd:1, word:`Vた ＋
+{no:153, unit:10, subno:99, vd:0, word:`Vた ＋
 かと思うと、かと思うたら `, mean: `Dùng khi giải thích chuyện của mình, 1 tình huống đột nhiên thay đổi
 空が光ったかと思うたら、校庭の桜の木に大きな雷が落ちる。
 Trời bỗng nhiên sáng trắng, cây hoa anh đào ở sân trường bị sét đánh trúng.`},
-{no:154, unit:1, subno:1, vd:1, word:`N ＋
+{no:154, unit:11, subno:100, vd:0, word:`N ＋
 ほかならない `, mean: `Nothing but, none other than (Không có gì khác ngoài)
 今回のプロジェットの成功は、テームワークの勝利にほかなりません。
 Sự thành công của project lần này, không có gì khác ngoài sự thắng lợi của tinh thần làm việc theo nhóm.`},
-{no:155, unit:1, subno:1, vd:1, word:`Vる、Vた、N ＋
+{no:155, unit:11, subno:101, vd:0, word:`Vる、Vた、N ＋
 にすぎない `, mean: `Chỉ có ~
 No more than, just, merely, only
 いくらはたらいても一か月の収入は２０万円にすぎない。
 Dù tôi có làm việc chăm chỉ thế nào, 1 tháng cũng chỉ kiếm được 20 man.`},
-{no:156, unit:1, subno:1, vd:1, word:`PI +
+{no:156, unit:11, subno:102, vd:0, word:`PI +
 上に `, mean: `Besides, In addition to (Thêm vào đó)
 先週は熱が４０度も出た上に、下痢が止まらず、本当に大変でした。
 Tuần trước không chỉ bị tiêu chảy, thêm vào đó nhiệt độ lúc nào cũng 40 độ, thật vất vả.`},
-{no:157, unit:1, subno:1, vd:1, word:`PI +
+{no:157, unit:11, subno:103, vd:0, word:`PI +
 といっても、
 といいましても `, mean: `Nói là vậy nhưng mà
 あの店、CDが安いんだって？
 まあね。安いといっても１０％だけどね。
 Cửa hàng này, đĩa CD rẻ nhỉ ?
 Nói vậy thôi, chỉ rẻ khoảng 10% so với bên ngoài thôi`},
-{no:158, unit:1, subno:1, vd:1, word:`Vる、Vない、N ＋
+{no:158, unit:11, subno:104, vd:0, word:`Vる、Vない、N ＋
 に限る `, mean: `Chắc chắn ~ là tốt nhất
 調子が悪いときは、ゆっくりやすむに限る。
 Khi cảm thấy không khỏe, tốt nhất là nên nghỉ ngơi.`},
-{no:159, unit:1, subno:1, vd:1, word:`Vる、Vた、Vている
+{no:159, unit1:1, subno:105, vd:0, word:`Vる、Vた、Vている
 Aい、Aな
 N（な） ＋
 だけあって、だけに `, mean: `Being the case, because (Điều đương nhiên, bởi vì)
 この町は文化遺産に登録されているだけあって、住民の環境保護に対する意識もたかい。
 Thị trấn này người dân có ý thức bảo vệ môi trường rất tốt, được đăng ký di sản văn hóa là điều đương nhỉ.`},
-{no:160, unit:1, subno:1, vd:1, word:`PI ＋
+{no:160, unit:11, subno:106, vd:0, word:`PI ＋
 にしろ、にしても、にせよ ＋
 PI ＋
-にしろ、にしても、にせよ `, mean: `Cái nào cũng ~
-大学院で研究しようと思ったら、理系にしても文系にしても、英語力は絶対必要だよ。
-Ở đại học khi nghĩ đến việc nghiên cứu, bất kể là khoa học tự nhiên hay khoa học xã hội, năng lực tiếng Nhật rất cần thiết.`},
-{no:161, unit:1, subno:1, vd:1, word:`12 `, mean: ``},
-{no:162, unit:1, subno:1, vd:1, word:`PI +
+にしろ、にしても、にせよ `, mean: `Cái nào cũng ~`},
+{no:161, unit:11, subno:106, vd:1, word:`大学院で研究しようと思ったら、理系にしても文系にしても、英語力は絶対必要だよ。`, mean: `Ở đại học khi nghĩ đến việc nghiên cứu, bất kể là khoa học tự nhiên hay khoa học xã hội, năng lực tiếng Nhật rất cần thiết.`},
+{no:162, unit:12, subno:107, vd:0, word:`PI +
 とか `, mean: `nghe nói là ~
 今年は花火大会、中止だとか。本当ですか。
 Năm nay nghe nói lễ hội bắn pháo hoa bị dừng lại. Thật không ?`},
-{no:163, unit:1, subno:1, vd:1, word:`N +
+{no:163, unit:12, subno:108, vd:0, word:`N +
 に沿って
 にそう、にそった＋N `, mean: `Along with, in accordance with (như, thuận theo)
 計画に沿って実施させているので、問題がないと思います。
 Nếu làm theo kế hoạch, tôi nghĩ sẽ không có vấn đề gì.`},
-{no:164, unit:1, subno:1, vd:1, word:`N +
+{no:164, unit:12, subno:109, vd:0, word:`N +
 にかけては `, mean: `Nếu nói về ~ (đánh giá tốt)
 Ở lĩnh vực ~
 コンピューターの知識にかけては誰にも負けないつもりだ。
 Ở lĩnh vực máy tính ai cũng không thua.`},
-{no:165, unit:1, subno:1, vd:1, word:`Vない ＋ 
+{no:165, unit:12, subno:110, vd:0, word:`Vない ＋ 
 ないことには ～ ない `, mean: `unless you do sth (Nếu không ~ thì không thể)
 もっと広い会場を借りないことには、観客を収容しきれないだろう。
 Nhất định phải thuê nơi nào thật rộng nếu không không thể chứa được hết khách.`},
-{no:166, unit:1, subno:1, vd:1, word:`V、N ＋
+{no:166, unit:12, subno:111, vd:0, word:`V、N ＋
 がち `, mean: `tend to do (Thường hay bị như)
 日本人は自分の意思をはっきり言わないので誤解されがちだ。
 Vì người Nhật thường không nói rõ ràng suy nghĩ của mình nên dễ gây hiểu nhầm.`},
-{no:167, unit:1, subno:1, vd:1, word:`V +
+{no:167, unit:12, subno:112, vd:0, word:`V +
 つつも `, mean: `While, although Mặc dù ~ nhưng rồi (thể hiện tâm trạng mặc dù nghĩ là nhưng thực tế thì đã làm chuyện không tốt mất rồi)
 早く寝ようと思いつつ、ゲームがやめられなくて、夜が明けてしまった。
 Mặc dù nghĩ rằng sẽ đi ngủ sớm, nhưng không từ bỏ được việc chơi game, lại sắp sáng mất rồi.`},
-{no:168, unit:1, subno:1, vd:1, word:`PI +
+{no:168, unit:12, subno:113, vd:0, word:`PI +
 としたら、
 とすると、
 とすれば `, mean: `If it were the case that, if we assume (Nếu nghĩ rằng thì)
 飛行機を行くとしたら、いくらぐらいかかりますか？
 Nếu đi bằng đường hàng không, mất bao nhiêu tiền ?`},
-{no:169, unit:1, subno:1, vd:1, word:`N ＋
+{no:169, unit:12, subno:114, vd:0, word:`N ＋
 次第で `, mean: `depending on, so
 今度の審査の結果次第で、国から研究資金がもらえるかどうか決まる。
 Dựa vào kết quả lần điều tra này, tiền đầu tư vào nghiên cứu sẽ được quyết định.`},
-{no:170, unit:1, subno:1, vd:1, word:`Vる ＋
+{no:170, unit:12, subno:115, vd:0, word:`Vる ＋
 一方
 (ばかり も同じ意味で使われる） `, mean: `Tình huống, trạng thái ~ đang dần dần tiếp tục tiến lên
 ここは静かな町だったのに、テレビで紹介されて以来、観光客が増える一方だ
 Thị trấn yên tĩnh này sau khi được giới thiệu trên TV, lượng khách du lịch đến thăm đang dần tăng lên.`},
-{no:171, unit:1, subno:1, vd:1, word:`N ＋
+{no:171, unit:12, subno:116, vd:0, word:`N ＋
 に先立って、
 に先立ち、
 に先立つ ＋ N `, mean: `Trước khi ~
 新しい機械の導入に先立ち、工場内で説明会が行われた。
 Trước khi đưa máy mới vào sử dụng, ở công trường đã có buổi giới thiệu về cách vận hành máy.`},
-{no:172, unit:1, subno:1, vd:1, word:`Vた、N ＋ の ＋
+{no:172, unit:12, subno:117, vd:0, word:`Vた、N ＋ の ＋
 上で、
 上での ＋ N `, mean: `Sau khi ~. Không sử dụng trong câu chuyện hàng ngày
 卒業後の進路は家族とよく相談した上で、決めたいと思います。
 sau khi tốt nghiệp, sau khi tham khảo ý kiến ra đình, muốn quyết định con đường sau này.`},
-{no:173, unit:1, subno:1, vd:1, word:`N ＋
+{no:173, unit:12, subno:118, vd:0, word:`N ＋
 にこたえて、
 にこたえた ＋ Nし `, mean: `in response to (theo nguyện vọng ~ )
 社員の要求にこたえて、労働時間を短縮した。
 Theo nguyện vọng của người lao động, giảm giờ làm.`},
-{no:174, unit:1, subno:1, vd:1, word:`13 － 人生の転機 `, mean: `Những bước ngoặt trong cuộc đời`},
-{no:175, unit:1, subno:1, vd:1, word:`Vた、Vない ＋
+{no:174, unit:12, subno:118, vd:1, word:`13 － 人生の転機 `, mean: `Những bước ngoặt trong cuộc đời`},
+{no:175, unit:13, subno:119, vd:0, word:`Vた、Vない ＋
 たことにする `, mean: `Cứ coi như là ~
 ごめん！財布落としちゃって。食事をおごる話はなかったことにしてくれる？
 ？？？`},
-{no:176, unit:1, subno:1, vd:1, word:`Vる、Vた、
+{no:176, unit:13, subno:120, vd:0, word:`Vる、Vた、
 Vている、
 N の ＋
 つもり `, mean: `Nghĩ rằng, tưởng rằng ~
 説明書通りにやっているつもりなのに、どうしてもうまくできない。`},
-{no:177, unit:1, subno:1, vd:1, word:`Vて、
+{no:177, unit:13, subno:121, vd:0, word:`Vて、
 Aい（くて）、
 Aな（で） ＋
 ならない `, mean: `Hết sức, vô cùng ~
 日本人がどうしてあんなに謝るのか不思議でならないという外国人は多い。
 ？？？`},
-{no:178, unit:1, subno:1, vd:1, word:`Vできる ＋
+{no:178, unit:13, subno:122, vd:0, word:`Vできる ＋
 ものなら、もんなら `, mean: `Nếu ~(Kì vọng vào 1 điều không có thực trong thực tế)
 子供のころから星が好きだったので、行けるものなら宇宙旅行に行ってみたいと思います。
 Khi còn nhỏ, rất thích ngắm sao, nếu có thể đi sẽ đi du lịch vũ trụ.`},
-{no:179, unit:1, subno:1, vd:1, word:`Vよう ＋
+{no:179, unit:13, subno:123, vd:0, word:`Vよう ＋
 か ＋
 Vる ＋
 まいか `, mean: `Không biết có được (Dùng khi tâm trạng hoang mang, bối rối không biết phải làm thế nào)
 彼は夏休みに国へ帰ろうか帰るまいかと悩んでいるらしい。
 Anh ấy lo rằng kì nghỉ hè không biết có về thăm nhà được không`},
-{no:180, unit:1, subno:1, vd:1, word:`Vた、N の ＋末に `, mean: `As the conclustion of (Sau 1 thời gian dài phấn đấu, cuối cùng cũng)
+{no:180, unit:13, subno:124, vd:0, word:`Vた、N の ＋末に `, mean: `As the conclustion of (Sau 1 thời gian dài phấn đấu, cuối cùng cũng)
 よく考えた末に、彼女と結婚することにした。
 Sau 1 thời gian dài suy nghĩ, cuối cùng tối quyết định kết hôn với cô ấy.`},
-{no:181, unit:1, subno:1, vd:1, word:`たとえ ＋
+{no:181, unit:13, subno:125, vd:0, word:`たとえ ＋
 Vても、
 Aい（く）ても、
 Aな（で）も、
 Nでも `, mean: `Giả sử (mặc dù) có ~ đi chăng nữa
 たとえ遠く離れていても、君の友情は決して忘れない。
 Dù có cách xa như thế nào, tình bạn của chúng ta sẽ không bao giờ nhạt phai.`},
-{no:182, unit:1, subno:1, vd:1, word:`V ＋がたい `, mean: `làm V thật khó ~ mãi không thể làm V
+{no:182, unit:13, subno:126, vd:0, word:`V ＋がたい `, mean: `làm V thật khó ~ mãi không thể làm V
 彼の話は信じがたい内容だった。
 Khó có thể tin được câu chuyện của anh ấy.`},
-{no:183, unit:1, subno:1, vd:1, word:`N ＋もかまわず `, mean: `làm mà không màng tới - ý phê phán
+{no:183, unit:13, subno:127, vd:0, word:`N ＋もかまわず `, mean: `làm mà không màng tới - ý phê phán
 電車の中で人目もかまわず、お化粧するのはどうかと私は思う。
 Trong tàu điện trang điểm mà không cần nghĩ tới mọi người nghĩ gì.`},
-{no:184, unit:1, subno:1, vd:1, word:`Vる、
+{no:184, unit:13, subno:128, vd:0, word:`Vる、
 Aな、
 N の ＋あまり `, mean: `Vì quá .... nên kết quả là (thường dùng khi kết quả không tốt)
 弟の病気を心配するあまり母は食欲がなくなり、すっかりやせてしまった。
