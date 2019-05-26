@@ -412,7 +412,7 @@ Nói vậy thôi, chỉ rẻ khoảng 10% so với bên ngoài thôi`},
 に限る `, mean: `Chắc chắn ~ là tốt nhất
 調子が悪いときは、ゆっくりやすむに限る。
 Khi cảm thấy không khỏe, tốt nhất là nên nghỉ ngơi.`},
-{no:159, unit1:1, subno:105, vd:0, word:`Vる、Vた、Vている
+{no:159, unit:11, subno:105, vd:0, word:`Vる、Vた、Vている
 Aい、Aな
 N（な） ＋
 だけあって、だけに `, mean: `Being the case, because (Điều đương nhiên, bởi vì)
