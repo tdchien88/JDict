@@ -168,213 +168,211 @@ Chuyện trong công ty dù nhỏ cũng ko nên nói cho người ngoài biết.
 {no:91, unit:5, subno:47, vd:0, word:`Vる ＋ だけ ＋ V `, mean: `Có lẽ không được nhưng thử làm
 Rakuten partnership プログランムは合格するのは難しいけど、応募だけ応募してみる.
 Rakuten partnership program khó mà đỗ được, nhưng mà thử ứng tuyển xem sao`},
-{no:92, unit:6, subno:48, vd:1, word:`PI + ばかりに `, mean: `Chỉ vì ~(bị kết quả xấu, thật đáng tiếc)
+{no:92, unit:6, subno:48, vd:0, word:`PI + ばかりに `, mean: `Chỉ vì ~(bị kết quả xấu, thật đáng tiếc)
 日本の能力試験が２点足りないばかりに、失敗したんだ。
 Chỉ vì thiếu 2 điểm, bị trượt bài kiểm tra năng lực tiếng Nhật.`},
-{no:93, unit:6, subno:49, vd:1, word:`Vる ＋ ことはない、こともない `, mean: `Không cần phải làm ~
+{no:93, unit:6, subno:49, vd:0, word:`Vる ＋ ことはない、こともない `, mean: `Không cần phải làm ~
 虫に刺されたくらいで病院に行くことはないよ。２、３日で治るから
 Khi bị côn trùng đốt không cần thiết đến bệnh viện, 2, 3 ngày sẽ khỏi.`},
-{no:94, unit:6, subno:50, vd:1, word:`N ＋ に比べて `, mean: `So với ~
+{no:94, unit:6, subno:50, vd:0, word:`N ＋ に比べて `, mean: `So với ~
 スピーチコンテストはエウェグジンス学校はメーロスに比べて、会場が狭いです・
 Speech contest của trường Evergreen so với của Meros, hội trường hẹp hơn.`},
-{no:95, unit:6, subno:51, vd:1, word:`Vる、Adj、Nな ＋
+{no:95, unit:6, subno:51, vd:0, word:`Vる、Adj、Nな ＋
 ものか `, mean: `Tuyệt đối không phải là ~
 ~ là sai
 Sử dụng khi nhấn mạnh rằng nhất quyết mình sẽ không làm việc gì
 この店はサービスが悪いですから、二度と来るものか。
 Vì cửa hàng này dịch vụ rất là kém, sẽ không đến lần thứ 2.`},
-{no:96, unit:1, subno:1, vd:1, word:`N ＋ 
+{no:96, unit:6, subno:52, vd:0, word:`N ＋ 
 というものだ `, mean: `Thường là như thế (không phải ý kiến cá nhân)
 一日に２０時間も働くのは無理というものだ。
 1 ngày làm việc 20h gần như là không thể.`},
-{no:97, unit:1, subno:1, vd:1, word:`Vば
+{no:97, unit:6, subno:53, vd:0, word:`Vば
 A(な）、Nであれば
 ＋
 こそ `, mean: `Dùng khi nhấn mạnh
 この山の自然を愛すればこそ、観光客の数を厳しく制限しているのです。
 ？？？`},
-{no:98, unit:1, subno:1, vd:1, word:`Vない、A（い）く、A（な）で
+{no:98, unit:6, subno:54, vd:0, word:`Vない、A（い）く、A（な）で
 ＋
 ないことはない、ないこともない `, mean: `Không phải là không~
 スキーはできないことはないですが、もう何年もやってないから。
 Nói tôi ko thể trượt tuyết là không đúng, chỉ là đã lâu không trượt thôi`},
-{no:99, unit:1, subno:1, vd:1, word:`V－できる ＋
+{no:99, unit:6, subno:55, vd:0, word:`V－できる ＋
 だけ `, mean: `Làm ¬ đến hết mức có thể
 頑張れるだけがんばろう
 Hãy cố gắng hết mức có thể`},
-{no:100, unit:1, subno:1, vd:1, word:`もん `, mean: `Sử dụng khi giải thích lý do hoặc biện minh
+{no:100, unit:6, subno:56, vd:0, word:`もん `, mean: `Sử dụng khi giải thích lý do hoặc biện minh
 A:どして食べないの
 B:だって、全然美味しいくないんだもん。
 A:Tại sao không ăn cơm?
 B:Cơm chả ngon tí nào cả`},
-{no:101, unit:1, subno:1, vd:1, word:`Vる、Vない
+{no:101, unit:6, subno:57, vd:0, word:`Vる、Vない
 ＋
 わけにはいかない `, mean: `Vì có lý do nên không thể làm ~
 もすぐテストがあるので、一生懸命勉強しないわけにはいかない
 Bài kiểm tra đến nơi rồi, phải học hành chăm chỉ thôi.`},
-{no:102, unit:1, subno:1, vd:1, word:`Vる、N ＋
+{no:102, unit:6, subno:58, vd:0, word:`Vる、N ＋
 のみ `, mean: `Chỉ, thường sử dụng khi thông báo
 太枠内のみご記入ください。
 Hãy điền vào phần trong khung đậm.`},
-{no:103, unit:1, subno:1, vd:1, word:`Vた、A、Nの ＋
+{no:103, unit:6, subno:59, vd:0, word:`Vた、A、Nの ＋
 つもりで `, mean: `Thực sự không phải như vậy nhưng có cảm giác là như thế đó.いつまでも若いつもりで徹夜していると体をこわすよ。`},
-{no:104, unit:1, subno:1, vd:1, word:`N +
+{no:104, unit:7, subno:60, vd:0, word:`N +
 から見ると、
 から見れば、
 から見て `, mean: `Nhìn từ, xét theo ~
 便利さという点から見えると、やはり田舎より都会のほうが暮らしやすい。
 Nếu xét về mặt tiện lợi, thì sông sở thành thị sẽ thích hơn ở nông thôn`},
-{no:105, unit:1, subno:1, vd:1, word:`PI (Aな、Nの）＋
+{no:105, unit:7, subno:61, vd:0, word:`PI (Aな、Nの）＋
 一方 `, mean: `Mặt khác ~, trái lại ~
 仕事を求めて都会に出る若者がいる一方、故郷に戻って就職する若者もいる。
 Có những người trẻ mong muốn 1 công việc ở thành phố, nhưng cũng có người muốn quay trở về quê hương làm việc.`},
-{no:106, unit:1, subno:1, vd:1, word:`PI、A/N である ＋
+{no:106, unit:7, subno:62, vd:0, word:`PI、A/N である ＋
 ことから `, mean: `Bởi vì ~
 Nói lý do làm căn cứ cho câu sau
 Dùng khi nói về một vật hoặc 1 vùng đất có cái tên đó hoặc lý do đưa ra phán đoán
 富士山が見えることから、この町は富士見町という名前がついた。
 Vì có thể nhìn thấy fujisan từ thị trấn này, nên nó có tên là fujimichou`},
-{no:107, unit:1, subno:1, vd:1, word:`PI、Aな/N である ＋
+{no:107, unit:7, subno:63, vd:0, word:`PI、Aな/N である ＋
 のみならず `, mean: `Không chỉ ~mà còn~
 ワピースは日本のみならず、外国でもよく知られている。
 One piece ko chỉ được biết đến rộng rãi ở Nhật, mà còn ở nước ngoài.`},
-{no:108, unit:1, subno:1, vd:1, word:`N +
+{no:108, unit:7, subno:64, vd:0, word:`N +
 といった `, mean: `such ... as
 Lấy ví dụ cụ thể để giải 
 ネズミやビーバーといった
 Chuột và hải ly`},
-{no:109, unit:1, subno:1, vd:1, word:`Vる、N ＋
+{no:109, unit:7, subno:65, vd:0, word:`Vる、N ＋
 にしたがって、にしたがい `, mean: `Cùng với sự thay đổi của ~(cái # cũng thay đổi theo)
 暑くなるにしたがって、体調を崩す人が増えた。
 ???`},
-{no:110, unit:1, subno:1, vd:1, word:`V +
+{no:110, unit:7, subno:66, vd:0, word:`V +
 得る/得る `, mean: `Có thể, có k.năng~
 そんなことがあり得るのだろうか？
 Có khả năng xảy ra không ?`},
-{no:111, unit:1, subno:1, vd:1, word:`N +
+{no:111, unit:7, subno:67, vd:0, word:`N +
 に反して
 に反し
 に反する ＋N
 に反した ＋N `, mean: `Kq, trạng thái ngược vs kỳ vọng,đã dự đoán
 彼は、親の意向に反して、戦場カメラマンになった。
 Trái với mong muốn của bố mẹ, anh ấy trở thành phóng viên chiến trường.`},
-{no:112, unit:1, subno:1, vd:1, word:`N ＋
+{no:112, unit:7, subno:68, vd:0, word:`N ＋
 に関して
 に関する ＋N `, mean: `liên quan đến ~
 修理に関するお問い合わせはサービスセンターまでお電話かメールでご連絡ください。
 Liên quan tới việc sửa chữa, hãy liên lạc bằng số điện thoại hoặc gửi mail đến trung tâm bảo hành.`},
-{no:113, unit:1, subno:1, vd:1, word:`PI +
+{no:113, unit:7, subno:69, vd:0, word:`PI +
 反面/半面 `, mean: `mặt khác ~, mặt trái ~
 フェースブックは便利な半面、トラブルも多い。
 Facebook rất tiện lợi, nhưng mặt khác cũng gây ra nhiều phiên toái.`},
-{no:114, unit:1, subno:1, vd:1, word:`N ＋
+{no:114, unit:7, subno:70, vd:0, word:`N ＋
 上 `, mean: `Từ điểm ~ mà suy xét
 スポーツは、子供にとって健康上はもちろん、教育上もいい点がたくさんある。
 Thể thao đối với trẻ em, đứng trên cả phương diện sức khỏe và giáo dục đều có tác dụng tốt.`},
-{no:115, unit:1, subno:1, vd:1, word:`V +
+{no:115, unit:7, subno:71, vd:0, word:`V +
 つつある `, mean: `dần dần đang ( giải thích rằng cái gì đó đang thay đổi từng chút một)
 日本では子供の数が減りつつある。
 Số lượng trẻ em được sinh ra ở Nhật đang giảm dần.`},
-{no:116, unit:1, subno:1, vd:1, word:`N +
+{no:116, unit:7, subno:72, vd:0, word:`N +
 に限らず `, mean: `Không chỉ ~, cái khác cũng ~
 水の問題は特定の地域に限らず、世界的な問題になるだるう。
 Vấn đề về nước không chỉ là vẫn đề của 1 khu vực nào đó mà là vấn đề của toàn thế giới`},
-{no:117, unit:1, subno:1, vd:1, word:`謙譲語 `, mean: `Khiêm nhường ngữ`},
-{no:118, unit:1, subno:1, vd:1, word:`来る `, mean: `お見えになる
+{no:117, unit:8, subno:73, vd:0, word:`謙譲語 `, mean: `Khiêm nhường ngữ`},
+{no:118, unit:8, subno:73, vd:1, word:`来る `, mean: `お見えになる
 お越になる`},
-{no:119, unit:1, subno:1, vd:1, word:`行く・来る・いる `, mean: `おいでになる`},
-{no:120, unit:1, subno:1, vd:1, word:`ている `, mean: `ておいでになる`},
-{no:121, unit:1, subno:1, vd:1, word:`見せる `, mean: `ご覧にいれる`},
-{no:122, unit:1, subno:1, vd:1, word:`聞く・引き受ける `, mean: `承る（うけたまわる）`},
-{no:123, unit:1, subno:1, vd:1, word:`借りる `, mean: `拝借する`},
-{no:124, unit:1, subno:1, vd:1, word:`思う（知っている） `, mean: `存じる`},
-{no:125, unit:1, subno:1, vd:1, word:`伝言する `, mean: `申し伝える`},
-{no:126, unit:1, subno:1, vd:1, word:`ていく・てくる `, mean: `てまいる`},
-{no:127, unit:1, subno:1, vd:1, word:`おV、ご N ＋
+{no:119, unit:8, subno:73, vd:1, word:`行く・来る・いる `, mean: `おいでになる`},
+{no:120, unit:8, subno:73, vd:1, word:`ている `, mean: `ておいでになる`},
+{no:121, unit:8, subno:73, vd:1, word:`見せる `, mean: `ご覧にいれる`},
+{no:122, unit:8, subno:73, vd:1, word:`聞く・引き受ける `, mean: `承る（うけたまわる）`},
+{no:123, unit:8, subno:73, vd:1, word:`借りる `, mean: `拝借する`},
+{no:124, unit:8, subno:73, vd:1, word:`思う（知っている） `, mean: `存じる`},
+{no:125, unit:8, subno:73, vd:1, word:`伝言する `, mean: `申し伝える`},
+{no:126, unit:8, subno:73, vd:1, word:`ていく・てくる `, mean: `てまいる`},
+{no:127, unit:8, subno:74, vd:0, word:`おV、ご N ＋
 願う `, mean: `Được sử dụng khi nhờ cậy 1 ai đó 1 cách lịch sự trong các tình huống kinh doanh
 こちらで少々お待ち願えますか。`},
-{no:128, unit:1, subno:1, vd:1, word:`おV. ごN ＋
+{no:128, unit:8, subno:75, vd:0, word:`おV. ごN ＋
 申し上げる `, mean: `Được sử dụng khi mình làm cái gì đó cho đối phương
 新校舎健康のため、ご寄付をお願い申し上げる。
 ???`},
-{no:129, unit:1, subno:1, vd:1, word:`Vば ＋
+{no:129, unit:8, subno:76, vd:0, word:`Vば ＋
 と思う `, mean: `Nếu có thể tôi muốn bạn làm
 こちらの事情をご理解いただければと思います。
 Nếu có thể làm ơn giải thích lý do.`},
-{no:130, unit:1, subno:1, vd:1, word:`につきまして `, mean: `？？？`},
-{no:131, unit:1, subno:1, vd:1, word:`PI ＋
+{no:130, unit:8, subno:77, vd:0, word:`につきまして `, mean: `？？？`},
+{no:131, unit:9, subno:78, vd:0, word:`PI ＋
 のなんのって `, mean: `vô cùng ~
 ああ、恐ろしかったのなんのって。あの恐ろしさは誰にも判りっこないわ。
 Không thể diễn tả được nó kinh khủng như thế nào. Không nghĩ rằng bất cứ ai có thể hiểu cảm giác đó.`},
-{no:132, unit:1, subno:1, vd:1, word:`V +
+{no:132, unit:9, subno:79, vd:0, word:`V +
 たて `, mean: `trạng thái ngay sau khi ~ được hình thành, trở nên ~
 このベンチ、ペンキぬりたてだって。
 Ghế dài vừa mới sơn phải không`},
-{no:133, unit:1, subno:1, vd:1, word:`N ＋ ったら `, mean: `Sử dụng khi muốn nói về điều mang tính phế phán đói với đối tượng gần gũi mình
+{no:133, unit:9, subno:80, vd:0, word:`N ＋ ったら `, mean: `Sử dụng khi muốn nói về điều mang tính phế phán đói với đối tượng gần gũi mình
 うちの弟ったら、私がとっておいたお菓子、全部たばちゃったんだよ。
 ？？？`},
-{no:134, unit:1, subno:1, vd:1, word:`Vる/Vない ＋
+{no:134, unit:9, subno:81, vd:0, word:`Vる/Vない ＋
 ようになっている `, mean: `Sử dụng khi giải thích ví dụ như hệ thống máy móc hoặc cơ`},
-{no:135, unit:1, subno:1, vd:1, word:`PI +
+{no:135, unit:9, subno:82, vd:0, word:`PI +
 わけだ `, mean: `Kđ sự thật. Hèn chi ~
 この道、カーブが多くて見通しが悪いし、街灯は少ないし
 本当だね。事故が多いわけだ。
 Con đường này nhiều chỗ uốn lượn, tầm nhìn kém, đèn đường ít.
 Thật à, tai nạn chắc là nhiều lắm nhỉ`},
-{no:136, unit:1, subno:1, vd:1, word:`PI +
+{no:136, unit:9, subno:83, vd:0, word:`PI +
 どころか `, mean: `Chẳng những mà ngay cả
 高校生のときは、海外旅行どころか国内旅行もしたことがありませんでした。
 Lúc học cấp 3, chẳng những không đi du lịch nước ngoài mà ngay cả trong nước cũng không.`},
-{no:137, unit:1, subno:1, vd:1, word:`Vる/Vない ＋
+{no:137, unit:9, subno:84, vd:0, word:`Vる/Vない ＋
 ようでは、ようじゃ `, mean: `Nếu cứ tiếp tục trạng thái hiện tại sẽ không có kq tốt 
 こんな質問をするようでは、まだ勉強が足りない。
 Nếu cứ hỏi những câu ntn, chứng tỏ mày học chưa đủ chăm chỉ`},
-{no:138, unit:1, subno:1, vd:1, word:`N, Aな、Aい ＋
+{no:138, unit:9, subno:85, vd:0, word:`N, Aな、Aい ＋
 ぶる `, mean: `Thực tế không phải vậy nhưng ra vẻ làm như ~
 あの人は大企業の社長なのに少しも偉ぶったところがない。
 Người này trông có vẻ không quyết đoán như 1 giám đốc ???`},
-{no:139, unit:1, subno:1, vd:1, word:`N +
+{no:139, unit:9, subno:86, vd:0, word:`N +
 に限って `, mean: `only, paricular (when)
 Nói mang tính phê phán rằng "người ở vị trí ¬ thường có khuynh hướng" ???
 金持ちに限って、けちでお金を出すのを嫌がるんだよね。
 Những người giàu có thường keo kiệt, đáng ghét !`},
-{no:140, unit:1, subno:1, vd:1, word:`Vる、Vない ＋
+{no:140, unit:9, subno:87, vd:0, word:`Vる、Vない ＋
 ことだ `, mean: `Thể hiện sự phán đoán của người nói rằng bạn nên làm, bạn phải làm
 強くなりたかったら、自分の長所をのばすことだ。
 Sau khi trở nên mạnh hơn, hãy phát huy sở trường của mình.`},
-{no:141, unit:1, subno:1, vd:1, word:`N ＋ という ＋ N `, mean: `ý nói tất cả ~
+{no:141, unit:9, subno:88, vd:0, word:`N ＋ という ＋ N `, mean: `ý nói tất cả ~
 田中監督はこの映画で、今年の映画関連の賞という賞を独占した。
 Đạo diễn Tanaka, với bộ phim này, năm nay độc chiếm tất cả các giải thưởng.`},
-{no:142, unit:1, subno:1, vd:1, word:`Vる ＋
+{no:142, unit:9, subno:89, vd:0, word:`Vる ＋
 ところだった `, mean: `Đã sắp sửa trở thành tình huống, suýt chút nữa bị (nhưng thực tế không trở nên như thế)
 今朝は３０分も寝坊しちゃって、危ういく遅刻するところだったよ。
 Sáng nay ngủ thêm 30 phút, suýt chút nữa bị muộn giờ làm.`},
-{no:143, unit:1, subno:1, vd:1, word:`Vる ＋
+{no:143, unit:9, subno:90, vd:0, word:`Vる ＋
 くらいなら `, mean: `Nếu phải A thì thì B còn hơn
 上司と飲みに行くくらいなら、残業のほうがいいよ。
 Thời gian đi nhậu với sếp, thà OT còn hơn`},
-{no:144, unit:1, subno:1, vd:1, word:`まし `, mean: `Sử dụng khi muốn nói là không thể nói là tốt khi thử so sánh với những cái khác, nhưng không phải là tệ nhất
-頑張ったほうがずっとましだ。
-Cố gắng bao giờ cũng tốt cả`},
-{no:145, unit:1, subno:1, vd:1, word:`10 満員電車 `, mean: ``},
-{no:146, unit:1, subno:1, vd:1, word:`PI ＋
+{no:144, unit:9, subno:91, vd:0, word:`まし `, mean: `Sử dụng khi muốn nói là không thể nói là tốt khi thử so sánh với những cái khác, nhưng không phải là tệ nhất`},
+{no:144, unit:9, subno:91, vd:1, word:`頑張ったほうがずっとましだ。`, mean: `Cố gắng bao giờ cũng tốt cả`},
+{no:146, unit:10, subno:92, vd:0, word:`PI ＋
 ものがある `, mean: `Có cảm giác
 校長のスピーチには人々を感動させるものがあった。
 Bài phát biểu của hiệu trưởng có cảm giác làm rung động mọi người.`},
-{no:147, unit:1, subno:1, vd:1, word:`Vる ＋
+{no:147, unit:10, subno:93, vd:0, word:`Vる ＋
 まい `, mean: `won't, intend not to (khả năng thấp, rất ít)
 どんなに生活習慣が変わっても、日本から畳の部屋がなくなることはあるまい。
 Dù tập quán sinh hoạt có thay đổi thế nào đi nữa, 
 với Nhật Bản những căn phòng với chiếu Tatami sẽ không biến mất.`},
-{no:148, unit:1, subno:1, vd:1, word:`Vる ＋
+{no:148, unit:10, subno:94, vd:0, word:`Vる ＋
 につけ `, mean: `mỗi lần nhìn thấy, nghe thấy ~(luôn nghĩ ~)
 戦争の悲惨な体験を聞くにつけ、平和の大切さを痛感する。
 Mỗi lần nghe về sự thảm khốc của chiến tranh, lại thấu hiểu sự quan trọng của hòa bình.`},
-{no:149, unit:1, subno:1, vd:1, word:`PI ＋
+{no:149, unit:10, subno:95, vd:0, word:`PI ＋
 わりに `, mean: `so với ~ thì(2 vế trái ngc vs snghi bthuong)(nếu so sánh vs cái mức thì người ta đương nhiên sẽ nghĩ từ)
 祖父は年齢のわりに若く見える。
 Ông trông trẻ hơn so với tuổi của mình.`},
-{no:150, unit:1, subno:1, vd:1, word:`Vる、Vた ＋
+{no:150, unit:1, subno:1, vd:96, word:`Vる、Vた ＋
 か ＋
 Vない ＋
 かのうちに `, mean: `Việc này chưa qua, việc khác đã xảy ra
