@@ -110,9 +110,14 @@ function(goin2, kanjin2, n2try, shadowing2, iword, bunpo, bunpovd, localStorageS
                         scope.returnBUNPO =  $.merge(res1, res2 );
 
                         $timeout(function(){
+
                             $.each(scope.returnBUNPO, function(idx,e){
+                                if(isNotEmpty(e.example)){
+                                    e.exampleJSON = e.example;
+                                }
+
                                 if(isNotEmpty(e.link)){
-                                    e.example = bunpovd.find(x => x.no === e.no).result;
+                                    e.exampleHTML = bunpovd.find(x => x.no === e.no).result;
                                 }
                             });
                         }, 0);

@@ -87,7 +87,16 @@
             </tbody></table>
           </p>
 
-          <div class="GrammarDetail multi-lines" dynamic-html="item.example"></div>
+          <div class="GrammarDetail multi-lines" ng-if="item.exampleHTML" dynamic-html="item.exampleHTML"></div>
+
+          <div class="GrammarDetail" ng-if="item.exampleJSON">
+            <ul class="grd-ul ">
+                <li ng-repeat="itemExa in item.exampleJSON">
+                    <span class="grammar-ex"><u class="furigana_text multi-lines">{{itemExa.jp}}</u></span>
+                    <p class="multi-lines">{{itemExa.vn}}</p>
+                </li>
+            </ul>
+          </div>
 
           <!-- <a class="float-right" target="_blank"  href="{{item.link}}">detail</a> -->
         </div>
