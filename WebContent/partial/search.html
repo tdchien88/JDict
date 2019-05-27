@@ -80,14 +80,14 @@
               <tr>
                 <td class="text-muted w40">TAG:</td>
                 <td class="font-sm">
-                    <span class="tag tag-jlpt-{{item.jlpt}} mr-1">{{item.jlpt}}</span>
-                    <span class="tag tag-bunpo  mr-1">{{item.tag}}</span>
+                    <span class="tag tag-jlpt-{{item.jlpt}} mr-1" ng-if="item.jlpt">{{item.jlpt}}</span>
+                    <span class="tag tag-bunpo  mr-1" ng-if="item.tag">{{item.tag}}</span>
                 </td>
               </tr>
             </tbody></table>
           </p>
 
-          <div class="GrammarDetail multi-lines" dynamic-html="item.ex"></div>
+          <div class="GrammarDetail multi-lines" dynamic-html="item.example"></div>
 
           <!-- <a class="float-right" target="_blank"  href="{{item.link}}">detail</a> -->
         </div>

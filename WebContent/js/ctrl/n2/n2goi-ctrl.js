@@ -5,8 +5,8 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 'dialogService', "$timeout", "goin2", "kanjin2",
-                function($scope, $stateParams, localStorageService, dialogService, $timeout, goin2, kanjin2){
+myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 'dialogService', "$timeout", '$location', '$anchorScroll', "goin2", "kanjin2",
+function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll, goin2, kanjin2){
 
     function init(){
         localStorageService.setPrefix('jdict.n2goi');
@@ -175,6 +175,8 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         $scope.data.isFirstCorrect = false;
 
         saveStore();
+
+        setTargetFocus("ans");
     }
 
     function saveStore(){
@@ -345,6 +347,17 @@ myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 
         }
 
         $scope.data.ans = '';
+
+        scrolTo('ans');
+    }
+
+    function scrolTo(element){
+
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash(element);
+        $anchorScroll();
+
     }
 
     $scope.reset = function(){

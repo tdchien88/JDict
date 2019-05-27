@@ -10,8 +10,8 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
-    function(goin2, kanjin2, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
+myApp.directive("searchBox", ["goin2", "kanjin2", "n2try", "shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
+function(goin2, kanjin2, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -101,16 +101,19 @@ myApp.directive("searchBox", ["goin2", "kanjin2","shadowing2", "iword", "bunpo",
                     $timeout(function(){
                         var res = searchInList2(listVD);
                         scope.returnVD =  (res) ? res : [];
-
                     }, 0);
 
                     $timeout(function(){
-                        var res = searchInList2(bunpo);
-                        scope.returnBUNPO =  (res) ? res : [];
+                        var res1 = searchInList2(n2try);
+                        var res2 = searchInList2(bunpo);
+
+                        scope.returnBUNPO =  $.merge(res1, res2 );
+
                         $timeout(function(){
                             $.each(scope.returnBUNPO, function(idx,e){
-                                console.log(idx +e);
-                                e.ex = bunpovd.find(x => x.no === e.no).result;
+                                if(isNotEmpty(e.link)){
+                                    e.example = bunpovd.find(x => x.no === e.no).result;
+                                }
                             });
                         }, 0);
                     }, 0);
@@ -635,7 +638,7 @@ myApp.directive("myInput", function() {
         }
     }
 });
-MyApp.directive('autoFocus', function($timeout) {
+myApp.directive('autoFocus', function($timeout) {
     return {
         restrict: 'AC',
         link: function(_scope, _element) {
