@@ -124,22 +124,25 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col" class="wp5" >No</th>
-                <th scope="col" class="wp40">Nghĩa</th>
-                <th scope="col" class="wp30">語彙</th>
-                <th scope="col" class="wp25">VD</th>
+                <th scope="col" class="wp50">Nghĩa</th>
+                <th scope="col" class="wp45">語彙</th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="item in data.curList" >
-                <th class="wp5" scope="row">{{$index+1}}</th>
-                <td class="wp40 font-lg multi-lines">{{item.word}}</td>
+                <th class="wp5" scope="row" rowspan='2'>{{$index+1}}</th>
+                <td class="wp40 multi-lines">{{item.word}}</td>
                 <td class="wp30 text-danger multi-lines">{{item.mean}}</td>
-                <td class="wp25 multi-lines">
+</tr>
+<tr class="">
+<td colspan='2' class=" multi-lines">{{item.word}}</td>
+
 <span class='vd' ng-repeat='itemExp in item.example'>
 <span class='furigana'>{{itemExp.jp}}</span>
 {{itemExp.vn}}
 </span>
-                </td>
+</td>
+
             </tr>
             </tbody>
         </table>
