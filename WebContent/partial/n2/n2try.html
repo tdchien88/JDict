@@ -82,7 +82,7 @@
                  <input ng-model="fcardChecked" type="checkbox"  class="fcard-input"  />
                  <div class="fcard-card">
                      <div class="fcard-front" ng-if="!fcardChecked">
-                          <div class="card h-100 p-2" >
+                          <div style='text-align: left;' class="card h-100 justify-content-center p-2" >
 
                                 <h1 class="multi-lines" ng-if="data.cardType == 'mean'">{{data.curWord.mean}}</h1>
                                 <h1 class="multi-lines" ng-if="data.cardType == 'word'">{{data.curWord.word}}</h1>
@@ -90,7 +90,7 @@
                           </div>
                      </div>
                      <div class="fcard-back" ng-if="fcardChecked">
-                        <div class="card h-100 p-2" >
+                        <div style='text-align: left;' class="card h-100 justify-content-center p-2" >
 
                             <dl >
                             <dt class="col-sm-2 text-gray-500">語彙</dt>
