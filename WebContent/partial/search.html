@@ -70,12 +70,12 @@
       <div ng-repeat="item in returnBUNPO" class="card">
         <div class="card-body">
           <p class="text-wrap">
-            <h4 class="text-danger">{{item.word}}</h4>
+            <h4 class="text-danger multi-lines">{{item.word}}</h4>
             <table class="w-100">
               <tbody>
               <tr>
                 <td class="text-muted w40">Mean:</td>
-                <td class="font-sm"><strong>{{item.mean}}</strong></td>
+                <td class="font-sm multi-lines"><strong>{{item.mean}}</strong></td>
               </tr>
               <tr>
                 <td class="text-muted w40">TAG:</td>
@@ -86,17 +86,27 @@
               </tr>
             </tbody></table>
           </p>
-
+<!--
           <div class="GrammarDetail multi-lines" ng-if="item.exampleHTML" dynamic-html="item.exampleHTML"></div>
+ -->
+            <div class="GrammarDetail " ng-if="item.exampleHTML" >
+                <div class="grd-div">{{item.exampleHTML.explain}}</div>
+                <ul class="grd-ul">
+                    <li ng-repeat='itemExa in item.exampleHTML.example'>
+                        <span class="grammar-ex"><u class="furigana_text multi-lines">{{itemExa.jp}}</u></span>
+                        <p class=" multi-lines">{{itemExa.vn}}</p>
+                    </li>
+                </ul>
+            </div>
 
-          <div class="GrammarDetail" ng-if="item.exampleJSON">
-            <ul class="grd-ul ">
-                <li ng-repeat="itemExa in item.exampleJSON">
-                    <span class="grammar-ex"><u class="furigana_text multi-lines">{{itemExa.jp}}</u></span>
-                    <p class="multi-lines">{{itemExa.vn}}</p>
-                </li>
-            </ul>
-          </div>
+            <div class="GrammarDetail" ng-if="item.exampleJSON">
+              <ul class="grd-ul ">
+                  <li ng-repeat="itemExa in item.exampleJSON">
+                      <span class="grammar-ex"><u class="furigana_text multi-lines">{{itemExa.jp}}</u></span>
+                      <p class="multi-lines">{{itemExa.vn}}</p>
+                  </li>
+              </ul>
+            </div>
 
           <!-- <a class="float-right" target="_blank"  href="{{item.link}}">detail</a> -->
         </div>

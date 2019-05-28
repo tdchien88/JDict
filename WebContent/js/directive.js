@@ -117,7 +117,7 @@ function(goin2, kanjin2, n2try, shadowing2, iword, bunpo, bunpovd, localStorageS
                                 }
 
                                 if(isNotEmpty(e.link)){
-                                    e.exampleHTML = bunpovd.find(x => x.no === e.no).result;
+                                    e.exampleHTML = bunpovd.find(x => x.no === e.no);
                                 }
                             });
                         }, 0);
