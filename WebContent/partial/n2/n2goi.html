@@ -203,9 +203,8 @@
             <tr>
                 <th class="col wp5">#</th>
                 <th class="col wp20">Nghĩa</th>
-                <th class="col wp25">語彙</th>
-                <th class="col wp25">かな1</th>
-                <th class="col wp25">かな2</th>
+                <th class="col wp35">語彙</th>
+                <th class="col wp40">かな2</th>
             </tr>
             </thead>
             <tbody>
@@ -213,16 +212,14 @@
             <tr class="panel panel-default swipe" ng-repeat="item in data.curList" swipe-left="delayedClose" left-template="partial/leftTemplate.html" right-template="partial/rightTemplate.html">
                 <td class="panel-body">{{item.mean}}</td>
                 <td>{{item.word}}</td>
-                <td>{{item.kana1}}</td>
                 <td>{{item.kana2}}</td>
             </tr>
              -->
             <tr ng-repeat="item in data.curList" >
                 <th class="wp5">{{$index+1}}</th>
                 <td class="wp20">{{item.mean}}</td>
-                <td class="wp25">{{item.word}}</td>
-                <td class="wp25">{{item.kana1}}</td>
-                <td class="wp25">{{item.kana2}}</td>
+                <td class="wp35">{{item.word}}</td>
+                <td class="wp40">{{item.kana2}}</td>
             </tr>
             </tbody>
         </table>
