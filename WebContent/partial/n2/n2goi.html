@@ -79,14 +79,14 @@
         </div>
         <my-textbox ctrlproptype="japan" ng-model="data.curWord.kana2" class="text-danger" readonly></my-textbox>
     </div>
-<!--
+
     <div class="input-group mb-3" ng-show="data.wrongCount > data.wrongCount_Kana1">
         <div class="input-group-prepend">
           <span class="input-group-text w70">かな1</span>
         </div>
         <my-textbox ctrlproptype="japan" ng-model="data.curWord.kana1" class="text-danger" readonly></my-textbox>
     </div>
--->
+
     <div class="input-group mb-3" ng-show="data.wrongCount > data.wrongCount_GOI">
         <div class="input-group-prepend">
           <span class="input-group-text w70">語彙</span>
@@ -105,7 +105,9 @@
           <div class="card-body" style="min-height:130px">
            <p class="text-center text-wrap">
                 <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana2" >{{data.curWord.kana2}}</h5>
+<!--
                 <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana1" >{{data.curWord.kana1}}</h5>
+-->
                 <h2 class="text-danger " ng-show="data.wrongCount > data.wrongCount_GOI" >{{data.curWord.word}}</h2>
                 <h1 class="text-uppercase text-danger " >{{data.curWord.mean}}</h1>
 
