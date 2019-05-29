@@ -1,74 +1,68 @@
 <form name="search-form">
+
+  <ul class="nav nav-tabs no-border-bottom"  role="tablist">
+    <li class="nav-item">
+    <label class="nav-link active show mb-0 no-border-radius" data-toggle="tab" role="tab" href="#goi" aria-controls="goi" aria-selected="true">GOI({{returnGOI.length}})</label>
+    </li>
+    <li class="nav-item">
+    <label class="nav-link mb-0 no-border-radius" data-toggle="tab" role="tab" href="#kanji" aria-controls="kanji" aria-selected="false">KANJI({{returnKANJI.length}})</label>
+    </li>
+    <li class="nav-item">
+    <label class="nav-link mb-0 no-border-radius" data-toggle="tab" role="tab" href="#vd" aria-controls="vd" aria-selected="false">VD({{returnVD.length}})</label>
+    </li>
+    <li class="nav-item">
+    <label class="nav-link mb-0 no-border-radius" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">BUNPO({{returnBUNPO.length}})</label>
+    </li>
+    <li class="nav-item">
+    <label class="nav-link mb-0 no-border-radius" data-toggle="tab" role="tab" href="#history" aria-controls="history" aria-selected="false">RIREKI</label>
+    </li>
+  </ul>
+
   <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text w70">検索</span>
-    </div>
-    <my-textbox ctrlproptype="japan" ng-model="searchStr" ng-keydown='enterSearch($event)' placeholder="さあ、今日も頑張ろう！"></my-textbox>
+    <my-textbox name="search-tbx" class=" no-border-radius" ctrlproptype="japan" ng-model="searchStr" ng-keydown='enterSearch($event)' placeholder="さあ、今日も頑張ろう！"></my-textbox>
     <span class="input-group-append">
-      <button class="btn btn-primary" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
+      <button class="btn btn-primary no-border-radius" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
     </span>
   </div>
 
 <div class="mb10">
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-    <label class="nav-link active show mb-0" data-toggle="tab" role="tab" href="#goi" aria-controls="goi" aria-selected="true">GOI({{returnGOI.length}})</label>
-    </li>
-    <li class="nav-item">
-    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#kanji" aria-controls="kanji" aria-selected="false">KANJI({{returnKANJI.length}})</label>
-    </li>
-    <li class="nav-item">
-    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#vd" aria-controls="vd" aria-selected="false">VD({{returnVD.length}})</label>
-    </li>
-    <li class="nav-item">
-    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">BUNPO({{returnBUNPO.length}})</label>
-    </li>
-    <li class="nav-item">
-    <label class="nav-link mb-0" data-toggle="tab" role="tab" href="#history" aria-controls="history" aria-selected="false">RIREKI</label>
-    </li>
-  </ul>
 
   <div class="tab-content">
     <div class="tab-pane active show" id="goi" role="tabpanel">
-      <div ng-repeat="item in returnGOI" class="card">
-        <div class="card-body">
+      <div ng-repeat="item in returnGOI" class="m-2">
           <p class="text-wrap">
             <h4 class="text-danger">{{item.word}}</h4>
+            <h5>{{item.han}}</h5>
             <h5>{{item.mean}}</h5>
             <span>{{item.kana2}}</span>
           </p>
-        </div>
+          <hr>
       </div>
     </div>
 
     <div class="tab-pane" id="kanji" role="tabpanel">
-      <div ng-repeat="item in returnKANJI" class="card">
-        <div class="card-body">
+      <div ng-repeat="item in returnKANJI" class="m-2">
           <p class="text-wrap">
-            <h4 class="text-danger">{{item.mean}}</h4>
-            <h5>{{item.kana2}}</h5>
-            <span>{{item.word}}</span>
-            <span>{{item.han}}</span>
+            <h2 class="text-danger">{{item.word}}</h2>
+            <h5>[{{item.han}}]</h5>
+            <span>{{item.mean}}</span>
           </p>
-        </div>
+          <hr>
       </div>
     </div>
 
     <div class="tab-pane" id="vd" role="tabpanel">
-      <div ng-repeat="item in returnVD" class="card">
-        <div class="card-body">
-          <p class="text-wrap">
-            <h4 class="text-danger multi-lines">{{item.word}}</h4>
-            <span class="multi-lines">{{item.mean}}</span>
-            <span class="float-right tag tag-bunpo" ng-if="item.unit">Unit: {{item.unit}}</span>
-          </p>
-        </div>
+      <div ng-repeat="item in returnVD" class="m-2">
+          <h4 class="text-danger multi-lines">{{item.word}}</h4>
+          <p class="multi-lines">{{item.mean}}</p>
+          <p class="float-right tag tag-bunpo" ng-if="item.unit">Unit: {{item.unit}}</p>
+          <div class="clearfix"> </div>
+          <hr>
       </div>
     </div>
 
     <div class="tab-pane" id="bunpo" role="tabpanel">
-      <div ng-repeat="item in returnBUNPO" class="card">
-        <div class="card-body">
+      <div ng-repeat="item in returnBUNPO" class="m-2">
           <p class="text-wrap">
             <h4 class="text-danger multi-lines">{{item.word}}</h4>
             <table class="w-100">
@@ -109,7 +103,8 @@
             </div>
 
           <!-- <a class="float-right" target="_blank"  href="{{item.link}}">detail</a> -->
-        </div>
+
+          <hr>
       </div>
 
     </div>

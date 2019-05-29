@@ -64,9 +64,10 @@ span::after {
   color: #8f9ba6 !important;
 }
 
-.hidden {
-	display: none !important;
-}
+.hidden {display: none !important;}
+
+.no-border-radius{border-radius:0px !important;}
+.no-border-bottom{border-bottom:none};
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
   border-color: #e4e7ea #e4e7ea #c8ced3;
@@ -75,16 +76,22 @@ span::after {
 .nav-tabs .nav-link {
     color: #73818f;
     padding: 0.3rem 0.5rem;
+    border-color: #c8ced3;
+    margin-right: -1px;
 }
-.tab-content {
+.nav-tabs .nav-link.active{
+	background-color: #20a8d8;
+    border-color: #20a8d8;
+    color: #ffffff;
+}
+
+.tab-content {/*
 border-top: 1px solid #c8ced3 !important;
 border-right: none !important;
 border-left: none !important;
-border-bottom: none !important;
+border-bottom: none !important;*/
 }
-.tab-content .tab-pane {
-	padding: 1rem 0rem;
-}
+.tab-content .tab-pane {padding: 1rem 0rem;}
 
 .tag{
   color: #ffffff;

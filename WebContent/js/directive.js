@@ -10,8 +10,8 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["n3goi", "n3kanji", "n2goi", "n2kanji", "n2try", "shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
-function(n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
+myApp.directive("searchBox", ["hanviet", "n3goi", "n3kanji", "n2goi", "n2kanji", "n2try", "shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
+function(hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -24,8 +24,8 @@ function(n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpov
 //                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
 //                          });
                var listVD = $.merge(iword, shadowing2 );
-               var listGOI = $.merge(n2goi, n3goi );
-               var listKANJI = $.merge(n2kanji, n3kanji );
+               var listGOI = $.merge(n2kanji, $.merge(n3kanji, $.merge(n2goi, n3goi )));
+               var listKANJI = hanviet;
 
                 function saveStore(isClear){
                     if(isClear){
@@ -55,13 +55,18 @@ function(n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpov
 
                 scope.listHistory = getStore();
 
+                function toString(str){
+                    return isEmpty(str)?"":str;
+                }
                 function searchInList(list){
                     return jQuery.grep(list, (x, i) => (
                             isEqual(x.word, scope.searchStr) ||
                             isEqual(x.mean, scope.searchStr) ||
-                            isEqual(x.kana2, scope.searchStr) ||
+                            isEqual(toString(x.han), scope.searchStr) ||
+                            isEqual(toString(x.kana2), scope.searchStr) ||
                             x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
-                            x.kana2.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            toString(x.han).toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            toString(x.kana2).toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
                             x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         ));
                 }
@@ -73,6 +78,19 @@ function(n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpov
                             x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
                             x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         ));
+                }
+
+                function searchInListKANJI(list){
+                    var res = [];
+                    scope.searchStr.split("").forEach(c=>{
+                        res = $.merge(res, jQuery.grep(list, (x, i) => (
+                                isEqual(x.word, c) ||
+                                isEqual(x.mean, c) ||
+                                x.word.toLowerCase().indexOf(c.toLowerCase()) > -1 ||
+                                x.mean.toLowerCase().indexOf(c.toLowerCase()) > -1
+                            )));
+                    });
+                    return res;
                 }
 
                 function searchText (scope){
@@ -93,7 +111,7 @@ function(n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpov
                     }, 0);
 
                     $timeout(function(){
-                        var res = searchInList(listKANJI);
+                        var res = searchInListKANJI(listKANJI);
                         scope.returnKANJI =  (res) ? res : [];
 
                     }, 0);
@@ -123,6 +141,7 @@ function(n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpov
                         }, 0);
                     }, 0);
 
+                    setTargetFocus("search-tbx");
                 }
 
                 scope.enterSearch = function(e) {
