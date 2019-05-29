@@ -10,20 +10,22 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["goin2", "kanjin2", "n2try", "shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
-function(goin2, kanjin2, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
+myApp.directive("searchBox", ["n3goi", "n3kanji", "n2goi", "n2kanji", "n2try", "shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
+function(n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
         compile : function(element, attr) {
             return function link (scope, element, attr, ngModel) {
-//                var goi = goin2.map((item, index, items) => {
+//                var goi = n2goi.map((item, index, items) => {
 //                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
 //                          });
-//                var kanji = kanjin2.map((item, index, items) => {
+//                var kanji = n2kanji.map((item, index, items) => {
 //                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
 //                          });
                var listVD = $.merge(iword, shadowing2 );
+               var listGOI = $.merge(n2goi, n3goi );
+               var listKANJI = $.merge(n2kanji, n3kanji );
 
                 function saveStore(isClear){
                     if(isClear){
@@ -57,10 +59,8 @@ function(goin2, kanjin2, n2try, shadowing2, iword, bunpo, bunpovd, localStorageS
                     return jQuery.grep(list, (x, i) => (
                             isEqual(x.word, scope.searchStr) ||
                             isEqual(x.mean, scope.searchStr) ||
-                            isEqual(x.kana1, scope.searchStr) ||
                             isEqual(x.kana2, scope.searchStr) ||
                             x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
-                            x.kana1.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
                             x.kana2.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
                             x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         ));
@@ -77,7 +77,7 @@ function(goin2, kanjin2, n2try, shadowing2, iword, bunpo, bunpovd, localStorageS
 
                 function searchText (scope){
                     //console.log("search: "+scope.searchStr);
-                   // console.log(goin2);
+                   // console.log(n2goi);
                     if(isEmpty(scope.searchStr)){
                         scope.returnGOI = [];
                         scope.returnKANJI = [];
@@ -87,13 +87,13 @@ function(goin2, kanjin2, n2try, shadowing2, iword, bunpo, bunpovd, localStorageS
                     saveStore();
 
                     $timeout(function(){
-                        var res = searchInList(goin2);
+                        var res = searchInList(listGOI);
                         scope.returnGOI =  (res) ? res : [];
 
                     }, 0);
 
                     $timeout(function(){
-                        var res = searchInList(kanjin2);
+                        var res = searchInList(listKANJI);
                         scope.returnKANJI =  (res) ? res : [];
 
                     }, 0);

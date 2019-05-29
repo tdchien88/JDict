@@ -105,13 +105,9 @@
           <div class="card-body" style="min-height:130px">
            <p class="text-center text-wrap">
                 <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana2" >{{data.curWord.kana2}}</h5>
-<!--
-                <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_Kana1" >{{data.curWord.kana1}}</h5>
--->
+                <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_HAN" >{{data.curWord.han}}</h5>
                 <h2 class="text-danger " ng-show="data.wrongCount > data.wrongCount_GOI" >{{data.curWord.word}}</h2>
                 <h1 class="text-uppercase text-danger " >{{data.curWord.mean}}</h1>
-
-
            </p>
           </div>
           <div class="card-footer">
@@ -158,12 +154,14 @@
                         <div class="card h-100 justify-content-center p-2" >
 
                             <dl >
-                            <dt class="col-sm-2 text-gray-500">Nghĩa</dt>
-                            <dd class="col-sm-10"><h4>{{data.curWord.mean}}</h4></dd>
-                            <dt class="col-sm-2 text-gray-500">語彙</dt>
-                            <dd class="col-sm-10 text-danger"><h4>{{data.curWord.word}}</h4></dd>
-                            <dt class="col-sm-2 text-gray-500">かな</dt>
-                            <dd class="col-sm-10 text-danger"><h4>{{data.curWord.kana2}}</h4></dd>
+                              <dt class="col-sm-2 text-gray-500">Nghĩa</dt>
+                              <dd class="col-sm-10"><h4>{{data.curWord.mean}}</h4></dd>
+                              <dt class="col-sm-2 text-gray-500">HAN</dt>
+                              <dd class="col-sm-10"><h4>{{data.curWord.han}}</h4></dd>
+                              <dt class="col-sm-2 text-gray-500">語彙</dt>
+                              <dd class="col-sm-10 text-danger"><h4>{{data.curWord.word}}</h4></dd>
+                              <dt class="col-sm-2 text-gray-500">かな</dt>
+                              <dd class="col-sm-10 text-danger"><h4>{{data.curWord.kana2}}</h4></dd>
                             </dl>
 
                         </div>
@@ -203,8 +201,9 @@
             <tr>
                 <th class="col wp5">#</th>
                 <th class="col wp30">Nghĩa</th>
-                <th class="col wp30">語彙</th>
-                <th class="col wp35">かな</th>
+                <th class="col wp15">HAN</th>
+                <th class="col wp20">語彙</th>
+                <th class="col wp30">かな</th>
             </tr>
             </thead>
             <tbody>
@@ -218,8 +217,9 @@
             <tr ng-repeat="item in data.curList" >
                 <th class="wp5">{{$index+1}}</th>
                 <td class="wp30">{{item.mean}}</td>
-                <td class="wp30">{{item.word}}</td>
-                <td class="wp35">{{item.kana2}}</td>
+                <td class="wp15">{{item.han}}</td>
+                <td class="wp20">{{item.word}}</td>
+                <td class="wp30">{{item.kana2}}</td>
             </tr>
             </tbody>
         </table>

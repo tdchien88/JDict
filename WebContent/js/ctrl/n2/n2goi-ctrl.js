@@ -5,8 +5,8 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 'dialogService', "$timeout", '$location', '$anchorScroll', "goin2", "kanjin2",
-function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll, goin2, kanjin2){
+myApp.controller("n2goiCtrl", ["$scope", "$stateParams", 'localStorageService', 'dialogService', "$timeout", '$location', '$anchorScroll', "n2goi", "n2kanji",
+function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll, n2goi, n2kanji){
 
     function init(){
         localStorageService.setPrefix('jdict.n2goi');
@@ -14,14 +14,14 @@ function($scope, $stateParams, localStorageService, dialogService, $timeout, $lo
         $scope.data = {};
         if($stateParams.type){
             if($stateParams.type == "GOI"){
-                $scope.data.listWords = goin2;//danh sach tat ca cac tu
+                $scope.data.listWords = n2goi;//danh sach tat ca cac tu
 
             }
             else if($stateParams.type == "KANJI"){
-                $scope.data.listWords = kanjin2;//danh sach tat ca cac tu
+                $scope.data.listWords = n2kanji;//danh sach tat ca cac tu
             }
         }else{
-            $scope.data.listWords = goin2;//danh sach tat ca cac tu
+            $scope.data.listWords = n2goi;//danh sach tat ca cac tu
         }
         $scope.data.listUnit = [];//danh sach tat ca cac bai
 
@@ -38,7 +38,7 @@ function($scope, $stateParams, localStorageService, dialogService, $timeout, $lo
 
         $scope.data.wrongCount = 0;
         $scope.data.wrongCount_GOI = 2;
-        $scope.data.wrongCount_Kana1 = 3;
+        $scope.data.wrongCount_HAN = 3;
         $scope.data.wrongCount_Kana2 = 4;
         $scope.data.wrongCountMin = 2;
         $scope.data.wrongCountMax = 10;
@@ -268,11 +268,8 @@ function($scope, $stateParams, localStorageService, dialogService, $timeout, $lo
 
         //tra loi dung
         if($scope.data.ans == $scope.data.curWord.word ||
-                $scope.data.ans == $scope.data.curWord.kana1 ||
                 $scope.data.ans == $scope.data.curWord.kana2 ||
-
                 isEqual($scope.data.ans, $scope.data.curWord.word) ||
-                isEqual($scope.data.ans, $scope.data.curWord.kana1) ||
                 isEqual($scope.data.ans, $scope.data.curWord.kana2)){
 
             $scope.data.isCorrect = true;
@@ -336,7 +333,7 @@ function($scope, $stateParams, localStorageService, dialogService, $timeout, $lo
         else {
             $scope.data.isCorrect = false;
             if($scope.data.wrongCount ==  $scope.data.wrongCount_GOI ||
-                    $scope.data.wrongCount ==  $scope.data.wrongCount_Kana1 ||
+                    $scope.data.wrongCount ==  $scope.data.wrongCount_HAN ||
                     $scope.data.wrongCount ==  $scope.data.wrongCount_Kana2){
                 $scope.data.ans = '';
             }
