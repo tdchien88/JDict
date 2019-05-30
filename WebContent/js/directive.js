@@ -10,8 +10,8 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["hanviet", "n3goi", "n3kanji", "n2goi", "n2kanji", "n2try", "shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
-function(hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
+myApp.directive("searchBox", ["$rootScope", "hanviet", "n3goi", "n3kanji", "n2goi", "n2kanji", "n2try", "shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
+function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -26,6 +26,13 @@ function(hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunp
                var listVD = $.merge(iword, shadowing2 );
                var listGOI = $.merge(n2kanji, $.merge(n3kanji, $.merge(n2goi, n3goi )));
                var listKANJI = hanviet;
+               scope.type = 'goi';
+               scope.searchOld = {
+                       'goi': '',
+                       'kanji': '',
+                       'vd': '',
+                       'bunpo': '',
+               };
 
                 function saveStore(isClear){
                     if(isClear){
@@ -94,53 +101,67 @@ function(hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunp
                 }
 
                 function searchText (scope){
+
+                    if(isNotEmpty(scope.searchOld[scope.type]) && scope.searchOld[scope.type] == scope.searchStr){
+                        return;
+                    }
+
+                    scope.searchOld[scope.type] = scope.searchStr;
+
                     //console.log("search: "+scope.searchStr);
                    // console.log(n2goi);
                     if(isEmpty(scope.searchStr)){
                         scope.returnGOI = [];
                         scope.returnKANJI = [];
+                        scope.returnVD = [];
+                        scope.returnBUNPO = [];
                         return;
                     }
 
+
+                    $rootScope.showLoading = true;
+
                     saveStore();
 
-                    $timeout(function(){
-                        var res = searchInList(listGOI);
-                        scope.returnGOI =  (res) ? res : [];
+                    if(scope.type == 'goi'){
+                            var res = searchInList(listGOI);
+                            scope.returnGOI =  (res) ? res : [];
+                    }
 
-                    }, 0);
+                    if(scope.type == 'kanji'){
+                            var res = searchInListKANJI(listKANJI);
+                            scope.returnKANJI =  (res) ? res : [];
+                    }
 
-                    $timeout(function(){
-                        var res = searchInListKANJI(listKANJI);
-                        scope.returnKANJI =  (res) ? res : [];
-
-                    }, 0);
-
-                    $timeout(function(){
-                        var res = searchInList2(listVD);
-                        scope.returnVD =  (res) ? res : [];
-                    }, 0);
-
-                    $timeout(function(){
-                        var res1 = searchInList2(n2try);
-                        var res2 = searchInList2(bunpo);
-
-                        scope.returnBUNPO =  $.merge(res1, res2 );
-
+                    if(scope.type == 'vd'){
                         $timeout(function(){
-
-                            $.each(scope.returnBUNPO, function(idx,e){
-                                if(isNotEmpty(e.example)){
-                                    e.exampleJSON = e.example;
-                                }
-
-                                if(isNotEmpty(e.link)){
-                                    e.exampleHTML = bunpovd.find(x => x.no === e.no);
-                                }
-                            });
+                            var res = searchInList2(listVD);
+                            scope.returnVD =  (res) ? res : [];
                         }, 0);
-                    }, 0);
+                    }
 
+                    if(scope.type == 'bunpo'){
+                            var res1 = searchInList2(n2try);
+                            var res2 = searchInList2(bunpo);
+
+                            scope.returnBUNPO =  $.merge(res1, res2 );
+
+                            $timeout(function(){
+
+                                $.each(scope.returnBUNPO, function(idx,e){
+                                    if(isNotEmpty(e.example)){
+                                        e.exampleJSON = e.example;
+                                    }
+
+                                    if(isNotEmpty(e.link)){
+                                        e.exampleHTML = bunpovd.find(x => x.no === e.no);
+                                    }
+                                });
+                            }, 0);
+                    }
+
+
+                   // $rootScope.showLoading = false;
                     setTargetFocus("search-tbx");
                 }
 
@@ -151,15 +172,22 @@ function(hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunp
                     searchText(scope);
                 }
 
-                scope.search = function(str) {
+                scope.search = function(str, type) {
                     if(isNotEmpty(str))
                         scope.searchStr = str;
+
+                    if(isNotEmpty(type)){
+                        scope.type = type;
+                    }
+
                     searchText(scope);
                 }
 
                 scope.clearHistory = function(){
                     saveStore(true);
                 }
+
+
             };
         },
         templateUrl : "./partial/search.html",
