@@ -29,6 +29,10 @@
 
   <div class="tab-content">
     <div class="tab-pane active show" id="goi" role="tabpanel">
+      <div ng-if="returnGOI.length==0" class="m-2">
+      No results for <bold>{{searchStr}}</bold>
+      </div>
+
       <div ng-repeat="item in returnGOI" class="m-2">
           <p class="text-wrap">
             <h4 class="text-danger">{{item.word}}</h4>
@@ -41,6 +45,10 @@
     </div>
 
     <div class="tab-pane" id="kanji" role="tabpanel">
+      <div ng-if="returnKANJI.length==0" class="m-2">
+      No results for <bold>{{searchStr}}</bold>
+      </div>
+
       <div ng-repeat="item in returnKANJI" class="m-2">
           <p class="text-wrap">
             <h2 class="text-danger">{{item.word}}</h2>
@@ -52,6 +60,10 @@
     </div>
 
     <div class="tab-pane" id="vd" role="tabpanel">
+      <div ng-if="returnVD.length==0" class="m-2">
+      No results for <bold>{{searchStr}}</bold>
+      </div>
+
       <div ng-repeat="item in returnVD" class="m-2">
           <h4 class="text-danger multi-lines">{{item.word}}</h4>
           <p class="multi-lines">{{item.mean}}</p>
@@ -62,6 +74,10 @@
     </div>
 
     <div class="tab-pane" id="bunpo" role="tabpanel">
+      <div ng-if="returnBUNPO.length==0" class="m-2">
+      No results for <bold>{{searchStr}}</bold>
+      </div>
+
       <div ng-repeat="item in returnBUNPO" class="m-2">
           <p class="text-wrap">
             <h4 class="text-danger multi-lines">{{item.word}}</h4>
