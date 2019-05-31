@@ -134,10 +134,16 @@ function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2,
                     }
 
                     if(scope.type == 'vd'){
-                        $timeout(function(){
+                        if(scope.searchStr == 'tag combini'){
+                            var res = iword.filter((x) => {
+                                return x.tag === "combini"
+                            })
+                            scope.returnVD =  (res) ? res : [];
+                        }else{
                             var res = searchInList2(listVD);
                             scope.returnVD =  (res) ? res : [];
-                        }, 0);
+
+                        }
                     }
 
                     if(scope.type == 'bunpo'){
