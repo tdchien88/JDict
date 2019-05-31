@@ -101,8 +101,7 @@ function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2,
                         res = $.merge(res, jQuery.grep(list, (x, i) => (
                                 isEqual(x.word, c) ||
                                 isEqual(x.han.toLowerCase(), c.toLowerCase()) ||
-                                x.han.toLowerCase().indexOf(c.toLowerCase()) > -1 ||
-                                x.mean.toLowerCase().indexOf(c.toLowerCase()) > -1
+                                x.han.toLowerCase().indexOf(c.toLowerCase()) > -1
                             )));
                     });
                     return res;
