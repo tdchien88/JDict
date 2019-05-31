@@ -89,7 +89,15 @@ function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2,
 
                 function searchInListKANJI(list){
                     var res = [];
-                    scope.searchStr.split("").forEach(c=>{
+                    var searchChar = [];
+
+                    if(isJPString(scope.searchStr)){
+                        searchChar = scope.searchStr.split("");
+                    }else{
+                        searchChar = scope.searchStr.split(" ");
+                    }
+
+                    searchChar.forEach(c=>{
                         res = $.merge(res, jQuery.grep(list, (x, i) => (
                                 isEqual(x.word, c) ||
                                 isEqual(x.han.toLowerCase(), c.toLowerCase()) ||
@@ -101,6 +109,7 @@ function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2,
                 }
 
                 function searchText (scope){
+                    scope.searchStr = scope.searchStr.trim();
 
                     if(isNotEmpty(scope.searchOld[scope.type]) && scope.searchOld[scope.type] == scope.searchStr){
                         return;
