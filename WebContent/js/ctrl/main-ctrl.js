@@ -6,7 +6,7 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("mainController", ["$scope", function($scope){
+myApp.controller("mainController", function($scope){
 
 
     $scope.menulist = [
@@ -25,5 +25,7 @@ myApp.controller("mainController", ["$scope", function($scope){
     $scope.createLink = function(menu){
         return menu.sref+'('+menu.param+')';
     }
-}]);
+});
+
+
 

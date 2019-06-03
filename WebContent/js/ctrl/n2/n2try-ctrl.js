@@ -5,8 +5,7 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2tryCtrl", ["$scope", "$stateParams", 'localStorageService', 'dialogService', "$timeout", "n2try",
-                function($scope, $stateParams, localStorageService, dialogService, $timeout, n2try){
+myApp.controller("n2tryCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, n2try){
 
     function init(){
         localStorageService.setPrefix('jdict.n2try');
@@ -308,4 +307,4 @@ myApp.controller("n2tryCtrl", ["$scope", "$stateParams", 'localStorageService', 
       }
 
     init();
-}]);
+});

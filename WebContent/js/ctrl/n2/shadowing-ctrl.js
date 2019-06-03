@@ -5,8 +5,7 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("shadowingCtrl", ["$scope", "$stateParams", 'localStorageService', 'dialogService', "$timeout", "shadowing2",
-                function($scope, $stateParams, localStorageService, dialogService, $timeout, shadowing2){
+myApp.controller("shadowingCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, shadowing2){
 
     function init(){
         localStorageService.setPrefix('jdict.shadowing2');
@@ -308,4 +307,4 @@ myApp.controller("shadowingCtrl", ["$scope", "$stateParams", 'localStorageServic
       }
 
     init();
-}]);
+});

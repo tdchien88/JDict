@@ -1,4 +1,55 @@
 
+<div ng-controller="BottomSheetExample" class="md-padding bottomSheetdemoBasicUsage" >
+  <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+    <md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet()">Show as List</md-button>
+    <md-button flex="50" class="md-primary md-raised" ng-click="showGridBottomSheet()">Show as Grid</md-button>
+  </div>
+
+  <div ng-if="alert">
+    <br>
+    <b layout="row" layout-align="center center" class="md-padding">
+      {{alert}}
+    </b>
+  </div>
+<script type="text/ng-template" id="bottom-sheet-grid-template.html"><md-bottom-sheet class="md-grid" layout="column">
+  <div layout="row" layout-align="center center" ng-cloak>
+    <h4>Since <code>clickOutsideToClose = false</code>, drag down or press ESC to close</h4>
+  </div>
+  <div ng-cloak>
+    <md-list flex layout="row" layout-align="center center">
+      <md-list-item ng-repeat="item in items">
+        <div>
+          <md-button class="md-grid-item-content" ng-click="listItemClick($index)">
+            <md-icon md-svg-src="{{item.icon}}"></md-icon>
+            <div class="md-grid-text"> {{ item.name }} </div>
+          </md-button>
+        </div>
+      </md-list-item>
+    </md-list>
+  </div>
+</md-bottom-sheet>
+</script>
+<script type="text/ng-template" id="bottom-sheet-list-template.html"><md-bottom-sheet class="md-list md-has-header">
+  <md-subheader ng-cloak>Comment Actions</md-subheader>
+  <md-list ng-cloak>
+    <md-list-item ng-repeat="item in items">
+
+      <md-button
+          ng-click="listItemClick($index)"
+          md-autofocus="$index == 2"
+          class="md-list-item-content">
+        <md-icon md-svg-src="{{item.icon}}"></md-icon>
+        <span class="md-inline-list-icon-label">{{ item.name }}</span>
+      </md-button>
+
+    </md-list-item>
+  </md-list>
+</md-bottom-sheet>
+</script>
+</div>
+
+
+
 Swipe1
 <div>
 <div class="panel panel-default swipe" swipe-left="onSwipeLeft" swipe-right="onSwipeRight">
@@ -88,3 +139,7 @@ popup
 </form>
 
 </div>
+
+
+
+

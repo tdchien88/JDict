@@ -13,8 +13,8 @@
     <li class="nav-item">
     <label class="nav-link mb-0 no-border-radius" ng-click="search(null, 'bunpo')" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">BUNPO</label>
     </li>
-    <li class="nav-item">
-    <label class="nav-link mb-0 no-border-radius" data-toggle="tab" role="tab" href="#history" aria-controls="history" aria-selected="false">RIREKI</label>
+    <li class="">
+    <label class="nav-link mb-0 no-border-radius" ng-click="showListBottomSheet()">RIREKI</label>
     </li>
   </ul>
 
@@ -125,26 +125,13 @@
 
     </div>
 
-    <div class="tab-pane" id="history" role="tabpanel">
-       <button class="btn btn-outline-danger float-right mr-3" ng-click="clearHistory()" type="button"><i class="fa fa-trash"></i> Clear History</button>
-       <div class="clearfix"> </div>
-       <div class="list-group mt-3">
-        <div ng-repeat="item in listHistory track by $index" ng-click="search(item.word)" class="list-group-item list-group-item-action flex-column align-items-start" href="">
-            <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{item.word}}</h5>
-            <small>{{item.time}}</small>
-            </div>
-            <!--
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            <small>Donec id elit non mi porta.</small>
-             -->
-        </div>
-       </div>
-
-    </div>
-
 
   </div>
 </div>
 
+<my-history></my-history>
+
 </form>
+
+
+

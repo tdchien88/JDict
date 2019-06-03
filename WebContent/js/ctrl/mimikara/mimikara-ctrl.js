@@ -1,4 +1,4 @@
-myApp.controller("mimikaraCtrl", ["$scope", "goin2", function($scope, goin2){
+myApp.controller("mimikaraCtrl",function($scope, goin2){
 
     function init(){
 
@@ -6,6 +6,6 @@ myApp.controller("mimikaraCtrl", ["$scope", "goin2", function($scope, goin2){
 
 
     init();
-}]);
+});
 
 

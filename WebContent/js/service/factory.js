@@ -6,7 +6,7 @@ myApp.factory('helloWorldFactory', function() {
         }
     };
 })
-.factory("dialogService", ["$uibModal", function($uibModal){
+.factory("dialogService", function($uibModal){
 
     return {
         okDialog: function(messageId, message, messageParam, okFunc, okBtnView) {
@@ -87,4 +87,44 @@ myApp.factory('helloWorldFactory', function() {
     };
 
 // エラーメッセージサービス
-}])
+})
+.factory("bottomSheetService", function($mdBottomSheet){
+  var _listItem = [];
+  var _clearFnc;
+  var _bottomSheetPresets = {
+    templateUrl: 'partial/dialog/history.html',
+    parent: angular.element(document.getElementById('content')),
+    controller: function ($scope, $mdBottomSheet) {
+        $scope.listHistory = _listItem;
+
+        $scope.selectListItem = function ($index) {
+            var selectedItem = $scope.listHistory[$index];
+
+            $mdBottomSheet.hide(selectedItem);
+
+        }
+
+        $scope.clearHistory = function () {
+            if(_clearFnc){
+                _clearFnc();
+
+                $mdBottomSheet.hide();
+
+            }
+
+        }
+    }
+  };
+
+  var _showHistory = function (list, clearFnc) {
+    _bottomSheetPresets.targetEvent = event;
+    _listItem = list;
+    _clearFnc = clearFnc;
+    return $mdBottomSheet.show(_bottomSheetPresets);
+  };
+
+  return {
+    showHistory: _showHistory
+  }
+
+});

@@ -6,7 +6,7 @@
  * @param helloWorldFactory
  * @param
  */
-myApp.controller("homeCtrl", [ "$scope", function($scope) {
+myApp.controller("homeCtrl",function($scope) {
 
 
-} ]);
+} );

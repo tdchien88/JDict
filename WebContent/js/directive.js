@@ -10,8 +10,7 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", ["$rootScope", "hanviet", "n3goi", "n3kanji", "n2goi", "n2kanji", "n2try", "shadowing2", "iword", "bunpo", "bunpovd", 'localStorageService', '$timeout',
-function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout) {
+myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout, bottomSheetService) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
@@ -108,13 +107,6 @@ function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2,
                 }
 
                 function searchText (scope){
-                    scope.searchStr = scope.searchStr.trim();
-
-                    if(isNotEmpty(scope.searchOld[scope.type]) && scope.searchOld[scope.type] == scope.searchStr){
-                        return;
-                    }
-
-                    scope.searchOld[scope.type] = scope.searchStr;
 
                     //console.log("search: "+scope.searchStr);
                    // console.log(n2goi);
@@ -125,6 +117,14 @@ function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2,
                         scope.returnBUNPO = [];
                         return;
                     }
+
+                    scope.searchStr = scope.searchStr.trim();
+
+                    if(isNotEmpty(scope.searchOld[scope.type]) && scope.searchOld[scope.type] == scope.searchStr){
+                        return;
+                    }
+
+                    scope.searchOld[scope.type] = scope.searchStr;
 
 
                     $rootScope.showLoading = true;
@@ -201,12 +201,18 @@ function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2,
                     saveStore(true);
                 }
 
-
+                scope.showListBottomSheet = function(){
+                    bottomSheetService.showHistory(scope.listHistory, scope.clearHistory).then(function (selectedItem) {
+                        console.log(selectedItem);
+                        if(selectedItem)
+                           scope.search(selectedItem.word);
+                    });
+                }
             };
         },
         templateUrl : "./partial/search.html",
     };
-}]);
+});
 
 myApp.directive('dynamicHtml', ['$compile', function ($compile) {
     return {

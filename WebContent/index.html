@@ -18,9 +18,49 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/core-ui2.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/awesome-angular-swipe.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<body  ng-cloak ng-controller="mainController" >
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" ui-sref="home">JDict</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li ng-repeat="menu in menulist" class="nav-item dropdown" >
+          <a ng-if="!menu.sub" ui-sref="{{createLink(menu)}}" ui-sref-active="active" class="nav-link" >{{menu.name}}</a>
+
+          <a ng-if="menu.sub" class="nav-link dropdown-toggle" ui-sref="{{createLink(menu)}}" ui-sref-active="active" id="{{menu.name}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menu.name}}</a>
+            <div ng-if="menu.sub" class="dropdown-menu" aria-labelledby="{{menu.name}}">
+              <a ng-repeat="sub in menu.sub" class="dropdown-item" ui-sref="{{createLink(sub)}}"  ui-sref-active="active">{{sub.name}}</a>
+            </div>
+      </li>
+<!--
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+-->
+
+    </ul>
+  </div>
+</nav>
+
+    <div  class="mt-2 container">
+         <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+        <div ui-view style="height: 100%;"></div>
+    </div>
+
+<div ng-if="showLoading">
+    <img src="lib/jQuery/images/ajax-loader.gif" class="ajax-loader"/>
+</div>
+
 
 <script src="js/lib/jquery-1.9.1.js"></script>
 <!--
@@ -33,9 +73,13 @@
 <script src="js/lib/perfect-scrollbar.min.js"></script>
 <script src="js/lib/coreui.min.js"></script>
 
-<script src="js/lib/angular.min.js"></script>
-<script src="js/lib/angular-ui-router.js"></script>
-<script src="js/lib/angular-animate.js"></script>
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+<script src="//unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
 <script src="js/lib/angular-touch.min.js"></script>
 <script src="js/lib/awesome-angular-swipe.min.js"></script>
 <script src="js/lib/ui-bootstrap-tpls-2.5.0.js"></script>
@@ -79,42 +123,5 @@
 <script src="js/config/router/config-router-end.js"></script>
 <!-- router end -->
 
-</head>
-<body  ng-cloak ng-controller="mainController" >
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" ui-sref="home">JDict</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li ng-repeat="menu in menulist" class="nav-item dropdown" >
-          <a ng-if="!menu.sub" ui-sref="{{createLink(menu)}}" ui-sref-active="active" class="nav-link" >{{menu.name}}</a>
-
-          <a ng-if="menu.sub" class="nav-link dropdown-toggle" ui-sref="{{createLink(menu)}}" ui-sref-active="active" id="{{menu.name}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menu.name}}</a>
-            <div ng-if="menu.sub" class="dropdown-menu" aria-labelledby="{{menu.name}}">
-              <a ng-repeat="sub in menu.sub" class="dropdown-item" ui-sref="{{createLink(sub)}}"  ui-sref-active="active">{{sub.name}}</a>
-            </div>
-      </li>
-<!--
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
--->
-
-    </ul>
-  </div>
-</nav>
-
-    <div  class="mt-2 container">
-         <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-        <div ui-view style="height: 100%;"></div>
-    </div>
-
-<div ng-if="showLoading">
-    <img src="lib/jQuery/images/ajax-loader.gif" class="ajax-loader"/>
-</div>
 </body>
 </html>
