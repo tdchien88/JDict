@@ -12,11 +12,11 @@ myApp.controller("mainController", function($scope){
     $scope.menulist = [
                 {sref:"home", name:"Home"},
                 {sref:"sample", name:"Sample"},
-                {sref:"n2goi", name:"N2",  sub:[
+                {sref:"", name:"N2",  sub:[
                     {sref:"n2goi", name:"N2 GOI", param:"{type: 'GOI'}"},
                     {sref:"n2goi", name:"N2 KANJI", param:"{type: 'KANJI'}"},
+                    {sref:"n2try", name:"TRY N2"},
                 ]},
-                {sref:"n2try", name:"TRY N2"},
                 {sref:"shadowing", name:"Shadowing"},
                 {sref:"mimikara", name:"Mimi Kara"},
                 {sref:"about", name:"About"},
