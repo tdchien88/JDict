@@ -84,7 +84,7 @@ span::after {
 }
 
 .nav-tabs .nav-link.active{
-	background-color: #20a8d8;
+	background-color: #20a8d8 !important;
     border-color: #20a8d8;
     color: #ffffff;
     padding: 0.4rem 0.5rem;
