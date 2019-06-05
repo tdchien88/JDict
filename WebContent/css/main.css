@@ -92,6 +92,7 @@ span::after {
     z-index: 9999;
 }
 
+.table-hover tbody tr:hover {background-color: #FFECB3;}
 .tab-content {/*
 border-top: 1px solid #c8ced3 !important;
 border-right: none !important;

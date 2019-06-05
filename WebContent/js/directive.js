@@ -127,56 +127,57 @@ myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi
                     scope.searchOld[scope.type] = scope.searchStr;
 
 
-                    $rootScope.showLoading = true;
+                    $rootScope.showLoading(()=>{
 
-                    saveStore();
+                        saveStore();
 
-                    if(scope.type == 'goi'){
-                            var res = searchInList(listGOI);
-                            scope.returnGOI =  (res) ? res : [];
-                    }
-
-                    if(scope.type == 'kanji'){
-                            var res = searchInListKANJI(listKANJI);
-                            scope.returnKANJI =  (res) ? res : [];
-                    }
-
-                    if(scope.type == 'vd'){
-                        if(scope.searchStr == 'tag combini'){
-                            var res = iword.filter((x) => {
-                                return x.tag === "combini"
-                            })
-                            scope.returnVD =  (res) ? res : [];
-                        }else{
-                            var res = searchInList2(listVD);
-                            scope.returnVD =  (res) ? res : [];
-
+                        if(scope.type == 'goi'){
+                                var res = searchInList(listGOI);
+                                scope.returnGOI =  (res) ? res : [];
                         }
-                    }
 
-                    if(scope.type == 'bunpo'){
-                            var res1 = searchInList2(n2try);
-                            var res2 = searchInList2(bunpo);
+                        if(scope.type == 'kanji'){
+                                var res = searchInListKANJI(listKANJI);
+                                scope.returnKANJI =  (res) ? res : [];
+                        }
 
-                            scope.returnBUNPO =  $.merge(res1, res2 );
+                        if(scope.type == 'vd'){
+                            if(scope.searchStr == 'tag combini'){
+                                var res = iword.filter((x) => {
+                                    return x.tag === "combini"
+                                })
+                                scope.returnVD =  (res) ? res : [];
+                            }else{
+                                var res = searchInList2(listVD);
+                                scope.returnVD =  (res) ? res : [];
 
-                            $timeout(function(){
+                            }
+                        }
 
-                                $.each(scope.returnBUNPO, function(idx,e){
-                                    if(isNotEmpty(e.example)){
-                                        e.exampleJSON = e.example;
-                                    }
+                        if(scope.type == 'bunpo'){
+                                var res1 = searchInList2(n2try);
+                                var res2 = searchInList2(bunpo);
 
-                                    if(isNotEmpty(e.link)){
-                                        e.exampleHTML = bunpovd.find(x => x.no === e.no);
-                                    }
-                                });
-                            }, 0);
-                    }
+                                scope.returnBUNPO =  $.merge(res1, res2 );
+
+                                $timeout(function(){
+
+                                    $.each(scope.returnBUNPO, function(idx,e){
+                                        if(isNotEmpty(e.example)){
+                                            e.exampleJSON = e.example;
+                                        }
+
+                                        if(isNotEmpty(e.link)){
+                                            e.exampleHTML = bunpovd.find(x => x.no === e.no);
+                                        }
+                                    });
+                                }, 0);
+                        }
+
+                        setTargetFocus("search-tbx");
 
 
-                   // $rootScope.showLoading = false;
-                    setTargetFocus("search-tbx");
+                    });
                 }
 
                 scope.enterSearch = function(e) {
