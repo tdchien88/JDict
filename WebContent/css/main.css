@@ -65,6 +65,7 @@ span::after {
 }
 
 .hidden {display: none !important;}
+.hidden2 {opacity: 0 !important;}
 
 .no-border-radius{border-radius:0px !important;}
 .no-border-top{border-top:none !important;};
