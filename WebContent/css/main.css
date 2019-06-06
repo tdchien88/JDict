@@ -18,6 +18,22 @@ span::after {
 .form-control[readonly] {
     background-color: #fff;
 }
+
+
+.ball-spin-fade-loader > div {
+    background-color: #000;
+}
+.loading_mask {
+    position:fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color:#00000066;
+    justify-content: center;
+    align-items: center;
+}
+.loading { z-index:10000; }
+
 .navbar{
     padding: 0.3rem 1rem;
 }
@@ -305,8 +321,3 @@ top: -999px;
   font-weight: bolder; }
 
 
-/*
-Copyright 2018 Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that can be found
-in the LICENSE file at http://material.angularjs.org/HEAD/license.
-*/

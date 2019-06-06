@@ -61,18 +61,17 @@ myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi
 
                 scope.listHistory = getStore();
 
-                function toString(str){
-                    return isEmpty(str)?"":str;
-                }
+
+
                 function searchInList(list){
                     return jQuery.grep(list, (x, i) => (
                             isEqual(x.word, scope.searchStr) ||
                             isEqual(x.mean, scope.searchStr) ||
-                            isEqual(toString(x.han), scope.searchStr) ||
-                            isEqual(toString(x.kana2), scope.searchStr) ||
+                            isEqual(emptyToString(x.han), scope.searchStr) ||
+                            isEqual(emptyToString(x.kana2), scope.searchStr) ||
                             x.word.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
-                            toString(x.han).toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
-                            toString(x.kana2).toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            emptyToString(x.han).toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
+                            emptyToString(x.kana2).toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1 ||
                             x.mean.toLowerCase().indexOf(scope.searchStr.toLowerCase()) > -1
                         ));
                 }
@@ -106,6 +105,9 @@ myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi
                     return res;
                 }
 
+                /**
+                 * searchText
+                 */
                 function searchText (scope){
 
                     //console.log("search: "+scope.searchStr);
@@ -126,9 +128,7 @@ myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi
 
                     scope.searchOld[scope.type] = scope.searchStr;
 
-
-                    $rootScope.showLoading(()=>{
-
+                    $rootScope.showLoading(function(){
                         saveStore();
 
                         if(scope.type == 'goi'){
@@ -155,31 +155,31 @@ myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi
                         }
 
                         if(scope.type == 'bunpo'){
-                                var res1 = searchInList2(n2try);
-                                var res2 = searchInList2(bunpo);
+                            var res1 = searchInList2(n2try);
+                            var res2 = searchInList2(bunpo);
 
-                                scope.returnBUNPO =  $.merge(res1, res2 );
+                            scope.returnBUNPO =  $.merge(res1, res2 );
 
-                                $timeout(function(){
+                            $.each(scope.returnBUNPO, function(idx,e){
+                                if(isNotEmpty(e.example)){
+                                    e.exampleJSON = e.example;
+                                }
 
-                                    $.each(scope.returnBUNPO, function(idx,e){
-                                        if(isNotEmpty(e.example)){
-                                            e.exampleJSON = e.example;
-                                        }
-
-                                        if(isNotEmpty(e.link)){
-                                            e.exampleHTML = bunpovd.find(x => x.no === e.no);
-                                        }
-                                    });
-                                }, 0);
+                                if(isNotEmpty(e.link)){
+                                    e.exampleHTML = bunpovd.find(x => x.no === e.no);
+                                }
+                            });
                         }
 
                         setTargetFocus("search-tbx");
 
-
                     });
+
                 }
 
+                /**
+                 * enterSearch
+                 */
                 scope.enterSearch = function(e) {
 
                     if (e.which !== 13) return;
@@ -187,6 +187,9 @@ myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi
                     searchText(scope);
                 }
 
+                /**
+                 * search
+                 */
                 scope.search = function(str, type) {
                     if(isNotEmpty(str))
                         scope.searchStr = str;
@@ -198,10 +201,16 @@ myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi
                     searchText(scope);
                 }
 
+                /**
+                 * clearHistory
+                 */
                 scope.clearHistory = function(){
                     saveStore(true);
                 }
 
+                /**
+                 * showListBottomSheet
+                 */
                 scope.showListBottomSheet = function(){
                     bottomSheetService.showHistory(scope.listHistory, scope.clearHistory).then(function (selectedItem) {
                         console.log(selectedItem);

@@ -20,14 +20,29 @@
 <link rel="stylesheet" type="text/css" href="css/core-ui2.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/load-awesome.min.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Theme included stylesheets -->
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
 
 </head>
 <body  ng-cloak ng-controller="mainController" >
+
+
+<!-- ロード時のマスク -->
+<div ng-if="loading" class="loading loading_mask">
+    <div style="color: #56aed3" class="la-ball-spin-rotate la-3x" >
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+</div>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" ui-sref="home">JDict</a>
 
-<ul class="nav navbar-nav ml-auto">
+<ul class="nav navbar-nav ">
   <li class="nav-item text-white">
       <i class="fa fa-clock-o fa-lg "></i>
       {{clientCurrent| date: 'HH:mm'}}<span ng-class="{hidden2:clientCurrentPoint}">.</span>
@@ -64,10 +79,6 @@
         <div ui-view style="height: 100%;"></div>
     </div>
 
-<div ng-show="_loading">
-    <img src="img/ajax-loader.gif" class="ajax-loader"/>
-</div>
-
 
 <script src="js/lib/jquery-1.9.1.js"></script>
 <!--
@@ -91,6 +102,7 @@
 <script src="js/lib/ui-bootstrap-tpls-2.5.0.js"></script>
 <script src="js/lib/ngStorage.js"></script>
 <script src="js/lib/wanakana.min.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
 <script src="js/app.js"></script>
 <script src="js/common/directive-utils.js"></script>

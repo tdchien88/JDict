@@ -3,18 +3,26 @@ var myApp = angular.module("myApp", ['ui.router', 'LocalStorageModule', 'ngMater
 
 
 myApp.run( function($rootScope, $timeout, $interval){
-	$rootScope._loading = false;
-	$rootScope.showLoading = function(callback){
-        $rootScope._loading = true;
-        setTimeout(function(){
+    $rootScope.loading = false;
+
+    $rootScope.showLoading = function(callback){
+
+        $timeout(function(){
+            $rootScope.loading = true;
+        },0)
+
+        $timeout(function(){
             callback();
-            $rootScope._loading = false;
-        }, 0);
-	}
+            $rootScope.loading = false;
+        },100)
 
-	$rootScope.clientCurrent;
-	$rootScope.clientCurrentPoint;
+    }
 
+    /**
+     * clock timer
+     */
+    $rootScope.clientCurrent;
+    $rootScope.clientCurrentPoint;
     var dateProgress = $interval(function() {
         setDate();
     }, 1000);
@@ -25,6 +33,8 @@ myApp.run( function($rootScope, $timeout, $interval){
         $rootScope.clientCurrent = new Date();
         $rootScope.clientCurrentPoint = ($rootScope.clientCurrent.getSeconds() % 2 == 0);
     }
+
+
 
 });
 
