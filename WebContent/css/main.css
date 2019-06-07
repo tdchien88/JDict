@@ -281,8 +281,11 @@ top: -999px;
 }
 
 .md-list{
-    max-height: 500px;
+    height: 90vh;
     overflow-y: scroll;
+    padding-top: 0;
+    bottom: 0;
+    position: fixed;
 }
 
 .bottomSheetdemoBasicUsage .md-inline-list-icon-label {
