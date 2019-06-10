@@ -77,20 +77,20 @@
 
             </div>
             <div class="card-body p-2" >
-            <div class="fcard ">
+            <div class="fcard " style="height:500px">
                 <label class="fcard-inner" >
                  <input ng-model="fcardChecked" type="checkbox"  class="fcard-input"  />
                  <div class="fcard-card">
                      <div class="fcard-front" ng-if="!fcardChecked">
                           <div style='text-align: left;' class="card h-100 justify-content-center p-2" >
 
-                                <h1 class="multi-lines" ng-if="data.cardType == 'mean'">{{data.curWord.mean}}</h1>
-                                <h1 class="multi-lines" ng-if="data.cardType == 'word'">{{data.curWord.word}}</h1>
+                                <h1 data-fittext data-fittext-min="30" class="multi-lines " ng-if="data.cardType == 'mean'">{{data.curWord.mean}}</h1>
+                                <h1 data-fittext data-fittext-min="30" class="multi-lines " ng-if="data.cardType == 'word'">{{data.curWord.word}}</h1>
 
                           </div>
                      </div>
                      <div class="fcard-back" ng-if="fcardChecked">
-                        <div style='text-align: left;' class="card h-120 justify-content-center p-2" >
+                        <div style='text-align: left;height: 100%;' class="card h-120 justify-content-center p-2" >
 
                             <dl >
                             <dt class="col-sm-2 text-gray-500">語彙</dt>
@@ -101,11 +101,11 @@
 
                             <dt class="col-sm-2 text-gray-500">VD</dt>
                             <dd class="col-sm-10 ">
-			                    <span class='vd ' ng-repeat='itemExp in data.curWord.example'>
-			                            <h6 class=" multi-lines">{{itemExp.jp}}</h6>
-			                            <h5 class=" multi-lines">{{itemExp.vn}}</h6>
-			                    </span>
-		                    </dd>
+                                <span class='vd ' ng-repeat='itemExp in data.curWord.example'>
+                                    <span class=" multi-lines">{{itemExp.jp}}</span>
+                                    <span class=" multi-lines">{{itemExp.vn}}</span>
+                                </span>
+                            </dd>
                             </dl>
 
                         </div>

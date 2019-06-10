@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp", ['ui.router', 'LocalStorageModule', 'ngMaterial', 'ngMessages',
+var myApp = angular.module("myApp", ['ui.router', 'LocalStorageModule', 'ngMaterial', 'ngMessages', 'ngFitText',
     "ui.bootstrap", "ui.bootstrap.datepicker", "ui.bootstrap.datepickerPopup", "ui.bootstrap.dateparser", "ui.bootstrap.isClass", "ui.bootstrap.tabs"]);
 
 
