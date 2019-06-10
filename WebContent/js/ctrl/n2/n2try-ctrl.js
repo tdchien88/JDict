@@ -86,6 +86,7 @@ myApp.controller("n2tryCtrl", function($scope, $stateParams, localStorageService
 
         }, 100);
 
+
     }
 
 

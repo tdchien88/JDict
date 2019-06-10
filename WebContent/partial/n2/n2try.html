@@ -82,22 +82,22 @@
                  <input ng-model="fcardChecked" type="checkbox"  class="fcard-input"  />
                  <div class="fcard-card">
                      <div class="fcard-front" ng-if="!fcardChecked">
-                          <div style='text-align: left;' class="card h-100 justify-content-center p-2" >
+                          <div data-fittext style="text-align: left;height: 100%;" class="card justify-content-center p-2" >
 
-                                <h1 data-fittext data-fittext-min="30" class="multi-lines " ng-if="data.cardType == 'mean'">{{data.curWord.mean}}</h1>
-                                <h1 data-fittext data-fittext-min="30" class="multi-lines " ng-if="data.cardType == 'word'">{{data.curWord.word}}</h1>
+                                <span class="multi-lines " ng-if="data.cardType == 'mean'">{{data.curWord.mean}}</span>
+                                <span class="multi-lines " ng-if="data.cardType == 'word'">{{data.curWord.word}}</span>
 
                           </div>
                      </div>
                      <div class="fcard-back" ng-if="fcardChecked">
-                        <div style='text-align: left;height: 100%;' class="card h-120 justify-content-center p-2" >
+                        <div data-fittext style='text-align: left;height: 100%;' class="card justify-content-center p-2" >
 
                             <dl >
                             <dt class="col-sm-2 text-gray-500">語彙</dt>
                             <dd class="col-sm-10"><h5 class="multi-lines">{{data.curWord.word}}</h5></dd>
 
                             <dt class="col-sm-2 text-gray-500">Nghĩa</dt>
-                            <dd class="col-sm-10 text-danger"><h5 class="text-danger multi-lines">{{data.curWord.mean}}</h5></dd>
+                            <dd class="col-sm-10 text-danger multi-lines">{{data.curWord.mean}}</dd>
 
                             <dt class="col-sm-2 text-gray-500">VD</dt>
                             <dd class="col-sm-10 ">
