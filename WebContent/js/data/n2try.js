@@ -127,5 +127,6 @@ myApp.constant('n2try',  [
 {no:182, unit:13, subno:126, jlpt:'N2', word:`V ＋がたい `, mean: `làm V thật khó ~ mãi không thể làm V`,example:[{jp:`彼の話は信じがたい内容だった。`, vn: `Khó có thể tin được câu chuyện của anh ấy.`},],},
 {no:183, unit:13, subno:127, jlpt:'N2', word:`N ＋もかまわず `, mean: `làm mà không màng tới - ý phê phán`,example:[{jp:`電車の中で人目もかまわず、お化粧するのはどうかと私は思う。`, vn: `Trong tàu điện trang điểm mà không cần nghĩ tới mọi người nghĩ gì.`},],},
 {no:184, unit:13, subno:128, jlpt:'N2', word:`Vる、\nAな、\nN の ＋あまり `, mean: `Vì quá .... nên kết quả là (thường dùng khi kết quả không tốt)`,example:[{jp:`弟の病気を心配するあまり母は食欲がなくなり、すっかりやせてしまった。`, vn: `Vì quá lo lắng cho em trai bị ốm, mẹ không ăn uống gì, gầy đi trông thấy.`},],},
+{no:185, unit:14, subno:129, jlpt:'N2', word:`aa`, mean: `bbb`,example:[{jp:`zzz`, vn: ``},],},
 
 ]);

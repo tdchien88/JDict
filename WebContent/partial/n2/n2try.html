@@ -66,15 +66,41 @@
 
 
 <div class="accordion" id="accordion">
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 
-        <div class="card ">
-            <div class="card-header" >
+        <div class="span-newline ">
+            <div class="" dynamic-html="data.doc.content"></div>
 
-            </div>
-            <div class="card-body p-2" style=" clear: both;">
-                <div class="span-newline" dynamic-html="data.doc.content"></div>
-            </div>
+            <div class="accordion" id="accordion2">
+                <div ng-repeat="item in data.doc.bunpo" >
+                  <div class="card "  >
+                    <div class="card-header" id="heading{{$index}}">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseBP{{$index}}" aria-expanded="true" aria-controls="collapseBP{{$index}}">
+                          <div class="text-left span-newline" dynamic-html="item.no+'.'+item.jp"></div>
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="collapseBP{{$index}}" class="collapse " aria-labelledby="heading{{$index}}" data-parent="#accordion2">
+                      <div class="card-body span-newline p-0">
+                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><div class="callout callout-info" dynamic-html="item.vn"></div></li>
+                            <li class="list-group-item">
+                                <span>VD:</span>
+                                <div dynamic-html="item.vd"></div></li>
+                            <li class="list-group-item">
+                                <span>やってみよう！</span>
+                                <div dynamic-html="item.quest"></div></li>
+                            <li class="list-group-item "><div class="hidden3" dynamic-html="item.ans"></div></li>
+                         </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div><!-- accordion2 -->
+
         </div>
     </div>
 
@@ -141,7 +167,7 @@
         </div>
     </div>
 
-    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapseThree" class="collapse " aria-labelledby="headingThree" data-parent="#accordion">
 
         <table class="table table-sm table-hover table-striped">
             <thead class="thead-dark">

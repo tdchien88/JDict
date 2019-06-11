@@ -44,7 +44,7 @@ myApp.controller("n2tryCtrl", function($scope, $stateParams, localStorageService
                 week: e.week,
                 day: e.day,
                 code: e.unit,
-                name: "Unit: " + e.unit + " NG:0",
+                name: "Unit "+ e.unit +": " + n2tryDoc.find(x=> x.unit === e.unit).title + " NG:0",
                 listCurrentWords: [],//danh sach cac tu trong bai
                 listNotRemember: [],//danh sach cac tu chua thuoc
                 listRemember: [],//danh sach cac tu da thuoc
