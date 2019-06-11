@@ -5,7 +5,7 @@ span::after {
   content: "\A";
   white-space: pre;
 }
-div.span-newline span::after {
+div.span-nonewline span::after {
   content: none !important ;
 }
 .multi-lines {
@@ -166,6 +166,9 @@ border-bottom: none !important;*/
 .GrammarDetail .kj-n a { float: right; color: #999; }
 .GrammarDetail .kj-n a:hover { color: #416390; }
 
+.link-no-uderline{
+	text-decoration: none !important;
+}
 /*
 input[type=text] {
 font-size: 1.3rem;

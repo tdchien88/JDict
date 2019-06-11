@@ -2,9 +2,7 @@
 <div class="row justify-content-center">
 <div class="col-md-12">
     <div class="input-group  mb-2 ">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">Unit</span>
-        </div>
+
         <my-dropdown name="unit" ng-model="data.unit" default-item-idx="0" items="data.listUnit" ng-change="changeUnit()"></my-dropdown>
         <span class="input-group-append">
             <button class="btn btn-danger" type="button" ng-click="reset()">Reset</button>
@@ -68,22 +66,21 @@
 <div class="accordion" id="accordion">
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 
-        <div class="span-newline ">
-            <div class="" dynamic-html="data.doc.content"></div>
+        <div class=" ">
+            <div class="span-nonewline " dynamic-html="data.doc.content"></div>
 
             <div class="accordion" id="accordion2">
                 <div ng-repeat="item in data.doc.bunpo" >
                   <div class="card "  >
                     <div class="card-header" id="heading{{$index}}">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseBP{{$index}}" aria-expanded="true" aria-controls="collapseBP{{$index}}">
-                          <div class="text-left span-newline" dynamic-html="item.no+'.'+item.jp"></div>
+                   <span class=""> {{item.no+'.'}}</span>
+                        <button class="btn btn-link link-no-uderline " type="button" data-toggle="collapse" data-target="#collapseBP{{$index}}" aria-expanded="true" aria-controls="collapseBP{{$index}}">
+                          <div class="text-left multi-lines justify-content-center" dynamic-html="item.jp"></div>
                         </button>
-                      </h5>
                     </div>
 
                     <div id="collapseBP{{$index}}" class="collapse " aria-labelledby="heading{{$index}}" data-parent="#accordion2">
-                      <div class="card-body span-newline p-0">
+                      <div class="card-body p-0">
                          <ul class="list-group list-group-flush">
                             <li class="list-group-item"><div class="callout callout-info" dynamic-html="item.vn"></div></li>
                             <li class="list-group-item">

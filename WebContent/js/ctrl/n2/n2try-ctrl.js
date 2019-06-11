@@ -70,7 +70,7 @@ myApp.controller("n2tryCtrl", function($scope, $stateParams, localStorageService
                     $.each(e.listHardWords, function(i,w){
                         e.listHardWords[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
                     });
-                    e.name = "Unit: " + e.unit + " [NG:" + e.listNotRemember.length + " - ★:" +e.listHardWords.length + "]";
+                    e.name = "Unit "+ e.unit +": " + n2tryDoc.find(x=> x.unit === e.unit).title + " [NG:" + e.listNotRemember.length + " - ★:" +e.listHardWords.length + "]";
 
                 });
             } else {
