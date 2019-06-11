@@ -193,5 +193,8 @@ myApp.constant('iword',  [
 {no:189, tag:`combini`, word:`X円ちょうど頂戴いたします`, mean:`xin nhận số tiền vừa đủ X-yên (không có tiền thừa)`},
 {no:190, tag:`combini`, word:`お先（さき）、～円のお返し（かえし）と、お後（あと）～円のお返しでございます`, mean:`Xin trả tiền thừa X -yên (tiền chẵn) và Y-yên (tiền lẻ)`},
 
+{no:191, tag:`他`, word:`持たせてください。`, mean:`Cho phép tôi giữ nó.`},
+{no:192, tag:`他`, word:`お手紙4枚 持たせます。 `, mean:`Tôi gửi cho anh 4 bức thư.`},
+
 
 ]);

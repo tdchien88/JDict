@@ -5,6 +5,9 @@ span::after {
   content: "\A";
   white-space: pre;
 }
+div.span-newline span::after {
+  content: none !important ;
+}
 .multi-lines {
   white-space: pre-line;
   line-height: 1.75;

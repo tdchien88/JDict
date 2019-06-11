@@ -34,6 +34,9 @@
     <div class="col-4">
         <!-- accordion -->
        <div class="btn-group btn-group-sm mb-4" role="group" aria-label="Basic example">
+           <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+           Doc
+           </button>
 
            <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
            Card
@@ -63,6 +66,17 @@
 
 
 <div class="accordion" id="accordion">
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+
+        <div class="card ">
+            <div class="card-header" >
+
+            </div>
+            <div class="card-body p-2" style=" clear: both;">
+                <div class="span-newline" dynamic-html="data.doc.content"></div>
+            </div>
+        </div>
+    </div>
 
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 

@@ -5,7 +5,7 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2tryCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, n2try){
+myApp.controller("n2tryCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, n2try, n2tryDoc){
 
     function init(){
         localStorageService.setPrefix('jdict.n2try');
@@ -223,6 +223,7 @@ myApp.controller("n2tryCtrl", function($scope, $stateParams, localStorageService
             $scope.data.curUnit.listRemember = [];
 
         }
+        $scope.data.doc = n2tryDoc.find(i=> i.unit === $scope.data.curUnit.unit);
 
         nextWord();
     }
