@@ -29,17 +29,24 @@
 
 
 </head>
-<body  ng-cloak ng-controller="mainController" >
+<body  ng-cloak ng-controller="mainController" class="app header-fixed  sidebar-fixed">
 
-
-<!-- ロード時のマスク -->
-<div ng-if="loading" class="loading loading_mask">
-    <div style="color: #56aed3" class="la-ball-spin-rotate la-3x" >
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <!-- ロード時のマスク -->
+    <div ng-if="loading" class="loading loading_mask">
+        <div style="color: #56aed3" class="la-ball-spin-rotate la-3x" >
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
     </div>
-</div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<!-- <header class="app-header navbar">
+    <button class="navbar-toggler sidebar-toggler  " type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+-->
+<header class="">
+
+<nav class="navbar navbar-expand-lg ">
   <a class="navbar-brand" ui-sref="home">JDict</a>
 
 <ul class="nav navbar-nav ">
@@ -74,21 +81,79 @@
   </div>
 </nav>
 
-    <div  class="mt-2 container">
-         <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-        <div ui-view style="height: 100%;"></div>
-    </div>
 
-<footer class="app-footer">
-  <div>
-    <a href="https://coreui.io">JDict</a>
-    <span>&copy; 2019 TDChien88.</span>
-  </div>
-  <div class="ml-auto">
-    <span>Theme</span>
-    <a href="https://coreui.io/docs/components/footer/">CoreUI</a>
-  </div>
+</header>
+
+
+
+<div class="app-body">
+
+<div class="sidebar">
+  <nav class="sidebar-nav">
+    <ul class="nav">
+      <li class="nav-title">Nav Title</li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="nav-icon cui-speedometer"></i> Nav item
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="nav-icon cui-speedometer"></i> With badge
+          <span class="badge badge-primary">NEW</span>
+        </a>
+      </li>
+      <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#">
+          <i class="nav-icon cui-puzzle"></i> Nav dropdown
+        </a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="nav-icon cui-puzzle"></i> Nav dropdown item
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="nav-icon cui-puzzle"></i> Nav dropdown item
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item mt-auto">
+        <a class="nav-link nav-link-success" href="https://coreui.io">
+          <i class="nav-icon cui-cloud-download"></i> Download CoreUI</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-danger" href="https://coreui.io/pro/">
+          <i class="nav-icon cui-layers"></i> Try CoreUI
+          <strong>PRO</strong>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+<main class="main">
+    <div class="mt-2 container">
+         <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+        <div ui-view ></div>
+    </div>
+</main>
+</div>
+
+<footer  class="app-footer">
+   <div >
+     <a href="https://coreui.io">JDict</a>
+     <span>&copy; 2019 TDChien88.</span>
+   </div>
+   <div class="ml-auto">
+     <a target="_blank" href="https://coreui.io/demo/#main.html"><span>CoreUI</span></a>
+     <a target="_blank" href="https://coreui.io/docs"><span>Docs</span></a>
+   </div>
 </footer>
+
+
 
 <script src="js/lib/jquery-1.9.1.js"></script>
 <!--
@@ -97,8 +162,6 @@
 
 <script src="js/lib/popper.min.js"></script>
 <script src="js/lib/bootstrap.js"></script>
-<script src="js/lib/pace.min.js"></script>
-<script src="js/lib/perfect-scrollbar.min.js"></script>
 <script src="js/lib/coreui.min.js"></script>
 
 <!-- Angular Material requires Angular.js Libraries -->
@@ -108,12 +171,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-messages.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
-<script src="//unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
+<script src="https://unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script src="https://unpkg.com/wanakana@4.0.2/umd/wanakana.min.js"></script>
+
 <script src="js/lib/angular-touch.min.js"></script>
 <script src="js/lib/ui-bootstrap-tpls-2.5.0.js"></script>
 <script src="js/lib/ngStorage.js"></script>
 <script src="js/lib/ng-fittext.js"></script>
-<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
 <script src="js/app.js"></script>
 <script src="js/common/directive-utils.js"></script>

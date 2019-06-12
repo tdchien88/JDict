@@ -21,7 +21,6 @@ myApp.controller("sampleCtrl", function($scope, $timeout, dialogService, helloWo
 
     var options = {
             modules: {
-                debug: "",
                 toolbar: [
                     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
                     ['blockquote', 'code-block'],
