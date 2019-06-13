@@ -66,7 +66,7 @@
 <div class="accordion" id="accordion">
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 
-        <div class=" ">
+        <div class=" lead">
             <div class="span-nonewline " dynamic-html="data.doc.content"></div>
 
             <div class="accordion" id="accordion2">
@@ -74,13 +74,14 @@
                   <div class="card "  >
                     <div class="card-header" id="heading{{$index}}">
                    <span class=""> {{item.no+'.'}}</span>
-                        <button class="btn btn-link link-no-uderline " type="button" data-toggle="collapse" data-target="#collapseBP{{$index}}" aria-expanded="true" aria-controls="collapseBP{{$index}}">
                           <div class="text-left multi-lines justify-content-center" dynamic-html="item.jp"></div>
+                        <button class="btn btn-link link-no-uderline float-right" type="button" data-toggle="collapse" data-target="#collapseBP{{$index}}" aria-expanded="true" aria-controls="collapseBP{{$index}}">
+                        more
                         </button>
                     </div>
 
                     <div id="collapseBP{{$index}}" class="collapse " aria-labelledby="heading{{$index}}" data-parent="#accordion2">
-                      <div class="card-body p-0 lead">
+                      <div class="card-body p-0 ">
                          <ul class="list-group list-group-flush">
                             <li class="list-group-item"><div class="callout callout-info" dynamic-html="item.vn"></div></li>
                             <li class="list-group-item">
@@ -95,6 +96,36 @@
                     </div>
 
                   </div>
+                </div>
+                <div ng-if="data.doc.bunpo == null">
+                    <div ng-repeat="item in data.curUnit.listCurrentWords" >
+                      <div class="card "  >
+                        <div class="card-header" id="heading{{$index}}">
+                            <span class=""> {{item.subno+'.'}}</span>
+                            <div class="text-left multi-lines justify-content-center" dynamic-html="item.word"></div>
+                            <button class="btn btn-link link-no-uderline float-right" type="button" data-toggle="collapse" data-target="#collapseBP{{$index}}" aria-expanded="true" aria-controls="collapseBP{{$index}}">
+                             more
+                            </button>
+                        </div>
+
+                        <div id="collapseBP{{$index}}" class="collapse " aria-labelledby="heading{{$index}}" data-parent="#accordion2">
+                          <div class="card-body p-0 ">
+                             <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><div class="callout callout-info" dynamic-html="item.mean"></div></li>
+                                <li class="list-group-item">
+                                    <span>VD:</span>
+                                     <span class='vd multi-lines' ng-repeat='itemExp in item.example'>
+                                       <span class='furigana'>{{itemExp.jp}}</span>
+                                       {{itemExp.vn}}
+                                    </span>
+                                </li>
+
+                             </ul>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
                 </div>
             </div><!-- accordion2 -->
 
