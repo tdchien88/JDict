@@ -39,28 +39,24 @@
     </div>
 
 
-<header class="app-header navbar">
-    <button class="navbar-toggler sidebar-toggler  " type="button" data-toggle="sidebar-show">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-<!--
-  <a class="navbar-brand" ui-sref="home">JDict</a>
+<header class="">
 
-<ul class="nav navbar-nav ">
-  <li class="nav-item text-white">
-      <i class="fa fa-clock-o fa-lg "></i>
-      {{clientCurrent| date: 'HH:mm'}}<span ng-class="{hidden2:clientCurrentPoint}">.</span>
-  </li>
-</ul>
--->
-<nav class="navbar navbar-expand-lg ml-auto">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light ">
+
+
+    <span><a class="navbar-brand text-white" ui-sref="home"><i class="fa fa-graduation-cap" aria-hidden="true"></i>JDict</a></span>
+
+    <span class="navbar-text text-white ">
+          <i class="fa fa-clock-o fa-lg "></i>
+          {{clientCurrent| date: 'HH:mm'}}<a class="text-white " ng-class="{hidden2:clientCurrentPoint}">.</a>
+    </span>
+  <button class="navbar-toggler float-right " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
       <li ng-repeat="menu in menulist" class="nav-item dropdown" >
           <a ng-if="!menu.sub" ui-sref="{{createLink(menu)}}" ui-sref-active="active" class="nav-link" >{{menu.name}}</a>
 
@@ -80,59 +76,13 @@
   </div>
 </nav>
 
-
 </header>
 
 
 
 <div class="app-body">
 
-<div class="sidebar">
-  <nav class="sidebar-nav">
-    <ul class="nav">
-      <li class="nav-title">Nav Title</li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="nav-icon cui-speedometer"></i> Nav item
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="nav-icon cui-speedometer"></i> With badge
-          <span class="badge badge-primary">NEW</span>
-        </a>
-      </li>
-      <li class="nav-item nav-dropdown">
-        <a class="nav-link nav-dropdown-toggle" href="#">
-          <i class="nav-icon cui-puzzle"></i> Nav dropdown
-        </a>
-        <ul class="nav-dropdown-items">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="nav-icon cui-puzzle"></i> Nav dropdown item
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="nav-icon cui-puzzle"></i> Nav dropdown item
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item mt-auto">
-        <a class="nav-link nav-link-success" href="https://coreui.io">
-          <i class="nav-icon cui-cloud-download"></i> Download CoreUI</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-link-danger" href="https://coreui.io/pro/">
-          <i class="nav-icon cui-layers"></i> Try CoreUI
-          <strong>PRO</strong>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-</div>
+
 <main class="main">
     <div class="mt-2 container">
          <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
@@ -151,7 +101,7 @@
      <a target="_blank" href="https://coreui.io/docs"><span>Docs</span></a>
    </div>
 </footer>
- 
+
 
 
 <script src="js/lib/jquery-1.9.1.js"></script>
