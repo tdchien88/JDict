@@ -1,5 +1,5 @@
 body{background:url(../img/bg.png) no-repeat}
-.app-body{overflow-x:initial}
+.app-body{overflow-x:initial;margin-top: 10px; }
 span::after{content:"\A";white-space:pre}
 div.span-nonewline span::after{content:none!important}
 
@@ -13,10 +13,8 @@ div.span-nonewline span::after{content:none!important}
 .loading_mask{position:fixed;display:flex;width:100%;height:100%;background-color:#00000066;justify-content:center;align-items:center}
 .loading{z-index:10000}
 
-
 .navbar{padding:.3rem 1rem}
 .navbar-light {background-color:#56aed320!important}
-
 
 .my-modal-popup .modal{background-color:#00000055}
 
