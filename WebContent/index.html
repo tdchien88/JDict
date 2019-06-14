@@ -29,7 +29,7 @@
 
 
 </head>
-<body  ng-cloak ng-controller="mainController" class="app ">
+<body  ng-cloak ng-controller="mainController" class="app header-fixed">
 
     <!-- ロード時のマスク -->
     <div ng-if="loading" class="loading loading_mask">
@@ -80,7 +80,7 @@
 
 
 
-<div class="app-body1">
+<div class="app-body">
 
 
 <main class="main">
@@ -91,6 +91,7 @@
 </main>
 </div>
 
+<!--
 <footer  class="app-footer">
    <div >
      <a href="https://coreui.io">JDict</a>
@@ -101,7 +102,7 @@
      <a target="_blank" href="https://coreui.io/docs"><span>Docs</span></a>
    </div>
 </footer>
-
+ -->
 
 
 <script src="js/lib/jquery-1.9.1.js"></script>
@@ -133,6 +134,9 @@
 <script src="js/common/directive-utils.js"></script>
 <script src="js/common/utils.js"></script>
 <script src="js/common/constant.js"></script>
+
+<script src="js/data/load-data-js.js"></script>
+<!-- <load-data></load-data>
 <script src="js/data/bunpo.js"></script>
 <script src="js/data/bunpovd.js"></script>
 <script src="js/data/shadowing2.js"></script>
@@ -140,16 +144,17 @@
 <script src="js/data/n3kanji.js"></script>
 <script src="js/data/n2goi.js"></script>
 <script src="js/data/n2kanji.js"></script>
-<script src="js/data/n2try.js"></script>
+<script src="js/data/n2try-bk.js"></script>
 <script src="js/data/n2try-doc.js"></script>
 <script src="js/data/iword.js"></script>
 <script src="js/data/hanviet.js"></script>
+-->
 
 <script src="js/service/services.js"></script>
 <script src="js/service/factory.js"></script>
 <script src="js/service/provider.js"></script>
-<script src="js/directive.js"></script>
 
+<script src="js/directive.js"></script>
 <script src="js/config/config.js"></script>
 
 <script src="js/ctrl/main-ctrl.js"></script>
