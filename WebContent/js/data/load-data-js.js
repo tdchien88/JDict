@@ -12,24 +12,58 @@ var _listData = [
     {key: 'iword', link:'js/data/iword.js', value: null},
     {key: 'hanviet', link:'js/data/hanviet.js', value: null},
 ]
+var _listJS = [
+    'js/service/services.js',
+    'js/service/factory.js',
+    'js/service/provider.js',
+
+    'js/directive.js',
+    'js/config/config.js',
+
+    'js/ctrl/main-ctrl.js',
+    'js/ctrl/home-ctrl.js',
+    'js/ctrl/sample-ctrl.js',
+    'js/ctrl/n2/n2goi-ctrl.js',
+    'js/ctrl/n2/shadowing-ctrl.js',
+    'js/ctrl/n2/n2try-ctrl.js',
+    'js/ctrl/mimikara/mimikara-ctrl.js',
+
+    'js/config/router/config-router-begin.js',
+    'js/config/router/config-router-n2.js',
+    'js/config/router/config-router-mimikara.js',
+    'js/config/router/config-router-end.js',
+]
 function _getKey(key){
     return _prefix+key;
 }
 _listData.forEach(function(e,i){
 
     if (localStorage.getItem(_getKey(_listData[0].key)) !== ""){
-        var scriptTag = document.createElement('script');
-        scriptTag.src = e.link;
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+       // if(callback)script.onload=callback;
+        script.src = e.link;
+        document.body.appendChild(script);
 
-       // scriptTag.onload = yourCodeToBeCalled(calback);
-     //   scriptTag.onreadystatechange = ;
-
-        document.body.appendChild(scriptTag);
+//        var scriptTag = document.createElement('script');
+//        scriptTag.src = e.link;
+//
+//       // scriptTag.onload = yourCodeToBeCalled(calback);
+//     //   scriptTag.onreadystatechange = ;
+//
+//        document.body.appendChild(scriptTag);
     }else{
         _listData[0].value = localStorage.getItem(_getKey(_listData[0].key))
     }
 
 })
 
-
+//_listJS.forEach(function(e,i){
+//
+//    var scriptTag = document.createElement('script');
+//    scriptTag.src = e;
+//
+//    document.body.appendChild(scriptTag);
+//
+//})
 
