@@ -1,3 +1,7 @@
+/*
+大きな鏡に全身を映す。おきなかがみに ぜんしんを うつす。soi mình trong cái gương lớn.
+
+*/
 myApp.constant('iword',  [
 
 {no:1, tag:`Denwa`, word:`- 電話に出られなかった`, mean:`- I wasn't able to pick up your call.`},
