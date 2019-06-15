@@ -1,5 +1,7 @@
 /*
 大きな鏡に全身を映す。おきなかがみに ぜんしんを うつす。soi mình trong cái gương lớn.
+海岸で貝殻を拾う。 かいがんで かいがらを ひろう。Nhặt nhạnh vỏ sò trên bãi biển .
+
 
 */
 myApp.constant('iword',  [
