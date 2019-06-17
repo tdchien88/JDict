@@ -16,15 +16,29 @@ var _listData = [
     */
 
 
-    {key: 'n2try', link:'js/data/reload.js', value: null},
+    {key: 'reload', link:'js/data/reload.js', value: null},
 ]
 var _n2try = [];
 
 function _getKey(key){
     return _prefix+key;
 }
+
+function _resetDATA(_key){
+    if(isEmpty(_key)){
+        _listData.forEach(function(e,i){
+            var key = _getKey(e.key);
+            localStorage.removeItem(key)
+        });
+        console.log("_resetDATA");
+    }else{
+        var key = _getKey(_key);
+        localStorage.removeItem(key)
+    }
+}
+
 _listData.forEach(function(e,i){
-    var key = _getKey(_listData[0].key);
+    var key = _getKey(e.key);
     if (isEmpty(localStorage.getItem(key))){
         var script = document.createElement("script");
         script.type = "text/javascript";
@@ -40,7 +54,7 @@ _listData.forEach(function(e,i){
 //
 //        document.body.appendChild(scriptTag);
     }else{
-        _n2try = JSON.parse(localStorage.getItem(key));
+        if(i == 0) _n2try = JSON.parse(localStorage.getItem(key));
     }
 
 })
@@ -53,4 +67,6 @@ _listData.forEach(function(e,i){
 //    document.body.appendChild(scriptTag);
 //
 //})
+
+
 

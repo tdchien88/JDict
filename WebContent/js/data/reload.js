@@ -1,5 +1,5 @@
-if(localStorage.getItem("reload") != 'reload'){
-    localStorage.setItem("reload", 'reload')
+if(localStorage.getItem(_getKey("reload")) != 'reload'){
+    localStorage.setItem(_getKey("reload"), 'reload');
     location.reload();
 }else{
 }
