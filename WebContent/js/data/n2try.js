@@ -1,4 +1,4 @@
-_n2try = [
+_listData[0].value = [
 
 {no:1, unit:1, subno:1, jlpt:'N2', word:`N＋につき `, mean: `Vì ...........\nnêu lý do\n(Hay dùng trong thông báo.)`, example:[{jp:`清掃中につき、お足元にご注意ください。 `, vn:`Vì đang dọn vệ sinh, hãy cẩn thận.`}]},
 {no:3, unit:1, subno:2, jlpt:'N2', word:`N + をとわず (問わず) `, mean: `Không phân biệt, bất kể N..........\n(N: thường là các cặp đối nghĩa VD: nam nữ, già trẻ)\ndùng trong văn bản thông báo\ný nghĩa: bất cứ cứ lúc nào, bất cứ đâu bất kỳ ai`, example:[{jp:`このスポーツセンターは、年齢を問わず、どなたでも利用できます。 `, vn:`Trung tâm thể thao này không chỉ dành cho người cao tuổi, bất cứ ai cũng có thể sử dụng được.`},]},
@@ -129,7 +129,9 @@ _n2try = [
 {no:183, unit:13, subno:127, jlpt:'N2', word:`N ＋もかまわず `, mean: `làm mà không màng tới - ý phê phán`,example:[{jp:`電車の中で人目もかまわず、お化粧するのはどうかと私は思う。`, vn: `Trong tàu điện trang điểm mà không cần nghĩ tới mọi người nghĩ gì.`},],},
 {no:184, unit:13, subno:128, jlpt:'N2', word:`Vる、\nAな、\nN の ＋あまり `, mean: `Vì quá .... nên kết quả là (thường dùng khi kết quả không tốt)`,example:[{jp:`弟の病気を心配するあまり母は食欲がなくなり、すっかりやせてしまった。`, vn: `Vì quá lo lắng cho em trai bị ốm, mẹ không ăn uống gì, gầy đi trông thấy.`},],},
 {no:185, unit:14, subno:129, jlpt:'N2', word:`aa`, mean: `bbb`,example:[{jp:`zzz`, vn: ``},],},
+
 ];
 
+localStorage.setItem(_getKey(_listData[0].key), JSON.stringify(_listData[0].value));
 
-localStorage.setItem(_getKey("n2try"), JSON.stringify(_n2try));
+_loaded++;

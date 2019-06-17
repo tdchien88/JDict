@@ -1,7 +1,8 @@
 /*
 link : `http://j-dict.com/grammar-1087.htm`
 */
-myApp.constant('bunpo',  [
+_listData[1].value = [
+
 { no : 1, subno : 1, jlpt : `N2`, word : `... なければ ...た`, mean : `Giá như không ... thì đã ...`, kana1 : ``, kana2 : ``, tag : `Suy đoán`, link : `1087`},
 { no : 2, subno : 2, jlpt : `N2`, word : `これいじょう…は ...`, mean : `Không ... (thêm) nữa`, kana1 : ``, kana2 : ``, tag : `Giới hạn, cực hạn`, link : `1084`},
 { no : 3, subno : 3, jlpt : `N2`, word : `ついに`, mean : `Cuối cùng, rốt cuộc đã ...`, kana1 : ``, kana2 : ``, tag : `Hoàn tất`, link : `1069`},
@@ -2124,4 +2125,9 @@ myApp.constant('bunpo',  [
 { no : 2120, subno : 169, jlpt : `N5`, word : `そして`, mean : `Và (Liệt kê)`, kana1 : ``, kana2 : ``, tag : `Xếp hàng, liệt kê`, link : `1184`},
 { no : 2121, subno : 170, jlpt : `N5`, word : `もう...`, mean : `Đã ... lắm rồi, không còn... (Thái độ phủ định)`, kana1 : ``, kana2 : ``, tag : `Nhấn mạnh nghia phủ định`, link : `1162`},
 
-]);
+];
+
+
+localStorage.setItem(_getKey(_listData[1].key), JSON.stringify(_listData[1].value));
+
+_loaded++;

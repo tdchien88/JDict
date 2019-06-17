@@ -4,7 +4,7 @@
 
 
 */
-myApp.constant('iword',  [
+_listData[9].value = [
 
 {no:1, tag:`Denwa`, word:`- 電話に出られなかった`, mean:`- I wasn't able to pick up your call.`},
 {no:2, tag:`Denwa`, word:`- 電話に気がつかなくて謝りたい`, mean:`- I'm sorry that I didn't notice your call.`},
@@ -203,4 +203,10 @@ myApp.constant('iword',  [
 {no:192, tag:`他`, word:`お手紙4枚 持たせます。 `, mean:`Tôi gửi cho anh 4 bức thư.`},
 
 
-]);
+
+];
+
+localStorage.setItem(_getKey(_listData[9].key), JSON.stringify(_listData[9].value));
+
+
+_loaded++;

@@ -1,4 +1,4 @@
-myApp.constant('shadowing2',  [
+_listData[3].value = [
 
 {no:1, unit:1, word:`- 今年は何年。\n- 2006年平成18年だよ`, mean:`- Năm nay là năm bao nhiêu? \n-  Năm 2006. Năm Bình Thành thứ 18`},
 {no:2, unit:1, word:`- それは何ですか。\n- デジカメです`, mean:`- đó là cái gì, máy ảnh kỹ thuật số`},
@@ -1146,4 +1146,9 @@ myApp.constant('shadowing2',  [
 {no:1144, unit:25, word:`- ただ、この時期には上位機種である 大画面薄型の販売台数が伸びています。\n- 競合他社と比較し品質で上回るわが社 の製品が選ばれた結果と受け取れます`, mean:`- [CD2]31. Tuy nhiên, cũng trong giai đoạn này, doanh số bán TV màn hình mỏng cỡ lớn - dòng sản phẩm cao cấp của chúng ta - lại tăng lên.  Có thể coi đó là nhờ khách hàng đã Ịụa chọn sản phẩm của công ty chúng ta do chất lưọng tốt hon các công ty đối thủ.`},
 {no:1145, unit:25, word:`- ブランドイメージという付加価値が浸透した結果だろうと考えています。\n- `, mean:`- [CD2]31.Tôi cho rằng đó là nhờ hình ảnh thưong hiệu - mọt trong các giá trị gia tăng - đã được xác lập trên thị trưòng.`},
 
-]);
+
+];
+
+localStorage.setItem(_getKey(_listData[3].key), JSON.stringify(_listData[3].value));
+
+_loaded++;

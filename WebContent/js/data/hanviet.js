@@ -1,4 +1,4 @@
-myApp.constant('hanviet',  [
+_listData[10].value = [
 
 {no:1, tag:`小一年`, word:`一`, han:`NHẤT`, mean:`Một`},
 {no:2, tag:`小一年`, word:`七`, han:`THẤT`, mean:`bảy (7)`},
@@ -2219,4 +2219,10 @@ myApp.constant('hanviet',  [
 
 
 
-]);
+
+];
+
+localStorage.setItem(_getKey(_listData[10].key), JSON.stringify(_listData[10].value));
+
+
+_loaded++;

@@ -1,4 +1,4 @@
-myApp.constant('n2kanji',  [
+_listData[7].value = [
 {no:1, week:1, day:1, unit:1, word:`Cấm`, kana2:`きんし`, han:`CẤM CHỈ`, mean:`禁止`},
 {no:2, week:1, day:1, unit:1, word:`Cấm hút thuốc`, kana2:`きんえん`, han:`CẤM YÊN`, mean:`禁煙`},
 {no:3, week:1, day:1, unit:1, word:`Khói`, kana2:`けむり`, han:`YÊN`, mean:`煙`},
@@ -2186,4 +2186,8 @@ myApp.constant('n2kanji',  [
 
 
 
-]);
+];
+
+localStorage.setItem(_getKey(_listData[7].key), JSON.stringify(_listData[7].value));
+
+_loaded++;

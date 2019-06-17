@@ -1,5 +1,4 @@
-
-myApp.constant('n2goi',  [
+_listData[6].value = [
 {no:1, week:1, day:1, unit:1, word:`チラシ`, kana2:`チラシ`, mean:`tờ rơi`},
 {no:2, week:1, day:1, unit:1, word:`びら`, kana2:`びら`, mean:`tờ rơi`},
 {no:3, week:1, day:1, unit:1, word:`賃貸アパート`, kana2:`ちんたいアパート`, mean:`căn hộ cho thuê`},
@@ -2176,4 +2175,9 @@ myApp.constant('n2goi',  [
 {no:2174, week:8, day:6, unit:48, word:`うざい`, kana2:`うざい`, mean:`phiền hà, khó chịu`},
 {no:2175, week:8, day:6, unit:48, word:`毎日のように電話してくる友達がうざい`, kana2:`まいにちのようにでんわしてくるともだちがうざい`, mean:`mấy đứa bạn điện thoại hầu như mỗi ngày thật là phiền toái`},
 
-]);
+];
+
+localStorage.setItem(_getKey(_listData[6].key), JSON.stringify(_listData[6].value));
+
+
+_loaded++;
