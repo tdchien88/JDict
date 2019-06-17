@@ -1,7 +1,7 @@
 var _prefix = 'jdict.';
 var _listData = [
 
-    {key: 'n2try', link:'js/data/n2try-bk.js', value: null},
+    {key: 'n2try', link:'js/data/n2try.js', value: null},
     /*
     {key: 'bunpo', link:'js/data/bunpo.js', value: null},
     {key: 'bunpovd', link:'js/data/bunpovd.js', value: null},
@@ -14,6 +14,9 @@ var _listData = [
     {key: 'iword', link:'js/data/iword.js', value: null},
     {key: 'hanviet', link:'js/data/hanviet.js', value: null},
     */
+
+
+    {key: 'n2try', link:'js/data/reload.js', value: null},
 ]
 var _n2try = [];
 
