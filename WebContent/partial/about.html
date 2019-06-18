@@ -2,12 +2,10 @@
     <label>about-form</label>
 </div>
 
-<button type="button" class="close" onclick="_resetDATA()" aria-label="Close">RESET DATA
-</button>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+<i class="fa fa-trash"></i> RESET DATA
 </button>
 
 <!-- Modal -->
@@ -21,11 +19,11 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        DO YOU WANT TO RESET ALL DATA?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" onclick="_resetDATA()" class="btn btn-danger"  data-dismiss="modal">DELETE</button>
       </div>
     </div>
   </div>
