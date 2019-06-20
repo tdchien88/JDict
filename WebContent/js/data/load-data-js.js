@@ -1,3 +1,8 @@
+
+const _tableName = "dataJSON"
+_db_config.storeName = _tableName;
+var dataJSON = localforage.createInstance(_db_config);
+
 var _prefix = 'jdict.';
 var _listData = [
 
@@ -12,10 +17,12 @@ var _listData = [
     {key: 'n2tryDoc', link:'js/data/n2try-doc.js', value: []},
     {key: 'iword', link:'js/data/iword.js', value: []},
     {key: 'hanviet', link:'js/data/hanviet.js', value: []},
-    /*
-*/
+
     {key: 'reload', link:'js/data/reload.js', value: null},
 ]
+
+
+
 var _loaded = 0;
 
 function _getKey(key){
@@ -24,12 +31,11 @@ function _getKey(key){
 
 function _resetDATA(_key){
     if(isEmpty(_key)){
-        _listData.forEach(function(e,i){
-            var key = _getKey(e.key);
-            localStorage.removeItem(key)
+        dataJSON.dropInstance()
+        .then(function() {
+            console.log('Dropped the store of the current instance');
         });
-        console.log("_resetDATA");
-    }else{
+    } else {
         var key = _getKey(_key);
         localStorage.removeItem(key)
     }
@@ -37,25 +43,32 @@ function _resetDATA(_key){
 
 _listData.forEach(function(e,i){
     var key = _getKey(e.key);
-    if (isEmpty(localStorage.getItem(key))){
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-       // if(callback)script.onload=callback;
-        script.src = e.link;
-        document.body.appendChild(script);
 
-//        var scriptTag = document.createElement('script');
-//        scriptTag.src = e.link;
-//
-//       // scriptTag.onload = yourCodeToBeCalled(calback);
-//     //   scriptTag.onreadystatechange = ;
-//
-//        document.body.appendChild(scriptTag);
-        console.log("loadData> FILE: "+e.key)
-    }else{
-        console.log("loadData> localStore: "+e.key)
-        e.value = JSON.parse(localStorage.getItem(key));
-    }
+    dataJSON.getItem(e.key).then(function(value) {
+        if(isEmpty(value)){
+
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+           // if(callback)script.onload=callback;
+            script.src = e.link;
+            document.body.appendChild(script);
+
+//            var scriptTag = document.createElement('script');
+//            scriptTag.src = e.link;
+//           // scriptTag.onload = yourCodeToBeCalled(calback);
+//           // scriptTag.onreadystatechange = ;
+//            document.body.appendChild(scriptTag);
+
+            console.log("loadData> FILE: "+e.key)
+
+        } else {
+            console.log("loadData> localStore: "+e.key)
+            e.value = value;
+        }
+    }).catch(function(err) {
+        // This code runs if there were any errors
+        console.log(err);
+    });
 
 })
 

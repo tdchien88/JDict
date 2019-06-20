@@ -17,6 +17,5 @@ bunpo:[{no:'1',jp:`N+につき`,vn:`<blockquote><p>vì</p><p>Được sử dụn
 
 ];
 
-localStorage.setItem(_getKey(_listData[8].key), JSON.stringify(_listData[8].value));
-
+dataJSON.setItem(_listData[8].key , _listData[8].value);
 _loaded++;

@@ -772,6 +772,5 @@ _listData[5].value = [
 
 ];
 
-localStorage.setItem(_getKey(_listData[5].key), JSON.stringify(_listData[5].value));
-
+dataJSON.setItem(_listData[5].key , _listData[5].value);
 _loaded++;
