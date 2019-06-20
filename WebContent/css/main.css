@@ -1,4 +1,4 @@
-body{background:url(../img/bg.png) no-repeat}
+body{font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;background:url(../img/bg.png) no-repeat}
 .app-body{overflow-x:initial;margin-top: 10px; }
 span::after{content:"\A";white-space:pre}
 div.span-nonewline span::after{content:none!important}
