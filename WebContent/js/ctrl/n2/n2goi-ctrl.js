@@ -5,7 +5,9 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll, n2goi, n2kanji){
+myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll){
+    var n2goi = _getDataByKey('n2goi');
+    var n2kanji = _getDataByKey('n2kanji');
 
     function init(){
         localStorageService.setPrefix('jdict.n2goi');

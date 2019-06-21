@@ -6,7 +6,9 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("sampleCtrl", function($scope, $timeout, dialogService, helloWorld, helloWorldService, helloWorldFactory, n2goi){
+myApp.controller("sampleCtrl", function($scope, $timeout, dialogService, helloWorld, helloWorldService, helloWorldFactory){
+
+    var n2goi = _getDataByKey('n2goi');
 
     // helloWorld Provider
     $scope.provider = helloWorld.title;

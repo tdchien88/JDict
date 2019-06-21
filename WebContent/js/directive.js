@@ -10,12 +10,24 @@ By default the value is EA, meaning that both Element names and attribute names 
 
 
 //search box
-myApp.directive("searchBox", function($rootScope, hanviet, n3goi, n3kanji, n2goi, n2kanji, n2try, shadowing2, iword, bunpo, bunpovd, localStorageService, $timeout, bottomSheetService) {
+myApp.directive("searchBox", function($rootScope, localStorageService, $timeout, bottomSheetService) {
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
         compile : function(element, attr) {
             return function link (scope, element, attr, ngModel) {
+                var hanviet    = _getDataByKey('hanviet');
+                var n3goi      = _getDataByKey('n3goi');
+                var n3kanji    = _getDataByKey('n3kanji');
+                var n2goi      = _getDataByKey('n2goi');
+                var n2kanji    = _getDataByKey('n2kanji');
+                var n2try      = _getDataByKey('n2try');
+                var shadowing2 = _getDataByKey('shadowing2');
+                var iword      = _getDataByKey('iword');
+                var bunpo      = _getDataByKey('bunpo');
+                var bunpovd    = _getDataByKey('bunpovd');
+
+
 //                var goi = n2goi.map((item, index, items) => {
 //                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
 //                          });

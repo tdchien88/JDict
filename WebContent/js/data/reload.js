@@ -16,6 +16,8 @@ dataJSON.getItem("reload").then(function(value) {
             }
         }, 1000);
 
+    }else{
+        _loadListJsFile();
     }
 }).catch(function(err) {
     // This code runs if there were any errors
