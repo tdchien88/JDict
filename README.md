@@ -1,7 +1,9 @@
 # JDict
-base on rikaikun 
+base on rikaikun
 
 view page
-https://tdchien88.github.io/JDict/
 
-https://tdchien88.github.io/JDict/WebContent/#!/home
+[Git](https://github.com/tdchien88/jdict)
+
+
+[Demo](https://tdchien88.github.io/JDict/WebContent/#!/home)
