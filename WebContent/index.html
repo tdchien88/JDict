@@ -52,7 +52,7 @@
           <i class="fa fa-clock-o fa-lg "></i>
           {{clientCurrent| date: 'HH:mm'}}<a class="text-white " ng-class="{hidden2:clientCurrentPoint}">.</a>
     </span>
-    <button class="navbar-toggler hamburger hamburger--elastic float-right " style="outline: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler hamburger hamburger--elastic float-right " onclick="$(this).toggleClass('is-active');" style="outline: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
@@ -61,11 +61,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li ng-repeat="menu in menulist" class="nav-item dropdown" >
-          <a ng-if="!menu.sub" ui-sref="{{createLink(menu)}}" ui-sref-active="active" class="nav-link" >{{menu.name}}</a>
+          <a ng-if="!menu.sub" ui-sref="{{createLink(menu)}}" ui-sref-active="active" class="nav-link " onclick="$('.hamburger').toggleClass('is-active');" data-toggle="collapse" data-target="#navbarSupportedContent">{{menu.name}}</a>
 
           <a ng-if="menu.sub" class="nav-link dropdown-toggle" ui-sref="{{createLink(menu)}}" ui-sref-active="active" id="{{menu.name}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menu.name}}</a>
             <div ng-if="menu.sub" class="dropdown-menu" aria-labelledby="{{menu.name}}">
-              <a ng-repeat="sub in menu.sub" class="dropdown-item" ui-sref="{{createLink(sub)}}"  ui-sref-active="active">{{sub.name}}</a>
+              <a ng-repeat="sub in menu.sub" class="dropdown-item " ui-sref="{{createLink(sub)}}" onclick="$('.hamburger').toggleClass('is-active');" ui-sref-active="active" data-toggle="collapse" data-target="#navbarSupportedContent">{{sub.name}}</a>
             </div>
       </li>
 <!--
@@ -183,14 +183,5 @@
 <script src="js/config/router/config-router-end.js"></script>
 <!-- router end -->
 
-<script>
-
-
-$('.hamburger').click(function(){
-    $(this).toggleClass("is-active");
-  // Toggle your menu here
-  // $('#menu').toggleClass('active');
-});
-</script>
 </body>
 </html>
