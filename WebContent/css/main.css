@@ -1,4 +1,6 @@
-body{background:url(../img/bg.png) no-repeat}
+body{
+font-family:  Tahoma, "メイリオ", Meiryo, Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+background:url(../img/bg.png) no-repeat}
 .app-body{overflow-x:initial;margin-top: 10px; }
 span::after{content:"\A";white-space:pre}
 div.span-nonewline span::after{content:none!important}
