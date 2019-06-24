@@ -10,6 +10,7 @@ myApp.controller("sampleCtrl", function($scope, $timeout, dialogService, helloWo
 
     var n2goi = _getDataByKey('n2goi');
 
+
     // helloWorld Provider
     $scope.provider = helloWorld.title;
 
