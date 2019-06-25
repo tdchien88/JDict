@@ -113,30 +113,12 @@
 
 <script type="text/javascript" src="js/lib/kuroshiro.js"></script>
 <script type="text/javascript" src="js/lib/kuroshiro-analyzer-kuromoji.js"></script>
+<script type="text/javascript" src="js/lib/kuroshiro-config.js"></script>
 
 <!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+-->
 
-
-<script type="text/javascript" src="https://unpkg.com/kuroshiro@1.1.2/lib/index.js"></script>
-<script type="text/javascript" src="https://unpkg.com/kuroshiro@0.2.4/src/kuroshiro.js"></script>
-<script type="text/javascript" src="https://unpkg.com/kuroshiro-analyzer-seed@1.1.0/lib/index.js"></script>
-<script type="text/javascript" src="https://unpkg.com/kuroshiro-analyzer-kuromoji@1.1.0/lib/index.js"></script>
-<script type="text/javascript" src="https://unpkg.com/kuroshiro-analyzer-mecab@1.0.1/lib/index.js"></script>
-<script type="text/javascript" src="https://unpkg.com/kuroshiro-analyzer-yahoo-webapi@1.1.0/lib/index.js"></script>
- -->
-
-<script>
-var kuroshiro = new Kuroshiro();
-kuroshiro.init(new KuromojiAnalyzer({ dictPath: "js/lib/kuromoji/" }))
-.then(function () {
-    return kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", {mode:"furigana", to:"hiragana"});
-})
-.then(function(result){
-    document.getElementById("test-shirokuro").innerHTML+= result
-    console.log(result);
-})
-</script>
 <script src="js/lib/popper.min.js"></script>
 <script src="js/lib/bootstrap.js"></script>
 <script src="js/lib/coreui.min.js"></script>
