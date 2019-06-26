@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body{background-color: #eee;font-family: Roboto, "メイリオ", Meiryo, Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;background:url(../img/bg.png) no-repeat}
 .app-body{overflow-x:initial;margin-top: 10px; }
