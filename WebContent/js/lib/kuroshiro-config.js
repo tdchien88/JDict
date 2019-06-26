@@ -1,25 +1,38 @@
 /**
  * https://github.com/hexenq/kuroshiro
  */
+var _kuroshiro = null;
+const _kuroshiroOption = {mode:"furigana", to:"hiragana"};
 
-var _kuroshiro = new Kuroshiro();
-var _kuroshiroOption = {mode:"furigana", to:"hiragana"};
+var _kuroshiroInit = function() {
 
-var _libDicLoaded = false;
-var kuroshiroExc = function(string){
-    if(!libDicLoaded) return Promise.resolve("Library is loading.. plz wait");
-    return _kuroshiro.convert(string, _kuroshiroOption);
-}
+    if(typeof Kuroshiro == 'undefined' || typeof KuromojiAnalyzer == 'undefined' ){
 
-$("#test-shirokuro").html("Library is loading.. plz wait");
+        setTimeout(function(){
+            _kuroshiroInit();
+        },1000)
+        return;
 
-_kuroshiro.init(new KuromojiAnalyzer({ dictPath: "js/lib/kuromoji/" }))
-.then(()=>{
-    libDicLoaded = true;
-    kuroshiroExc(" (oﾟ▽ﾟ)oﾟ　頑張ってね！").then(function(result){
-    $("#test-shirokuro").html(result);
-})});
+    }else{
 
+        _kuroshiro = new Kuroshiro();
+        $("#test-shirokuro").html("Library is loading.. plz wait");
+
+        var kuroshiroExc = function(string){
+            if(!libDicLoaded) return Promise.resolve("Library is loading.. plz wait");
+            return _kuroshiro.convert(string, _kuroshiroOption);
+        }
+        _kuroshiro.init(new KuromojiAnalyzer({ dictPath: "js/lib/kuromoji/" }))
+        .then(()=>{
+            libDicLoaded = true;
+            kuroshiroExc(" (oﾟ▽ﾟ)oﾟ　頑張ってね！").then(function(result){
+            $("#test-shirokuro").html(result);
+        })});
+    }
+    // your code here
+
+};
+_kuroshiroInit();
 
 /*
 var kuroshiro = new Kuroshiro();

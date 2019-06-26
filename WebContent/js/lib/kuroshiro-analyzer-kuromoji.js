@@ -7686,6 +7686,18 @@ BrowserDictionaryLoader.prototype = Object.create(DictionaryLoader.prototype);
  * @param {BrowserDictionaryLoader~onLoad} callback Callback function
  */
 BrowserDictionaryLoader.prototype.loadArrayBuffer = function (url, callback) {
+// Chien add load data from localDB
+    try{
+        var localData = _getDataByLink(url);
+        if(localData){
+            var gz = new zlib.Zlib.Gunzip(new Uint8Array(localData));
+            var typed_array = gz.decompress();
+            callback(null, typed_array.buffer);
+            return;
+        }
+    }catch(e){console.log(e)}
+// Chien add load data from localDB
+
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.responseType = "arraybuffer";

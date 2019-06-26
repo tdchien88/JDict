@@ -5,7 +5,6 @@ var dataJSON = localforage.createInstance(_db_config);
 
 var _prefix = 'jdict.';
 var _listData = [
-
     {key: 'n2try', link:'js/data/n2try.js', value: []},
     {key: 'bunpo', link:'js/data/bunpo.js', value: []},
     {key: 'bunpovd', link:'js/data/bunpovd.js', value: []},
@@ -18,40 +17,38 @@ var _listData = [
     {key: 'iword', link:'js/data/iword.js', value: []},
     {key: 'hanviet', link:'js/data/hanviet.js', value: []},
 
-    {key: 'reload', link:'js/data/reload.js', value: null},
-]
+    {key: 'data_base', link:'js/lib/kuromoji/base.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_check', link:'js/lib/kuromoji/check.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_tid', link:'js/lib/kuromoji/tid.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_tid_pos', link:'js/lib/kuromoji/tid_pos.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_unk', link:'js/lib/kuromoji/unk.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_tid_map', link:'js/lib/kuromoji/tid_map.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_cc', link:'js/lib/kuromoji/cc.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_unk_char', link:'js/lib/kuromoji/unk_char.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_unk_map', link:'js/lib/kuromoji/unk_map.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_unk_compat', link:'js/lib/kuromoji/unk_compat.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_unk_invoke', link:'js/lib/kuromoji/unk_invoke.dat.gz', isArraybuffer:true, value: null},
+    {key: 'data_unk_pos', link:'js/lib/kuromoji/unk_pos.dat.gz', isArraybuffer:true, value: null},
+
+    // must at last array
+    {key: 'reload', link:'js/data/reload.js', value: []}
+];
+
 
 var _getDataByKey = function(key) {
     var res = _listData.find(x=> x.key === key);
+    return isEmpty(res)? null: res.value;
+}
 
+var _getDataByLink = function(link) {
+    var res = _listData.find(x=> x.link === link);
     return isEmpty(res)? null: res.value;
 }
 
 var _listJsFile = [
-    "js/data/init-constant-data.js",
-//
-//    "js/common/constant.js",
-//    "js/data/init-constant-data.js",
-//
-//    "js/service/services.js",
-//    "js/service/factory.js",
-//    "js/service/provider.js",
-//
-//    "js/directive.js",
-//    "js/config/config.js",
-//
-//    "js/ctrl/main-ctrl.js",
-//    "js/ctrl/home-ctrl.js",
-//    "js/ctrl/sample-ctrl.js",
-//    "js/ctrl/n2/n2goi-ctrl.js",
-//    "js/ctrl/n2/shadowing-ctrl.js",
-//    "js/ctrl/n2/n2try-ctrl.js",
-//    "js/ctrl/mimikara/mimikara-ctrl.js",
-//
-//    "js/config/router/config-router-begin.js",
-//    "js/config/router/config-router-n2.js",
-//    "js/config/router/config-router-mimikara.js",
-//    "js/config/router/config-router-end.js",
+    "js/lib/kuroshiro.js",
+    "js/lib/kuroshiro-analyzer-kuromoji.js",
+    "js/lib/kuroshiro-config.js",
 ];
 
 
@@ -90,20 +87,70 @@ function loadScript(path) {
     script.onerror = function () { result.reject(); };
     document.querySelector("head").appendChild(script);
     return result.promise();
-  }
+}
 
+var loadArrayBuffer = function (e, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", e.link, true);
+    xhr.responseType = "arraybuffer";
+    xhr.onload = function () {
+        if (this.status > 0 && this.status !== 200) {
+            callback(xhr.statusText, null);
+            return;
+        }
+        var arraybuffer = this.response;
+        e.value = arraybuffer;
+        dataJSON.setItem(e.key , arraybuffer);
+
+        callback(null, arraybuffer);
+
+    };
+    xhr.onerror = function (err) {
+        callback(err, null);
+    };
+    xhr.send();
+};
+
+
+var _loadListJsFile = function(){
+
+    _listJsFile.forEach(function(e,i){
+
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = e;
+        document.body.appendChild(script);
+
+        console.log("loadJsFILE> "+e)
+
+
+    })
+}
 
 _listData.forEach(function(e,i){
-    var key = _getKey(e.key);
 
     dataJSON.getItem(e.key).then(function(value) {
         if(isEmpty(value) || e.key == _listData[_listData.length-1].key){
 
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-           // if(callback)script.onload=callback;
-            script.src = e.link;
-            document.body.appendChild(script);
+            if(e.isArraybuffer){
+
+
+                var callback = function(err, res){
+
+                    _loaded++;//importance for reload
+
+                    isEmpty(err)? null : console.error(err);
+                    isEmpty(res)? null : console.log(res);
+                }
+
+                loadArrayBuffer(e, callback);
+            }else{
+
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+               // if(callback)script.onload=callback;
+                script.src = e.link;
+                document.body.appendChild(script);
 
 //            var scriptTag = document.createElement('script');
 //            scriptTag.src = e.link;
@@ -111,12 +158,13 @@ _listData.forEach(function(e,i){
 //           // scriptTag.onreadystatechange = ;
 //            document.body.appendChild(scriptTag);
 
+            }
+
             console.log("loadData> FILE: "+e.key)
 
         } else {
             console.log("loadData> localStore: "+e.key)
             e.value = value;
-
 
         }
 
@@ -126,20 +174,6 @@ _listData.forEach(function(e,i){
     });
 
 })
-
-var _loadListJsFile = function(){
-    _listJsFile.forEach(function(e,i){
-
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = e;
-        document.body.appendChild(script);
-
-        console.log("loadJs> FILE: "+e)
-
-
-    })
-}
 
 //_listJS.forEach(function(e,i){
 //
