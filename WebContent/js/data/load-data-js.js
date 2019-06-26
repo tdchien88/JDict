@@ -1,4 +1,3 @@
-
 const _tableName = "dataJSON"
 _db_config.storeName = _tableName;
 var dataJSON = localforage.createInstance(_db_config);
@@ -37,6 +36,11 @@ var _listData = [
 
 var _getDataByKey = function(key) {
     var res = _listData.find(x=> x.key === key);
+    if(isEmpty(res.value) || res.value.length == 0){
+        console.log("_getDataByKey delay");
+        //wait(1000);
+        //return _getDataByKey(key);
+    }
     return isEmpty(res)? null: res.value;
 }
 
@@ -49,6 +53,8 @@ var _listJsFile = [
     "js/lib/kuroshiro.js",
     "js/lib/kuroshiro-analyzer-kuromoji.js",
     "js/lib/kuroshiro-config.js",
+
+
 ];
 
 
@@ -121,11 +127,16 @@ var _loadListJsFile = function(){
         script.src = e;
         document.body.appendChild(script);
 
+        if(i == _listJsFile.length-1){
+            // init angularjs
+            initMyApp();
+        }
         console.log("loadJsFILE> "+e)
 
 
     })
 }
+
 
 _listData.forEach(function(e,i){
 
@@ -174,6 +185,8 @@ _listData.forEach(function(e,i){
     });
 
 })
+
+
 
 //_listJS.forEach(function(e,i){
 //

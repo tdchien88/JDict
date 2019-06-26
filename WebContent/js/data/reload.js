@@ -10,7 +10,7 @@ dataJSON.getItem("reload").then(function(value) {
                 dataJSON.setItem(key , {data : 'reload'})
                 .then(function(value){
                     console.log("reload")
-                    location.reload();
+                    location.reload(true);// works for safari
                 });
 
             }

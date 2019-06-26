@@ -741,3 +741,11 @@ function replaceAll(string, target, replacement) {
 function emptyToString(str){
     return isEmpty(str)? "" : str;
 }
+
+function wait(ms){
+    var start = new Date().getTime();
+    var end = start;
+    while(end < start + ms) {
+      end = new Date().getTime();
+   }
+ }
