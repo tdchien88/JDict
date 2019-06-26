@@ -54,7 +54,7 @@ var _listJsFile = [
     "js/lib/kuroshiro-analyzer-kuromoji.js",
     "js/lib/kuroshiro-config.js",
 
-
+    "end",
 ];
 
 
@@ -121,15 +121,16 @@ var loadArrayBuffer = function (e, callback) {
 var _loadListJsFile = function(){
 
     _listJsFile.forEach(function(e,i){
-
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = e;
-        document.body.appendChild(script);
-
+        //last file
         if(i == _listJsFile.length-1){
             // init angularjs
-            initMyApp();
+        }else{
+
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = e;
+            document.body.appendChild(script);
+
         }
         console.log("loadJsFILE> "+e)
 

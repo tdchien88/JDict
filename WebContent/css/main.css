@@ -5,6 +5,7 @@ body{background-color: #eee;font-family: Roboto, "メイリオ", Meiryo, Verdana
 header{box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);}
 span::after{content:"\A";white-space:pre}
 div.span-nonewline span::after{content:none!important}
+.line-h2{line-height: 2;}
 
 .hamburger{padding:5px!important;}
 .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before{background-color:#fff !important;width: 30px;}

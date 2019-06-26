@@ -4,35 +4,40 @@
 var _kuroshiro = null;
 const _kuroshiroOption = {mode:"furigana", to:"hiragana"};
 
-var _kuroshiroInit = function() {
+
+$("#test-shirokuro").html("Library is loading.. plz wait");
+var kuroshiroExc = function(string){
+    if(!libDicLoaded) return Promise.resolve("Library is loading.. plz wait");
+    return _kuroshiro.convert(string, _kuroshiroOption);
+}
+
+var _kuroshiroInit = function(callback) {
 
     if(typeof Kuroshiro == 'undefined' || typeof KuromojiAnalyzer == 'undefined' ){
 
         setTimeout(function(){
-            _kuroshiroInit();
+            _kuroshiroInit(callback);
         },1000)
         return;
 
     }else{
 
         _kuroshiro = new Kuroshiro();
-        $("#test-shirokuro").html("Library is loading.. plz wait");
-
-        var kuroshiroExc = function(string){
-            if(!libDicLoaded) return Promise.resolve("Library is loading.. plz wait");
-            return _kuroshiro.convert(string, _kuroshiroOption);
-        }
         _kuroshiro.init(new KuromojiAnalyzer({ dictPath: "js/lib/kuromoji/" }))
         .then(()=>{
             libDicLoaded = true;
-            kuroshiroExc(" (oﾟ▽ﾟ)oﾟ　頑張ってね！").then(function(result){
-            $("#test-shirokuro").html(result);
-        })});
+            kuroshiroExc(" (oﾟ▽ﾟ)oﾟ　～＞ 頑張ってね！").then(function(result){
+                $("#test-shirokuro").html(result);
+            })
+
+            callback();
+        });
     }
     // your code here
 
 };
-_kuroshiroInit();
+
+_kuroshiroInit(initMyApp);
 
 /*
 var kuroshiro = new Kuroshiro();

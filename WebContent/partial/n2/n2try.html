@@ -67,7 +67,19 @@
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 
         <div class=" lead">
-            <div class="span-nonewline " dynamic-html="data.doc.content"></div>
+            <fieldset>
+              <p class="float-right">
+                <label>Show Furigana:</label>
+                <label class="switch switch-pill switch-success">
+                  <input ng-model="isShowRuby" type="checkbox" class="switch-input" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </p>
+              <div class="clearfix"> </div>
+            </fieldset>
+
+            <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="data.doc.content"></div>
+            <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="data.doc.contentRuby"></div>
 
             <div class="accordion" id="accordion2">
                 <div ng-repeat="item in data.doc.bunpo" >

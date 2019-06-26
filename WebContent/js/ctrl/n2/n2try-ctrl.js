@@ -225,9 +225,12 @@ myApp.controller("n2tryCtrl", function($scope, $stateParams, localStorageService
             $scope.data.curUnit.listRemember = [];
 
         }
+
         $scope.data.doc = n2tryDoc.find(i=> i.unit === $scope.data.curUnit.unit);
 
-        nextWord();
+        kuroshiroExc($scope.data.doc.content).then(function(result){
+            $scope.data.doc.contentRuby = result;
+        });
     }
 
     $scope.reset = function(){

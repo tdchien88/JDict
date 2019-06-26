@@ -202,6 +202,10 @@ _listData[9].value = [
 {no:191, tag:`他`, word:`持たせてください。`, mean:`Cho phép tôi giữ nó.`},
 {no:192, tag:`他`, word:`お手紙4枚 持たせます。 `, mean:`Tôi gửi cho anh 4 bức thư.`},
 
+{no:193, tag:`IT`, word:`不具合を再現することができません。 `, mean:`BUG không thể tái hiện.`},
+
+{no:194, tag:`他`, word:`『愚者は経験に学び、賢者は歴史に学ぶ』と言う。\n『おろかものは けいけんにならび、けんじゃは れきしにまなぶ』という。`, mean:`Kẻ ngu thì học từ kinh nghiệm. Hiền giả học từ lịch sử.`},
+
 
 
 ];

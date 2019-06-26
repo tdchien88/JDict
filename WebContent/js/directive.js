@@ -134,10 +134,21 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
 
                     scope.searchStr = scope.searchStr.trim();
 
+                    kuroshiroExc(scope.searchStr).then(function(result){
+                        scope.searchStrRuby = result;
+                    })
+
                     if(isNotEmpty(scope.searchOld[scope.type]) && scope.searchOld[scope.type] == scope.searchStr){
                         return;
                     }
 
+                    if(scope.searchStr.length > 10){
+                        scope.returnGOI = [];
+                        scope.returnKANJI = [];
+                        scope.returnVD = [];
+                        scope.returnBUNPO = [];
+                        return;
+                    }
                     scope.searchOld[scope.type] = scope.searchStr;
 
                     $rootScope.showLoading(function(){
