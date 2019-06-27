@@ -751,6 +751,20 @@ function wait(ms){
  }
 
 
+function showStatus(status){
+    setTimeout(function(){
+        if($("#myAlert").find("div#myAlert2").length > 0){
+            $("#myAlert").empty();
+        }
+        $("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button>"+status+"</div>");
+        $("#myAlert").css("display", "");
+        $(".alert button.close").click(function (e) {
+            closeStatus();
+        });
+    },0)
+}
 
-
+function closeStatus(){
+    $(".alert button.close").parent().fadeOut('slow');
+}
 

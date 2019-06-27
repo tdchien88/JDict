@@ -5,7 +5,8 @@ var _kuroshiro = null;
 const _kuroshiroOption = {mode:"furigana", to:"hiragana"};
 
 
-$("#test-shirokuro").html("Library is loading.. plz wait");
+
+
 var kuroshiroExc = function(string){
     if(!libDicLoaded) return Promise.resolve("Library is loading.. plz wait");
     return _kuroshiro.convert(string, _kuroshiroOption);
@@ -27,7 +28,7 @@ var _kuroshiroInit = function(callback) {
         .then(()=>{
             libDicLoaded = true;
             kuroshiroExc(" (oﾟ▽ﾟ)oﾟ　～＞ 頑張ってね！").then(function(result){
-                $("#test-shirokuro").html(result);
+                showStatus(result);
             })
 
             callback();

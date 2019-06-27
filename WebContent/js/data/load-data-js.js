@@ -1,3 +1,5 @@
+showStatus("✧٩(*ˊωˋ)و✧　～＞ Library is loading.. plz wait");
+
 const _tableName = "dataJSON"
 _db_config.storeName = _tableName;
 var dataJSON = localforage.createInstance(_db_config);

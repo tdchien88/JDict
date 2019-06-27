@@ -70,7 +70,7 @@
 <script src="js/data/load-data-js.js"></script>
 
 </head>
-<body ng-cloak ng-controller="mainController" class="app header-fixed">
+<body ng-controller="mainController" class="app header-fixed">
 
     <!-- ロード時のマスク -->
     <div ng-if="loading" class="loading loading_mask">
@@ -127,9 +127,10 @@
 
 
 <main class="main">
+    <div id="myAlert" style="display:none;"></div>
+
     <div class="mt-2 container">
          <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-        <div id="test-shirokuro"></div>
         <div ui-view ></div>
     </div>
 </main>
