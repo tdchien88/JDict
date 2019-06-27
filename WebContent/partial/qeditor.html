@@ -5,20 +5,20 @@
     <label class="nav-item nav-link " data-toggle="tab" role="tab" href="#to-html" aria-controls="to-html" aria-selected="false">To HTML</label>
 </div>
 </nav>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button>
+
 <div class="tab-content no-border-bottom no-border-left no-border-right">
     <div class="tab-pane fade active show" id="q-editor" role="tabpanel" aria-labelledby="nav-home-tab">
-        <div id="editor-container"></div>
+        <div id="editor-container" style="min-height:400px"></div>
 
     </div>
 
 
-    <div class="tab-pane fade" id="to-html" role="tabpanel"aria-labelledby="nav-home-tab" aria-labelledby="nav-home-tab">
+    <div class="tab-pane fade" id="to-html" role="tabpanel" aria-labelledby="nav-home-tab" aria-labelledby="nav-home-tab">
 
-        <div id="exportHTML" class=" border p-2">{{editor.container.firstChild.innerHTML}}</div>
-        <md-button class="btn " ng-click="copy(editor.container.firstChild.innerHTML)" tooltip="show favorites">Copy HTML</md-button>
+        <button class="btn btn-success btn-sm float-right" ng-click="copy(editor.container.firstChild.innerHTML)" tooltip="show favorites">Copy HTML</button>
+        <div class="clearfix"> </div>
+
+        <div id="exportHTML" class=" border p-2 mt-2" style="min-height:400px">{{editor.container.firstChild.innerHTML}}</div>
     </div>
 
 
