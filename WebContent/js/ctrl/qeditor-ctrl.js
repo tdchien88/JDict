@@ -61,7 +61,7 @@ myApp.controller("qeditorCtrl", function($scope, $timeout, dialogService){
     $scope.copy = function (text){
 
 
-        myCopy(text);
+        Clipboard.copy(text);
     }
 
 });
