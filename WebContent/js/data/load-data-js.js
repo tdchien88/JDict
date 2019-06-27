@@ -1,4 +1,4 @@
-showStatus("✧٩(*ˊωˋ)و✧　～＞ Library is loading.. plz wait");
+showStatus("Library is loading.. plz wait");
 
 const _tableName = "dataJSON"
 _db_config.storeName = _tableName;

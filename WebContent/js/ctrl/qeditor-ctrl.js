@@ -62,6 +62,7 @@ myApp.controller("qeditorCtrl", function($scope, $timeout, dialogService){
 
 
         Clipboard.copy(text);
+        showStatus("Copied!")
     }
 
 });

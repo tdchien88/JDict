@@ -752,6 +752,10 @@ function wait(ms){
 
 
 function showStatus(status){
+    var faces = ["✧٩(*ˊωˋ)و✧ ", "(oﾟ▽ﾟ)oﾟ", ];
+    var myFace = faces[Math.floor(Math.random()*faces.length)];
+    status = myFace +"　～＞ " + status;
+
     setTimeout(function(){
         if($("#myAlert").find("div#myAlert2").length > 0){
             $("#myAlert").empty();

@@ -27,7 +27,7 @@ var _kuroshiroInit = function(callback) {
         _kuroshiro.init(new KuromojiAnalyzer({ dictPath: "js/lib/kuromoji/" }))
         .then(()=>{
             libDicLoaded = true;
-            kuroshiroExc(" (oﾟ▽ﾟ)oﾟ　～＞ 頑張ってね！").then(function(result){
+            kuroshiroExc("頑張ってね！").then(function(result){
                 showStatus(result);
             })
 
