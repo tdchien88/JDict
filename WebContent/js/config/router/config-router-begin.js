@@ -27,6 +27,11 @@ myApp.config(function($stateProvider, $urlRouterProvider){
         templateUrl: 'partial/sample.html',
         controller: 'sampleCtrl'
     })
+    .state('qeditor', {
+        url: '/qeditor',
+        templateUrl: 'partial/qeditor.html',
+        controller: 'qeditorCtrl'
+    })
     .state('about', {
         url: '/about',
         templateUrl: 'partial/about.html'

@@ -58,7 +58,11 @@ div.span-nonewline span::after{content:none!important}
 .hidden3{color:#eee!important}
 
 .no-border-radius{border-radius:0!important}
+.no-border{border:none!important}
 .no-border-top{border-top:none!important}
+.no-border-bottom{border-bottom:none!important}
+.no-border-left{border-left:none!important}
+.no-border-right{border-right:none!important}
 
 .nav-tabs .nav-link:focus{border-color:#e4e7ea #e4e7ea #c8ced3;background-color:#f5f5f5}
 .nav-tabs .nav-link{color:#73818f;padding:.3rem .5rem;border-color:#c8ced3}

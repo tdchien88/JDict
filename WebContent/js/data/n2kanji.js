@@ -2176,7 +2176,7 @@ _listData[7].value = [
 {no:2175, week:10, day:1, unit:55, word:`Đáng kể`, kana2:`いちじるしい`, han:`TRỨ`, mean:`著しい`},
 {no:2176, week:10, day:1, unit:55, word:`Bao gồm`, kana2:`しめる`, han:`CHIẾM, CHIÊM`, mean:`占める`},
 {no:2177, week:10, day:1, unit:55, word:`Bói`, kana2:`うらなう`, han:`CHIẾM, CHIÊM`, mean:`占う`},
-{no:2178, week:10, day:1, unit:55, word:`So sánh`, kana2:`くらべうる`, han:`TỈ`, mean:`比べる`},
+{no:2178, week:10, day:1, unit:55, word:`So sánh`, kana2:`くらべる`, han:`TỈ`, mean:`比べる`},
 {no:2179, week:10, day:1, unit:55, word:`Sự so sánh`, kana2:`ひかく`, han:`TỈ GIÁC`, mean:`比較`},
 {no:2180, week:10, day:1, unit:55, word:`Mang tính so sánh`, kana2:`きかくてき`, han:`TỈ GIÁC ĐÍCH`, mean:`比較的`},
 {no:2181, week:10, day:1, unit:55, word:`Trung bình năm`, kana2:`へいねんなみ`, han:`BÌNH NIÊN TỊNH`, mean:`平年並み`},
