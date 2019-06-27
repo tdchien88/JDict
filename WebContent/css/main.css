@@ -64,6 +64,8 @@ div.span-nonewline span::after{content:none!important}
 .no-border-left{border-left:none!important}
 .no-border-right{border-right:none!important}
 
+.header-sticky{position:sticky;position: -webkit-sticky;top:0px;}
+
 #search-form .nav-tabs .nav-link{background-color:#fbfbfb;color:#73818f;padding:.3rem .5rem;border-color:#c8ced3}
 #search-form .nav-tabs .nav-link:focus{border-color:#e4e7ea #e4e7ea #c8ced3;background-color:#f5f5f5}
 #search-form .nav-tabs .nav-link.active{background-color:#20a8d8!important;border-color:#20a8d8;color:#fff;padding:.4rem .5rem;margin-top:-.2rem;z-index:9999}
