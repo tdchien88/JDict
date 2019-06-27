@@ -85,9 +85,9 @@
             <div class="accordion" id="accordion2">
                 <div ng-repeat="item in data.doc.bunpo" >
                   <div class="card "  >
-                    <div class="card-header" id="heading{{$index}}">
-                   <span class=""> {{item.no+'.'}}</span>
-                          <div class="text-left multi-lines justify-content-center" dynamic-html="item.jp"></div>
+                    <div class="card-header header-sticky" id="heading{{$index}}">
+                        <span class=""> {{item.no+'.'}}</span>
+                        <div class="text-left multi-lines justify-content-center" dynamic-html="item.jp"></div>
                         <button class="btn btn-link link-no-uderline float-right" type="button" data-toggle="collapse" data-target="#collapseBP{{$index}}" aria-expanded="true" aria-controls="collapseBP{{$index}}">
                         more
                         </button>
@@ -113,7 +113,7 @@
                 <div ng-if="data.doc.bunpo == null">
                     <div ng-repeat="item in data.curUnit.listCurrentWords" >
                       <div class="card "  >
-                        <div class="card-header" id="heading{{$index}}">
+                        <div class="card-header header-sticky" id="heading{{$index}}">
                             <span class=""> {{item.subno+'.'}}</span>
                             <div class="text-left multi-lines justify-content-center" dynamic-html="item.word"></div>
                             <button class="btn btn-link link-no-uderline float-right" type="button" data-toggle="collapse" data-target="#collapseBP{{$index}}" aria-expanded="true" aria-controls="collapseBP{{$index}}">
