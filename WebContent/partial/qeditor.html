@@ -8,12 +8,12 @@
 	  <a class="nav-link no-border-radius" data-toggle="tab" href="#q2html" role="tab" aria-controls="q2html">To HTML</a>
 	</li>
     <li class="nav-item">
-      <a class="nav-link no-border-radius" data-toggle="tab" href="#q2markdown" role="tab" aria-controls="q2markdown">To HTML</a>
+      <a class="nav-link no-border-radius" data-toggle="tab" href="#q2markdown" role="tab" aria-controls="q2markdown">To Markdown</a>
     </li>
 </ul>
 <div class="tab-content  no-border-bottom no-border-right no-border-left">
 	<div class="tab-pane active" id="qeditor" role="tabpanel">
-       <div id="editor-container" style="min-height:400px"></div>
+       <div id="editor-container" style="height:400px"></div>
 	</div>
 
 	<div class="tab-pane" id="q2html" role="tabpanel">
@@ -21,7 +21,7 @@
        <button class="btn btn-success btn-sm float-right" ng-click="copy(editor.container.firstChild.innerHTML)" tooltip="show favorites">Copy HTML</button>
        <div class="clearfix"> </div>
 
-       <div id="exportHTML" class=" border p-2 mt-2" style="min-height:400px">{{editor.container.firstChild.innerHTML}}</div>
+       <div id="exportHTML" class=" border p-2 mt-2" style="height:400px;overflow: scroll;">{{editor.container.firstChild.innerHTML}}</div>
 	</div>
 
     <div class="tab-pane" id="q2markdown" role="tabpanel">
@@ -29,7 +29,7 @@
        <button class="btn btn-success btn-sm float-right" ng-click="copy(editor.container.firstChild.innerHTML)" tooltip="show favorites">Copy Markdown</button>
        <div class="clearfix"> </div>
 
-       <div id="exportHTML" class=" border p-2 mt-2" style="min-height:400px">{{editor.container.firstChild.innerHTML}}</div>
+       <div id="exportMD" class=" border p-2 mt-2" style="height:400px;overflow: scroll;">{{editor.container.firstChild.innerHTML}}</div>
     </div>
 </div>
 
