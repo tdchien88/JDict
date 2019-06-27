@@ -6,17 +6,18 @@ var dataJSON = localforage.createInstance(_db_config);
 
 var _prefix = 'jdict.';
 var _listData = [
-    {key: 'n2try', link:'js/data/n2try.js', value: []},
+    {key: 'n2try', link:'js/data/n2try.js', value: []},//0
     {key: 'bunpo', link:'js/data/bunpo.js', value: []},
     {key: 'bunpovd', link:'js/data/bunpovd.js', value: []},
     {key: 'shadowing2', link:'js/data/shadowing2.js', value: []},
     {key: 'n3goi', link:'js/data/n3goi.js', value: []},
-    {key: 'n3kanji', link:'js/data/n3kanji.js', value: []},
+    {key: 'n3kanji', link:'js/data/n3kanji.js', value: []},//5
     {key: 'n2goi', link:'js/data/n2goi.js', value: []},
     {key: 'n2kanji', link:'js/data/n2kanji.js', value: []},
     {key: 'n2tryDoc', link:'js/data/n2try-doc.js', value: []},
     {key: 'iword', link:'js/data/iword.js', value: []},
-    {key: 'hanviet', link:'js/data/hanviet.js', value: []},
+    {key: 'hanviet', link:'js/data/hanviet.js', value: []},//10
+    {key: 'n2bunpo', link:'js/data/n2bunpo.js', value: []},
 
     {key: 'data_base', link:'js/lib/kuromoji/base.dat.gz', isArraybuffer:true, value: null},
     {key: 'data_check', link:'js/lib/kuromoji/check.dat.gz', isArraybuffer:true, value: null},

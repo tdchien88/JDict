@@ -11,23 +11,25 @@ myApp.controller("qeditorCtrl", function($scope, $timeout, dialogService){
 
     var toolbarOpton = {
             container: [
-                ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-                ['blockquote', 'code-block'],
-
-                [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-                [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-                [{ 'direction': 'rtl' }],                         // text direction
-
+                [{ 'font': [] }],                                 // select font
+                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],        // select header (tag h)
+//                [{ 'header': 1 }, { 'header': 2 }],             // custom button values
                 [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
                 [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-                [{ 'font': [] }],
-                [{ 'align': [] }],
-                ['markdown'], // Add this.
+                ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+                [{ 'align': [] },                                  // align
+                 { 'indent': '-1'},                               // indent -1
+                 { 'indent': '+1' },                              // indent +1
+                ],
+                [
+                 { 'list': 'ordered'},                            // list ordered
+                 { 'list': 'bullet' },                            // list ordered
+                ],
+                ['blockquote', 'code-block'],                     // blockquote
+                [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+//                [{ 'direction': 'rtl' }],                       // text direction
                 ['clean']                                         // remove formatting button
+                ['markdown'], // Add this.
             ],
             handlers: { // Add this.
                 'markdown': function () {}
