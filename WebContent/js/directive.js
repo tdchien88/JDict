@@ -162,6 +162,11 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                         if(scope.type == 'kanji'){
                                 var res = searchInListKANJI(listKANJI);
                                 scope.returnKANJI =  (res) ? res : [];
+                                $timeout(function(){
+                                    scope.returnKANJI.forEach(function(e,i){
+                                        $(("#draw"+i)).dmak(e.word);
+                                    });
+                                },100)
                         }
 
                         if(scope.type == 'vd'){

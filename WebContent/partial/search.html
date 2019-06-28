@@ -48,11 +48,20 @@
       <div ng-if="returnKANJI.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
       <div ng-repeat="item in returnKANJI" class="m-2">
-          <p class="text-wrap">
-            <h2 class="text-danger">{{item.word}}</h2>
-            <h5>[{{item.han}}]</h5>
-            <span>{{item.mean}}</span>
-          </p>
+         <table>
+         <tr>
+             <td class="p-2">
+                 <div id="draw{{$index}}" ></div>
+             </td>
+             <td class="p-2">
+                 <p class="text-wrap">
+                   <h2 class="text-danger">{{item.word}}</h2>
+                   <h5>[{{item.han}}]</h5>
+                   <span>{{item.mean}}</span>
+                 </p>
+             </td>
+         </tr>
+         </table>
           <hr>
       </div>
     </div>
