@@ -1,10 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+
 body{background-color: #eee;font-family: Roboto, "メイリオ", Meiryo, Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;background:url(../img/bg.png) no-repeat}
 .app-body{overflow-x:initial;margin-top: 10px; }
 header{box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);}
 span::after{content:"\A";white-space:pre}
 div.span-nonewline span::after{content:none!important}
+a { color: #37add3; text-decoration: none; }
+a:focus, *:focus { outline:none; }
+a:hover { color: #0095c5; }
+
 .line-h2{line-height: 2;}
 
 .hamburger{padding:5px!important;}
@@ -27,6 +32,10 @@ div.span-nonewline span::after{content:none!important}
 .my-modal-popup .modal{background-color:#00000055}
 
 .card-body{padding:1rem}
+
+.input-group-prepend {position: absolute;right: 40px;top: 50%;transform: translateY(-50%);z-index:999;}
+.input-group-prepend button.close {font-size: 1rem;opacity: 1!important;}
+
 
 .w0{width:0}
 .w10{width:10px}
@@ -114,7 +123,9 @@ div.span-nonewline span::after{content:none!important}
 .panel-body{padding:15px}
 .panel-heading{padding:10px 15px;border-bottom:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px}
 
-.md-list{height:90vh;overflow-y:scroll;padding-top:0;bottom:0;position:fixed}
+.md-content{height:90vh;padding-top:0;bottom:0;position:fixed}
+.md-list{overflow-y:scroll;height:680px}
+
 
 .bottomSheetdemoBasicUsage .md-inline-list-icon-label{display:inline-block;padding-left:10px;padding-right:10px;margin-top:-10px;height:24px;vertical-align:middle}
 .bottomSheetdemoBasicUsage .md-grid-item-content{height:90px;padding-top:10px}

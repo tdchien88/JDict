@@ -142,7 +142,7 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                         return;
                     }
 
-                    if(scope.searchStr.length > 10){
+                    if(scope.searchStr.length > 20){
                         scope.returnGOI = [];
                         scope.returnKANJI = [];
                         scope.returnVD = [];
@@ -170,15 +170,25 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                         }
 
                         if(scope.type == 'vd'){
-                            if(scope.searchStr == 'tag combini'){
+                            if(scope.searchStr.toUpperCase().indexOf("TAG")==0){
+
+                                var searchStr = scope.searchStr.toUpperCase().replace("TAG", "").trim();
+
                                 var res = iword.filter((x) => {
-                                    return x.tag === "combini"
+                                    return ((isEmpty(x.tag))?"":x.tag).toUpperCase() === searchStr.toUpperCase();
                                 })
+
                                 scope.returnVD =  (res) ? res : [];
+
+                                scope.returnVD.forEach(function(e, i){
+                                    kuroshiroExc(e.word).then(function(result){
+                                        e.wordRuby = result;
+                                    })
+                                });
+
                             }else{
                                 var res = searchInList2(listVD);
                                 scope.returnVD =  (res) ? res : [];
-
                             }
                         }
 
@@ -227,6 +237,14 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                     }
 
                     searchText(scope);
+                }
+
+                /**
+                 * clear
+                 */
+                scope.clear = function(){
+                    scope.searchStr = "";
+                    setTargetFocus("searchStr");
                 }
 
                 /**

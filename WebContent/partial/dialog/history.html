@@ -1,13 +1,13 @@
-<md-bottom-sheet class="md-list md-has-header">
+<md-bottom-sheet class="md-content md-has-header">
   <md-subheader ng-cloak>
-  <bold>
-  Lịch sử tra cứu
-  </bold>
+  <bold>Lịch sử tra cứu</bold>
   <button ng-if="listHistory.length > 0" class="btn btn-outline-danger float-right mr-3" ng-click="clearHistory()" type="button"><i class="fa fa-trash"></i> Clear History</button>
   <div class="clearfix"> </div>
   </md-subheader>
+
   <span ng-if="listHistory.length == 0">no history</span>
-  <md-list ng-cloak>
+
+  <md-list class="md-list" ng-cloak>
     <md-list-item ng-repeat="item in listHistory track by $index" ng-click="selectListItem($index)" class="" href="">
 
        <div class="d-flex w-100 justify-content-between">

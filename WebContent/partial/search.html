@@ -2,24 +2,27 @@
 
   <ul class="nav nav-tabs no-border-bottom"  role="tablist">
     <li class="nav-item">
-    <label class="nav-link active show mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'goi')" data-toggle="tab" role="tab" href="#goi" aria-controls="goi" aria-selected="true">GOI</label>
+    <label class="nav-link active show mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'goi')" data-toggle="tab" role="tab" href="#goi" aria-controls="goi" aria-selected="true">TỪ VỰNG</label>
     </li>
     <li class="nav-item">
-    <label class="nav-link mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'kanji')" data-toggle="tab" role="tab" href="#kanji" aria-controls="kanji" aria-selected="false">KANJI</label>
+    <label class="nav-link mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'kanji')" data-toggle="tab" role="tab" href="#kanji" aria-controls="kanji" aria-selected="false">HÁN TỰ</label>
     </li>
     <li class="nav-item">
-    <label class="nav-link mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'vd')" data-toggle="tab" role="tab" href="#vd" aria-controls="vd" aria-selected="false">VD</label>
+    <label class="nav-link mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'vd')" data-toggle="tab" role="tab" href="#vd" aria-controls="vd" aria-selected="false">CÂU</label>
     </li>
     <li class="nav-item">
-    <label class="nav-link mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'bunpo')" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">BUNPO</label>
+    <label class="nav-link mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'bunpo')" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">NGỮ PHÁP</label>
     </li>
     <li class="">
-    <label class="nav-link mb-0 no-border-radius no-border-bottom" ng-click="showListBottomSheet()">RIREKI</label>
+    <label class="nav-link mb-0 no-border-radius no-border-bottom" ng-click="showListBottomSheet()"><i class="fa fa-history" aria-hidden="true"></i></label>
     </li>
   </ul>
 
   <div class="input-group mb-3">
-    <my-textbox name="search-tbx" class=" no-border-radius" ctrlproptype="japan" ng-model="searchStr" ng-keydown='enterSearch($event)' placeholder="さあ、今日も頑張ろう！"></my-textbox>
+    <my-textbox name="searchStr" class=" no-border-radius" ctrlproptype="japan" ng-model="searchStr" ng-keydown='enterSearch($event)' placeholder="さあ、今日も頑張ろう！"></my-textbox>
+    <span ng-if="searchStr.length>0" class="input-group-prepend">
+      <button class="close p-2 text-primary" ng-click="clear()" type="button"><span class="fa fa-times fa-lg"></span></button>
+    </span>
     <span class="input-group-append">
       <button class="btn btn-primary no-border-radius" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
     </span>
@@ -71,7 +74,7 @@
       <div ng-if="returnVD.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
       <div ng-repeat="item in returnVD" class="m-2">
-          <h4 class="text-danger multi-lines">{{item.word}}</h4>
+          <h4 class="text-danger multi-lines" dynamic-html="item.wordRuby"></h4>
           <p class="multi-lines">{{item.mean}}</p>
           <p class="float-right tag tag-bunpo" ng-if="item.unit">Unit: {{item.unit}}</p>
           <div class="clearfix"> </div>
