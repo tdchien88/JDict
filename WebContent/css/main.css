@@ -7,7 +7,7 @@ header{box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);}
 span::after{content:"\A";white-space:pre}
 div.span-nonewline span::after{content:none!important}
 a { color: #37add3; text-decoration: none; }
-a:focus, *:focus { outline:none; }
+a:focus, button:focus, *:focus { outline:none; }
 a:hover { color: #0095c5; }
 
 .line-h2{line-height: 2;}
@@ -33,8 +33,8 @@ a:hover { color: #0095c5; }
 
 .card-body{padding:1rem}
 
-.input-group-prepend {position: absolute;right: 40px;top: 50%;transform: translateY(-50%);z-index:999;}
-.input-group-prepend button.close {font-size: 1rem;opacity: 1!important;}
+.input-group-right {position: absolute;right: 40px;top: 50%;transform: translateY(-50%);z-index:999;}
+.input-group-right button.close {font-size: 1rem;opacity: 1!important;}
 
 
 .w0{width:0}

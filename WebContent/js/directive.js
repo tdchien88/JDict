@@ -180,16 +180,17 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
 
                                 scope.returnVD =  (res) ? res : [];
 
-                                scope.returnVD.forEach(function(e, i){
-                                    kuroshiroExc(e.word).then(function(result){
-                                        e.wordRuby = result;
-                                    })
-                                });
-
                             }else{
                                 var res = searchInList2(listVD);
                                 scope.returnVD =  (res) ? res : [];
+
                             }
+
+                            scope.returnVD.forEach(function(e, i){
+                                kuroshiroExc(e.word).then(function(result){
+                                    e.wordRuby = result;
+                                })
+                            });
                         }
 
                         if(scope.type == 'bunpo'){

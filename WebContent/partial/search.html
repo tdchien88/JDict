@@ -20,7 +20,7 @@
 
   <div class="input-group mb-3">
     <my-textbox name="searchStr" class=" no-border-radius" ctrlproptype="japan" ng-model="searchStr" ng-keydown='enterSearch($event)' placeholder="さあ、今日も頑張ろう！"></my-textbox>
-    <span ng-if="searchStr.length>0" class="input-group-prepend">
+    <span ng-if="searchStr.length>0" class="input-group-right">
       <button class="close p-2 text-primary" ng-click="clear()" type="button"><span class="fa fa-times fa-lg"></span></button>
     </span>
     <span class="input-group-append">

@@ -752,7 +752,7 @@ function wait(ms){
 
 
 function showStatus(status){
-    var faces = ["✧٩(*ˊωˋ)و✧ ", "(oﾟ▽ﾟ)oﾟ", ];
+    var faces = ["✧٩(*ˊωˋ)و✧ ", "(oﾟ▽ﾟ)oﾟ", "＼\ ٩( ᐛ )و /／","٩( ᐛ )و","(๑•̀ㅂ•́)و✧","٩(ˊᗜˋ*)و","(๑˃̵ᴗ˂̵)و","やったー！　(๑˃̵ᴗ˂̵)و ﾖｼ!","(๑˃̵ᴗ˂̵)و ﾖｼ!","╭( ･ㅂ･)و ̑̑ ｸﾞｯ !","✧＼\ ٩( 'ω' )و /／✧","✧*｡٩(ˊωˋ*)و✧*｡","٩( 'ω' )و ♬*゜"];
     var myFace = faces[Math.floor(Math.random()*faces.length)];
     status = myFace +"　～＞ " + status;
 
