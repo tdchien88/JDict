@@ -19,13 +19,16 @@
   </ul>
 
   <div class="input-group mb-3">
-    <my-textbox name="searchStr" class=" no-border-radius" ctrlproptype="japan" ng-model="searchStr" ng-keydown='enterSearch($event)' placeholder="さあ、今日も頑張ろう！"></my-textbox>
+    <my-textbox id="searchStr" name="searchStr" class=" no-border-radius" list='searchList' ctrlproptype="japan" ng-model="searchStr" ng-keydown='enterSearch($event)' placeholder="さあ、今日も頑張ろう！"></my-textbox>
     <span ng-if="searchStr.length>0" class="input-group-right">
-      <button class="close p-2 text-primary" ng-click="clear()" type="button"><span class="fa fa-times fa-lg"></span></button>
+      <button class="close p-2 " ng-click="clear()" type="button"><span class="fa fa-times fa-lg"></span></button>
     </span>
     <span class="input-group-append">
       <button class="btn btn-primary no-border-radius" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
     </span>
+    <datalist id="searchList" class="w-100">
+        <option ng-repeat="item in listResult" label="{{tagStr +' '+ item.tag}}" value="{{tagStr +' '+ item.tag}}"></option>
+    </datalist>
   </div>
 
 <div class="mb10">
@@ -36,13 +39,18 @@
       <div ng-if="returnGOI.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
       <div ng-repeat="item in returnGOI" class="m-2">
-          <p class="text-wrap">
-            <h4 class="text-danger">{{item.word}}</h4>
-            <h5>{{item.han}}</h5>
-            <h5>{{item.mean}}</h5>
-            <span>{{item.kana2}}</span>
-          </p>
-          <hr>
+        <div class=" d-flex ">
+          <div class="p-2">{{$index+1+"."}}</div>
+          <div class="p-2 flex-fill">
+            <p class="text-wrap">
+              <h4 class="multi-lines text-danger" dynamic-html="item.wordRuby"></h4>
+              <h5>{{item.han}}</h5>
+              <h5 class="multi-lines " dynamic-html="item.meanRuby" ></h5>
+              <span ng-if="item.wordRuby == null">{{item.kana2}}</span>
+            </p>
+          </div>
+        </div>
+        <hr>
       </div>
     </div>
 
@@ -51,21 +59,19 @@
       <div ng-if="returnKANJI.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
       <div ng-repeat="item in returnKANJI" class="m-2">
-         <table>
-         <tr>
-             <td class="p-2">
-                 <div id="draw{{$index}}" ></div>
-             </td>
-             <td class="p-2">
+        <div class=" d-flex ">
+          <div class="p-2 ">
+            <div id="draw{{$index}}" ></div>
+          </div>
+          <div class="p-2 flex-fill">
                  <p class="text-wrap">
                    <h2 class="text-danger">{{item.word}}</h2>
                    <h5>[{{item.han}}]</h5>
                    <span>{{item.mean}}</span>
                  </p>
-             </td>
-         </tr>
-         </table>
-          <hr>
+          </div>
+        </div>
+        <hr>
       </div>
     </div>
 
@@ -74,11 +80,16 @@
       <div ng-if="returnVD.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
       <div ng-repeat="item in returnVD" class="m-2">
-          <h4 class="text-danger multi-lines" dynamic-html="item.wordRuby"></h4>
-          <p class="multi-lines">{{item.mean}}</p>
-          <p class="float-right tag tag-bunpo" ng-if="item.unit">Unit: {{item.unit}}</p>
-          <div class="clearfix"> </div>
-          <hr>
+        <div class=" d-flex ">
+          <div class="p-2">{{$index+1+"."}}</div>
+          <div class="p-2 flex-fill">
+              <h4 class="text-danger multi-lines" dynamic-html="item.wordRuby"></h4>
+              <p class="multi-lines">{{item.mean}}</p>
+              <p class="float-right tag tag-bunpo" ng-if="item.unit">Unit: {{item.unit}}</p>
+              <div class="clearfix"> </div>
+          </div>
+        </div>
+        <hr>
       </div>
     </div>
 

@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 
-body{background-color: #eee;font-family: Roboto, "メイリオ", Meiryo, Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;background:url(../img/bg.png) no-repeat}
+body{background-color: #eee;font-family: Roboto, "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, Verdana, "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;background:url(../img/bg.png) no-repeat}
 .app-body{overflow-x:initial;margin-top: 10px; }
 header{box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);}
 span::after{content:"\A";white-space:pre}
@@ -9,6 +9,7 @@ div.span-nonewline span::after{content:none!important}
 a { color: #37add3; text-decoration: none; }
 a:focus, button:focus, *:focus { outline:none; }
 a:hover { color: #0095c5; }
+rt,rp {opacity: 0.8;}
 
 .line-h2{line-height: 2;}
 
@@ -26,6 +27,7 @@ a:hover { color: #0095c5; }
 .loading_mask{position:fixed;display:flex;width:100%;height:100%;background-color:#00000066;justify-content:center;align-items:center}
 .loading{z-index:10000}
 
+#navbarSupportedContent .dropdown-menu{border:none!important}
 .navbar{padding:.3rem 1rem}
 .navbar-light {background-color:#56aed320!important}
 
@@ -33,9 +35,10 @@ a:hover { color: #0095c5; }
 
 .card-body{padding:1rem}
 
+#searchStr::-webkit-calendar-picker-indicator {opacity: 0!important;}
 .input-group-right {position: absolute;right: 40px;top: 50%;transform: translateY(-50%);z-index:999;}
-.input-group-right button.close {font-size: 1rem;opacity: 1!important;}
-
+.input-group-right button.close {font-size: 1rem;opacity: 1!important;color: #20a8d8;}
+.input-group-right button:hover {color: #1b8eb7;}
 
 .w0{width:0}
 .w10{width:10px}
@@ -60,6 +63,18 @@ a:hover { color: #0095c5; }
 .wp45{width:45%}
 .wp50{width:50%}
 .wp55{width:55%}
+
+.o0{opacity:0}
+.o1{opacity:0.1}
+.o2{opacity:0.2}
+.o3{opacity:0.3}
+.o4{opacity:0.4}
+.o5{opacity:0.5}
+.o6{opacity:0.6}
+.o7{opacity:0.7}
+.o8{opacity:0.8}
+.o9{opacity:0.9}
+
 .text-gray-500{color:#8f9ba6!important}
 
 .hidden{display:none!important}
@@ -78,6 +93,7 @@ a:hover { color: #0095c5; }
 #search-form .nav-tabs .nav-link{background-color:#fbfbfb;color:#73818f;padding:.3rem .5rem;border-color:#c8ced3}
 #search-form .nav-tabs .nav-link:focus{border-color:#e4e7ea #e4e7ea #c8ced3;background-color:#f5f5f5}
 #search-form .nav-tabs .nav-link.active{background-color:#20a8d8!important;border-color:#20a8d8;color:#fff;padding:.4rem .5rem;margin-top:-.2rem;z-index:9999}
+#search-form .nav-tabs .nav-link:hover{background-color:#eee!important}
 
 .table-hover tbody tr:hover{background-color:#ffecb3}
 .tab-content .tab-pane{padding:1rem 0}

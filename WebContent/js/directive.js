@@ -35,6 +35,12 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
 //                           return {'word': item.word, 'mean': item.mean, 'kana1': item.kana1, 'kana2': item.kana2}
 //                          });
                var listVD = $.merge(iword, shadowing2 );
+               var seen = {};
+               scope.tagStr = "tag ";
+               var listVD_TAG = listVD.filter(function (e) {
+                   return seen[e.tag] ? false : (seen[e.tag] = true);
+               });
+
                var listGOI = $.merge(n2kanji, $.merge(n3kanji, $.merge(n2goi, n3goi )));
                var listKANJI = hanviet;
                scope.type = 'goi';
@@ -157,6 +163,15 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                         if(scope.type == 'goi'){
                                 var res = searchInList(listGOI);
                                 scope.returnGOI =  (res) ? res : [];
+
+                                scope.returnGOI.forEach(function(e, i){
+                                    kuroshiroExc(e.word).then(function(result){
+                                        e.wordRuby = result;
+                                    })
+                                    kuroshiroExc(e.mean).then(function(result){
+                                        e.meanRuby = result;
+                                    })
+                                });
                         }
 
                         if(scope.type == 'kanji'){
@@ -170,9 +185,9 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                         }
 
                         if(scope.type == 'vd'){
-                            if(scope.searchStr.toUpperCase().indexOf("TAG")==0){
+                            if(scope.searchStr.toUpperCase().indexOf(scope.tagStr.toUpperCase())==0){
 
-                                var searchStr = scope.searchStr.toUpperCase().replace("TAG", "").trim();
+                                var searchStr = scope.searchStr.toUpperCase().replace(scope.tagStr.toUpperCase(), "").trim();
 
                                 var res = iword.filter((x) => {
                                     return ((isEmpty(x.tag))?"":x.tag).toUpperCase() === searchStr.toUpperCase();
@@ -235,6 +250,12 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
 
                     if(isNotEmpty(type)){
                         scope.type = type;
+                    }
+
+                    if(type == "vd"){
+                        scope.listResult = listVD_TAG;
+                    }else{
+                        scope.listResult = [];
                     }
 
                     searchText(scope);

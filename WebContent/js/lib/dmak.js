@@ -48,7 +48,7 @@
 			w: 109,
 			h: 109
 		},
-		step: 0.05,                         // positive integer which defines the speed of the drawing.
+		step: 0.03,                         // positive integer which defines the speed of the drawing.
 		element: "draw",                    // DOM element or its ID which is going to be a parent for drawing surface.
 		stroke: {
 			animated : {

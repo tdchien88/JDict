@@ -68,7 +68,7 @@
           <a ng-if="!menu.sub" ui-sref="{{createLink(menu)}}" ui-sref-active="active" class="nav-link " onclick="$('.hamburger').toggleClass('is-active');" data-toggle="collapse" data-target="#navbarSupportedContent">{{menu.name}}</a>
 
           <a ng-if="menu.sub" class="nav-link dropdown-toggle" ui-sref="{{createLink(menu)}}" ui-sref-active="active" id="{{menu.name}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menu.name}}</a>
-            <div ng-if="menu.sub" class="dropdown-menu" aria-labelledby="{{menu.name}}">
+            <div ng-if="menu.sub" class="dropdown-menu no-boder o8" aria-labelledby="{{menu.name}}">
               <a ng-repeat="sub in menu.sub" class="dropdown-item " ui-sref="{{createLink(sub)}}" onclick="$('.hamburger').toggleClass('is-active');" ui-sref-active="active" data-toggle="collapse" data-target="#navbarSupportedContent">{{sub.name}}</a>
             </div>
       </li>
