@@ -8,6 +8,12 @@
 myApp.controller("shadowingCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout){
     var shadowing2 = _getDataByKey('shadowing2');
 
+    shadowing2.forEach(function(e,i){
+        kuroshiroExc(e.word).then(function(result){
+            e.wordRuby = result;
+        })
+    })
+
     function init(){
         localStorageService.setPrefix('jdict.shadowing2');
 
