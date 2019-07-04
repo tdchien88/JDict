@@ -36,7 +36,7 @@ rt,rp {opacity: 0.9;color: #63c2de!important}
 .card-body{padding:1rem}
 
 #searchStr::-webkit-calendar-picker-indicator {opacity: 0!important;}
-.input-group-right {position: absolute;right: 40px;top: 50%;transform: translateY(-50%);z-index:999;}
+.input-group-right {position: absolute;right: 40px;top: 50%;transform: translateY(-50%);z-index:1;}
 .input-group-right button.close {font-size: 1rem;opacity: 1!important;color: #20a8d8;}
 .input-group-right button:hover {color: #1b8eb7;}
 
