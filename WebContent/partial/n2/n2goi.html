@@ -202,8 +202,10 @@
                 <th class="col wp5">#</th>
                 <th class="col wp30">Nghĩa</th>
                 <th class="col wp15">HAN</th>
+               <!--
                 <th class="col wp20">語彙</th>
                 <th class="col wp30">かな</th>
+-->
             </tr>
             </thead>
             <tbody>
@@ -217,9 +219,18 @@
             <tr ng-repeat="item in data.curList" >
                 <th class="wp5">{{$index+1}}</th>
                 <td class="wp30">{{item.mean}}</td>
+                <td class="wp65">
+<table>
+<tr><td>{{item.han}}</td></tr>
+<tr><td>{{item.word}}</td></tr>
+<tr><td>{{item.word2}}</td></tr>
+</table>
+                </td>
+<!--
                 <td class="wp15">{{item.han}}</td>
                 <td class="wp20">{{item.word}}</td>
                 <td class="wp30">{{item.kana2}}</td>
+-->
             </tr>
             </tbody>
         </table>
