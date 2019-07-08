@@ -248,6 +248,10 @@ _listData[9].value = [
 {no:235, tag:`IT`, word:`パスワード期限の15日前、5日前、3日前、1日前の計4回メールにて、期限が近づいていることの通知が行われる。`, mean:`pw`},
 {no:236, tag:`IT`, word:`パスワードの再利用 過去120日の間に使用したことのある文字列を再利用することはできない。`, mean:`pw`},
 {no:237, tag:`IT`, word:`パスワードの最低利用日数: パスワードを変更した場合、3日間は再変更ができない。`, mean:`pw`},
+{no:238, tag:`IT`, word:`作業を割り当てる`, mean:`phân chia công việc`},
+{no:239, tag:`IT`, word:`やむを得ず`, mean:`Nếu bạn không thể đình chỉ; buộc phải làm;`},
+{no:240, tag:`IT`, word:`欄（らん） <> 列（れつ）`, mean:`カラム; Column; cột  <> Row; hàng`},
+
 
 //="{no:"&A1&", tag:`IT`, word:`"&B1& "`, mean:`"&D1&IF(D1="",""," - ")&E1&"`},"
 

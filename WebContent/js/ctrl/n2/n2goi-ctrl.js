@@ -13,6 +13,7 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
         localStorageService.setPrefix('jdict.n2goi');
 
         $scope.data = {};
+        $scope.type = $stateParams.type;
         if($stateParams.type){
             if($stateParams.type == "GOI"){
                 $scope.data.listWords = n2goi;//danh sach tat ca cac tu

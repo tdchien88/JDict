@@ -8,7 +8,10 @@
 	  <a class="nav-link no-border-radius" data-toggle="tab" href="#q2html" role="tab" aria-controls="q2html">To HTML</a>
 	</li>
     <li class="nav-item">
-      <a class="nav-link no-border-radius" data-toggle="tab" href="#q2markdown" role="tab" aria-controls="q2markdown">To Markdown</a>
+      <a class="nav-link no-border-radius" data-toggle="tab" href="#q2JSON" role="tab" aria-controls="q2JSON" ng-click="convert2Json()">To JSON</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link no-border-radius" data-toggle="tab" href="#q2ruby" role="tab" aria-controls="q2ruby" ng-click="convert2Ruby()">Furi</a>
     </li>
 </ul>
 <div class="tab-content  no-border-bottom no-border-right no-border-left">
@@ -18,18 +21,28 @@
 
 	<div class="tab-pane" id="q2html" role="tabpanel">
 
-       <button class="btn btn-success btn-sm float-right" ng-click="copy(editor.container.firstChild.innerHTML)" tooltip="show favorites">Copy HTML</button>
+       <div id="exportHTML" class=" border p-2 mt-2" style="height:100px;overflow: scroll;">{{editor.container.firstChild.innerHTML}}</div>
+       <button class="btn btn-success btn-sm float-right mt-1" ng-click="copy(editor.container.firstChild.innerHTML)" tooltip="show favorites">Copy HTML</button>
        <div class="clearfix"> </div>
 
-       <div id="exportHTML" class=" border p-2 mt-2" style="height:400px;overflow: scroll;">{{editor.container.firstChild.innerHTML}}</div>
+       <div id="exportHTML" class=" border p-2 mt-2" style="overflow: scroll;" dynamic-html="editor.container.firstChild.innerHTML"></div>
 	</div>
 
-    <div class="tab-pane" id="q2markdown" role="tabpanel">
+    <div class="tab-pane" id="q2JSON" role="tabpanel">
 
-       <button class="btn btn-success btn-sm float-right" ng-click="copy(editor.container.firstChild.innerHTML)" tooltip="show favorites">Copy Markdown</button>
+       <button class="btn btn-success btn-sm float-right" ng-click="copy(data.toJson)" tooltip="show favorites">Copy JSON</button>
        <div class="clearfix"> </div>
 
-       <div id="exportMD" class=" border p-2 mt-2" style="height:400px;overflow: scroll;">{{editor.container.firstChild.innerHTML}}</div>
+       <div id="exportMD" class=" border p-2 mt-2 multi-lines" style="height:400px;overflow: scroll;">{{data.toJson2}}</div>
+    </div>
+
+    <div class="tab-pane" id="q2ruby" role="tabpanel">
+
+       <div id="exportMD" class=" border p-2 mt-2" style="height:100px;overflow: scroll;">{{data.toRuby}}</div>
+       <button class="btn btn-success btn-sm float-right mt-1" ng-click="copy(data.toRuby)" tooltip="show favorites">Copy HTML</button>
+       <div class="clearfix"> </div>
+
+       <div id="exportMD" class=" border p-2 mt-2" style="overflow: scroll;" dynamic-html="data.toRuby"></div>
     </div>
 </div>
 

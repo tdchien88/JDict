@@ -49,6 +49,7 @@ myApp.controller("qeditorCtrl", function($scope, $timeout, dialogService){
 
     function init(){
 
+        $scope.data = {};
 
         Quill.register({
             'modules/markdown-toolbar': MarkdownToolbar // Add this.
@@ -56,11 +57,35 @@ myApp.controller("qeditorCtrl", function($scope, $timeout, dialogService){
 
         $scope.editor = new Quill('#editor-container', options);
 
+        /*
+        $scope.editor.on('selection-change', function(range, oldRange, source) {
+            if (range === null && oldRange !== null) {
+                //console.log('blur');
+            } else if (range !== null && oldRange === null){
+                //console.log('focus');
+            }
+        });
+
+
+        $scope.editor.on('text-change', function(){
+        });
+
+        */
 
     }
 
-    init();
+    $scope.convert2Ruby = function(){
+        kuroshiroExc($scope.editor.container.firstChild.innerHTML).then(function(result){
+            $scope.data.toRuby = result;
+        });
+    }
 
+    $scope.convert2Json = function(){
+        $scope.data.toJson = JSON.stringify($scope.editor.getContents(), null, 0);
+        $scope.data.toJson2 = JSON.stringify($scope.editor.getContents(), null, 2);
+    }
+
+    init();
 
     $scope.copy = function (text){
 

@@ -200,12 +200,8 @@
             <thead class="thead-dark">
             <tr>
                 <th class="col wp5">#</th>
-                <th class="col wp30">Nghĩa</th>
-                <th class="col wp15">HAN</th>
-               <!--
-                <th class="col wp20">語彙</th>
-                <th class="col wp30">かな</th>
--->
+                <th class="col wp30">Word</th>
+                <th class="col wp15">Mean</th>
             </tr>
             </thead>
             <tbody>
@@ -218,19 +214,15 @@
              -->
             <tr ng-repeat="item in data.curList" >
                 <th class="wp5">{{$index+1}}</th>
-                <td class="wp30"><h2>{{item.mean}}</h2></td>
-                <td class="wp65">
-<table>
-<tr><td>{{item.han}}</td></tr>
-<tr><td>{{item.word}}</td></tr>
-<tr><td>{{item.kana2}}</td></tr>
-</table>
+                <td ng-if="type == 'GOI' " class="wp40"><b>{{item.mean}}</b></td>
+                <td ng-if="type == 'KANJI' " class="wp40"><h2>{{item.mean}}</h2></td>
+                <td class="wp55">
+                    <div class=" d-flex  flex-column">
+                      <div ng-if="isEmpty(item.han)" class="p-1 border-bottom"><b>{{item.han}}</b></div>
+                      <div class="p-1 border-bottom" >{{item.word}}</div>
+                      <div class="p-1 ">{{item.kana2}}</div>
+                    </div>
                 </td>
-<!--
-                <td class="wp15">{{item.han}}</td>
-                <td class="wp20">{{item.word}}</td>
-                <td class="wp30">{{item.kana2}}</td>
--->
             </tr>
             </tbody>
         </table>
