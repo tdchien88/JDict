@@ -4,7 +4,6 @@ const _tableName = "dataJSON"
 _db_config.storeName = _tableName;
 var dataJSON = localforage.createInstance(_db_config);
 
-var _prefix = 'jdict.';
 var _listData = [
     {key: 'n2try', link:'js/data/n2try.js', value: []},//0
     {key: 'bunpo', link:'js/data/bunpo.js', value: []},
@@ -63,19 +62,18 @@ var _listJsFile = [
 
 var _loaded = 0;
 
-function _getKey(key){
-    return _prefix+key;
-}
-
 function _resetDATA(_key){
     if(isEmpty(_key)){
+        //reset all
         dataJSON.dropInstance()
         .then(function() {
             console.log('Dropped the store of the current instance');
+            location.reload(true);// works for safari
         });
     } else {
-        var key = _getKey(_key);
-        localStorage.removeItem(key)
+        //reset 1
+        localStorage.removeItem(_key);
+        location.reload(true);// works for safari
     }
 }
 
