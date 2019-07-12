@@ -258,6 +258,7 @@ _listData[9].value = [
 {no:244, tag:`休み`, word:`休ませていただけませんか`, mean:``},
 
 {no:245, tag:`歌`, word:`パプリカ\n\n曲がりくねり はしゃいだ道\n青葉の意森で駆け回る\n遊びまわり 日差しの街\n誰かが呼んでいる\n \n夏が来る 影が立つ あなたに会いたい\n見つけたのはいちばん星\n明日も晴れるかな\n \nパプリカ 花が咲いたら\n晴れた空に種を蒔こう\nハレルヤ 夢を描いたなら\n心遊ばせあなたにとどけ\n \n雨に燻り 月は陰り\n木陰で泣いてたのは誰\n一人一人 慰めるよに\n誰かが呼んでいる\n喜びを数えたら あなたでいっぱい\n帰り道を照らしたのは\n思い出のかげぼうし\n \nパプリカ 花が咲いたら\n晴れた空に種を蒔こう\nハレルヤ夢を描いたなら\n心遊ばせあなたにとどけ\n \n会いに行くよ 並木を抜けて\n歌を歌って\n手にはいっぱいの 花を抱えて\nらるらりら\n \n会いに行くよ 並木を抜けて\n歌を歌って\n手にはいっぱいの 花を抱えて\nらるらりら\n \nパプリカ 花が咲いたら\n晴れた空に種を蒔こう\nハレルヤ夢を描いたなら\n心遊ばせあなたにとどけ\n \nかかと弾ませ この指とまれ\n`, mean:`A curvy road\nRun around in the Aoba Forest\nCity around the sun\nSomeone is calling\n\nSummer comes, shadows want to meet you\nThe first star I found\nI wonder if it will be fine tomorrow\nPaprika flower blooms\n\nSow seeds in the clear sky\nHallelujah If you drew a dream\nLet the heart go to you\nIt is raining and the moon is dark\n\nWho cried in the shade\nTo comfort each one\nSomeone is calling\nIf you count pleasure, it will be full of you\n\nI lit the way back\nA memory of memories\nPaprika flower blooms\nSow seeds in the clear sky\n\nHallelujah If you drew a dream\nLet the heart go to you\nI’m going to meet you\nSing a song\n\nWith a lot of flowers in my hands\nRalura\nPaprika flower blooms\nSow seeds in the clear sky\n\nHallelujah If you drew a dream\nLet the heart go to you\nBounce your heel with this finger`},
+{no:246, tag:`文法`, word:`AをBに変更する`, mean:`đổi A thành B`},
 
 /*
   {no:, tag:`IT`, word:``, mean:``},
