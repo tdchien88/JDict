@@ -1390,7 +1390,7 @@ _listData[7].value = [
 {no:1389, week:6, day:6, unit:36, word:`Tiền thuế`, kana2:`ぜいきん`, han:`THUẾ KIM`, mean:`税金`},
 {no:1390, week:6, day:6, unit:36, word:`Thuế tiêu dùng`, kana2:`しょうひぜい`, han:`TIÊU PHÍ THUẾ`, mean:`消費税`},
 {no:1391, week:6, day:6, unit:36, word:`Thuế Quan`, kana2:`ぜいかん`, han:`THUẾ QUAN`, mean:`税関`},
-{no:1392, week:6, day:6, unit:36, word:`Thuế Khóa`, kana2:`かぜい`, han:`KHÓA THUẾ`, mean:`課税`},
+{no:1392, week:6, day:6, unit:36, word:`Đối tượng chịu thuế`, kana2:`かぜいたいしょう`, han:`KHÓA THUẾ ĐỐI TƯỢNG`, mean:`課税対象`},
 {no:1393, week:6, day:6, unit:36, word:`Giá cố định ghi trên hàng hóa`, kana2:`ていか`, han:`ĐỊNH GIÁ`, mean:`定価`},
 {no:1394, week:6, day:6, unit:36, word:`Vật giá, giá cả`, kana2:`ぶっか`, han:`VẬT GIÁ`, mean:`物価`},
 {no:1395, week:6, day:6, unit:36, word:`Giá cả`, kana2:`かかく`, han:`GIÁ CÁCH`, mean:`価格`},
