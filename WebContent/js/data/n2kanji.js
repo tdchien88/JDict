@@ -1296,7 +1296,7 @@ _listData[7].value = [
 {no:1295, week:6, day:3, unit:33, word:`Cơ thể`, kana2:`しんたい`, han:`THÂN THỂ`, mean:`身体`},
 {no:1296, week:6, day:3, unit:33, word:`Chiều cao`, kana2:`しんちょう`, han:`THÂN TRƯỜNG`, mean:`身長`},
 {no:1297, week:6, day:3, unit:33, word:`Bên trong, phần bên trong`, kana2:`なかみ`, han:`TRUNG THÂN`, mean:`中身`},
-{no:1298, week:6, day:3, unit:33, word:`Món Sashimi`, kana2:`さひみ`, han:`THÍCH THÂN`, mean:`刺身`},
+{no:1298, week:6, day:3, unit:33, word:`Món Sashimi`, kana2:`さしみ`, han:`THÍCH THÂN`, mean:`刺身`},
 {no:1299, week:6, day:3, unit:33, word:`Ăn (lịch sự)`, kana2:`めしあげる`, han:`TRIỆU THƯỢNG`, mean:`召し上げる`},
 {no:1300, week:6, day:3, unit:33, word:`~ tách, ly`, kana2:`～ばい`, han:`BÔI`, mean:`～杯`},
 {no:1301, week:6, day:3, unit:33, word:`Cạn ly`, kana2:`かんぱい`, han:`CAN BÔI`, mean:`乾杯`},
