@@ -12,7 +12,6 @@ _listData[9].value = [
 {no:4, tag:`天気`, word:`雨が降らないそう。 `, mean:`I heard it won't rain.`},
 {no:5, tag:`天気`, word:`雨が降りそうもない。`, mean:`I think it won't rain.`},
 {no:6, tag:`天気`, word:`雨が降らなさそう。`, mean:`I think it won't rain.`},
-
 {no:7, tag:`trang tu`, word:`Vたあとで`, mean:`sau khi`},
 {no:8, tag:`trang tu`, word:`あちこち`, mean:`nơi này nơi kia`},
 {no:9, tag:`trang tu`, word:`あまり`, mean:`không....mấy, lắm`},
@@ -172,7 +171,6 @@ _listData[9].value = [
 {no:163, tag:`trang tu`, word:`別に`, mean:`ngoài ra`},
 {no:164, tag:`trang tu`, word:`本当に`, mean:`thật sự`},
 {no:165, tag:`trang tu`, word:`例えば`, mean:`ví dụ, giả dụ như`},
-
 {no:166, tag:`combini`, word:`レジ`, mean:`tinh tien`},
 {no:167, tag:`combini`, word:`返品`, mean:`tra hang`},
 {no:168, tag:`combini`, word:`返金`, mean:`tra tien`},
@@ -198,13 +196,10 @@ _listData[9].value = [
 {no:188, tag:`combini`, word:`X円お預かり(あずかり)いたします`, mean:`tôi đã nhận X-yên`},
 {no:189, tag:`combini`, word:`X円ちょうど頂戴いたします`, mean:`xin nhận số tiền vừa đủ X-yên (không có tiền thừa)`},
 {no:190, tag:`combini`, word:`お先～円のお返しでございます`, mean:`Xin trả tiền thừa X -yên (tiền chẵn) và Y-yên (tiền lẻ)`},
-
 {no:191, tag:`他`, word:`持たせてください。`, mean:`Cho phép tôi giữ nó.`},
 {no:192, tag:`他`, word:`お手紙4枚 持たせます。 `, mean:`Tôi gửi cho anh 4 bức thư.`},
 {no:193, tag:`他`, word:`『愚者は経験に学び、賢者は歴史に学ぶ』と言う。\n『おろかものは けいけんにならび、けんじゃは れきしにまなぶ』という。`, mean:`Kẻ ngu thì học từ kinh nghiệm. Hiền giả học từ lịch sử.`},
-
 {no:194, tag:`chuc mung`, word:`ご健康をお祈りしております`, mean:`I wish you good health, always.`},
-
 {no:195, tag:`IT`, word:`不具合を再現することができません。 `, mean:`BUG không thể tái hiện.`},
 {no:196, tag:`IT`, word:`番号を採番する。 `, mean:`Đánh số Index, (unique) index number`},
 {no:197, tag:`IT`, word:`矢印→`, mean:`THỈ ẤN - Mũi tên chỉ hướng`},
@@ -253,10 +248,8 @@ _listData[9].value = [
 {no:240, tag:`IT`, word:`欄（らん） <> 列（れつ）`, mean:`カラム; Column; cột  <> Row; hàng`},
 {no:241, tag:`IT`, word:`効率測定結果`, mean:`HIỆU XUẤT TRẮC ĐỊNH KẾT QUẢ - kết quả đo lường hiệu xuất`},
 {no:242, tag:`IT`, word:`セキュリティ事故を積極的に防止する行動をとる。\n●　普段とは異なる状態」であることを意識し テレワーク中は気を引き締めましょう。\n●　PC利用の留意点。\n●　網棚に置かず、身体から離さない等、 　　紛失・盗難の予防策を講じる。\n●　パスワードロック、HDD暗号化等、 第三者の不正利用の予防策を講じる。\n●　ローカルディスク上の業務使用/ 個人使用ファイルを皆無にする。 \n●　業務使用ファイルはSITS共有ディスク、 個人使用ファイルはOneDriveに保存。\n●　ローカルディスクに持出許可を得ていない余分なファイルがないことを 直属上司が確認する。`, mean:``},
-
 {no:243, tag:`休み`, word:`M月DD日（金）後半休をお願いします。\n翌日にWROロボット大会がありその準備のためです。\nご迷惑をおかけしますが、宜しくお願いします。`, mean:``},
 {no:244, tag:`休み`, word:`休ませていただけませんか`, mean:``},
-
 {no:245, tag:`歌`, word:`パプリカ\n\n曲がりくねり はしゃいだ道\n青葉の意森で駆け回る\n遊びまわり 日差しの街\n誰かが呼んでいる\n \n夏が来る 影が立つ あなたに会いたい\n見つけたのはいちばん星\n明日も晴れるかな\n \nパプリカ 花が咲いたら\n晴れた空に種を蒔こう\nハレルヤ 夢を描いたなら\n心遊ばせあなたにとどけ\n \n雨に燻り 月は陰り\n木陰で泣いてたのは誰\n一人一人 慰めるよに\n誰かが呼んでいる\n喜びを数えたら あなたでいっぱい\n帰り道を照らしたのは\n思い出のかげぼうし\n \nパプリカ 花が咲いたら\n晴れた空に種を蒔こう\nハレルヤ夢を描いたなら\n心遊ばせあなたにとどけ\n \n会いに行くよ 並木を抜けて\n歌を歌って\n手にはいっぱいの 花を抱えて\nらるらりら\n \n会いに行くよ 並木を抜けて\n歌を歌って\n手にはいっぱいの 花を抱えて\nらるらりら\n \nパプリカ 花が咲いたら\n晴れた空に種を蒔こう\nハレルヤ夢を描いたなら\n心遊ばせあなたにとどけ\n \nかかと弾ませ この指とまれ\n`, mean:`A curvy road\nRun around in the Aoba Forest\nCity around the sun\nSomeone is calling\n\nSummer comes, shadows want to meet you\nThe first star I found\nI wonder if it will be fine tomorrow\nPaprika flower blooms\n\nSow seeds in the clear sky\nHallelujah If you drew a dream\nLet the heart go to you\nIt is raining and the moon is dark\n\nWho cried in the shade\nTo comfort each one\nSomeone is calling\nIf you count pleasure, it will be full of you\n\nI lit the way back\nA memory of memories\nPaprika flower blooms\nSow seeds in the clear sky\n\nHallelujah If you drew a dream\nLet the heart go to you\nI’m going to meet you\nSing a song\n\nWith a lot of flowers in my hands\nRalura\nPaprika flower blooms\nSow seeds in the clear sky\n\nHallelujah If you drew a dream\nLet the heart go to you\nBounce your heel with this finger`},
 {no:246, tag:`IT`, word:`AをBに変更する`, mean:`đổi A thành B`},
 {no:247, tag:`IT`, word:`代入\n変数に値を割り振ることを指します。\n例えば、「a = 5」とあれば、aという名前の変数に5というデータを入れています。`, mean:`IT: Set (Gán giá trị)`},
@@ -796,6 +789,7 @@ _listData[9].value = [
 {no:781, tag:`IT`, word:`論理プログラミング`, mean:`Logic programming`},
 {no:782, tag:`IT`, word:`ワイド文字`, mean:`Wide character`},
 {no:783, tag:`IT`, word:`割り込み処理`, mean:`Interrupt processing`},
+{no:784, tag:`天気`, word:`ベトナムの季節は、乾季と雨季に分かれています。`, mean:`Việt Nam được chia thành 2 mùa, mùa khô và mùa mưa.`},
 
 /*
   {no:, tag:`IT`, word:``, mean:``},
