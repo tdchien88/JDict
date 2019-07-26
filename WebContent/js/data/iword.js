@@ -790,6 +790,9 @@ _listData[9].value = [
 {no:782, tag:`IT`, word:`ワイド文字`, mean:`Wide character`},
 {no:783, tag:`IT`, word:`割り込み処理`, mean:`Interrupt processing`},
 {no:784, tag:`天気`, word:`ベトナムの季節は、乾季と雨季に分かれています。`, mean:`Việt Nam được chia thành 2 mùa, mùa khô và mùa mưa.`},
+{no:785, tag:`IT`, word:`取消`, mean:`Cancel; Delete`},
+{no:786, tag:`IT`, word:`適用`, mean:`apply ; [THÍCH DỤNG]`},
+{no:787, tag:`IT`, word:`上書き`, mean:`overwrite; Ghi đè (file... dùng trong IT)`},
 
 /*
   {no:, tag:`IT`, word:``, mean:``},
