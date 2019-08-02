@@ -793,6 +793,8 @@ _listData[9].value = [
 {no:785, tag:`IT`, word:`取消`, mean:`Cancel; Delete`},
 {no:786, tag:`IT`, word:`適用`, mean:`apply ; [THÍCH DỤNG]`},
 {no:787, tag:`IT`, word:`上書き`, mean:`overwrite; Ghi đè (file... dùng trong IT)`},
+{no:788, tag:`IT`, word:`取り込み`, mean:`import`},
+{no:789, tag:`IT`, word:`書き出し`, mean:`export`},
 
 /*
   {no:, tag:`IT`, word:``, mean:``},
