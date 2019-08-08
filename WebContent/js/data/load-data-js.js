@@ -17,6 +17,7 @@ var _listData = [
     {key: 'iword', link:'js/data/iword.js', value: []},
     {key: 'hanviet', link:'js/data/hanviet.js', value: []},//10
     {key: 'n2bunpo', link:'js/data/n2bunpo.js', value: []},
+    {key: 'myarticle', link:'js/data/myarticle.js', value: []},
 
     {key: 'data_base', link:'js/lib/kuromoji/base.dat.gz', isArraybuffer:true, value: null},
     {key: 'data_check', link:'js/lib/kuromoji/check.dat.gz', isArraybuffer:true, value: null},
