@@ -1,0 +1,40 @@
+<form name="try-form" class="animated fadeIn">
+<div class="row justify-content-center">
+<div class="col-md-12">
+
+  <div>
+    <fieldset class='' style='position:sticky; position: -webkit-sticky;top:0px;'>
+      <p class="float-right pt-2 pr-4 pl-4" style='background-color:#eee'>
+        <label>Show Furigana:</label>
+        <label class="switch switch-pill switch-success">
+          <input ng-model="isShowRuby" type="checkbox" class="switch-input" checked>
+          <span class="switch-slider"></span>
+        </label>
+      </p>
+      <div class="clearfix"> </div>
+    </fieldset>
+  </div>
+  <div ng-repeat="article in data.articles">
+
+    <div class=" card">
+      <div class="card-header header-sticky" id="heading{{$index}}">
+        <div>{{article.title}}</div>
+      </div>
+      <div class="card-body" id="heading{{$index}}">
+        <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="article.content"></div>
+        <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="article.contentRuby"></div>
+      </div>
+      <span ng-if="article.content.length > 50 && article.content.length != strLimit">
+        <button ng-click="showMore(article.content)">Show more</button>
+      </span>
+      <span ng-if="article.content.length == strLimit">
+        <button ng-click="showLess()">Show less</button>
+      </span>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+</form>

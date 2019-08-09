@@ -20,6 +20,9 @@ myApp.controller("mainController", function($scope){
             {sref:"shadowing", name:"Shadowing"},
             {sref:"mimikara", name:"Mimi Kara"},
         ]},
+        {sref:"", name:"Articles",  sub:[
+            {sref:"articles", name:"Works", param:"{tag: 'oshigoto'}"},
+        ]},
         {sref:"", name:"Tool",  sub:[
             {sref:"sample", name:"Sample"},
             {sref:"qeditor", name:"Editor"},
