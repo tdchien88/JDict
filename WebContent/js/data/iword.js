@@ -801,6 +801,7 @@ _listData[9].value = [
 {no:792, tag:`仕事`, word:`声をかけてください`, mean:`let me know`},
 {no:793, tag:`IT`, word:`これはAとして扱う`, mean:`use this as A, Coi đây là A`},
 {no:794, tag:`IT`, word:`届いたファイルを確認する`, mean:`Check the received file`},
+{no:795, tag:`IT`, word:`置き換え`, mean:`replace / Thay thế`},
 
 /*
   {no:, tag:`IT`, word:``, mean:``},
