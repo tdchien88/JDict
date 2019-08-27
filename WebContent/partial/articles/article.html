@@ -2,9 +2,21 @@
 <div class="row justify-content-center">
 <div class="col-md-12">
 
-  <div>
-    <fieldset class='' style='position:sticky; position: -webkit-sticky;top:0px;'>
-      <p class="float-right pt-2 pr-4 pl-4" style='background-color:#eee'>
+  <div class=" pt-4 pl-4 pr-4" style='position: fixed; bottom: 0px; z-index: 99999; right: 0px; display: -webkit-inline-box; background-color:#eeeeee7a'>
+    <ul uib-pagination total-items="data.articles.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
+<!--
+    <nav class="pr-4" aria-label="Page navigation example">
+
+      <ul class="pagination">
+        <li class="page-item"><button class="page-link" ng-click="setCurrentArticle(0)">«</button></li>
+        <li ng-repeat="aricle in data.articles" class="page-item"><a class="page-link" href="" ng-click="setCurrentArticle($index)">{{$index+1}}</a></li>
+        <li class="page-item"><button class="page-link" ng-click="setCurrentArticle(data.articles.length-1)">»</button></li>
+      </ul>
+    </nav>
+
+ -->
+    <fieldset class='' >
+      <p >
         <label>Show Furigana:</label>
         <label class="switch switch-pill switch-success">
           <input ng-model="isShowRuby" type="checkbox" class="switch-input" checked>
@@ -14,25 +26,19 @@
       <div class="clearfix"> </div>
     </fieldset>
   </div>
-  <div ng-repeat="article in data.articles">
+
 
     <div class=" card">
       <div class="card-header header-sticky" id="heading{{$index}}">
-        <div>{{article.title}}</div>
+        <div>{{data.curArt.title}}</div>
       </div>
       <div class="card-body" id="heading{{$index}}">
-        <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="article.content"></div>
-        <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="article.contentRuby"></div>
+        <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="data.curArt.content"></div>
+        <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="data.curArt.contentRuby"></div>
       </div>
-      <span ng-if="article.content.length > 50 && article.content.length != strLimit">
-        <button ng-click="showMore(article.content)">Show more</button>
-      </span>
-      <span ng-if="article.content.length == strLimit">
-        <button ng-click="showLess()">Show less</button>
-      </span>
+
     </div>
 
-  </div>
 
 </div>
 

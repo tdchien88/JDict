@@ -3,7 +3,7 @@ var initMyApp = function(){
     angular.bootstrap(document, ['myApp']);
 }
 
-var myApp = angular.module("myApp", ['ui.router', 'LocalStorageModule', 'ngMaterial', 'ngMessages', 'ngFitText', 'ngSanitize',
+var myApp = angular.module("myApp", ['ui.router', 'LocalStorageModule', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngFitText', 'ngSanitize',
     "ui.bootstrap", "ui.bootstrap.datepicker", "ui.bootstrap.datepickerPopup", "ui.bootstrap.dateparser", "ui.bootstrap.isClass", "ui.bootstrap.tabs"]);
 
 

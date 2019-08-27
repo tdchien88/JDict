@@ -1,6 +1,15 @@
 myApp.controller("articleCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout){
     var myarticle = _getDataByKey('myarticle');
 
+
+    $scope.setPage = function (pageNo) {
+      $scope.currentPage = pageNo;
+    };
+
+    $scope.pageChanged = function() {
+      $log.log('Page changed to: ' + $scope.currentPage);
+    };
+
     function init(){
         localStorageService.setPrefix('jdict.n2try');
 
@@ -19,19 +28,13 @@ myApp.controller("articleCtrl", function($scope, $stateParams, localStorageServi
         //get list articles by tag
         $scope.data.articles = myarticle.filter(x=> x.tag === $stateParams.tag);
 
-        setCurrentArticle(0);
+        $scope.setCurrentArticle(0);
+        // https://morgul.github.io/ui-bootstrap4/
+        $scope.maxSize = 5;
+        $scope.currentPage = 1;
     }
 
-    $scope.showMore = function(content) {
-        $scope.strLimit = content.length;
-    };
-
-    // Event trigger on click on the Show less button.
-    $scope.showLess = function() {
-      $scope.strLimit = 50;
-    };
-
-    function setCurrentArticle (idx){
+    $scope.setCurrentArticle = function(idx){
 
         $scope.data.curArt = $scope.data.articles[idx];
         $scope.data.curArt.content = $scope.data.curArt.word;

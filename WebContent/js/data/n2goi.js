@@ -2129,7 +2129,7 @@ _listData[6].value = [
 {no:2128, week:8, day:6, unit:48, word:`見聞きする`, kana2:`みききする`, mean:`kinh nghiệm, trải nghiệm mắt thấy tai nghe`},
 {no:2129, week:8, day:6, unit:48, word:`見聞きしたことを人に話す`, kana2:`みききしたことを人にはなす`, mean:`nói với người ta về những điều mắt thấy tai nghe`},
 {no:2130, week:8, day:6, unit:48, word:`行き来する`, kana2:`いききする`, mean:`qua lại`},
-{no:2131, week:8, day:6, unit:48, word:`田中さんとお互いの家を行き来する`, kana2:`たなかさんとおたがいのいえをいきいする`, mean:`tôi và anh Tanaka qua lại nhà lẫn nhau`},
+{no:2131, week:8, day:6, unit:48, word:`田中さんとお互いの家を行き来する`, kana2:`たなかさんとおたがいのいえをいききする`, mean:`tôi và anh Tanaka qua lại nhà lẫn nhau`},
 {no:2132, week:8, day:6, unit:48, word:`貸し借りする`, kana2:`かしかりする`, mean:`mượn và cho mượn`},
 {no:2133, week:8, day:6, unit:48, word:`お金の貸し借りはやめよう`, kana2:`おかねのかしかりはやめよう`, mean:`thôi chuyện mượn và cho mượn tiền đi`},
 {no:2134, week:8, day:6, unit:48, word:`出し入れする`, kana2:`だしいれする`, mean:`lấy ra và bỏ vào`},
