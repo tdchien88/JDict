@@ -23,6 +23,8 @@ myApp.controller("mainController", function($scope){
         {sref:"", name:"Articles",  sub:[
             {sref:"articles", name:"Works", param:"{tag: 'oshigoto'}"},
             {sref:"articles", name:"Musics", param:"{tag: 'music'}"},
+            {sref:"articles", name:"Novels", param:"{tag: 'novel'}"},
+            {sref:"articles", name:"Life", param:"{tag: 'life'}"},
         ]},
         {sref:"", name:"Tool",  sub:[
             {sref:"sample", name:"Sample"},

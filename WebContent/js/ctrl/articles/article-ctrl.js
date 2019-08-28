@@ -2,21 +2,11 @@ myApp.controller("articleCtrl", function($scope, $stateParams, localStorageServi
     var myarticle = _getDataByKey('myarticle');
 
 
-    $scope.setPage = function (pageNo) {
-      $scope.currentPage = pageNo;
-    };
-
-    $scope.pageChanged = function() {
-      $log.log('Page changed to: ' + $scope.currentPage);
-    };
-
     function init(){
-        localStorageService.setPrefix('jdict.n2try');
+        $scope.prefix = 'jdict.article.'+$stateParams.tag;
+        localStorageService.setPrefix($scope.prefix);
 
         $scope.data = {};
-
-        // Initial 50 characters will be displayed.
-        $scope.strLimit = 50;
 
         // get list tags in myarticle
         var seen = {};
@@ -27,21 +17,35 @@ myApp.controller("articleCtrl", function($scope, $stateParams, localStorageServi
 
         //get list articles by tag
         $scope.data.articles = myarticle.filter(x=> x.tag === $stateParams.tag);
+        $scope.data.articlesOnPage = [];
 
-        $scope.setCurrentArticle(0);
         // https://morgul.github.io/ui-bootstrap4/
-        $scope.maxSize = 5;
-        $scope.currentPage = 1;
+        $scope.paging = {};
+        $scope.paging.totalItems = $scope.data.articles.length;
+        $scope.paging.maxSize = 3;
+        $scope.paging.currentPage = 1;
+        $scope.paging.itemsPerPage = 3;
+        $scope.setPagingData();
+
+
     }
 
-    $scope.setCurrentArticle = function(idx){
+    $scope.setPagingData = function() {
+        var from = ($scope.paging.currentPage - 1) * $scope.paging.itemsPerPage;
+        var get = $scope.paging.currentPage * $scope.paging.itemsPerPage;
+        $scope.data.articlesOnPage = $scope.data.articles.slice(from, get);
 
-        $scope.data.curArt = $scope.data.articles[idx];
-        $scope.data.curArt.content = $scope.data.curArt.word;
-        kuroshiroExc($scope.data.curArt.content).then(function(result){
-            $scope.data.curArt.contentRuby = result;
+        $scope.data.articlesOnPage.map(function(item){
+            item.content = item.word;
+            kuroshiroExc(item.content).then(function(result){
+                item.contentRuby = result;
+            });
         });
+
     }
+
+
+
 
     init();
 });

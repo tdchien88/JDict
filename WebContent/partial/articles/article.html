@@ -3,18 +3,11 @@
 <div class="col-md-12">
 
   <div class=" pt-4 pl-4 pr-4" style='position: fixed; bottom: 0px; z-index: 99999; right: 0px; display: -webkit-inline-box; background-color:#eeeeee7a'>
-    <ul uib-pagination total-items="data.articles.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
-<!--
-    <nav class="pr-4" aria-label="Page navigation example">
 
-      <ul class="pagination">
-        <li class="page-item"><button class="page-link" ng-click="setCurrentArticle(0)">«</button></li>
-        <li ng-repeat="aricle in data.articles" class="page-item"><a class="page-link" href="" ng-click="setCurrentArticle($index)">{{$index+1}}</a></li>
-        <li class="page-item"><button class="page-link" ng-click="setCurrentArticle(data.articles.length-1)">»</button></li>
-      </ul>
-    </nav>
+    <ul uib-pagination total-items="paging.totalItems" ng-model="paging.currentPage" max-size="paging.maxSize" items-per-page="paging.itemsPerPage" ng-change="setPagingData()"
+        class="pagination-sm" first-text="&laquo;" previous-text="&lsaquo;" next-text="&rsaquo;" last-text="&raquo;"
+        boundary-links="true" boundary-link-numbers="true" rotate="true"></ul>
 
- -->
     <fieldset class='' >
       <p >
         <label>Show Furigana:</label>
@@ -28,16 +21,16 @@
   </div>
 
 
-    <div class=" card">
-      <div class="card-header header-sticky" id="heading{{$index}}">
-        <div>{{data.curArt.title}}</div>
-      </div>
-      <div class="card-body" id="heading{{$index}}">
-        <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="data.curArt.content"></div>
-        <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="data.curArt.contentRuby"></div>
-      </div>
-
+  <div ng-repeat="article in data.articlesOnPage" class=" card">
+    <div class="card-header header-sticky" id="heading{{$index}}">
+      <div>{{article.title}}</div>
     </div>
+    <div class="card-body" id="heading{{$index}}">
+      <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="article.content"></div>
+      <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="article.contentRuby"></div>
+    </div>
+
+  </div>
 
 
 </div>
