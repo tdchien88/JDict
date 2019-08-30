@@ -751,7 +751,7 @@ function wait(ms){
  }
 
 
-function showStatus(status){
+function showStatus(status, autoclose){
     var faces = ["✧٩(*ˊωˋ)و✧ ", "(oﾟ▽ﾟ)oﾟ", "＼\ ٩( ᐛ )و /／","٩( ᐛ )و","(๑•̀ㅂ•́)و✧","٩(ˊᗜˋ*)و","(๑˃̵ᴗ˂̵)و","やったー！　(๑˃̵ᴗ˂̵)و ﾖｼ!","(๑˃̵ᴗ˂̵)و ﾖｼ!","╭( ･ㅂ･)و ̑̑ ｸﾞｯ !","✧＼\ ٩( 'ω' )و /／✧","✧*｡٩(ˊωˋ*)و✧*｡","٩( 'ω' )و ♬*゜"];
     var myFace = faces[Math.floor(Math.random()*faces.length)];
     status = myFace +"　～＞ " + status;
@@ -765,6 +765,11 @@ function showStatus(status){
         $(".alert button.close").click(function (e) {
             closeStatus();
         });
+        if(autoclose){
+            setTimeout(function(){
+                closeStatus();
+            }, 5000);
+        }
     },0)
 }
 

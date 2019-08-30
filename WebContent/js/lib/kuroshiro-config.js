@@ -28,7 +28,7 @@ var _kuroshiroInit = function(callback) {
         .then(()=>{
             libDicLoaded = true;
             kuroshiroExc("頑張ってね！").then(function(result){
-                showStatus(result);
+                showStatus(result,true);
             })
 
             callback();

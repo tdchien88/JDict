@@ -27,7 +27,7 @@ rt,rp {opacity: 0.9;color: #63c2de!important}
 .loading_mask{position:fixed;display:flex;width:100%;height:100%;background-color:#00000066;justify-content:center;align-items:center}
 .loading{z-index:10000}
 
-#navbarSupportedContent .dropdown-menu{border:none!important;background-color:#56aed3!important}
+#navbarSupportedContent .dropdown-menu{border:none!important;background-color:#56aed3!important;z-index:99999!important}
 .navbar{padding:.3rem 1rem}
 .navbar-light {background-color:#56aed3!important}
 .my-modal-popup .modal{background-color:#00000055}
