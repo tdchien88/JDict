@@ -347,7 +347,7 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
 
         $scope.data.ans = '';
 
-        scrolTo('collapseOne');
+        scrolTo('scroll2here');
     }
 
     function scrolTo(element){
