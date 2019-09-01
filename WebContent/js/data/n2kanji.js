@@ -87,7 +87,7 @@ _listData[7].value = [
 {no:86, week:1, day:3, unit:3, word:`Trận bán kết`, kana2:`じゅんけっしょう`, han:`CHUẨN QUYẾT THẮNG`, mean:`準決勝`},
 {no:87, week:1, day:3, unit:3, word:`Thiết bị, dụng cụ`, kana2:`びひん`, han:`BỊ PHẨM`, mean:`備品`},
 {no:88, week:1, day:3, unit:3, word:`Sắp xếp, chuẩn bị`, kana2:`そなえる`, han:`BỊ`, mean:`備える`},
-{no:89, week:1, day:3, unit:3, word:`Được trang bị với ...(xây dựng)`, kana2:`そなえつけの`, han:`BỊ PHÓ`, mean:`備え付けの`},
+{no:89, week:1, day:3, unit:3, word:`Thiết bhij được lắp sẵn`, kana2:`そなえつけのせつび`, han:`BỊ PHÓ`, mean:`備え付けの設備`},
 {no:90, week:1, day:3, unit:3, word:`Sức chứa`, kana2:`ていいん`, han:`ĐỊNH VIÊN`, mean:`定員`},
 {no:91, week:1, day:3, unit:3, word:`Ngày nghỉ định kỳ`, kana2:`ていきゅうび`, han:`ĐỊNH HƯU NHẬT`, mean:`定休日`},
 {no:92, week:1, day:3, unit:3, word:`Set menu`, kana2:`ていしょく`, han:`ĐỊNH THỰC`, mean:`定食`},
