@@ -42,7 +42,7 @@ _listData[7].value = [
 {no:41, week:1, day:2, unit:2, word:`Rất là`, kana2:`ひじょうに`, han:`PHI THƯỜNG`, mean:`非常に`},
 {no:42, week:1, day:2, unit:2, word:`(Dùng kính ngữ để gọi tên người/đồ vật/hành động)`, kana2:`お/ご～`, han:`NGỰ`, mean:`御～`},
 {no:43, week:1, day:2, unit:2, word:`Nhà vệ sinh`, kana2:`おてあらい`, han:`NGỰ THỦ TẨY`, mean:`お手洗い`},
-{no:44, week:1, day:2, unit:2, word:`Kính thưa, kính gửi`, kana2:`おんちゅう`, han:`NGỰ TRUNG`, mean:`御中`},
+{no:44, week:1, day:2, unit:2, word:`Kính thưa, kính gửi các vị có liên quan công ty ABC`, kana2:`おんちゅう`, han:`NGỰ TRUNG`, mean:`（株）ABC御中関係各位`},
 {no:45, week:1, day:2, unit:2, word:`Thường ngày, mỗi ngày`, kana2:`にちじょう`, han:`NHẬT THƯỜNG`, mean:`日常`},
 {no:46, week:1, day:2, unit:2, word:`Kiến thức phổ thông`, kana2:`じょうしき`, han:`THƯỜNG THỨC`, mean:`常識`},
 {no:47, week:1, day:2, unit:2, word:`Luôn luôn`, kana2:`つねに`, han:`THƯỜNG`, mean:`常に`},
