@@ -45,7 +45,7 @@ _listData[7].value = [
 {no:44, week:1, day:2, unit:2, word:`Kính thưa, kính gửi các vị có liên quan công ty ABC`, kana2:`おんちゅう`, han:`NGỰ TRUNG`, mean:`（株）ABC御中関係各位`},
 {no:45, week:1, day:2, unit:2, word:`Thường ngày, mỗi ngày`, kana2:`にちじょう`, han:`NHẬT THƯỜNG`, mean:`日常`},
 {no:46, week:1, day:2, unit:2, word:`Kiến thức phổ thông`, kana2:`じょうしき`, han:`THƯỜNG THỨC`, mean:`常識`},
-{no:47, week:1, day:2, unit:2, word:`Luôn luôn`, kana2:`つねに`, han:`THƯỜNG`, mean:`常に`},
+{no:47, week:1, day:2, unit:2, word:`Luôn luôn/ vật luôn đem theo bên người`, kana2:`つねに`, han:`THƯỜNG`, mean:`常に携帯の物`},
 {no:48, week:1, day:2, unit:2, word:`Kỳ thi, dự thi`, kana2:`じゅけん`, han:`THỤ NGHIỆM`, mean:`受験`},
 {no:49, week:1, day:2, unit:2, word:`Nhận, dự`, kana2:`うける`, han:`THỤ`, mean:`受ける`},
 {no:50, week:1, day:2, unit:2, word:`Kế cận, phụ cận`, kana2:`ふきん`, han:`PHÓ CẬN`, mean:`付近`},
