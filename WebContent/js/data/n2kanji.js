@@ -49,7 +49,7 @@ _listData[7].value = [
 {no:48, week:1, day:2, unit:2, word:`Kỳ thi, dự thi`, kana2:`じゅけん`, han:`THỤ NGHIỆM`, mean:`受験`},
 {no:49, week:1, day:2, unit:2, word:`Nhận, dự`, kana2:`うける`, han:`THỤ`, mean:`受ける`},
 {no:50, week:1, day:2, unit:2, word:`Kế cận, phụ cận`, kana2:`ふきん`, han:`PHÓ CẬN`, mean:`付近`},
-{no:51, week:1, day:2, unit:2, word:`Gắn với~`, kana2:`～つき`, han:`PHÓ`, mean:`～付き`},
+{no:51, week:1, day:2, unit:2, word:`Gắn với~/ kèm CD`, kana2:`～つき`, han:`PHÓ`, mean:`～付き／CD付き`},
 {no:52, week:1, day:2, unit:2, word:`Quầy tiếp tân`, kana2:`うけつけ`, han:`THỤ PHÓ`, mean:`受付`},
 {no:53, week:1, day:2, unit:2, word:`Ngày tháng năm`, kana2:`ひづけ`, han:`NHẬT PHÓ`, mean:`日付`},
 {no:54, week:1, day:2, unit:2, word:`Hướng dẫn`, kana2:`あんない`, han:`ÁN NỘI`, mean:`案内`},
