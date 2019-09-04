@@ -5,26 +5,18 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll){
-    var n2goi = _getDataByKey('n2goi');
-    var n2kanji = _getDataByKey('n2kanji');
+myApp.controller("tryCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout){
+    var n2tryDoc = _getDataByKey('n2tryDoc');
+    var n2try = _getDataByKey('n2try');
 
     function init(){
-        localStorageService.setPrefix('jdict.n2goi');
+        localStorageService.setPrefix('jdict.n2try');
+
+        $scope.lv = $stateParams.lv;
 
         $scope.data = {};
-        $scope.type = $stateParams.type;
-        if($stateParams.type){
-            if($stateParams.type == "GOI"){
-                $scope.data.listWords = n2goi;//danh sach tat ca cac tu
 
-            }
-            else if($stateParams.type == "KANJI"){
-                $scope.data.listWords = n2kanji;//danh sach tat ca cac tu
-            }
-        }else{
-            $scope.data.listWords = n2goi;//danh sach tat ca cac tu
-        }
+        $scope.data.listWords = n2try;//danh sach tat ca cac tu
         $scope.data.listUnit = [];//danh sach tat ca cac bai
 
         //tu hien tai
@@ -34,16 +26,14 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
         $scope.data.isCorrect = false;
         $scope.data.isFirstCorrect = false;
 
-        $scope.data.learnType = 'newwords';//[all wrong rememberd newwords hardwords]
-        $scope.data.cardType = 'mean';//[word mean]
+        $scope.data.learnType = 'all';//[all wrong rememberd newwords hardwords]
+        $scope.data.cardType = 'word';//[word mean]
         $scope.data.curList = [];
 
         $scope.data.wrongCount = 0;
         $scope.data.wrongCount_GOI = 2;
-        $scope.data.wrongCount_HAN = 3;
-        $scope.data.wrongCount_Kana2 = 4;
         $scope.data.wrongCountMin = 2;
-        $scope.data.wrongCountMax = 10;
+        $scope.data.wrongCountMax = 20;
 
         $scope.fcardChecked = false;
 
@@ -58,7 +48,7 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
                 week: e.week,
                 day: e.day,
                 code: e.unit,
-                name: "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") NG:0",
+                name: "Unit "+ e.unit +": " + n2tryDoc.find(x=> x.unit === e.unit).title + " NG:0",
                 listCurrentWords: [],//danh sach cac tu trong bai
                 listNotRemember: [],//danh sach cac tu chua thuoc
                 listRemember: [],//danh sach cac tu da thuoc
@@ -84,7 +74,7 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
                     $.each(e.listHardWords, function(i,w){
                         e.listHardWords[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
                     });
-                    e.name = "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") [NG:" + e.listNotRemember.length + " - ★:" +e.listHardWords.length + "]";
+                    e.name = "Unit "+ e.unit +": " + n2tryDoc.find(x=> x.unit === e.unit).title + " [NG:" + e.listNotRemember.length + " - ★:" +e.listHardWords.length + "]";
 
                 });
             } else {
@@ -100,7 +90,6 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
 
         }, 100);
 
-        wanakana.bind($("#ans")[0] /* options */);
 
     }
 
@@ -108,15 +97,9 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
 
     function nextWord(){
         /*
-            day: 1
-            difficult: ""
-            kana1: "さんがいだて"
-            kana2: "さんがいだて"
             mean: "nhà 3 tầng"
             no: 9
-            score: "0"
             unit: 1
-            week: 1
             word: "３階建て"
          */
 
@@ -177,28 +160,16 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
         $scope.data.isFirstCorrect = false;
 
         saveStore();
-
-        setTargetFocus("ans");
     }
 
     function saveStore(){
 
-        if($stateParams.type == "GOI"){
-           localStorageService.set("dataGOI", $scope.data);
-        }
-        else if($stateParams.type == "KANJI"){
-            localStorageService.set("dataKANJI", $scope.data);
-        }
+        localStorageService.set("dataN2TRY", $scope.data);
     }
 
     function getStore(){
 
-        if($stateParams.type == "GOI"){
-            return  localStorageService.get("dataGOI");
-        }
-        else if($stateParams.type == "KANJI"){
-            return  localStorageService.get("dataKANJI");
-        }
+        return  localStorageService.get("dataN2TRY");
 
     }
 
@@ -257,106 +228,11 @@ myApp.controller("n2goiCtrl", function($scope, $stateParams, localStorageService
 
         }
 
-        nextWord();
-    }
+        $scope.data.doc = n2tryDoc.find(i=> i.unit === $scope.data.curUnit.unit);
 
-    $scope.ansKeydown = function(event){
-        if(event.key != "Enter" || isEmpty($scope.data.ans)){
-            return;
-        }
-        var ansRomaji = wanakana.toRomaji($scope.data.ans);
-        var ansKatakana = wanakana.toKatakana($scope.data.ans);
-        var ansHiragana = wanakana.toHiragana($scope.data.ans);
-
-        //tra loi dung
-        if($scope.data.ans == $scope.data.curWord.word ||
-                $scope.data.ans == $scope.data.curWord.kana2 ||
-                isEqual($scope.data.ans, $scope.data.curWord.word) ||
-                isEqual($scope.data.ans, $scope.data.curWord.kana2)){
-
-            $scope.data.isCorrect = true;
-
-            // neu la tra loi dung trong lan cuoi
-             if($scope.data.wrongCount >= $scope.data.wrongCountMax ) {
-
-
-                // neu k phai dung trong lan fai va tu chua ton tai moi add vao
-               if(!$scope.data.isFirstCorrect && !$scope.data.curUnit.listHardWords.find(x => x.no === $scope.data.curWord.no)){
-                    $scope.data.curUnit.listHardWords.push($scope.data.curWord) ;
-               }
-
-                // neu k phai dung lan dau va co trong tu da hoc thi xoa
-                if(!$scope.data.isFirstCorrect && $scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)) {
-                   $scope.data.curUnit.listRemember = $.grep($scope.data.curUnit.listRemember, function(e){
-                       return e.no != $scope.data.curWord.no;
-                   });
-                }
-
-                // neu tu chua ton tai moi add vao
-                if(!$scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no) &&
-                        !$scope.data.curUnit.listNotRemember.find(x => x.no === $scope.data.curWord.no)){
-                    $scope.data.curUnit.listNotRemember.push($scope.data.curWord) ;
-                }
-/*
-                if(!$scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no) &&
-                        !$scope.data.curUnit.listNotRemember.find(x => x.no === $scope.data.curWord.no)){
-                    $scope.data.curUnit.listNotRemember.push($scope.data.curWord) ;
-                }
-*/
-                $scope.data.wrongCount = 0;
-                $scope.data.ans = '';
-                markScore();
-                nextWord();
-
-            }
-            // neu tra loi dung trong lan dau
-            else if($scope.data.wrongCount <= $scope.data.wrongCountMin){
-                $scope.data.isFirstCorrect = true;
-                $scope.data.wrongCount = $scope.data.wrongCountMax ;
-
-                // neu tu chua ton tai moi add vao
-                if(!$scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)){
-                    $scope.data.curUnit.listRemember.push($scope.data.curWord) ;
-                }
-
-                if($scope.data.curUnit.listNotRemember.find(x => x.no === $scope.data.curWord.no)){
-                    $scope.data.curUnit.listNotRemember = $.grep($scope.data.curUnit.listNotRemember, function(e){
-                        return e.no != $scope.data.curWord.no;
-                   });
-                }
-
-            }
-            else {
-                $scope.data.wrongCount++;
-                $scope.data.ans = '';
-            }
-        }
-        //tra loi sai
-        else {
-            $scope.data.isCorrect = false;
-            if($scope.data.wrongCount ==  $scope.data.wrongCount_GOI ||
-                    $scope.data.wrongCount ==  $scope.data.wrongCount_HAN ||
-                    $scope.data.wrongCount ==  $scope.data.wrongCount_Kana2){
-                $scope.data.ans = '';
-            }
-
-            if($scope.data.wrongCount <= $scope.data.wrongCount_Kana2){
-                $scope.data.wrongCount++;
-            }
-        }
-
-        $scope.data.ans = '';
-
-        scrolTo('scroll2here');
-    }
-
-    function scrolTo(element){
-
-        // set the location.hash to the id of
-        // the element you wish to scroll to.
-        $location.hash(element);
-        $anchorScroll();
-
+        kuroshiroExc($scope.data.doc.content).then(function(result){
+            $scope.data.doc.contentRuby = result;
+        });
     }
 
     $scope.reset = function(){

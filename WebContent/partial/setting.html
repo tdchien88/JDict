@@ -3,26 +3,25 @@
 <div class="col-md-12">
 
   <div>
-    <label>setting-form</label>
+    <label>Setting</label>
   </div>
+
   <div class="input-group  mb-2 ">
-
-
 
     <div class="input-group-prepend">
       <span class="input-group-text w70">Data</span>
     </div>
     <my-dropdown name="unit" ng-model="resetKey" default-item-idx="0" items="listKey"></my-dropdown>
 
-
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-danger" ng-click="showPopup()">
-      <i class="fa fa-trash"></i> RESET
-    </button>
+    <span class="input-group-append">
+        <button type="button" class="btn btn-danger" ng-click="showPopup()">
+          <i class="fa fa-trash"></i> RESET
+        </button>
+    </span>
 
-
-  </div><!-- col-md-12 -->
-</div><!-- input-group  mb-2  -->
+  </div><!-- input-group  mb-2  -->
+</div><!-- col-md-12 -->
 </div> <!-- row justify-content-center -->
 
 </form>

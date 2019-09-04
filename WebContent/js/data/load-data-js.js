@@ -63,7 +63,7 @@ var _listJsFile = [
 
 var _loaded = 0;
 
-function _resetDATA(_key){
+var _resetDATA = function(_key){
     if(isEmpty(_key)){
         //reset all
         dataJSON.dropInstance()

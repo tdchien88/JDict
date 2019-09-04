@@ -11,10 +11,14 @@ myApp.controller("mainController", function($scope){
 
     $scope.menulist = [
         {sref:"home", name:"Home"},
+        {sref:"", name:"N3",  sub:[
+            {sref:"somatome", name:"N3 GOI", param:"{lv: 'n3goi'}"},
+            {sref:"somatome", name:"N3 KANJI", param:"{lv: 'n3kanji'}"},
+        ]},
         {sref:"", name:"N2",  sub:[
-            {sref:"n2goi", name:"N2 GOI", param:"{type: 'GOI'}"},
-            {sref:"n2goi", name:"N2 KANJI", param:"{type: 'KANJI'}"},
-            {sref:"n2try", name:"TRY N2"},
+            {sref:"somatome", name:"N2 GOI", param:"{lv: 'n2goi'}"},
+            {sref:"somatome", name:"N2 KANJI", param:"{lv: 'n2kanji'}"},
+            {sref:"try", name:"TRY N2", param:"{lv: 'n2'}"},
         ]},
         {sref:"", name:"聴解",  sub:[
             {sref:"shadowing", name:"Shadowing"},
@@ -29,6 +33,7 @@ myApp.controller("mainController", function($scope){
         {sref:"", name:"Tool",  sub:[
             {sref:"sample", name:"Sample"},
             {sref:"qeditor", name:"Editor"},
+            {sref:"setting", name:"Setting"},
         ]},
         {sref:"about", name:"About"},
     ];

@@ -19,7 +19,7 @@ myApp.controller("settingCtrl", function($scope, $timeout, dialogService){
                     _resetDATA();
                 } else {
 
-                    _resetData($scope.listKey[$scope.resetKey].name);
+                    _resetDATA($scope.listKey[$scope.resetKey].name);
                 }
           }, function() {
               console.log("cancel")
