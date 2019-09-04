@@ -3,7 +3,7 @@
 <div class="col-md-12">
 <div class="input-group  mb-2 ">
     <div class="input-group-prepend">
-      <span class="input-group-text w70">Unit</span>
+      <span class="input-group-text w70">{{curCourse.name}}</span>
     </div>
     <my-dropdown name="unit" ng-model="data.unit" default-item-idx="0" items="data.listUnit" ng-change="changeUnit()"></my-dropdown>
     <span class="input-group-append">
@@ -71,36 +71,6 @@
 <div class="accordion" id="accordion">
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-
-<!--
-    <div class="input-group mb-3" ng-show="data.wrongCount > data.wrongCount_Kana2">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">かな2</span>
-        </div>
-        <my-textbox ctrlproptype="japan" ng-model="data.curWord.kana2" class="text-danger" readonly></my-textbox>
-    </div>
-
-    <div class="input-group mb-3" ng-show="data.wrongCount > data.wrongCount_Kana1">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">かな1</span>
-        </div>
-        <my-textbox ctrlproptype="japan" ng-model="data.curWord.kana1" class="text-danger" readonly></my-textbox>
-    </div>
-
-    <div class="input-group mb-3" ng-show="data.wrongCount > data.wrongCount_GOI">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">語彙</span>
-        </div>
-        <my-textbox ctrlproptype="japan" ng-model="data.curWord.word" class="text-danger font-3xl " readonly></my-textbox>
-    </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text w70">Nghĩa</span>
-        </div>
-        <my-textbox ctrlproptype="alphanum" ng-model="data.curWord.mean" class="form-control form-control-lg text-uppercase text-danger font-weight-bold font-4xl " readonly ></my-textbox>
-    </div>
- -->
         <div class="card">
           <div class="card-body" style="min-height:130px">
            <p class="text-center text-wrap">
@@ -113,14 +83,6 @@
           <div class="card-footer">
             <my-textbox auto-focus id="ans" name="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-danger form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
             <small class="float-right">Ans {{data.wrongCount}}</small>
-        <!--
-            <div class="input-group mb-3" >
-                <div class="input-group-prepend">
-                  <span class="input-group-text w70">Ans {{data.wrongCount}}</span>
-                </div>
-                <my-textbox id="ans" ctrlproptype="japan" ng-model="data.ans" placeholder="{{data.curWord.mean}}" ng-disabled="!data.curWord.mean" class="form-control text-dark form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus ></my-textbox>
-            </div>
-        -->
           </div>
         </div>
     </div>

@@ -86,14 +86,9 @@ myApp.controller("tryCtrl", function($scope, $stateParams, localStorageService, 
             }
 
             $scope.changeUnit();
-
-
         }, 100);
 
-
     }
-
-
 
     function nextWord(){
         /*
