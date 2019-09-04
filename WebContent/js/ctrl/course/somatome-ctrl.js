@@ -7,10 +7,10 @@
 */
 myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll){
     var courses = [
-        {key:'n3goi', data:_getDataByKey('n3goi')},
-        {key:'n3kanji', data: _getDataByKey('n3kanji')},
-        {key:'n2goi', data: _getDataByKey('n2goi')},
-        {key:'n2kanji', data: _getDataByKey('n2kanji')}
+        {key:'n3goi',   type: 'GOI',   data:_getDataByKey('n3goi')},
+        {key:'n2goi',   type: 'GOI',   data: _getDataByKey('n2goi')},
+        {key:'n3kanji', type: 'KANJI', data: _getDataByKey('n3kanji')},
+        {key:'n2kanji', type: 'KANJI', data: _getDataByKey('n2kanji')}
     ];
 
     function init(){

@@ -210,11 +210,11 @@
              -->
             <tr ng-repeat="item in data.curList" >
                 <th class="wp5">{{$index+1}}</th>
-                <td ng-if="type == 'GOI' " class="wp40"><b>{{item.mean}}</b></td>
-                <td ng-if="type == 'KANJI' " class="wp40"><h2>{{item.mean}}</h2></td>
+                <td ng-if="curCourse.type == 'GOI' " class="wp40"><b>{{item.mean}}</b></td>
+                <td ng-if="curCourse.type == 'KANJI' " class="wp40"><h2>{{item.mean}}</h2></td>
                 <td class="wp55">
                     <div class=" d-flex  flex-column">
-                      <div ng-if="type == 'KANJI'" class="p-1 border-bottom"><b>{{item.han}}</b></div>
+                      <div ng-if="curCourse.type == 'KANJI'" class="p-1 border-bottom"><b>{{item.han}}</b></div>
                       <div class="p-1 border-bottom" >{{item.word}}</div>
                       <div class="p-1 ">{{item.kana2}}</div>
                     </div>
