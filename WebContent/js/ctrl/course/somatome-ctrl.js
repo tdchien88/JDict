@@ -46,6 +46,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
         $scope.data.choiceType = 'mean'; // [word mean]
         $scope.data.correctAnsInx = 0;
         $scope.data.randomAnsCount = 8;
+        $scope.data.showPopupResult = true;
         $scope.data.listRandomAns = [];// list random ans
 
         $scope.data.wrongCount = 0;
@@ -181,13 +182,32 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
     }
 
 
-    function getListRandomAns(){
-        var lst =  randomList($scope.data.curList, $scope.data.randomAnsCount);
+    function getListRandomAns() {
+        if($scope.data.curWord == null) {
+            $scope.data.listRandomAns = [];
+            return;
+        }
 
-        $scope.data.correctAnsInx = randomFromInterval(0, $scope.data.randomAnsCount-1);
-        lst[$scope.data.correctAnsInx] = $scope.data.curWord;
+        // lay ds cau tra loi
+        var lstAns =  randomList($scope.data.curUnit.listCurrentWords, $scope.data.randomAnsCount);
 
-        $scope.data.listRandomAns = lst;
+        // tim cau tra loi bi trung trong ds cau tra loi
+        var listCorrectAns = lstAns.filter(function(item){
+            return (item.mean == $scope.data.curWord.mean) || (item.word == $scope.data.curWord.word) ;
+        })
+
+        // neu k co cau tl dung trong ds thi them vao
+        if(listCorrectAns.length == 0){
+            $scope.data.correctAnsInx = randomFromInterval(0, $scope.data.randomAnsCount - 1);
+            lstAns[$scope.data.correctAnsInx] = $scope.data.curWord;
+
+        }
+        // neu co nhieu cau tra loi trung thi chay lai
+        else if(listCorrectAns.length > 1){
+            getListRandomAns();
+        }
+
+        $scope.data.listRandomAns = lstAns;
     }
 
 
@@ -233,21 +253,21 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
 
         var data = getStore();
         if(data){
-            var listUnit = data.listUnit.find(x=> x.code === $scope.data.unit);
-            if(listUnit.listNotRemember && listUnit.listNotRemember.length != 0){
-                $.each(listUnit.listNotRemember, function(i,w){
+            var unit = data.listUnit.find(x=> x.code === $scope.data.unit);
+            if(unit.listNotRemember && unit.listNotRemember.length != 0){
+                $.each(unit.listNotRemember, function(i,w){
                     $scope.data.curUnit.listNotRemember[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
                 });
             }
 
-            if(listUnit.listRemember && listUnit.listRemember.length != 0){
-                $.each(listUnit.listRemember, function(i,w){
+            if(unit.listRemember && unit.listRemember.length != 0){
+                $.each(unit.listRemember, function(i,w){
                     $scope.data.curUnit.listRemember[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
                 });
             }
 
-            if(listUnit.listNewWords && listUnit.listNewWords.length != 0){
-                $.each(listUnit.listNewWords, function(i,w){
+            if(unit.listNewWords && unit.listNewWords.length != 0){
+                $.each(unit.listNewWords, function(i,w){
                     $scope.data.curUnit.listNewWords[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
                 });
             }
@@ -257,6 +277,10 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
             $scope.data.curUnit.listNotRemember = [];
             $scope.data.curUnit.listRemember = [];
 
+        }
+
+        if($scope.data.randomAnsCount > $scope.data.curUnit.listCurrentWords.length){
+            $scope.data.randomAnsCount = $scope.data.curUnit.listCurrentWords.length;
         }
 
         nextWord();
@@ -449,17 +473,19 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
 
         if ($scope.data.correctAnsInx == idx) {
 
-            dialogService.okDialog("正解！", msg,  function() {
+            if($scope.data.showPopupResult){
+                dialogService.okDialog("正解！", msg,  function() {
+                    $scope.itemCardClick('ok');
+                });
+            } else {
                 $scope.itemCardClick('ok');
-            });
-
+            }
         } else {
-
             dialogService.okDialog("残念、頑張ってね！", msg,  function() {
                 $scope.itemCardClick('ng');
             });
-
         }
+
     }
 
     $scope.delayedClose = function() {

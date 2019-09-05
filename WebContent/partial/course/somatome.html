@@ -201,7 +201,13 @@
                   <input class="form-check-input hidden" id="choice-word" ng-model="data.choiceType"  type="radio" value="word" name="choice-type" >
                   <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == 'word'}" for="choice-word">Word</label>
               </div>
-
+              <div class="float-right">
+                <label>Show Popup:</label>
+                <label class="switch switch-pill switch-primary ">
+                  <input ng-model="data.showPopupResult" type="checkbox" class="switch-input" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
           </div>
           <div class="card-body" style="min-height:100px">
             <p class="text-center text-wrap">
