@@ -9,22 +9,20 @@ myApp.factory('helloWorldFactory', function() {
 .factory("dialogService", function($uibModal){
 
     return {
-        okDialog: function(messageId, message, messageParam, okFunc, okBtnView) {
-
-            // メッセージが設定されていない場合はメッセージIDからメッセージを取得する
-            if(isEmpty(message)) message = getMsg(messageId, messageParam);
+        okDialog: function(title, message, okFunc, okBtnView) {
 
             var instance = $uibModal.open({
-                templateUrl: 'partials/dialog/kakuninModal.html',
+                templateUrl: 'partial/dialog/myModal.html',
                 openedClass : 'my-modal-popup',
+                'class': 'modal show',
                 controller: function ($scope, $uibModalInstance) {
                     // キャンセルボタン非表示
                     $scope.cancelIsHide = true;
-                    $scope.title = messageId;
+                    $scope.title = title;
                     $scope.message = message;
 
                     // OKボタンクリック後の処理
-                    $scope.confirm = function () {
+                    $scope.ok = function () {
                         if(isNotEmpty(okFunc)){
                             $uibModalInstance.close(okFunc());
                         } else {

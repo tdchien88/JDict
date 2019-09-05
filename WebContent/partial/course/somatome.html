@@ -37,17 +37,22 @@
     <div class="col-4">
         <!-- accordion -->
        <div class="btn-group btn-group-sm mb-4" role="group" aria-label="Basic example">
-           <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-           Type
+           <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           All
            </button>
 
            <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
            Card
            </button>
 
-           <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-           All
+           <button class="btn btn-outline-primary " type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+           Choice
            </button>
+
+           <button class="btn btn-outline-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+           Type
+           </button>
+
        </div><!-- END accordion -->
     </div>
 
@@ -70,7 +75,7 @@
 
 <div class="accordion" id="accordion">
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+    <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card">
           <div class="card-body" style="min-height:130px">
            <p class="text-center text-wrap">
@@ -145,7 +150,7 @@
         </div>
     </div>
 
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
    <!--
     <div ng-repeat="item in data.curList">
         <div  class="swipe" swipe-right="delayedClose" swipe-left="delayedClose" left-template="partial/leftTemplate.html" right-template="partial/rightTemplate.html">
@@ -186,6 +191,37 @@
         </table>
 
     </div>
+
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div class="card">
+          <div class="card-header" >
+              <div class="form-check  form-check-inline">
+                  <input class="form-check-input hidden" id="choice-mean" ng-model="data.choiceType"  type="radio" value="mean" name="choice-type" >
+                  <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == 'mean'}" for="choice-mean">Mean</label>
+                  <input class="form-check-input hidden" id="choice-word" ng-model="data.choiceType"  type="radio" value="word" name="choice-type" >
+                  <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == 'word'}" for="choice-word">Word</label>
+              </div>
+
+          </div>
+          <div class="card-body" style="min-height:100px">
+            <p class="text-center text-wrap">
+                <h5 class="text-" ng-show="data.choiceType == 'mean'" >{{data.curWord.word}}</h5>
+                <h5 class="text-" ng-show="data.choiceType == 'word'" >{{data.curWord.mean}}</h5>
+            </p>
+          </div>
+          <div class="card-footer">
+
+            <dl class="row m-2" ng-repeat="item in data.listRandomAns track by $index" >
+              <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == 'mean'" ng-click="choiceCardClick($index)"><h5>{{item.mean}}</h5></dd>
+              <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == 'word'" ng-click="choiceCardClick($index)"><h5>{{item.word}}</h5></dd>
+            </dl>
+
+          </div>
+        </div>
+
+    </div>
+
+
 </div>
 
 </div><!-- col-md-12 -->

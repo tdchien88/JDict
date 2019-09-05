@@ -5,9 +5,9 @@
    <span aria-hidden="true">&times;</span>
  </button>
 </div>
-<div class="modal-body" id="modal-body" align="left">
-    {{message}}
-</div>
+
+<div class="modal-body" id="modal-body" align="left" dynamic-html="message"></div>
+
 <div class="modal-footer" id="modal-footer" align="right">
     <!-- okDialogボタン -->
     <button class="btn btn-primary " type="button" ng-click="ok()" ng-if="cancelIsHide" ng-hide="okIsHide" autofocus>{{okView}}</button>

@@ -7,10 +7,10 @@
 */
 myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll){
     var courses = [
-        {key:'n3goi', type: 'GOI', name: '語彙 N3', data:_getDataByKey('n3goi')},
-        {key:'n2goi', type: 'GOI', name: '語彙 N2', data: _getDataByKey('n2goi')},
-        {key:'n3kanji', type: 'KANJI', name: '漢字 N3', data: _getDataByKey('n3kanji')},
-        {key:'n2kanji', type: 'KANJI', name: '漢字 N2', data: _getDataByKey('n2kanji')}
+        {lv:'n3goi', type: 'GOI', name: '語彙 N3', data:_getDataByKey('n3goi')},
+        {lv:'n2goi', type: 'GOI', name: '語彙 N2', data: _getDataByKey('n2goi')},
+        {lv:'n3kanji', type: 'KANJI', name: '漢字 N3', data: _getDataByKey('n3kanji')},
+        {lv:'n2kanji', type: 'KANJI', name: '漢字 N2', data: _getDataByKey('n2kanji')}
     ];
 
     function init(){
@@ -22,7 +22,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
         // danh sach tat ca cac tu
         if($scope.lv){
             $scope.curCourse = courses.find(function(course){
-                return course.key == $scope.lv
+                return course.lv == $scope.lv
             });
             $scope.data.listWords = $scope.curCourse.data;
         }else{
@@ -38,9 +38,15 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
         $scope.data.isCorrect = false;
         $scope.data.isFirstCorrect = false;
 
+        $scope.data.curList = [];// list current word in unit
+
         $scope.data.learnType = 'newwords'; // [all wrong rememberd newwords hardwords]
         $scope.data.cardType = 'mean'; // [word mean]
-        $scope.data.curList = [];
+
+        $scope.data.choiceType = 'mean'; // [word mean]
+        $scope.data.correctAnsInx = 0;
+        $scope.data.randomAnsCount = 8;
+        $scope.data.listRandomAns = [];// list random ans
 
         $scope.data.wrongCount = 0;
         $scope.data.wrongCount_GOI = 2;
@@ -167,29 +173,33 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
 
         $scope.data.isFirstCorrect = false;
 
+        getListRandomAns();
+
         saveStore();
 
         setTargetFocus("ans");
     }
 
+
+    function getListRandomAns(){
+        var lst =  randomList($scope.data.curList, $scope.data.randomAnsCount);
+
+        $scope.data.correctAnsInx = randomFromInterval(0, $scope.data.randomAnsCount-1);
+        lst[$scope.data.correctAnsInx] = $scope.data.curWord;
+
+        $scope.data.listRandomAns = lst;
+    }
+
+
+
     function saveStore(){
 
-        if($stateParams.type == "GOI"){
-           localStorageService.set("dataGOI", $scope.data);
-        }
-        else if($stateParams.type == "KANJI"){
-            localStorageService.set("dataKANJI", $scope.data);
-        }
+        localStorageService.set($scope.lv, $scope.data);
     }
 
     function getStore(){
 
-        if($stateParams.type == "GOI"){
-            return  localStorageService.get("dataGOI");
-        }
-        else if($stateParams.type == "KANJI"){
-            return  localStorageService.get("dataKANJI");
-        }
+        return  localStorageService.get($scope.lv);
 
     }
 
@@ -423,6 +433,32 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
             nextWord();
 
             break;
+        }
+    }
+
+    $scope.choiceCardClick = function(idx){
+
+        var han = isEmpty($scope.data.curWord.han)? "" : $scope.data.curWord.han;
+        var msg =
+            `<dl >
+                <dd class="col-sm-10"><h4>` + $scope.data.curWord.mean + `</h4></dd>
+                <dd class="col-sm-10"><h4>` + han + `</h4></dd>
+                <dd class="col-sm-10 text-danger"><h4>` + $scope.data.curWord.word + `</h4></dd>
+                <dd class="col-sm-10 text-danger"><h4>` + $scope.data.curWord.kana2 + `</h4></dd>
+              </dl>`;
+
+        if ($scope.data.correctAnsInx == idx) {
+
+            dialogService.okDialog("正解！", msg,  function() {
+                $scope.itemCardClick('ok');
+            });
+
+        } else {
+
+            dialogService.okDialog("残念、頑張ってね！", msg,  function() {
+                $scope.itemCardClick('ng');
+            });
+
         }
     }
 
