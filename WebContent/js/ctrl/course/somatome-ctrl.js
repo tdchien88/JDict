@@ -471,7 +471,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
                 <dd class="col-sm-10 text-danger"><h4>` + $scope.data.curWord.kana2 + `</h4></dd>
               </dl>`;
 
-        if ($scope.data.correctAnsInx == idx) {
+        if ($scope.data.curWord.no == $scope.data.listRandomAns[idx].no) {
 
             if($scope.data.showPopupResult){
                 dialogService.okDialog("正解！", msg,  function() {
