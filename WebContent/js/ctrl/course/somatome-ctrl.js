@@ -14,7 +14,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
     ];
 
     function init(){
-        localStorageService.setPrefix('jdict.n2goi');
+        localStorageService.setPrefix('jdict.somatome');
 
         $scope.data = {};
         $scope.lv = $stateParams.lv;
