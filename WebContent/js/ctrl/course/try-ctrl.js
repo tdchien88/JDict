@@ -10,7 +10,7 @@ myApp.controller("tryCtrl", function($scope, $stateParams, localStorageService, 
     var n2try = _getDataByKey('n2try');
 
     function init(){
-        localStorageService.setPrefix('jdict.n2try');
+        localStorageService.setPrefix('jdict.try');
 
         $scope.lv = $stateParams.lv;
 

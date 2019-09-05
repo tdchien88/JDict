@@ -16,4 +16,14 @@ myApp.config(function() {
         templateUrl: 'partial/course/try.html',
         controller: 'tryCtrl'
     })
+    .state('mimikara', {
+        url: '/mimikara',
+        templateUrl: 'partial/course/mimikara.html',
+        controller: 'mimikaraCtrl'
+    })
+    .state('shadowing', {
+        url: '/shadowing',
+        templateUrl: 'partial/course/shadowing.html',
+        controller: 'shadowingCtrl'
+    })
 });

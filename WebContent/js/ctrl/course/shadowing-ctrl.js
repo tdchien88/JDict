@@ -15,7 +15,7 @@ myApp.controller("shadowingCtrl", function($scope, $stateParams, localStorageSer
     })
 
     function init(){
-        localStorageService.setPrefix('jdict.shadowing2');
+        localStorageService.setPrefix('jdict.shadowing');
 
         $scope.data = {};
 
