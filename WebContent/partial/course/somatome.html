@@ -206,13 +206,13 @@
             <div class="card-header">
               <div class="form-check  form-check-inline">
                 <input class="form-check-input hidden" id="choice-mean" ng-model="data.choiceType" type="radio" ng-value="constMap.choiceType.mean.code" name="choice-type">
-                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.mean.code}" for="choice-mean">Mean</label>
+                <label class="form-check-label" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.mean.code}" for="choice-mean">Mean</label>
 
                 <input class="form-check-input hidden" id="choice-furi" ng-model="data.choiceType" type="radio" ng-value="constMap.choiceType.furi.code" name="choice-type">
-                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.furi.code}" for="choice-furi">Furi</label>
+                <label class="form-check-label ml-4" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.furi.code}" for="choice-furi">Furi</label>
 
                 <input class="form-check-input hidden" id="choice-word" ng-model="data.choiceType" type="radio" ng-value="constMap.choiceType.word.code" name="choice-type">
-                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.word.code}" for="choice-word">Word</label>
+                <label class="form-check-label ml-4" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.word.code}" for="choice-word">Word</label>
 
               </div>
               <div class="float-right">
@@ -231,13 +231,13 @@
             <div class="card-footer">
               <dl class="row ml-1 mr-1 mb-0" ng-repeat="item in data.listRandomAns track by $index">
                 <dd class="col-sm-12p-2 w-100 bg-white" ng-show="data.choiceType == constMap.choiceType.mean.code" ng-click="choiceCardClick($index)">
-                  <label class="btn btn-outline-primary w-100 align-left"><h5 class="mb-0">{{item.mean}}</h5></label>
+                  <label class="btn btn-outline-primary m-0 w-100 align-left"><h5 class="mb-0">{{item.mean}}</h5></label>
                 </dd>
                 <dd class="col-sm-12p-2 w-100 bg-white" ng-show="data.choiceType == constMap.choiceType.furi.code" ng-click="choiceCardClick($index)">
-                  <label class="btn btn-outline-primary w-100 align-left"><h5 class="mb-0">{{item.kana2}}</h5></label>
+                  <label class="btn btn-outline-primary m-0 w-100 align-left"><h5 class="mb-0">{{item.kana2}}</h5></label>
                 </dd>
                 <dd class="col-sm-12p-2 w-100 bg-white" ng-show="data.choiceType == constMap.choiceType.word.code" ng-click="choiceCardClick($index)">
-                  <label class="btn btn-outline-primary w-100 align-left"><h5 class="mb-0">{{item.word}}</h5></label>
+                  <label class="btn btn-outline-primary m-0 w-100 align-left"><h5 class="mb-0">{{item.word}}</h5></label>
                 </dd>
               </dl>
             </div>
