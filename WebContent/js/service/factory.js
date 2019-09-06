@@ -26,11 +26,7 @@ myApp.factory('helloWorldFactory', function() {
 
                     // OKボタンクリック後の処理
                     $scope.ok = function () {
-                        if(isNotEmpty(okFunc)){
-                            $uibModalInstance.close(okFunc());
-                        } else {
-                            $uibModalInstance.close();
-                        }
+                        $uibModalInstance.close();
                     };
 
                     // OKボタン表示名称に「false」が設定されている場合、OKボタンを表示しない
@@ -91,10 +87,8 @@ myApp.factory('helloWorldFactory', function() {
 
             modalInstance.result.then(function(){
                 console.log("a");
-                okFunc();
             }, function(res){
                 console.log("b");
-                cancelFunc();
 
             });
 
