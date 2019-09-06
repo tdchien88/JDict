@@ -3,7 +3,7 @@
   <div class="row justify-content-center">
     <div class="col-md-12">
 
-      <div class="input-group  mb-2 ">
+      <div class="input-group  mb-1 ">
         <div class="input-group-prepend">
           <span class="input-group-text w70">{{curCourse.name}}</span>
         </div>
@@ -14,27 +14,27 @@
       </div>
       <!-- input-group  mb-2 -->
 
-      <div class="input-group">
-        <div class="font-weight-bold " ng-class="{'hidden': data.learnType == 'newwords'}">【Idx: {{data.curIdx + 1}}】</div>
+      <div class="input-group mb-1">
+        <div class="font-weight-bold " ng-class="{'hidden': data.learnType == constMap.learnType.newwords.code}">【Idx: {{data.curIdx + 1}}】</div>
 
-        <input class="form-check-input hidden" id="inline-hardwords" ng-model="data.learnType" type="radio" value="hardwords" name="inline-radios" ng-change="changeLearnType()">
-        <label class="form-check-label text-warning ml-auto" ng-class="{'font-weight-bold border-bottom border-warning': data.learnType == 'hardwords'}" for="inline-hardwords">★ ({{data.curUnit.listHardWords.length}})
+        <input class="form-check-input hidden" id="inline-hardwords" ng-model="data.learnType" type="radio" ng-value="constMap.learnType.hardwords.code" name="inline-radios" ng-change="changeLearnType()">
+        <label class="form-check-label text-warning ml-auto" ng-class="{'font-weight-bold border-bottom border-warning': data.learnType == constMap.learnType.hardwords.code}" for="inline-hardwords">★ ({{data.curUnit.listHardWords.length}})
         </label>
 
-        <input class="form-check-input hidden" id="inline-rememberd" ng-model="data.learnType" type="radio" value="rememberd" name="inline-radios" ng-change="changeLearnType()">
-        <label class="form-check-label text-success ml-2" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == 'rememberd'}" for="inline-rememberd">OK ({{data.curUnit.listRemember.length}})
+        <input class="form-check-input hidden" id="inline-rememberd" ng-model="data.learnType" type="radio" ng-value="constMap.learnType.rememberd.code" name="inline-radios" ng-change="changeLearnType()">
+        <label class="form-check-label text-success ml-2" ng-class="{'font-weight-bold border-bottom border-success': data.learnType == constMap.learnType.rememberd.code}" for="inline-rememberd">OK ({{data.curUnit.listRemember.length}})
         </label>
 
-        <input class="form-check-input hidden" id="inline-wrong" ng-model="data.learnType" type="radio" value="wrong" name="inline-radios" ng-change="changeLearnType()">
-        <label class="form-check-label text-danger ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.learnType == 'wrong'}" for="inline-wrong">NG ({{data.curUnit.listNotRemember.length}})
+        <input class="form-check-input hidden" id="inline-wrong" ng-model="data.learnType" type="radio" ng-value="constMap.learnType.wrong.code" name="inline-radios" ng-change="changeLearnType()">
+        <label class="form-check-label text-danger ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.learnType == constMap.learnType.wrong.code}" for="inline-wrong">NG ({{data.curUnit.listNotRemember.length}})
         </label>
 
-        <input class="form-check-input hidden" id="inline-newwords" ng-model="data.learnType" type="radio" value="newwords" name="inline-radios" ng-change="changeLearnType()">
-        <label class="form-check-label text-primary ml-2" ng-class="{'font-weight-bold border-bottom border-primary': data.learnType == 'newwords'}" for="inline-newwords">New ({{data.curUnit.listNewWords.length}})
+        <input class="form-check-input hidden" id="inline-newwords" ng-model="data.learnType" type="radio" ng-value="constMap.learnType.newwords.code" name="inline-radios" ng-change="changeLearnType()">
+        <label class="form-check-label text-primary ml-2" ng-class="{'font-weight-bold border-bottom border-primary': data.learnType == constMap.learnType.newwords.code}" for="inline-newwords">New ({{data.curUnit.listNewWords.length}})
         </label>
 
-        <input class="form-check-input hidden" id="inline-all" ng-model="data.learnType" type="radio" value="all" name="inline-radios" ng-change="changeLearnType()">
-        <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-dark': data.learnType == 'all'}" for="inline-all">All ({{data.curUnit.listCurrentWords.length}})
+        <input class="form-check-input hidden" id="inline-all" ng-model="data.learnType" type="radio" ng-value="constMap.learnType.all.code" name="inline-radios" ng-change="changeLearnType()">
+        <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-dark': data.learnType == constMap.learnType.all.code}" for="inline-all">All ({{data.curUnit.listCurrentWords.length}})
         </label>
 
         <!--
@@ -42,15 +42,15 @@
  -->
       </div>
 
-      <div id="scroll2here" class="row">
+      <div id="scroll2here" class="row mb-1">
 
         <!-- accordion -->
         <div class="col-6">
-          <div class="btn-group btn-group-sm mb-4" role="group">
-            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="'All'" uib-uncheckable="uncheckable">All</label>
-            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="'Card'" uib-uncheckable="uncheckable">Card</label>
-            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="'Choice'" uib-uncheckable="uncheckable">Choice</label>
-            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="'Type'" uib-uncheckable="uncheckable">Type</label>
+          <div class="btn-group btn-group-sm " role="group">
+            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.All.code" uib-uncheckable="uncheckable">All</label>
+            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Card.code" uib-uncheckable="uncheckable">Card</label>
+            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Choice.code" uib-uncheckable="uncheckable">Choice</label>
+            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Type.code" uib-uncheckable="uncheckable">Type</label>
           </div>
         </div>
         <!-- accordion -->
@@ -74,7 +74,7 @@
 
       <div class="accordion" id="accordion">
 
-        <div ng-class="{'show': data.learnModel == 'Type'}" class="collapse">
+        <div ng-class="{'show': data.learnModel == constMap.learnModel.Type.code}" class="collapse">
           <div class="card">
             <div class="card-body" style="min-height: 130px">
               <p class="text-center text-wrap">
@@ -91,15 +91,15 @@
           </div>
         </div>
 
-        <div ng-class="{'show': data.learnModel == 'Card'}" class="collapse">
+        <div ng-class="{'show': data.learnModel == constMap.learnModel.Card.code}" class="collapse">
 
           <div class="card ">
             <div class="card-header">
               <div class="form-check  form-check-inline">
-                <input class="form-check-input hidden" id="card-mean" ng-model="data.cardType" type="radio" value="mean" name="card-type">
-                <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'mean'}" for="card-mean">Mean</label>
-                <input class="form-check-input hidden" id="card-word" ng-model="data.cardType" type="radio" value="word" name="card-type">
-                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == 'word'}" for="card-word">Word</label>
+                <input class="form-check-input hidden" id="card-mean" ng-model="data.cardType" type="radio" ng-value="constMap.cardType.mean.code" name="card-type">
+                <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == constMap.cardType.mean.code}" for="card-mean">Mean</label>
+                <input class="form-check-input hidden" id="card-word" ng-model="data.cardType" type="radio" ng-value="constMap.cardType.word.code" name="card-type">
+                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.cardType == constMap.cardType.word.code}" for="card-word">Word</label>
               </div>
 
             </div>
@@ -110,8 +110,8 @@
                   <div class="fcard-card">
                     <div class="fcard-front" ng-if="!fcardChecked">
                       <div class="card h-100 justify-content-center p-2">
-                        <h1 ng-if="data.cardType == 'mean'">{{data.curWord.mean}}</h1>
-                        <h1 ng-if="data.cardType == 'word'">{{data.curWord.word}}</h1>
+                        <h1 ng-if="data.cardType == constMap.cardType.mean.code">{{data.curWord.mean}}</h1>
+                        <h1 ng-if="data.cardType == constMap.cardType.word.code">{{data.curWord.word}}</h1>
                       </div>
                     </div>
 
@@ -156,7 +156,7 @@
           </div>
         </div>
 
-        <div ng-class="{'show': data.learnModel == 'All'}" class="collapse">
+        <div ng-class="{'show': data.learnModel == constMap.learnModel.All.code}" class="collapse">
           <!--
   <div ng-repeat="item in data.curList">
     <div  class="swipe" swipe-right="delayedClose" swipe-left="delayedClose" left-template="partial/leftTemplate.html" right-template="partial/rightTemplate.html">
@@ -201,14 +201,19 @@
 
         </div>
 
-        <div ng-class="{'show': data.learnModel == 'Choice'}" class="collapse">
+        <div ng-class="{'show': data.learnModel == constMap.learnModel.Choice.code}" class="collapse">
           <div class="card">
             <div class="card-header">
               <div class="form-check  form-check-inline">
-                <input class="form-check-input hidden" id="choice-mean" ng-model="data.choiceType" type="radio" value="mean" name="choice-type">
-                <label class="form-check-label " ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == 'mean'}" for="choice-mean">Mean</label>
-                <input class="form-check-input hidden" id="choice-word" ng-model="data.choiceType" type="radio" value="word" name="choice-type">
-                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == 'word'}" for="choice-word">Word</label>
+                <input class="form-check-input hidden" id="choice-mean" ng-model="data.choiceType" type="radio" ng-value="constMap.choiceType.mean.code" name="choice-type">
+                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.mean.code}" for="choice-mean">Mean</label>
+
+                <input class="form-check-input hidden" id="choice-furi" ng-model="data.choiceType" type="radio" ng-value="constMap.choiceType.furi.code" name="choice-type">
+                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.furi.code}" for="choice-furi">Furi</label>
+
+                <input class="form-check-input hidden" id="choice-word" ng-model="data.choiceType" type="radio" ng-value="constMap.choiceType.word.code" name="choice-type">
+                <label class="form-check-label ml-2" ng-class="{'font-weight-bold border-bottom border-danger': data.choiceType == constMap.choiceType.word.code}" for="choice-word">Word</label>
+
               </div>
               <div class="float-right">
                 <label>Show Popup:</label>
@@ -219,17 +224,20 @@
             </div>
             <div class="card-body" style="min-height: 100px">
               <p class="text-center text-wrap">
-                <h5 class="text-" ng-show="data.choiceType == 'mean'">{{data.curWord.word}}</h5>
-                <h5 class="text-" ng-show="data.choiceType == 'word'">{{data.curWord.mean}}</h5>
+                <h5 class="text-" ng-show="data.choiceType == constMap.choiceType.mean.code || data.choiceType == constMap.choiceType.furi.code">{{data.curWord.word}}</h5>
+                <h5 class="text-" ng-show="data.choiceType == constMap.choiceType.word.code">{{data.curWord.mean}}</h5>
               </p>
             </div>
             <div class="card-footer">
 
-              <dl class="row m-2" ng-repeat="item in data.listRandomAns track by $index">
-                <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == 'mean'" ng-click="choiceCardClick($index)">
+              <dl class="row ml-1 mr-1 mb-1" ng-repeat="item in data.listRandomAns track by $index">
+                <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == constMap.choiceType.mean.code" ng-click="choiceCardClick($index)">
                   <h5>{{item.mean}}</h5>
                 </dd>
-                <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == 'word'" ng-click="choiceCardClick($index)">
+                <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == constMap.choiceType.furi.code" ng-click="choiceCardClick($index)">
+                  <h5>{{item.kana2}}</h5>
+                </dd>
+                <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == constMap.choiceType.word.code" ng-click="choiceCardClick($index)">
                   <h5>{{item.word}}</h5>
                 </dd>
               </dl>

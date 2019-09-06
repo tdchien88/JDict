@@ -5,7 +5,7 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll){
+myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll, constMap){
     var courses = [
         {lv:'n3goi', type: 'GOI', name: '語彙 N3', data:_getDataByKey('n3goi')},
         {lv:'n2goi', type: 'GOI', name: '語彙 N2', data: _getDataByKey('n2goi')},
@@ -39,11 +39,11 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
         $scope.data.isFirstCorrect = false;
 
         $scope.data.curList = [];// list current word in unit
-        $scope.data.learnModel = 'All'; // [All Type Card Choice]
-        $scope.data.learnType = 'newwords'; // [all wrong rememberd newwords hardwords]
-        $scope.data.cardType = 'mean'; // [word mean]
+        $scope.data.learnModel = constMap.learnModel.All.code; // [All Type Card Choice]
+        $scope.data.learnType = constMap.learnType.newwords.code; // [all wrong rememberd newwords hardwords]
+        $scope.data.cardType = constMap.cardType.mean.code; // [word mean]
 
-        $scope.data.choiceType = 'mean'; // [word mean]
+        $scope.data.choiceType = constMap.choiceType.mean.code; // [word mean furi]
         $scope.data.correctAnsInx = 0;
         $scope.data.randomAnsCount = 8;
         $scope.data.showPopupResult = true;
@@ -131,11 +131,11 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
         $scope.fcardChecked = false;
 
         $scope.data.curList = [];
-        if($scope.data.learnType == 'all'){
+        if($scope.data.learnType == constMap.learnType.all.code){
             $scope.data.curList = $scope.data.curUnit.listCurrentWords;
             $scope.data.curIdx++;
         }
-        else if($scope.data.learnType == 'wrong'){
+        else if($scope.data.learnType == constMap.learnType.wrong.code){
             $scope.data.curList = $scope.data.curUnit.listNotRemember;
 
             if($scope.data.isFirstCorrect){
@@ -149,7 +149,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
             }
 
         }
-        else if($scope.data.learnType == 'rememberd'){
+        else if($scope.data.learnType == constMap.learnType.rememberd.code){
             $scope.data.curList = $scope.data.curUnit.listRemember;
             if($scope.data.isFirstCorrect){
                 $scope.data.curIdx++;
@@ -157,11 +157,11 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
                 $scope.data.curIdx = 0;
             }
         }
-        else if($scope.data.learnType == 'newwords'){
+        else if($scope.data.learnType == constMap.learnType.newwords.code){
             $scope.data.curList = $scope.data.curUnit.listNewWords;
             $scope.data.curIdx = 0;
         }
-        else if($scope.data.learnType == 'hardwords'){
+        else if($scope.data.learnType == constMap.learnType.hardwords.code){
             $scope.data.curList = $scope.data.curUnit.listHardWords;
             $scope.data.curIdx++;
         }

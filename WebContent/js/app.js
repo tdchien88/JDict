@@ -7,7 +7,10 @@ var myApp = angular.module("myApp", ['ui.router', 'LocalStorageModule', 'ngMater
     "ui.bootstrap", "ui.bootstrap.datepicker", "ui.bootstrap.datepickerPopup", "ui.bootstrap.dateparser", "ui.bootstrap.isClass", "ui.bootstrap.tabs"]);
 
 
-myApp.run( function($rootScope, $timeout, $interval){
+myApp.run( function($rootScope, $timeout, $interval, constMap, constList){
+    $rootScope.constMap = constMap;
+    $rootScope.constList = constList;
+
     $rootScope.loading = false;
 
     $rootScope.showLoading = function(callback){
