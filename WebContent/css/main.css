@@ -41,6 +41,9 @@ rt,rp {opacity: 0.9;color: #63c2de!important}
 .input-group-right button.close {font-size: 1rem;opacity: 1!important;color: #20a8d8;}
 .input-group-right button:hover {color: #1b8eb7;}
 
+.align-left{text-align: left !important;}
+.align-right{text-align: right !important;}
+
 .w0{width:0}
 .w10{width:10px}
 .w20{width:20px}
