@@ -21,7 +21,7 @@
   </div>
 
 
-  <div ng-repeat="article in data.articlesOnPage" class=" card">
+  <div ng-repeat="article in data.articlesOnPage track by $index" class=" card">
     <div class="card-header header-sticky" id="heading{{$index}}">
       <div>{{article.title}}</div>
     </div>

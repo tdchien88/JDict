@@ -27,7 +27,7 @@
       <button class="btn btn-primary no-border-radius" ng-click="search()" type="button"><i class="fa fa-search"></i></button>
     </span>
     <datalist id="searchList" class="w-100">
-        <option ng-repeat="item in listResult" label="{{tagStr +' '+ item.tag}}" value="{{tagStr +' '+ item.tag}}"></option>
+        <option ng-repeat="item in listResult track by $index" label="{{tagStr +' '+ item.tag}}" value="{{tagStr +' '+ item.tag}}"></option>
     </datalist>
   </div>
 
@@ -38,7 +38,7 @@
       <div ng-if="returnGOI.length==0" class="m-2">No results for <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
       <div ng-if="returnGOI.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
-      <div ng-repeat="item in returnGOI" class="m-2">
+      <div ng-repeat="item in returnGOI track by $index" class="m-2">
         <div class=" d-flex ">
           <div class="p-2">{{$index+1+"."}}</div>
           <div class="p-2 flex-fill">
@@ -58,7 +58,7 @@
       <div ng-if="returnKANJI.length==0" class="m-2">No results for <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
       <div ng-if="returnKANJI.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
-      <div ng-repeat="item in returnKANJI" class="m-2">
+      <div ng-repeat="item in returnKANJI track by $index" class="m-2">
         <div class=" d-flex ">
           <div class="p-2 ">
             <div id="draw{{$index}}" ></div>
@@ -79,7 +79,7 @@
       <div ng-if="returnVD.length==0" class="m-2">No results for <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
       <div ng-if="returnVD.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
-      <div ng-repeat="item in returnVD" class="m-2">
+      <div ng-repeat="item in returnVD track by $index" class="m-2">
         <div class=" d-flex ">
           <div class="p-2">{{$index+1+"."}}</div>
           <div class="p-2 flex-fill">
@@ -97,7 +97,7 @@
       <div ng-if="returnBUNPO.length==0" class="m-2">No results for <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
       <div ng-if="returnBUNPO.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
 
-      <div ng-repeat="item in returnBUNPO" class="m-2">
+      <div ng-repeat="item in returnBUNPO track by $index" class="m-2">
           <p class="text-wrap">
             <h4 class="text-danger multi-lines">{{item.word}}</h4>
             <table class="w-100">
@@ -121,7 +121,7 @@
             <div class="GrammarDetail " ng-if="item.exampleHTML" >
                 <div class="grd-div">{{item.exampleHTML.explain}}</div>
                 <ul class="grd-ul">
-                    <li ng-repeat='itemExa in item.exampleHTML.example'>
+                    <li ng-repeat='itemExa in item.exampleHTML.example track by $index'>
                         <span class="grammar-ex"><u class="furigana_text multi-lines">{{itemExa.jp}}</u></span>
                         <p class=" multi-lines">{{itemExa.vn}}</p>
                     </li>
@@ -130,7 +130,7 @@
 
             <div class="GrammarDetail" ng-if="item.exampleJSON">
               <ul class="grd-ul ">
-                  <li ng-repeat="itemExa in item.exampleJSON">
+                  <li ng-repeat="itemExa in item.exampleJSON track by $index">
                       <span class="grammar-ex"><u class="furigana_text multi-lines">{{itemExa.jp}}</u></span>
                       <p class="multi-lines">{{itemExa.vn}}</p>
                   </li>

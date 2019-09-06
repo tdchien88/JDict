@@ -39,7 +39,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
         $scope.data.isFirstCorrect = false;
 
         $scope.data.curList = [];// list current word in unit
-
+        $scope.data.learnModel = 'All'; // [All Type Card Choice]
         $scope.data.learnType = 'newwords'; // [all wrong rememberd newwords hardwords]
         $scope.data.cardType = 'mean'; // [word mean]
 
@@ -213,7 +213,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
 
 
     function saveStore(){
-
+        localStorageService.set($scope.lv, null);
         localStorageService.set($scope.lv, $scope.data);
     }
 

@@ -10,11 +10,14 @@ myApp.factory('helloWorldFactory', function() {
 
     return {
         okDialog: function(title, message, okFunc, okBtnView) {
-
-            var instance = $uibModal.open({
-                templateUrl: 'partial/dialog/myModal.html',
+            var modalInstance = $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
                 openedClass : 'my-modal-popup',
                 'class': 'modal show',
+                animation : true,
+                //backdrop: 'static', // disable outside click
+                templateUrl: 'partial/dialog/myModal.html',
                 controller: function ($scope, $uibModalInstance) {
                     // キャンセルボタン非表示
                     $scope.cancelIsHide = true;
@@ -40,13 +43,26 @@ myApp.factory('helloWorldFactory', function() {
                     $scope.okView = isNotEmpty(okBtnView) ? okBtnView : "OK";
                 }
             });
-            return instance;
+
+            modalInstance.result.then(function(){
+                console.log("a");
+                okFunc();
+            }, function(res){
+                console.log("b");
+                okFunc();
+            });
+
+            return modalInstance;
         },
         confirmDialog: function(title, message, okFunc, cancelFunc) {
             var modalInstance = $uibModal.open({
-                templateUrl: 'partial/dialog/myModal.html',
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
                 openedClass : 'my-modal-popup',
                 'class': 'modal show',
+                animation : true,
+                backdrop: 'static', // disable outside click
+                templateUrl: 'partial/dialog/myModal.html',
                 controller: function ($scope, $uibModalInstance) {
                     $scope.title = title;
                     $scope.message = message;
@@ -75,8 +91,10 @@ myApp.factory('helloWorldFactory', function() {
 
             modalInstance.result.then(function(){
                 console.log("a");
+                okFunc();
             }, function(res){
                 console.log("b");
+                cancelFunc();
 
             });
 

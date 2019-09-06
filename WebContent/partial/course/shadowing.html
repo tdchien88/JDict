@@ -129,7 +129,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in data.curList" >
+            <tr ng-repeat="item in data.curList track by $index" >
                 <th class="wp5" scope="row">{{$index+1}}</th>
                 <td class="wp55 font-lg multi-lines" dynamic-html="item.wordRuby" ></td>
                 <td class="wp40 text-danger multi-lines">{{item.mean}}</td>
