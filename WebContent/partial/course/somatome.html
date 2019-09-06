@@ -216,18 +216,16 @@
 
               </div>
               <div class="float-right">
-                <label>Show Popup:</label>
-                <label class="switch switch-pill switch-primary ">
+                <label class=" mb-0">Show Popup:</label>
+                <label class="switch switch-pill switch-primary mb-0">
                   <input ng-model="data.showPopupResult" type="checkbox" class="switch-input" checked> <span class="switch-slider"></span>
                 </label>
               </div>
             </div>
 
             <div class="card-body">
-              <p class="text-center text-wrap">
-                <h4 class="text-" ng-show="data.choiceType == constMap.choiceType.mean.code || data.choiceType == constMap.choiceType.furi.code">{{data.curWord.word}}</h4>
-                <h4 class="text-" ng-show="data.choiceType == constMap.choiceType.word.code">{{data.curWord.mean}}</h4>
-              </p>
+                <h3 class="text-" ng-show="data.choiceType == constMap.choiceType.mean.code || data.choiceType == constMap.choiceType.furi.code">{{data.curWord.word}}</h3>
+                <h3 class="text-" ng-show="data.choiceType == constMap.choiceType.word.code">{{data.curWord.mean}}</h3>
             </div>
 
             <div class="card-footer">
