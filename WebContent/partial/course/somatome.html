@@ -222,26 +222,26 @@
                 </label>
               </div>
             </div>
-            <div class="card-body" style="min-height: 100px">
+
+            <div class="card-body">
               <p class="text-center text-wrap">
-                <h5 class="text-" ng-show="data.choiceType == constMap.choiceType.mean.code || data.choiceType == constMap.choiceType.furi.code">{{data.curWord.word}}</h5>
-                <h5 class="text-" ng-show="data.choiceType == constMap.choiceType.word.code">{{data.curWord.mean}}</h5>
+                <h4 class="text-" ng-show="data.choiceType == constMap.choiceType.mean.code || data.choiceType == constMap.choiceType.furi.code">{{data.curWord.word}}</h4>
+                <h4 class="text-" ng-show="data.choiceType == constMap.choiceType.word.code">{{data.curWord.mean}}</h4>
               </p>
             </div>
-            <div class="card-footer">
 
+            <div class="card-footer">
               <dl class="row ml-1 mr-1 mb-1" ng-repeat="item in data.listRandomAns track by $index">
                 <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == constMap.choiceType.mean.code" ng-click="choiceCardClick($index)">
-                  <h5>{{item.mean}}</h5>
+                  <h5 class="mb-0">{{item.mean}}</h5>
                 </dd>
                 <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == constMap.choiceType.furi.code" ng-click="choiceCardClick($index)">
-                  <h5>{{item.kana2}}</h5>
+                  <h5 class="mb-0">{{item.kana2}}</h5>
                 </dd>
                 <dd class="col-sm-12 border border-primary bg-white text- rounded p-2" ng-show="data.choiceType == constMap.choiceType.word.code" ng-click="choiceCardClick($index)">
-                  <h5>{{item.word}}</h5>
+                  <h5 class="mb-0">{{item.word}}</h5>
                 </dd>
               </dl>
-
             </div>
           </div>
 
