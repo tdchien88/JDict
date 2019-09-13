@@ -932,6 +932,9 @@ _listData[9].value = [
 {no:924, tag:`Bank`, word:`外貨両替`, mean:`Đổi tiền nước ngoài`},
 {no:925, tag:`Bank`, word:`手数料`, mean:`Phí dịch vụ`},
 {no:926, tag:`Bank`, word:`振込手数料`, mean:`Phí dịch vụ giao dịch chuyển khoản`},
+{no:927, tag:`IT`, word:`括弧（かっこ）`, mean:`bracket, ( ) { } [ ] < > :dấu ngoặc đơn,`},
+{no:928, tag:`IT`, word:` 一意制約`, mean:`Unique constraint`},
+{no:929, tag:`病気`, word:`中耳炎（ちゅうじえん）`, mean:`[TRUNG NHĨ VIÊM] Viêm tai giữa`},
 
 
 

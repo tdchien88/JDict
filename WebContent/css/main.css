@@ -9,7 +9,7 @@ div.span-nonewline span::after{content:none!important}
 a { color: #37add3; text-decoration: none; }
 a:focus, button:focus, *:focus { outline:none; }
 a:hover { color: #0095c5; }
-rt,rp {opacity: 0.9;color: #63c2de!important}
+rt,rp {opacity: 1;color: #63c2de!important}
 
 .line-h2{line-height: 2;}
 

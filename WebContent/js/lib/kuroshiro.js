@@ -1186,7 +1186,7 @@ var Kuroshiro = function () {
                                         if (notations[n1][1] !== 1) {
                                             result += notations[n1][0];
                                         } else {
-                                            result += "<ruby><a href='javascript:void(0)'>" + notations[n1][0] + "</a><rp>" + options.delimiter_start + "</rp><rt>" + (0, _util.toRawKatakana)(notations[n1][2]) + "</rt><rp>" + options.delimiter_end + "</rp></ruby>";
+                                            result += "<ruby>" + notations[n1][0] + "<rp>" + options.delimiter_start + "</rp><rt>" + (0, _util.toRawKatakana)(notations[n1][2]) + "</rt><rp>" + options.delimiter_end + "</rp></ruby>";
                                         }
                                     }
                                 }
@@ -1205,7 +1205,7 @@ var Kuroshiro = function () {
                                     // furigana
                                     result += "<ruby>";
                                     for (n3 = 0; n3 < notations.length; n3++) {
-                                        result += "<a href='javascript:void(0)'>"+notations[n3][0] + "</a><rp>" + options.delimiter_start + "</rp><rt>" + (0, _util.toRawRomaji)(notations[n3][3], options.romajiSystem) + "</rt><rp>" + options.delimiter_end + "</rp>";
+                                        result += ""+notations[n3][0] + "<rp>" + options.delimiter_start + "</rp><rt>" + (0, _util.toRawRomaji)(notations[n3][3], options.romajiSystem) + "</rt><rp>" + options.delimiter_end + "</rp>";
                                     }
                                     result += "</ruby>";
                                 }
@@ -1226,7 +1226,7 @@ var Kuroshiro = function () {
                                         if (notations[n5][1] !== 1) {
                                             result += notations[n5][0];
                                         } else {
-                                            result += "<ruby><a href='javascript:void(0)'>" + notations[n5][0] + "</a><rp>" + options.delimiter_start + "</rp><rt>" + notations[n5][2] + "</rt><rp>" + options.delimiter_end + "</rp></ruby>";
+                                            result += "<ruby>" + notations[n5][0] + "<rp>" + options.delimiter_start + "</rp><rt>" + notations[n5][2] + "</rt><rp>" + options.delimiter_end + "</rp></ruby>";
                                         }
                                     }
                                 }

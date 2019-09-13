@@ -19,6 +19,7 @@ myApp.controller("mainController", function($scope){
             {sref:"somatome", name:"N2 GOI", param:"{lv: 'n2goi'}"},
             {sref:"somatome", name:"N2 KANJI", param:"{lv: 'n2kanji'}"},
             {sref:"try", name:"TRY N2", param:"{lv: 'n2'}"},
+            {sref:"hantu", name:"HÁN TỰ"},
         ]},
         {sref:"", name:"聴解",  sub:[
             {sref:"shadowing", name:"Shadowing"},

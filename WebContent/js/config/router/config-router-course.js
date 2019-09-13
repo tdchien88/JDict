@@ -26,4 +26,9 @@ myApp.config(function() {
         templateUrl: 'partial/course/shadowing.html',
         controller: 'shadowingCtrl'
     })
+    .state('hantu', {
+        url: '/hantu',
+        templateUrl: 'partial/course/hanTu.html',
+        controller: 'hanTuCtrl'
+    })
 });

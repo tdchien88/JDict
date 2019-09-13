@@ -5,29 +5,16 @@
 * @param helloWorldFactory
 * @param
 */
-myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll, constMap){
-    var courses = [
-        {lv:'n3goi', type: 'GOI', name: '語彙 N3', data:_getDataByKey('n3goi')},
-        {lv:'n2goi', type: 'GOI', name: '語彙 N2', data: _getDataByKey('n2goi')},
-        {lv:'n3kanji', type: 'KANJI', name: '漢字 N3', data: _getDataByKey('n3kanji')},
-        {lv:'n2kanji', type: 'KANJI', name: '漢字 N2', data: _getDataByKey('n2kanji')}
-    ];
+myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll, constMap){
+    var _listWord = _getDataByKey('hanviet');
 
     function init(){
-        localStorageService.setPrefix('jdict.somatome');
+        localStorageService.setPrefix('jdict.hanviet');
 
         $scope.data = {};
-        $scope.lv = $stateParams.lv;
         $scope.curCourse = {};
-        // danh sach tat ca cac tu
-        if($scope.lv){
-            $scope.curCourse = courses.find(function(course){
-                return course.lv == $scope.lv
-            });
-            $scope.data.listWords = $scope.curCourse.data;
-        }else{
-            $scope.data.listWords = n2goi;
-        }
+
+        $scope.data.listWords = _listWord;
 
         $scope.data.listUnit = [];// danh sach tat ca cac bai
 
@@ -41,7 +28,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
         $scope.data.curList = [];// list current word in unit
         $scope.data.learnModel = constMap.learnModel.All.code; // [All Type Card Choice]
         $scope.data.learnType = constMap.learnType.newwords.code; // [all wrong rememberd newwords hardwords]
-        $scope.data.cardType = constMap.cardType.mean.code; // [word mean]
+        $scope.data.cardType = constMap.cardType.word.code; // [word mean]
 
         $scope.data.choiceType = constMap.choiceType.mean.code; // [word mean furi]
         $scope.data.correctAnsInx = 0;
@@ -67,9 +54,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
             $scope.data.listUnit.push({
                 unit: e.unit,
                 code: e.unit,
-                week: e.week,
-                day: e.day,
-                name: "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") NG:0",
+                name: e.unit + " [NG:0]",
                 listCurrentWords: [],// danh sach cac tu trong bai
                 listNotRemember: [],// danh sach cac tu chua thuoc
                 listRemember: [],// danh sach cac tu da thuoc
@@ -95,13 +80,13 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
                     $.each(e.listHardWords, function(i,w){
                         e.listHardWords[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
                     });
-                    e.name = "U" + e.unit + " (W"+e.week+ " - D"+e.day + ") [NG:" + e.listNotRemember.length + " - ★:" +e.listHardWords.length + "]";
+                    e.name = e.unit + " [NG:" + e.listNotRemember.length + " - ★:" +e.listHardWords.length + "]";
 
                 });
             } else {
                 $scope.data.listUnit.forEach(eUnit => {
                     eUnit.listNewWords = $scope.data.listWords.filter(function (word) {
-                        return eUnit.code == word.unit ;
+                        return eUnit.unit == word.unit ;
                     });
                 });
             }
@@ -193,7 +178,7 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
 
         // tim cau tra loi bi trung trong ds cau tra loi
         var listCorrectAns = lstAns.filter(function(item){
-            return (item.mean == $scope.data.curWord.mean) || (item.word == $scope.data.curWord.word) ;
+            return (item.han == $scope.data.curWord.han) || (item.word == $scope.data.curWord.word) ;
         })
 
         // neu k co cau tl dung trong ds thi them vao
@@ -290,15 +275,9 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
         if(event.key != "Enter" || isEmpty($scope.data.ans)){
             return;
         }
-        var ansRomaji = wanakana.toRomaji($scope.data.ans);
-        var ansKatakana = wanakana.toKatakana($scope.data.ans);
-        var ansHiragana = wanakana.toHiragana($scope.data.ans);
 
         // tra loi dung
-        if($scope.data.ans == $scope.data.curWord.word ||
-                $scope.data.ans == $scope.data.curWord.kana2 ||
-                isEqual($scope.data.ans, $scope.data.curWord.word) ||
-                isEqual($scope.data.ans, $scope.data.curWord.kana2)){
+        if($scope.data.ans == $scope.data.curWord.han  ){
 
             $scope.data.isCorrect = true;
 
@@ -462,13 +441,12 @@ myApp.controller("somatomeCtrl", function($scope, $stateParams, localStorageServ
 
     $scope.choiceCardClick = function(idx){
 
-        var han = isEmpty($scope.data.curWord.han)? "" : $scope.data.curWord.han;
+        var han = $scope.data.curWord.han;
         var msg =
             `<dl >
-                <dd class="col-sm-10"><h4>` + $scope.data.curWord.mean + `</h4></dd>
-                <dd class="col-sm-10"><h4>` + han + `</h4></dd>
-                <dd class="col-sm-10 text-danger"><h4>` + $scope.data.curWord.word + `</h4></dd>
-                <dd class="col-sm-10 text-danger"><h4>` + $scope.data.curWord.kana2 + `</h4></dd>
+                <dd class="col-sm-10"><h2>` + $scope.data.curWord.word + `</h2></dd>
+                <dd class="col-sm-10"><h2>` + han + `</h2></dd>
+                <dd class="col-sm-10 text-danger"><h4>` + $scope.data.curWord.mean + `</h4></dd>
               </dl>`;
 
         if ($scope.data.curWord.no == $scope.data.listRandomAns[idx].no) {
