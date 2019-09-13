@@ -95,8 +95,6 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
         }, 100);
 
-        wanakana.bind($("#ans")[0] /* options */);
-
     }
 
 
@@ -276,7 +274,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
         }
 
         // tra loi dung
-        if($scope.data.ans == $scope.data.curWord.han  ){
+        if($scope.data.ans.toUpperCase() == $scope.data.curWord.han.toUpperCase()  ){
 
             $scope.data.isCorrect = true;
 

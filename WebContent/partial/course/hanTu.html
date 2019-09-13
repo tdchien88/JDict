@@ -78,13 +78,13 @@
           <div class="card">
             <div class="card-body" style="min-height: 130px">
               <p class="text-center text-wrap">
-                <h5 class="text-" ng-show="data.wrongCount > data.wrongCount_HAN">{{data.curWord.han}}</h5>
-                <h2 class="text-danger " ng-show="data.wrongCount > data.wrongCount_GOI">{{data.curWord.mean}}</h2>
-                <h1 class="text-uppercase text-danger ">{{data.curWord.word}}</h1>
+                <h5 class="text-uppercase text-danger" ng-show="data.wrongCount > data.wrongCount_HAN">{{data.curWord.han}}</h5>
+                <h2 class=" " ng-show="data.wrongCount > data.wrongCount_GOI">{{data.curWord.mean}}</h2>
+                <h1 class="text-danger ">{{data.curWord.word}}</h1>
               </p>
             </div>
             <div class="card-footer">
-              <my-textbox auto-focus id="ans" name="ans"  ng-model="data.ans" placeholder="{{data.curWord.word}}" ng-disabled="!data.curWord.word" class="form-control text-danger form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus></my-textbox>
+              <my-textbox auto-focus id="ans" name="ans" ctrlproptype="all" ng-model="data.ans" placeholder="{{data.curWord.word}}" ng-disabled="!data.curWord.word" class="form-control text-danger form-control-lg" ng-class="{'is-invalid': !data.isCorrect}" ng-keydown="ansKeydown($event)" autofocus></my-textbox>
               <small class="float-right">Ans {{data.wrongCount}}</small>
             </div>
           </div>
