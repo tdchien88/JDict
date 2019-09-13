@@ -53,7 +53,6 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
         $.each(listUnit, function(i,e){
             $scope.data.listUnit.push({
                 unit: e.unit,
-                code: e.unit,
                 name: e.unit + " [NG:0]",
                 listCurrentWords: [],// danh sach cac tu trong bai
                 listNotRemember: [],// danh sach cac tu chua thuoc
@@ -71,7 +70,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
                 $scope.data.unit = isEmpty(data.unit)? 0 : data.unit;
 
                 $scope.data.listUnit.forEach(e => {
-                    var unit = data.listUnit.find(x=> x.code === e.code);
+                    var unit = data.listUnit.find(x=> x.unit === e.unit);
 
                     e.listNotRemember = isEmpty(unit.listNotRemember) ? [] : unit.listNotRemember;
                     e.listRemember = isEmpty(unit.listRemember) ? [] : unit.listRemember;
@@ -225,7 +224,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
     $scope.changeUnit = function(){
 
-        $scope.data.curUnit = $scope.data.listUnit.find(x=> x.code === $scope.data.unit);
+        $scope.data.curUnit = $scope.data.listUnit.find(x=> x.unit === $scope.data.unit);
         $scope.data.curIdx = -1;
         $scope.data.curWord = {};
         $scope.data.wrongCount = 0;
@@ -238,7 +237,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
         var data = getStore();
         if(data){
-            var unit = data.listUnit.find(x=> x.code === $scope.data.unit);
+            var unit = data.listUnit.find(x=> x.unit === $scope.data.unit);
             if(unit.listNotRemember && unit.listNotRemember.length != 0){
                 $.each(unit.listNotRemember, function(i,w){
                     $scope.data.curUnit.listNotRemember[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
@@ -445,8 +444,8 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
         var msg =
             `<dl >
                 <dd class="col-sm-10"><h2>` + $scope.data.curWord.word + `</h2></dd>
-                <dd class="col-sm-10"><h2>` + han + `</h2></dd>
-                <dd class="col-sm-10 text-danger"><h4>` + $scope.data.curWord.mean + `</h4></dd>
+                <dd class="col-sm-10 text-danger"><h2>` + han + `</h2></dd>
+                <dd class="col-sm-10"><h4>` + $scope.data.curWord.mean + `</h4></dd>
               </dl>`;
 
         if ($scope.data.curWord.no == $scope.data.listRandomAns[idx].no) {
