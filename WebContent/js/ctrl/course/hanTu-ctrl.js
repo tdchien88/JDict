@@ -137,7 +137,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             if($scope.data.isFirstCorrect){
                 $scope.data.curIdx++;
             } else {
-                $scope.data.curIdx = 0;
+                // $scope.data.curIdx = 0;
             }
         }
         else if($scope.data.learnType == constMap.learnType.newwords.code){
@@ -149,7 +149,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             $scope.data.curIdx++;
         }
 
-        if($scope.data.curIdx >= $scope.data.curList.length ){
+        if($scope.data.curIdx < 0 || $scope.data.curIdx >= $scope.data.curList.length ){
             $scope.data.curIdx = 0;
         }
 
