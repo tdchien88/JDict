@@ -11,8 +11,12 @@ myApp.run( function($rootScope, $timeout, $interval, constMap, constList){
     $rootScope.constMap = constMap;
     $rootScope.constList = constList;
 
-    $rootScope.loading = false;
 
+    $rootScope.isShowSearchIcon = false;
+    $rootScope.searchText = "";
+
+
+    $rootScope.loading = false;
     $rootScope.showLoading = function(callback){
 
         $timeout(function(){

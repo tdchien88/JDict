@@ -92,11 +92,12 @@
 
 
 <main class="main">
-    <div class="mt-2 container">
+    <div class="mt-2 container"  my-mouseup>
         <div id="myAlert" style="display:none;"></div>
 
          <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
         <div ui-view ></div>
+        <div ng-style="iconSearchCss" ng-if="isShowSearchIcon" icon-search-click><i class="fa fa-search" ></i> </div>
     </div>
 </main>
 </div>

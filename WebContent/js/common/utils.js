@@ -806,3 +806,14 @@ function closeStatus(){
     $(".alert button.close").parent().fadeOut('slow');
 }
 
+
+
+function getSelectedText(){
+    var text = null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    } else if (document.selection && document.selection.type != "Control") {
+        text = document.selection.createRange().text;
+    }
+    return text;
+}

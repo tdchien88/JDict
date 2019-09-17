@@ -798,3 +798,56 @@ myApp.directive('autoFocus', function($timeout) {
         }
     };
 });
+myApp.directive('myMouseup', function($rootScope, $timeout) {
+    return {
+        restrict: 'AC',
+        link: function(scope, element, attr) {
+
+            function mouseup(event) {
+
+                $timeout(function(){
+                    $rootScope.searchText = getSelectedText();
+
+                    if(isEmpty( $rootScope.searchText)) {
+                        $rootScope.isShowSearchIcon = false;
+                        return;
+                    }
+                    $rootScope.isShowSearchIcon = true;
+
+                    var left  = (event.clientX +5) + "px";
+                    var top  = event.clientY  + "px";
+                    $rootScope.iconSearchCss = {position:'fixed',
+                            top: top,
+                            left:left,
+                            'font-size':'130%'}
+
+                    //console.log('selected: '+ $rootScope.searchText);
+                }, 10);
+            }
+
+            element.on('touchstart mouseup', mouseup);
+        }
+    };
+});
+myApp.directive('iconSearchClick', function($rootScope, $timeout, dialogService) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attr) {
+
+        function click(){
+            if(isEmpty($rootScope.searchText)) return;
+
+            var msg =
+                `<dl >
+                    <dd class="col-sm-10"><h2>` + $rootScope.searchText + `</h2></dd>
+                  </dl>`;
+
+            dialogService.okDialog("Search", msg);
+
+            console.log('Searching: ' + $rootScope.searchText);
+        }
+
+            element.on('click', click);
+        }
+    };
+});
