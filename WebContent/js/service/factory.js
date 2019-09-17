@@ -93,6 +93,42 @@ myApp.factory('helloWorldFactory', function() {
             });
 
             return modalInstance;
+        },
+        searchDialog: function(searchText) {
+            var modalInstance = $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                openedClass : 'my-modal-popup',
+                'class': 'modal show ',
+                windowClass: 'search-dialog',
+                animation : true,
+                templateUrl : "./partial/dialog/searchBox.html",
+                controller: function ($scope, $uibModalInstance) {
+                    $scope.title = "Search Box";
+                    $scope.searchStr = searchText;
+
+                    // OKボタンクリック後の処理
+                    $scope.ok = function () {
+                            $uibModalInstance.close();
+                    };
+                    // Cancelボタンクリック後の処理
+                    $scope.cancel = function () {
+                            $uibModalInstance.close();
+                    };
+
+                    $scope.isDialog = true;
+
+                }
+            });
+
+            modalInstance.result.then(function(){
+                console.log("a");
+            }, function(res){
+                console.log("b");
+
+            });
+
+            return modalInstance;
         }
     };
 

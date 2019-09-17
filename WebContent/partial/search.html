@@ -33,7 +33,7 @@
 
 <div class="mb10">
 
-  <div class="tab-content">
+  <div class="tab-content" ng-class="{'search-dialog-content':isDialog}">
     <div class="tab-pane active show" id="goi" role="tabpanel">
       <div ng-if="returnGOI.length==0" class="m-2">No results for <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>
       <div ng-if="returnGOI.length>0" class="m-2">Results of <bold class="span-nonewline line-h2" dynamic-html="searchStrRuby"></bold></div>

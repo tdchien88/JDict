@@ -14,6 +14,7 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
     return {
         restrict : "E", // A:属性
         require: "?ngModel",
+        templateUrl : "./partial/search.html",
         compile : function(element, attr) {
             return function link (scope, element, attr, ngModel) {
                 var hanviet    = _getDataByKey('hanviet');
@@ -37,6 +38,7 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                var listVD = $.merge(iword, shadowing2 );
                var seen = {};
                scope.tagStr = "tag ";
+
                var listVD_TAG = listVD.filter(function (e) {
                    return seen[e.tag] ? false : (seen[e.tag] = true);
                });
@@ -50,6 +52,17 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                        'vd': '',
                        'bunpo': '',
                };
+
+
+               if(isEmpty(scope.isDialog)){
+                   scope.isDialog = false;
+               }
+
+               if(scope.isDialog && isNotEmpty(scope.searchStr)){
+                   $timeout(function(){
+                       scope.search(null, 'goi');
+                   },10)
+               }
 
                 function saveStore(isClear){
                     if(isClear){
@@ -76,10 +89,7 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                         return (x)? x : [];
                 }
 
-
                 scope.listHistory = getStore();
-
-
 
                 function searchInList(list){
                     return jQuery.grep(list, (x, i) => (
@@ -288,7 +298,6 @@ myApp.directive("searchBox", function($rootScope, localStorageService, $timeout,
                 }
             };
         },
-        templateUrl : "./partial/search.html",
     };
 });
 
@@ -837,12 +846,7 @@ myApp.directive('iconSearchClick', function($rootScope, $timeout, dialogService)
         function click(){
             if(isEmpty($rootScope.searchText)) return;
 
-            var msg =
-                `<dl >
-                    <dd class="col-sm-10"><h2>` + $rootScope.searchText + `</h2></dd>
-                  </dl>`;
-
-            dialogService.okDialog("Search", msg);
+            dialogService.searchDialog($rootScope.searchText);
 
             console.log('Searching: ' + $rootScope.searchText);
         }
