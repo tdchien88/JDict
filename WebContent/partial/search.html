@@ -14,7 +14,7 @@
     <label class="nav-link mb-0 no-border-radius no-border-bottom no-border-right" ng-click="search(null, 'bunpo')" data-toggle="tab" role="tab" href="#bunpo" aria-controls="bunpo" aria-selected="false">NGỮ PHÁP</label>
     </li>
     <li class="">
-    <label class="nav-link mb-0 no-border-radius no-border-bottom" ng-click="showListBottomSheet()"><i class="fa fa-history" aria-hidden="true"></i></label>
+    <label class="nav-link mb-0 no-border-radius no-border-bottom" ng-if="!isDialog" ng-click="showListBottomSheet()"><i class="fa fa-history" aria-hidden="true"></i></label>
     </li>
   </ul>
 

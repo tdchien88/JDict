@@ -118,7 +118,7 @@ rt,rp {opacity: 1;color: #63c2de!important}
 #search-form .nav-tabs .nav-link:hover{background-color:#eee}
 
 .search-dialog {z-index:99999 !important}
-.search-dialog-content {overflow-y:scroll; max-height:300px}
+.search-dialog-content {overflow-y:scroll; max-height:65vh}
 
 .table-hover tbody tr:hover{background-color:#ffecb3}
 .tab-content .tab-pane{padding:1rem 0}
