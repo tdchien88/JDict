@@ -22,7 +22,8 @@ myApp.controller("mainController", function($scope){
             {sref:"hantu", name:"HÁN TỰ"},
         ]},
         {sref:"", name:"聴解",  sub:[
-            {sref:"shadowing", name:"Shadowing"},
+            {sref:"shadowing", name:"Shadowing 初級", param:"{tag: 'shadowing'}"},
+            {sref:"shadowing", name:"Shadowing 中級", param:"{tag: 'shadowing2'}"},
             {sref:"mimikara", name:"Mimi Kara"},
         ]},
         {sref:"", name:"Articles",  sub:[

@@ -855,3 +855,21 @@ myApp.directive('iconSearchClick', function($rootScope, $timeout, dialogService)
         }
     };
 });
+myApp.directive('floatActionButton', function($rootScope, $timeout, dialogService) {
+    return {
+        restrict: 'EA',
+        templateUrl : "./partial/float-action-button.html",
+        link: function(scope, element, attr) {
+            scope.topDirections = ['left', 'up'];
+            scope.bottomDirections = ['down', 'right'];
+
+            scope.isOpen = false;
+
+            scope.availableModes = ['md-fling', 'md-scale'];
+            scope.selectedMode = 'md-fling';
+
+            scope.availableDirections = ['up', 'down', 'left', 'right'];
+            scope.selectedDirection = 'up';
+        }
+    };
+});

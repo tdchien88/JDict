@@ -65,13 +65,14 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
 
         $timeout(function(){
-            var data = getStore();
+            var oldData = getStore();
 
-            if (data){
-                $scope.data.unit = isEmpty(data.unit)? 0 : data.unit;
+            if (oldData){
+
+                $scope.data.unit = isEmpty(oldData.unit)? 0 : oldData.unit;
 
                 $scope.data.listUnit.forEach(e => {
-                    var unit = data.listUnit.find(x=> x.code === e.code);
+                    var unit = oldData.listUnit.find(x=> x.code === e.code);
 
                     e.listNotRemember = isEmpty(unit.listNotRemember) ? [] : unit.listNotRemember;
                     e.listRemember = isEmpty(unit.listRemember) ? [] : unit.listRemember;
@@ -93,12 +94,27 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
             $scope.changeUnit();
 
+            if (oldData){
+                settingBack(oldData);
+            }
 
         }, 100);
 
     }
 
+    function settingBack(oldData){
 
+        $scope.data.learnType = oldData.learnType;
+        $scope.data.curIdx = oldData.curIdx;
+        $scope.data.curWord = oldData.curWord;
+
+        $scope.data.learnModel = oldData.learnModel;
+        $scope.data.learnType = oldData.learnType;
+        $scope.data.cardType = oldData.cardType;
+
+        $scope.data.choiceType = oldData.choiceType;
+
+    }
 
     function nextWord(){
          if(($scope.data.curUnit.listRemember.indexOf($scope.data.curWord) != -1) ||
@@ -234,9 +250,9 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             return e.unit == $scope.data.unit ;
         });
 
-        var data = getStore();
-        if(data){
-            var unit = data.listUnit.find(x=> x.code === $scope.data.unit);
+        var oldData = getStore();
+        if(oldData){
+            var unit = oldData.listUnit.find(x=> x.code === $scope.data.unit);
             if(unit.listNotRemember && unit.listNotRemember.length != 0){
                 $.each(unit.listNotRemember, function(i,w){
                     $scope.data.curUnit.listNotRemember[i] = $scope.data.listWords.find(w2=> w2.no === w.no);

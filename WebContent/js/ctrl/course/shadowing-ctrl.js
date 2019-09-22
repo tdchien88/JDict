@@ -15,11 +15,20 @@ myApp.controller("shadowingCtrl", function($scope, $stateParams, localStorageSer
     })
 
     function init(){
-        localStorageService.setPrefix('jdict.shadowing');
 
         $scope.data = {};
+        $scope.tag = isEmpty($stateParams.tag)? 'shadowing': $stateParams.tag;
+        $scope.tagName = $scope.tag == 'shadowing'? '初級' : '中級';
 
-        $scope.data.listWords = shadowing2;//danh sach tat ca cac tu
+        $scope.data.tag = 'jdict.'+ $stateParams.tag;
+        localStorageService.setPrefix($scope.data.tag);
+
+        //danh sach tat ca cac tu
+        $scope.data.listWords = shadowing2.filter(function (e) {
+            return e.tag == $scope.tag;
+        });
+
+
         $scope.data.listUnit = [];//danh sach tat ca cac bai
 
         //tu hien tai

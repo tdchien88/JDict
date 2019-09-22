@@ -3,7 +3,7 @@
 <div class="col-md-12">
     <div class="input-group  mb-2 ">
         <div class="input-group-prepend">
-          <span class="input-group-text w70">Unit</span>
+          <span class="input-group-text w70">{{tagName}}</span>
         </div>
         <my-dropdown name="unit" ng-model="data.unit" default-item-idx="0" items="data.listUnit" ng-change="changeUnit()"></my-dropdown>
         <span class="input-group-append">

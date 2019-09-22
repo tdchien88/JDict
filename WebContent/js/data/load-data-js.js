@@ -73,8 +73,10 @@ var _resetDATA = function(_key){
         });
     } else {
         //reset 1
-        localStorage.removeItem(_key);
-        location.reload(true);// works for safari
+        dataJSON.removeItem(_key).then(function(){
+            console.log('removed:' + _key);
+            location.reload(true);// works for safari
+        });
     }
 }
 

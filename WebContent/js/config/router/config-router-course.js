@@ -23,6 +23,9 @@ myApp.config(function() {
     })
     .state('shadowing', {
         url: '/shadowing',
+        params: {
+            tag: null,
+        },
         templateUrl: 'partial/course/shadowing.html',
         controller: 'shadowingCtrl'
     })
