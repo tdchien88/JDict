@@ -11,12 +11,12 @@ myApp.controller("sampleCtrl", function($scope, $timeout, dialogService, helloWo
     var n2goi = _getDataByKey('n2goi');
 
     //showdown - markdown
-    var markdown = `# markdown\n## 2019/09/22
-
-        * URIR add comma
-        > 検証
-        `;
-    $scope.mymarkdown = markdown;
+    $scope.mymarkdown = 'md\sample.md';
+    $scope.markdownText = `# markdown h1
+## 2019/09/22 h2
+* 1)
+    * 1.1)
+> quote`;
 
     // helloWorld Provider
     $scope.provider = helloWorld.title;
