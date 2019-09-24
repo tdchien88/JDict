@@ -5,7 +5,7 @@
 
       <div class="input-group  mb-1 ">
         <div class="input-group-prepend">
-          <span class="input-group-text w70">年生</span>
+          <span class="input-group-text w70">{{tagName}}</span>
         </div>
         <my-dropdown name="unit" ng-model="data.unit" default-item-idx="0" items="data.listUnit" ng-change="changeUnit()"></my-dropdown>
         <span class="input-group-append">

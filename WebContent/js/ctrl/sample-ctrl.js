@@ -16,7 +16,11 @@ myApp.controller("sampleCtrl", function($scope, $timeout, dialogService, helloWo
 ## 2019/09/22 h2
 * 1)
     * 1.1)
-> quote`;
+> quote
+\`\`\`sql
+SELECT * FROM ABC WHERE x=1
+\`\`\`
+`;
 
     // helloWorld Provider
     $scope.provider = helloWorld.title;

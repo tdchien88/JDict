@@ -1,26 +1,39 @@
 <form name="n2goi-form" class="animated fadeIn">
 <div class="row justify-content-center">
 <div class="col-md-12">
-
-  <div>
+<div class="card">
+  <div class="card-header">
     <label>Setting</label>
   </div>
 
-  <div class="input-group  mb-2 ">
-
-    <div class="input-group-prepend">
-      <span class="input-group-text w70">Data</span>
+  <div class="card-body">
+<form>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Create ID</label>
+    <div class="col-sm-10">
     </div>
-    <my-dropdown name="unit" ng-model="resetKey" default-item-idx="0" items="listKey"></my-dropdown>
+  </div>
 
-    <!-- Button trigger modal -->
-    <span class="input-group-append">
-        <button type="button" class="btn btn-danger" ng-click="showPopup()">
-          <i class="fa fa-trash"></i> DELETE
-        </button>
-    </span>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Delete Data</label>
+    <div class="col-sm-10">
+    <div class="input-group  mb-2 ">
+      <my-dropdown name="unit" ng-model="resetKey" default-item-idx="0" items="listKey"></my-dropdown>
 
-  </div><!-- input-group  mb-2  -->
+      <!-- Button trigger modal -->
+      <span class="input-group-append">
+          <button type="button" class="btn btn-danger" ng-click="showPopup()">
+            <i class="fa fa-trash"></i> DELETE
+          </button>
+      </span>
+    </div><!-- input-group  mb-2  -->
+    </div>
+  </div>
+</form>
+
+
+  </div>
+</div>
 </div><!-- col-md-12 -->
 </div> <!-- row justify-content-center -->
 

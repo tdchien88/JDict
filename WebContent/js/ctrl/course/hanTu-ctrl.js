@@ -9,12 +9,24 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
     var _listWord = _getDataByKey('hanviet');
 
     function init(){
-        localStorageService.setPrefix('jdict.hanviet');
 
         $scope.data = {};
-        $scope.curCourse = {};
+        $scope.tagName = "JLPT";
 
-        $scope.data.listWords = _listWord;
+        $scope.curCourse = {};
+        if($scope.tagName == "JLPT"){
+            localStorageService.setPrefix('jdict.hanviet.jlpt');
+            _listWord.forEach(function(e){
+                e.unit = e.jlpt;
+            });
+            $scope.data.listWords = _listWord;
+        }else{
+            localStorageService.setPrefix('jdict.hanviet.gakko');
+            _listWord.forEach(function(e){
+                e.unit = e.tag;
+            });
+            $scope.data.listWords = _listWord;
+        }
 
         $scope.data.listUnit = [];// danh sach tat ca cac bai
 
