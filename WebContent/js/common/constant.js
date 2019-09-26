@@ -29,6 +29,10 @@ myApp.constant('constMap', {
         mean : {code : 1, msg :'mean'},
         furi : {code : 2, msg :'furi'},
     },
+    hanTuTagName :{
+        JLPT : {code : 0, msg :'JLPT'},
+        JP : {code : 1, msg :'JP'},
+    }
 });
 
 myApp.constant('constList', {
@@ -37,5 +41,9 @@ myApp.constant('constList', {
         {code : 1, name :'Type'},
         {code : 2, name :'Card'},
         {code : 3, name :'Choice'}
+    ],
+    hanTuTagName :[
+        {code:0, name:"JLPT"},
+        {code:1, name:"JP"}
     ]
 });

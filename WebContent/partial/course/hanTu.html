@@ -5,7 +5,8 @@
 
       <div class="input-group  mb-1 ">
         <div class="input-group-prepend">
-          <span class="input-group-text w70">{{tagName}}</span>
+          <my-dropdown name="tag" ng-model="data.tagName" default-item-idx="0" items="constList.hanTuTagName" ng-change="changeTagName()"></my-dropdown>
+
         </div>
         <my-dropdown name="unit" ng-model="data.unit" default-item-idx="0" items="data.listUnit" ng-change="changeUnit()"></my-dropdown>
         <span class="input-group-append">

@@ -11,17 +11,21 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
     function init(){
 
         $scope.data = {};
-        $scope.tagName = "JLPT";
+        $scope.data.tagName = constMap.hanTuTagName.JLPT.code;
+        $scope.changeTagName();
+    }
+
+    $scope.changeTagName = function(){
 
         $scope.curCourse = {};
-        if($scope.tagName == "JLPT"){
-            localStorageService.setPrefix('jdict.hanviet.jlpt');
+        if($scope.data.tagName == constMap.hanTuTagName.JLPT.code){
+            localStorageService.setPrefix('jdict.hanviet_jlpt');
             _listWord.forEach(function(e){
                 e.unit = e.jlpt;
             });
             $scope.data.listWords = _listWord;
         }else{
-            localStorageService.setPrefix('jdict.hanviet.gakko');
+            localStorageService.setPrefix('jdict.hanviet_gakko');
             _listWord.forEach(function(e){
                 e.unit = e.tag;
             });
@@ -224,13 +228,13 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
 
     function saveStore(){
-        localStorageService.set($scope.lv, null);
-        localStorageService.set($scope.lv, $scope.data);
+        localStorageService.set("data", null);
+        localStorageService.set("data", $scope.data);
     }
 
     function getStore(){
 
-        return  localStorageService.get($scope.lv);
+        return  localStorageService.get("data");
 
     }
 
