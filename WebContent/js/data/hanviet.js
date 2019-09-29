@@ -59,7 +59,7 @@ _listData[10].value = [
 {no:56, jlpt:`N5`, tag:`小一年`, word:`少`, han:`THIẾU, THIỂU`, on:`しょう`, kun:`すこ（し）、すく（ない）`, sample:``, note:``, mean:`một chút, một ít`},
 {no:57, jlpt:`N5`, tag:`小一年`, word:`小`, han:`TIỂU`, on:`しょう`, kun:`ちい（さい）、こ、お`, sample:``, note:``, mean:`Nhỏ;bé;hẹp. nhỏ; trẻ. một ít. Ít`},
 {no:58, jlpt:`N5`, tag:`小一年`, word:`大`, han:`ĐẠI`, on:`だい、たい`, kun:`おお（きい）、おお（い）`, sample:``, note:``, mean:`Đại học. Lớn. . . Nhiều`},
-{no:59, jlpt:`N5`, tag:`小一年`, word:`犬`, han:`KHUYỂN`, on:`けん`, kun:`いぬ`, sample:``, note:``, mean:`da`},
+{no:59, jlpt:`N5`, tag:`小一年`, word:`犬`, han:`KHUYỂN`, on:`けん`, kun:`いぬ`, sample:``, note:``, mean:`chó`},
 {no:60, jlpt:`N5`, tag:`小一年`, word:`天`, han:`THIÊN`, on:`てん`, kun:`あめ、あま`, sample:``, note:``, mean:`trời;tự nhiên;thời tiết`},
 {no:61, jlpt:`N5`, tag:`小一年`, word:`入`, han:`NHẬP`, on:`にゅう`, kun:`はい（る）、い（る）、い（れる）`, sample:``, note:``, mean:`đi vào. . cho vào`},
 {no:62, jlpt:`N5`, tag:`小一年`, word:`出`, han:`XUẤT`, on:`しゅつ`, kun:`だ（す）、で（る）`, sample:``, note:``, mean:`lấy ra; gởi. đi ra; sinh ra`},
