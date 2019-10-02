@@ -192,8 +192,21 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
         getListRandomAns();
 
         saveStore();
-
+        $scope.fcardCheckedChange();
         setTargetFocus("ans");
+    }
+
+    $scope.fcardCheckedChange = function(){
+        if(!$scope.fcardChecked){
+            $("#draw").empty();
+            $("#draw").append("<div id='drawKanji'></div>");
+            return;
+        }
+
+        $timeout(function(){
+           $("#drawKanji").dmak($scope.data.curWord.word);
+        },500)
+
     }
 
 

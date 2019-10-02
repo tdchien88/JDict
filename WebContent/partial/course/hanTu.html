@@ -106,7 +106,7 @@
             <div class="card-body p-2">
               <div class="fcard ">
                 <label class="fcard-inner">
-                  <input ng-model="fcardChecked" type="checkbox" class="fcard-input" />
+                  <input ng-model="fcardChecked" type="checkbox" class="fcard-input" ng-change="fcardCheckedChange()"/>
                   <div class="fcard-card">
                     <div class="fcard-front" ng-if="!fcardChecked">
                       <div class="card h-100 justify-content-center p-2">
@@ -115,19 +115,23 @@
                       </div>
                     </div>
 
-                    <div class="fcard-back" ng-if="fcardChecked">
+                    <div class="fcard-back" ng-show="fcardChecked">
                       <div class="card h-100 justify-content-center p-2">
 
                         <table>
                           <tr>
-                            <td class="align-right pr-1 wp30"><h1>{{data.curWord.word}}</h1></td>
-                            <td class="align-left pl-1  wp70 text-danger"><h1 >[ {{data.curWord.han}} ]</h1></td>
+                            <td class="pr-2 wp40"  rowspan='3'>
+                              <div class="p-2 " style="heigth:150px">
+                                <div id="draw" ><div id='drawKanji'></div></div>
+                              </div>
+                            </td>
+                            <td class="align-left pl-1  wp60 text-danger" style="vertical-align:middle"><h2 >[ {{data.curWord.han}} ]</h2></td>
                           </tr>
                           <tr>
-                            <td class="align-left" colspan='2'>音(ON) ：{{data.curWord.on}}</td>
+                            <td class="align-left" >音(ON) ：{{data.curWord.on}}</td>
                           </tr>
                           <tr>
-                            <td class="align-left" colspan='2'>訓(kun)：{{data.curWord.kun}}</td>
+                            <td class="align-left">訓(kun)：{{data.curWord.kun}}</td>
                           </tr>
                           <tr>
                             <td class="p-2" colspan='2'>
