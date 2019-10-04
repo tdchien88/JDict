@@ -117,7 +117,7 @@
 
                     <div class="fcard-back" ng-show="fcardChecked">
                       <div class="card h-100 justify-content-center p-2">
-
+                        <div class="mb-1 bg-primary text-white"><h1>{{data.curWord.word}}</h1></div>
                         <table>
                           <tr>
                             <td class=" w150"  rowspan='2'>
@@ -126,7 +126,6 @@
                               </div>
                             </td>
                             <td class="align-left pl-1 text-danger" style="vertical-align:middle"><h2 >[{{data.curWord.han}}]</h2></td>
-                            
                           </tr>
                           <tr>
                             <td class="align-left" >
@@ -136,17 +135,19 @@
                           </tr>
                           <tr>
                             <td class="p-2" colspan='2'>
+                              <div class="docs-callout docs-callout-info">
                               <blockquote class="blockquote">
                                 <p class="align-left mb-0">{{data.curWord.mean}}</p>
-                                <footer class="align-right blockquote-footer">{{data.curWord.note}}</footer>
+                                <footer ng-if="data.curWord.note" class="align-right blockquote-footer">{{data.curWord.note}}</footer>
                               </blockquote>
+                              </div>
                             </td>
                           </tr>
                         </table>
 
                       </div>
                     </div>
-                  </div>
+                  </div><!-- class="fcard-card" -->
                 </label>
               </div>
             </div>
