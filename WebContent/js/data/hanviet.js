@@ -375,9 +375,9 @@ _listData[10].value = [
 {no:372, jlpt:`N3`, tag:`小三年`, word:`打`, han:`ĐẢ`, on:`だ`, kun:`う（つ）`, sample:``, note:``, mean:`Đánh`},
 {no:373, jlpt:`N3`, tag:`小三年`, word:`投`, han:`ĐẦU`, on:`とう`, kun:`な（げる）`, sample:``, note:``, mean:`Ném`},
 {no:374, jlpt:`N3`, tag:`小三年`, word:`指`, han:`CHỈ`, on:`し`, kun:`ゆび、さ（す）`, sample:``, note:``, mean:`Ngón tay;chỉ trỏ`},
-{no:375, jlpt:`N3`, tag:`小三年`, word:`拾`, han:`THẬP`, on:`しゅう、じゅう`, kun:`ひろ（う）`, sample:``, note:``, mean:`Thu thập;tìm. Mười(10;văn tự)`},
-{no:376, jlpt:`N3`, tag:`小三年`, word:`委`, han:`ỦY`, on:`い`, kun:`ゆだ（ねる）`, sample:``, note:``, mean:`giao phó; xác thực`},
-{no:377, jlpt:`N3`, tag:`小三年`, word:`息`, han:`TỨC`, on:`そく`, kun:`いき`, sample:``, note:``, mean:`con trai; thở; lời; tin tức. thở`},
+{no:375, jlpt:`N3`, tag:`小三年`, word:`拾`, han:`THẬP`, on:`しゅう、じゅう`, kun:`ひろ（う）`, sample:``, note:`Tay thấy cái gì hợp thì thu thập`, mean:`Thu thập;tìm. Mười(10;văn tự)`},
+{no:376, jlpt:`N3`, tag:`小三年`, word:`委`, han:`ỦY`, on:`い`, kun:`ゆだ（ねる）`, sample:``, note:`Uỷ thác cho người phụ nữ（女） tên hoà（禾）`, mean:`giao phó; xác thực`},
+{no:377, jlpt:`N3`, tag:`小三年`, word:`息`, han:`TỨC`, on:`そく`, kun:`いき`, sample:``, note:`Con TIM（心） mà vẫn TỰ（自） đập đc TỨC là vẫn còn HƠI THỞ`, mean:`con trai; thở; lời; tin tức. thở`},
 {no:378, jlpt:`N3`, tag:`小三年`, word:`悲`, han:`BI`, on:`ひ`, kun:`かな（しい）`, sample:``, note:``, mean:`buồn; thương. buồn tiếc; thương xót`},
 {no:379, jlpt:`N3`, tag:`小三年`, word:`感`, han:`CẢM`, on:`かん`, kun:`–`, sample:``, note:``, mean:`Cảm giác`},
 {no:380, jlpt:`N3`, tag:`小三年`, word:`想`, han:`TƯỞNG`, on:`そう、そ`, kun:`–`, sample:``, note:``, mean:`Ý kiến;ý nghĩa;nhớ;liệu định`},
@@ -2217,7 +2217,6 @@ _listData[10].value = [
 {no:2214, jlpt:`N1`, tag:`中上`, word:`鞠`, han:`CÚC`, on:``, kun:``, sample:``, note:``, mean:``},
 {no:2215, jlpt:`N1`, tag:`中上`, word:`崚`, han:`LĂNG`, on:``, kun:``, sample:``, note:``, mean:``},
 {no:2216, jlpt:`N1`, tag:`中上`, word:`捷`, han:`TIỆP, THIỆP`, on:``, kun:``, sample:``, note:``, mean:``},
-
 
 
 
