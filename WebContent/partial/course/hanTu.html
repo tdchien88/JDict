@@ -125,11 +125,17 @@
                                 <div id="draw" ><div id='drawKanji'></div></div>
                               </div>
                             </td>
-                            <td class="align-left pl-1 text-danger1" style="vertical-align:middle"><h4 >{{data.curWord.word}}</h4></td>
+                            <td class="align-left pl-1 text-danger1" style="vertical-align:middle">
+<!-- 
+<h4 >{{data.curWord.word}}</h4>
+-->
+<p>音(ON) ：{{data.curWord.on}}</p>
+
+</td>
                           </tr>
                           <tr>
                             <td class="align-left" >
-                                <p>音(ON) ：{{data.curWord.on}}</p>
+                               
                                 <p>訓(kun)：{{data.curWord.kun}}</p>
                             </td>
                           </tr>
