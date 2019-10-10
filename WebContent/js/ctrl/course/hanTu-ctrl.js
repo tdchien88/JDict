@@ -199,7 +199,9 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
     $scope.fcardCheckedChange = function(){
         if(!$scope.fcardChecked){
             $("#draw").empty();
-            $("#draw").append("<div id='drawKanji'></div>");
+            $timeout(function(){
+                $("#draw").append("<div id='drawKanji'></div>");
+             },100)
             return;
         }
 
