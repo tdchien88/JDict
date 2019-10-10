@@ -201,13 +201,13 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             $("#draw").empty();
             $timeout(function(){
                 $("#draw").append("<div id='drawKanji'></div>");
-             },100)
+             },0)
             return;
         }
 
         $timeout(function(){
            $("#drawKanji").dmak($scope.data.curWord.word);
-        },500)
+        },200)
 
     }
 
