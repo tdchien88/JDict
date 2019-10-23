@@ -223,6 +223,11 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
         // lay ds cau tra loi
         var lstAns =  randomList($scope.data.curUnit.listCurrentWords, $scope.data.randomAnsCount);
 
+        if(!lstAns){
+            console.log("lstAns errorrrrrrrrrrr")
+            return;
+        }
+
         // tim cau tra loi bi trung trong ds cau tra loi
         var listCorrectAns = lstAns.filter(function(item){
             return (item.han == $scope.data.curWord.han) || (item.word == $scope.data.curWord.word) ;
@@ -307,7 +312,10 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             }
 
             $.each($scope.data.curUnit.listCurrentWords, function(i,w){
-                $scope.data.curUnit.listCurrentWords[i] = oldData.curUnit.listCurrentWords.find(w2=> w2.no === w.no);
+                var x = oldData.curUnit.listCurrentWords.find(w2=> w2.no === w.no);
+                if(x != null){
+                    $scope.data.curUnit.listCurrentWords[i] = x;
+                }
             });
 
 
