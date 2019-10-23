@@ -203,7 +203,7 @@
         <div ng-class="{'show': data.learnModel == constMap.learnModel.All2.code}" class="collapse">
 
           <div  style="display:-webkit-inline-box !important" >
-              <h3 ng-repeat="item in data.curListSorted track by $index" class="btn mb-0 no-border-radius" ng-class="{'text-dark btn-outline-light': (item.wordSts != constMap.wordSts.ok.code && item.wordSts != constMap.wordSts.ng.code ), 'text-light btn-success': item.wordSts == constMap.wordSts.ok.code, 'text-light btn-danger': item.wordSts == constMap.wordSts.ng.code}" ng-click="displayWord(item)">{{item.word}}</h3>
+              <h2 ng-repeat="item in data.curListSorted track by $index" class="btn mb-0 no-border-radius" ng-class="{'text-dark btn-outline-light': (item.wordSts != constMap.wordSts.ok.code && item.wordSts != constMap.wordSts.ng.code ), 'text-light btn-success': item.wordSts == constMap.wordSts.ok.code, 'text-light btn-danger': item.wordSts == constMap.wordSts.ng.code}" ng-click="displayWord(item)">{{item.word}}</h2>
           </div>
         </div>
 
