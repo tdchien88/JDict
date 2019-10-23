@@ -24,7 +24,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
                 e.unit = e.jlpt;
             });
             $scope.data.listWords = _listWord;
-        }else{
+        } else {
             localStorageService.setPrefix('jdict.hanviet_gakko');
             _listWord.forEach(function(e){
                 e.unit = e.tag;
@@ -287,12 +287,14 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             if(unit.listNotRemember && unit.listNotRemember.length != 0){
                 $.each(unit.listNotRemember, function(i,w){
                     $scope.data.curUnit.listNotRemember[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
+                    $scope.data.curUnit.listNotRemember[i].wordSts = constMap.wordSts.ng.code;
                 });
             }
 
             if(unit.listRemember && unit.listRemember.length != 0){
                 $.each(unit.listRemember, function(i,w){
                     $scope.data.curUnit.listRemember[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
+                    $scope.data.curUnit.listRemember[i].wordSts = constMap.wordSts.ok.code;
                 });
             }
 
@@ -301,6 +303,10 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
                     $scope.data.curUnit.listNewWords[i] = $scope.data.listWords.find(w2=> w2.no === w.no);
                 });
             }
+
+            $.each($scope.data.curUnit.listCurrentWords, function(i,w){
+                $scope.data.curUnit.listCurrentWords[i] = oldData.curUnit.listCurrentWords.find(w2=> w2.no === w.no);
+            });
 
 
         } else {
@@ -432,6 +438,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
     }
 
     $scope.itemCardClick = function(mode){
+
         switch(mode){
         case "previous":
             break;
@@ -439,6 +446,9 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             nextWord();
             break;
         case "ok":
+            $scope.data.curWord.wordSts = constMap.wordSts.ok.code;
+            $scope.data.curUnit.listCurrentWords.find(x => x.no === $scope.data.curWord.no).wordSts = constMap.wordSts.ok.code;
+
             // neu tu chua ton tai moi add vao
             if(!$scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)){
                 $scope.data.curUnit.listRemember.push($scope.data.curWord) ;
@@ -457,6 +467,8 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
             break;
         case "ng":
+            $scope.data.curWord.wordSts = constMap.wordSts.ng.code;
+            $scope.data.curUnit.listCurrentWords.find(x => x.no === $scope.data.curWord.no).wordSts = constMap.wordSts.ng.code;
 
            // neu co trong tu da hoc thi xoa
            if($scope.data.curUnit.listRemember.find(x => x.no === $scope.data.curWord.no)) {
@@ -514,6 +526,24 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
     $scope.delayedClose = function() {
         $timeout($scope.swipeClose, 1000);
       }
+
+    $scope.displayWord = function(curWord){
+        $scope.data.curWord = $scope.data.listWords.find(x => x.no === curWord.no);
+
+        var han = $scope.data.curWord.han;
+        var msg =
+            `<dl >
+                <dd class="col-sm-10"><h2>` + $scope.data.curWord.word + `</h2></dd>
+                <dd class="col-sm-10 text-danger"><h2>` + han + `</h2></dd>
+                <dd class="col-sm-10"><h4>` + $scope.data.curWord.mean + `</h4></dd>
+              </dl>`;
+
+        dialogService.confirmDialog($scope.data.curWord.word, msg,  function() {
+            $scope.itemCardClick('ok');
+        },  function() {
+            $scope.itemCardClick('ng');
+        },"OK","NG");
+    }
 
     init();
 });

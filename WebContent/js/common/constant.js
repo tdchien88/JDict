@@ -11,7 +11,8 @@ myApp.constant('constMap', {
         All :    {code : 0, msg :'All'},
         Type :   {code : 1, msg :'Type'},
         Card :   {code : 2, msg :'Card'},
-        Choice : {code : 3, msg :'Choice'}
+        Choice : {code : 3, msg :'Choice'},
+        All2 :    {code : 4, msg :'□'},
     },
     learnType : {
         all :       {code : 0, msg :'all'},
@@ -32,6 +33,11 @@ myApp.constant('constMap', {
     hanTuTagName :{
         JLPT : {code : 0, msg :'JLPT'},
         JP : {code : 1, msg :'JP'},
+    },
+    wordSts :{
+        newWord : {code : 0, msg :'newWord'},
+        ok : {code : 1, msg :'OK'},
+        ng : {code : 2, msg :'NG'},
     }
 });
 

@@ -50,7 +50,7 @@ myApp.factory('helloWorldFactory', function() {
 
             return modalInstance;
         },
-        confirmDialog: function(title, message, okFunc, cancelFunc) {
+        confirmDialog: function(title, message, okFunc, cancelFunc, okBtnView, cancelBtnView) {
             var modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
@@ -79,9 +79,9 @@ myApp.factory('helloWorldFactory', function() {
                         }
                     };
                     // OKボタン表示名称設定
-                    $scope.okView =  "OK";
+                    $scope.okView = isEmpty(okBtnView)? "OK" : okBtnView;
                     // Cancelボタン表示名称設定
-                    $scope.cancelView =  "Cancel";
+                    $scope.cancelView = isEmpty(cancelBtnView)? "Cancel" : cancelBtnView;
                 }
             });
 

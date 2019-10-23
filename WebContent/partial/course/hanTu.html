@@ -52,6 +52,7 @@
             <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Card.code" uib-uncheckable="uncheckable">Card</label>
             <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Choice.code" uib-uncheckable="uncheckable">Choice</label>
             <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Type.code" uib-uncheckable="uncheckable">Type</label>
+            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.All2.code" uib-uncheckable="uncheckable">□</label>
           </div>
         </div>
         <!-- accordion -->
@@ -120,23 +121,23 @@
                         <div class="pt-1 bg-primary text-white"><h1>{{data.curWord.han}}</h1></div>
                         <table>
                           <tr>
-                            <td class=" w150"  rowspan='2'>
+                            <td class=" w150"  rowspan='3'>
                               <div class="w150 " style="heigth:150px">
                                 <div id="draw" ><div id='drawKanji'></div></div>
                               </div>
                             </td>
                             <td class="align-left pl-1 text-danger1" style="vertical-align:middle">
-<!-- 
-<h4 >{{data.curWord.word}}</h4>
--->
-<p>音(ON) ：{{data.curWord.on}}</p>
-
-</td>
+                              <p>音(ON) ：{{data.curWord.on}}</p>
+                            </td>
                           </tr>
                           <tr>
                             <td class="align-left" >
-                               
-                                <p>訓(kun)：{{data.curWord.kun}}</p>
+                              <p>訓(kun)：{{data.curWord.kun}}</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="align-left">
+                              <p class="">Bộ thành phần:{{data.curWord.bo}}</p>
                             </td>
                           </tr>
                           <tr>
@@ -165,24 +166,13 @@
                   <button type="button" class="btn btn-success w150" ng-disabled="!fcardChecked || !data.curWord.mean" ng-click="itemCardClick('ok')">OK</button>
                   <button type="button" class="btn btn-danger w150" ng-disabled="!fcardChecked || !data.curWord.mean" ng-click="itemCardClick('ng')">NG</button>
                 </div>
-                <!--
-          <button type="button" class="btn btn-link" ng-click="itemCardClick('previous')"><i class="fas fa-chevron-left"></i></button>
-          <button type="button" class="btn btn-link" ng-click="itemCardClick('next')"><i class="fas fa-chevron-right"></i></button>
-           -->
               </div>
             </div>
           </div>
         </div>
 
         <div ng-class="{'show': data.learnModel == constMap.learnModel.All.code}" class="collapse">
-          <!--
-  <div ng-repeat="item in data.curList">
-    <div  class="swipe" swipe-right="delayedClose" swipe-left="delayedClose" left-template="partial/leftTemplate.html" right-template="partial/rightTemplate.html">
-      <div class="panel-body">
-        Again with some template customization!
-      </div>
-    </div>
-  -->
+
           <table class="table table-sm  table-hover table-striped">
             <thead class="thead-dark">
               <tr>
@@ -208,6 +198,13 @@
             </tbody>
           </table>
 
+        </div>
+
+        <div ng-class="{'show': data.learnModel == constMap.learnModel.All2.code}" class="collapse">
+
+          <div  style="display:-webkit-inline-box !important" >
+              <label ng-repeat="item in data.curList track by $index" class="btn btn-outline mb-0" ng-class="{'btn-outline-success': item.wordSts == constMap.wordSts.ok.code, 'btn-outline-danger': item.wordSts == constMap.wordSts.ng.code}" ng-click="displayWord(item)">{{item.word}}</label>
+          </div>
         </div>
 
         <div ng-class="{'show': data.learnModel == constMap.learnModel.Choice.code}" class="collapse">
