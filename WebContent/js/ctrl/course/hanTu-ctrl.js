@@ -194,6 +194,8 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
         saveStore();
         $scope.fcardCheckedChange();
         setTargetFocus("ans");
+
+        $scope.data.curListSorted = $scope.data.curList.sort(function(a,b){return a.no - b.no})
     }
 
     $scope.fcardCheckedChange = function(){
