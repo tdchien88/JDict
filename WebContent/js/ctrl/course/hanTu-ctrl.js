@@ -542,7 +542,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
         var title = $scope.data.curWord.word +' [' + $scope.data.curWord.han + ']';
         var msg = `
-<div class="align-center mb-2 bg-primary text-white"><h1>` + $scope.data.curWord.han + `</h1></div>
+<div class="align-center pt-1 mb-2 bg-primary text-white"><h1>` + $scope.data.curWord.han + `</h1></div>
 <table class="wp100">
   <tr>
     <td class=" w150"  rowspan='2'>
