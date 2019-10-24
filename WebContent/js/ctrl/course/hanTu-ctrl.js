@@ -542,21 +542,17 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
         var title = $scope.data.curWord.word +' [' + $scope.data.curWord.han + ']';
         var msg = `
-<div class="align-center pt-1 bg-primary text-white"><h1>` + $scope.data.curWord.han + `</h1></div>
+<div class="align-center mb-2 bg-primary text-white"><h1>` + $scope.data.curWord.han + `</h1></div>
 <table class="wp100">
   <tr>
-    <td class=" w150"  rowspan='3'>
+    <td class=" w150"  rowspan='2'>
       <div class="w150 " style="heigth:150px">
         <div id="draw1" ><div id='drawKanji1'></div></div>
       </div>
     </td>
-    <td class="align-left pl-1 text-danger1" style="vertical-align:middle">
-      <p>音(ON) ：` + $scope.data.curWord.on + `</p>
-    </td>
-  </tr>
-  <tr>
-    <td class="align-left" >
+    <td class="align-left text-danger1" style="vertical-align:middle">
       <p>訓(kun)：` + $scope.data.curWord.kun + `</p>
+      <p>音(ON) ：` + $scope.data.curWord.on + `</p>
     </td>
   </tr>
   <tr>
