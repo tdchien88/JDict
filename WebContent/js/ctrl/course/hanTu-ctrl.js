@@ -540,19 +540,57 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
     $scope.displayWord = function(curWord){
         $scope.data.curWord = $scope.data.listWords.find(x => x.no === curWord.no);
 
-        var han = $scope.data.curWord.han;
-        var msg =
-            `<dl >
-                <dd class="col-sm-10"><h2>` + $scope.data.curWord.word + `</h2></dd>
-                <dd class="col-sm-10 text-danger"><h2>` + han + `</h2></dd>
-                <dd class="col-sm-10"><h4>` + $scope.data.curWord.mean + `</h4></dd>
-              </dl>`;
+        var title = + $scope.data.curWord.han +' [' + $scope.data.curWord.word + ']';
+        var msg = `
+<div class="align-center pt-1 bg-primary text-white"><h1>` + $scope.data.curWord.han + `</h1></div>
+<table class="wp100">
+  <tr>
+    <td class=" w150"  rowspan='3'>
+      <div class="w150 " style="heigth:150px">
+        <div id="draw1" ><div id='drawKanji1'></div></div>
+      </div>
+    </td>
+    <td class="align-left pl-1 text-danger1" style="vertical-align:middle">
+      <p>音(ON) ：` + $scope.data.curWord.on + `</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="align-left" >
+      <p>訓(kun)：` + $scope.data.curWord.kun + `</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="align-left">
+      <p class="">Bộ thành phần:` + $scope.data.curWord.bo + `</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="p-2" colspan='2'>
+      <div class="docs-callout docs-callout-info">
+      <blockquote class="blockquote">
+        <p class="align-left mb-0">` + $scope.data.curWord.mean + `</p>
+        <footer class="align-right blockquote-footer">` + $scope.data.curWord.note + `</footer>
+      </blockquote>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="p-2" colspan='2'>
+        <p class="align-left mb-0">` + $scope.data.curWord.sample + `</p>
+    </td>
+  </tr>
+</table>
+`;
 
-        dialogService.confirmDialog($scope.data.curWord.word, msg,  function() {
+        dialogService.confirmDialog(title, msg,  function() {
             $scope.itemCardClick('ok');
         },  function() {
             $scope.itemCardClick('ng');
         },"OK","NG");
+
+        $timeout(function(){
+            $("#drawKanji1").dmak($scope.data.curWord.word);
+         },200)
     }
 
     init();
