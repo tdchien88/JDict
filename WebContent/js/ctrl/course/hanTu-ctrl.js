@@ -582,7 +582,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             $scope.itemCardClick('ok');
         },  function() {
             $scope.itemCardClick('ng');
-        },"OK","NG");
+        },"　　OK　　","　　NG　　");
 
         $timeout(function(){
             $("#drawKanji1").dmak($scope.data.curWord.word);
