@@ -130,6 +130,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
         $scope.data.choiceType = oldData.choiceType;
 
+        $scope.changeLearnType();
     }
 
     function nextWord(){
@@ -533,6 +534,13 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
 
     }
 
+    $scope.changeLearnModel = function() {
+        if($scope.data.learnModel == constMap.learnModel.All2.code)
+            $scope.data.learnType = constMap.learnType.all.code;
+
+        $scope.changeLearnType();
+    }
+
     $scope.delayedClose = function() {
         $timeout($scope.swipeClose, 1000);
       }
@@ -582,7 +590,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
             $scope.itemCardClick('ok');
         },  function() {
             $scope.itemCardClick('ng');
-        },"　　OK　　","　　NG　　");
+        },"OK","NG");
 
         $timeout(function(){
             $("#drawKanji1").dmak($scope.data.curWord.word);

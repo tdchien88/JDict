@@ -52,7 +52,7 @@
             <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Card.code" uib-uncheckable="uncheckable">Card</label>
             <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Choice.code" uib-uncheckable="uncheckable">Choice</label>
             <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.Type.code" uib-uncheckable="uncheckable">Type</label>
-            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.All2.code" uib-uncheckable="uncheckable">□</label>
+            <label class="btn btn-outline-primary" ng-model="data.learnModel" uib-btn-radio="constMap.learnModel.All2.code" uib-uncheckable="uncheckable" ng-click="changeLearnModel()">□</label>
           </div>
         </div>
         <!-- accordion -->
@@ -204,7 +204,12 @@
         <div ng-class="{'show': data.learnModel == constMap.learnModel.All2.code}" class="collapse">
 
           <div  style="display:-webkit-inline-box !important" >
-              <label ng-repeat="item in data.curListSorted track by $index" class="btn btn-lg mb-0 no-border-radius" ng-class="{'text-dark btn-outline-light': (item.wordSts != constMap.wordSts.ok.code && item.wordSts != constMap.wordSts.ng.code ), 'text-light btn-success': item.wordSts == constMap.wordSts.ok.code, 'text-light btn-danger': item.wordSts == constMap.wordSts.ng.code}" ng-click="displayWord(item)">{{item.word}}</label>
+              <label ng-repeat="item in data.curListSorted track by $index"
+              class="btn btn-lg mb-0 no-border-radius"
+              ng-class="{'text-dark btn-outline-light': (item.wordSts != constMap.wordSts.ok.code && item.wordSts != constMap.wordSts.ng.code ),
+               'text-light btn-success': item.wordSts == constMap.wordSts.ok.code,
+               'text-light btn-danger': item.wordSts == constMap.wordSts.ng.code}"
+              ng-click="displayWord(item)">{{item.word}}</label>
           </div>
         </div>
 
