@@ -51,6 +51,9 @@ myApp.controller("qeditorCtrl", function($scope, $timeout, dialogService){
 
         $scope.data = {};
 
+        // convert class to inline code
+        Quill.register(Quill.import('attributors/style/align'), true);
+
         Quill.register({
             'modules/markdown-toolbar': MarkdownToolbar // Add this.
         });

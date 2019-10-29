@@ -945,7 +945,7 @@ _listData[9].value = [
 {no:937, tag:`耳から`, word:`10年前の地震は今でも記憶に新ただ。`, mean:`Trận động đất 10 năm trước đến bây giờ vẫn còn mới trong kí ức`},
 {no:938, tag:`耳から`, word:`10時30分の便で成田空港を立った。`, mean:`Xuất phát từ sân bay narita bằng chuyển 10 rưỡi.`},
 {no:939, tag:`耳から`, word:`12月になると、多くの店がクリスマスのデコレーションをする。`, mean:`Tháng 12 thì nhiều cửa hàng làm trang trí giáng sinh.`},
-{no:940, tag:`耳から`, word:`13歳の息子は今反抗期で、親と口をきかない。`, mean:`Con gái 13 tuổi bây giờ đang thời kì nổi loạn, không nói chuyện với bố mẹ.`},
+{no:940, tag:`耳から`, word:`13歳の息子は今反抗期で、親と口をきかない。`, mean:`Con trai 13 tuổi bây giờ đang thời kì nổi loạn, không nói chuyện với bố mẹ.`},
 {no:941, tag:`耳から`, word:`1960年代にフォークソングがブームになった。`, mean:`Vào thời đại 1960 nhạc đồng quê trở nên thịnh hành.`},
 {no:942, tag:`耳から`, word:`1カロリーは一気圧て水1グラムの温度を1C上げるのに必要な熱量だ。`, mean:`1calo là lượng nhiệt cần thiết để nâng 1C nhiệt độ của 1 gam nước ở không khí áp suất.`},
 {no:943, tag:`耳から`, word:`1万円相当のお食事券`, mean:`Vé ăn tương đương 10000 yên.`},
