@@ -533,6 +533,7 @@ myApp.controller("hanTuCtrl", function($scope, $stateParams, localStorageService
                   <div class="docs-callout docs-callout-info">
                   <blockquote class="blockquote">
                     <p class="align-left mb-0">` + $scope.data.curWord.mean + `</p>
+                    <p class="align-left mb-0">` + $scope.data.curWord.eng + `</p>
                     <footer class="align-right blockquote-footer">` + $scope.data.curWord.note + `</footer>
                   </blockquote>
                   </div>
