@@ -46,6 +46,7 @@ myApp.controller("articleCtrl", function($scope, $stateParams, localStorageServi
 
     }
     $scope.showContent = function(no) {
+        $scope.data.articles.forEach(function(x){x.isShow = false;});
         var item = $scope.data.articles.find(function(x){return x.no == no});
         item.isShow = !item.isShow;
     }
