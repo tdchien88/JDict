@@ -37,13 +37,18 @@ myApp.controller("articleCtrl", function($scope, $stateParams, localStorageServi
 
         $scope.data.articlesOnPage.map(function(item){
             item.content = item.word;
+            item.isShow = false;
             kuroshiroExc(item.content).then(function(result){
                 item.contentRuby = result;
             });
         });
 
-    }
 
+    }
+    $scope.showContent = function(no) {
+        var item = $scope.data.articles.find(function(x){return x.no == no});
+        item.isShow = !item.isShow;
+    }
 
 
 

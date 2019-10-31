@@ -23,11 +23,14 @@
 
   <div ng-repeat="article in data.articlesOnPage track by $index" class=" card">
     <div class="card-header header-sticky" id="heading{{$index}}">
-      <div>{{article.title}}</div>
+      <span class ="btn btn-link float-right" ng-click="showContent(article.no)">{{article.isShow?"Hide":"Show"}}</span>
+      <span>{{article.title}}</span>
     </div>
     <div class="card-body" id="heading{{$index}}">
-      <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="article.content"></div>
-      <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="article.contentRuby"></div>
+      <div ng-if="article.isShow">
+          <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="article.content"></div>
+          <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="article.contentRuby"></div>
+      </div>
     </div>
 
   </div>
