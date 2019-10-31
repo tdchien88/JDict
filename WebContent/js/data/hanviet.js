@@ -2,7 +2,7 @@ _listData[10].value = [
 
 
 
-{no:1, jlpt:`N5`, tag:`小一年`, word:`一`, bo:`一`, han:`NHẤT`, on:`イチ ; イツ`, kun:`ひと(つ)`,mei:`かず ; い ; いっ ; いる ; かつ ; かづ ; てん ; はじめ ; ひ ; ひとつ ; まこと`, sample:`一日（ついたち）\n一つ（ひとつ）`, note:`so 1 `, strokes:`1`,  eng:`One, one radical (no.1)`,   mean:`Một (1)`},
+    {no:1, jlpt:`N5`, tag:`小一年`, word:`一`, bo:`一`, han:`NHẤT`, on:`イチ ; イツ`, kun:`ひと(つ)`,mei:`かず ; い ; いっ ; いる ; かつ ; かづ ; てん ; はじめ ; ひ ; ひとつ ; まこと`, sample:`一日（ついたち）\n一つ（ひとつ）`, note:`so 1 `, strokes:`1`,  eng:`One, one radical (no.1)`,   mean:`Một (1)`},
 {no:2, jlpt:`N5`, tag:`小一年`, word:`七`, bo:`一`, han:`THẤT`, on:`シチ`, kun:`なな ; なな(つ) ; なの`,mei:`し ; しっ ; な ; ひち`, sample:``, note:``, strokes:`2`,  eng:`Seven`,   mean:`bảy (7)`},
 {no:3, jlpt:`N5`, tag:`小二年`, word:`万`, bo:`一`, han:`VẠN`, on:`マン ; バン`, kun:`よろず`,mei:`かず ; ま ; ゆる`, sample:``, note:``, strokes:`3`,  eng:`Ten thousand, 10,000`,   mean:`1 ngàn. nhiều; tất cả`},
 {no:4, jlpt:`N5`, tag:`小一年`, word:`三`, bo:`一`, han:`TAM`, on:`サン ; ゾウ`, kun:`み ; み(つ) ; みっ(つ)`,mei:`か ; さ ; さい ; さえ ; さぶ ; ざ ; ざえ ; ざぶ ; そう ; ぞ ; ただ ; みつ ; みん ; も ; や ; `, sample:``, note:``, strokes:`3`,  eng:`Three`,   mean:`Ba`},
@@ -273,9 +273,9 @@ _listData[10].value = [
 {no:269, jlpt:`N3`, tag:`中上`, word:`倒`, bo:`人(亻)`, han:`ĐẢO`, on:`トウ`, kun:`たお(れる) ; たお(す) ; さかさま ; さかさ ; さかしま`,mei:``, sample:``, note:``, strokes:`10`,  eng:`Overthrow, fall, collapse, drop, break down`,   mean:`xé; xụp đổ. đánh nhào`},
 {no:270, jlpt:`N3`, tag:`小四年`, word:`候`, bo:`人(亻)`, han:`HẬU`, on:`コウ`, kun:`そうろう`,mei:``, sample:``, note:``, strokes:`10`,  eng:`Climate, season, weather`,   mean:`thời tiết. nhờ; là...; chờ đợi`},
 {no:271, jlpt:`N3`, tag:`小六年`, word:`値`, bo:`人(亻)`, han:`TRỊ`, on:`チ`, kun:`ね ; あたい`,mei:`じ`, sample:``, note:``, strokes:`10`,  eng:`Price, cost, value`,   mean:`giá trị`},
-{no:272, jlpt:`N3`, tag:`中上`, word:`偉`, bo:`人(亻)`, han:`VĨ`, on:`イ`, kun:`えら(い)`,mei:`ひで`, sample:``, note:``, strokes:`12`,  eng:`Admirable, greatness, remarkable, conceited, famous, excellent`,   mean:`lớn; khác thường; tài giỏi`},
-{no:273, jlpt:`N3`, tag:`小四年`, word:`側`, bo:`人(亻)`, han:`TRẮC`, on:`ソク`, kun:`かわ ; がわ ; そば`,mei:``, sample:``, note:``, strokes:`11`,  eng:`Side, lean, oppose, regret`,   mean:`bên phía`},
-{no:274, jlpt:`N3`, tag:`中上`, word:`偶`, bo:`人(亻)`, han:`NGẪU`, on:`グウ`, kun:`たま`,mei:``, sample:``, note:``, strokes:`11`,  eng:`Accidentally, even number, couple, man & wife, same kind`,   mean:`cặp; số chẵn; hợp nhau; gặp nhau`},
+{no:272, jlpt:`N3`, tag:`中上`, word:`偉`, bo:`人(亻)`, han:`VĨ`, on:`イ`, kun:`えら(い)`,mei:`ひで`, sample:``, note:`亻 NHÂN 韋 VI　Vĩ nhân`, strokes:`12`,  eng:`Admirable, greatness, remarkable, conceited, famous, excellent`,   mean:`lớn; khác thường; tài giỏi`},
+{no:273, jlpt:`N3`, tag:`小四年`, word:`側`, bo:`人(亻)`, han:`TRẮC`, on:`ソク`, kun:`かわ ; がわ ; そば`,mei:``, sample:``, note:`Đao (刂) là bảo Bối (貝)mang bên Người (亻) để đề phòng bất Trắc (側)`, strokes:`11`,  eng:`Side, lean, oppose, regret`,   mean:`bên phía`},
+{no:274, jlpt:`N3`, tag:`中上`, word:`偶`, bo:`人(亻)`, han:`NGẪU`, on:`グウ`, kun:`たま`,mei:``, sample:``, note:`Ngẫu 亻 NHÂN đi làm ruộng NGẪU nhiên thấy con khỉ mặt 禺 NGU. (禺 NGU　ngu là con khỉ cổ. mặt nó xấu nên dùng bộ điền để thể hiện và dọc thẳng là thân khỉ, hai bên là cánh tay và cuối là chân)`, strokes:`11`,  eng:`Accidentally, even number, couple, man & wife, same kind`,   mean:`cặp; số chẵn; hợp nhau; gặp nhau`},
 {no:275, jlpt:`N3`, tag:`小五年`, word:`備`, bo:`人(亻)`, han:`BỊ`, on:`ビ`, kun:`そな(える) ; そな(わる) ; つぶさ(に)`,mei:`びっ ; びん`, sample:``, note:``, strokes:`12`,  eng:`Equip, provision, preparation`,   mean:`dự phòng; cung cấp. đã dự phòng; chiếm giữ`},
 {no:276, jlpt:`N3`, tag:`小四年`, word:`働`, bo:`人(亻)`, han:`ĐỘNG`, on:`ドウ ; リュク ; リキ ; ロク ; リョク`, kun:`はたら(く)`,mei:``, sample:``, note:``, strokes:`13`,  eng:`Work, (kokuji)`,   mean:`hoạt động (người); làm việc`},
 {no:277, jlpt:`N3`, tag:`小六年`, word:`優`, bo:`人(亻)`, han:`ƯU`, on:`ユウ ; ウ`, kun:`やさ(しい) ; すぐ(れる) ; まさ(る)`,mei:`ゆ ; よし`, sample:``, note:``, strokes:`17`,  eng:`Tenderness, excel, surpass, actor, superiority, gentleness`,   mean:`trên hết; minh tinh. tốt đẹp; hơn. dịu dàng`},
@@ -490,7 +490,7 @@ _listData[10].value = [
 {no:486, jlpt:`N3`, tag:`小三年`, word:`登`, bo:`癶`, han:`ĐĂNG`, on:`トウ ; ト ; ドウ ; ショウ ; チョウ`, kun:`のぼ(る) ; あ(がる)`,mei:`たか ; のぼし ; のぼり ; のり`, sample:``, note:``, strokes:`12`,  eng:`Ascend, climb up`,   mean:`ghi sổ. leo; lên`},
 {no:487, jlpt:`N3`, tag:`中上`, word:`皆`, bo:`白`, han:`GIAI`, on:`カイ`, kun:`みな ; みんな`,mei:`むな`, sample:``, note:``, strokes:`9`,  eng:`All, everything`,   mean:`Tất cả; mọi người; đều khắp`},
 {no:488, jlpt:`N3`, tag:`中上`, word:`盗`, bo:`皿`, han:`ĐẠO`, on:`トウ`, kun:`ぬす(む) ; ぬす(み)`,mei:``, sample:``, note:``, strokes:`11`,  eng:`Steal, rob, pilfer`,   mean:`ăn cắp`},
-{no:489, jlpt:`N3`, tag:`小二年`, word:`直`, bo:`目`, han:`TRỰC`, on:`チョク ; ジキ ; ジカ`, kun:`ただ(ちに) ; なお(す) ; なお(る) ; なお(き) ; す(ぐ)`,mei:`すぐ ; なお ; のう ; のお`, sample:``, note:``, strokes:`8`,  eng:`Straightaway, honesty, frankness, fix, repair`,   mean:`Thẳng thắn. . Sửa chữa. Được sửa. Tức thì`},
+{no:489, jlpt:`N3`, tag:`小二年`, word:`直`, bo:`目`, han:`TRỰC`, on:`チョク ; ジキ ; ジカ`, kun:`ただ(ちに) ; なお(す) ; なお(る) ; なお(き) ; す(ぐ)`,mei:`すぐ ; なお ; のう ; のお`, sample:``, note:` 10 (十) con mắt (目) TRỰC 直 cái (L)`, strokes:`8`,  eng:`Straightaway, honesty, frankness, fix, repair`,   mean:`Thẳng thắn. . Sửa chữa. Được sửa. Tức thì`},
 {no:490, jlpt:`N3`, tag:`小三年`, word:`相`, bo:`目`, han:`TƯỚNG, , TƯƠNG`, on:`ソウ ; ショウ`, kun:``,mei:`あ ; い ; おう ; さ ; さが ; すけ`, sample:``, note:``, strokes:`9`,  eng:`Inter-, mutual, together, each other, minister of state, councillor, aspect, phase, physiognomy`,   mean:`Dáng; trạng thái. Bộ trưởng; thủ tướng. Cùng nhau`},
 {no:491, jlpt:`N3`, tag:`中上`, word:`眠`, bo:`目`, han:`MIÊN`, on:`ミン`, kun:`ねむ(る) ; ねむ(い)`,mei:`ね`, sample:``, note:``, strokes:`10`,  eng:`Sleep, die, sleepy`,   mean:`ngủ. buồn ngủ; mệt`},
 {no:492, jlpt:`N3`, tag:`小一年`, word:`石`, bo:`石`, han:`THẠCH`, on:`セキ ; シャク ; コク`, kun:`いし`,mei:`いさ ; いす ; いわ ; し ; せっく ; と`, sample:``, note:``, strokes:`5`,  eng:`Stone`,   mean:`đá. . . đơn vị khốI lượng (=18...)`},
