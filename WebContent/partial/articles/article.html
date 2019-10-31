@@ -8,9 +8,9 @@
         class="pagination-sm" first-text="&laquo;" previous-text="&lsaquo;" next-text="&rsaquo;" last-text="&raquo;"
         boundary-links="true" boundary-link-numbers="true" rotate="true"></ul>
 
-    <fieldset class='' >
+    <fieldset class='ml-3' >
       <p >
-        <label>Show Furigana:</label>
+        <label>ShowFuri:</label>
         <label class="switch switch-pill switch-success">
           <input ng-model="isShowRuby" type="checkbox" class="switch-input" checked>
           <span class="switch-slider"></span>
@@ -21,18 +21,18 @@
   </div>
 
 
-  <div ng-repeat="article in data.articlesOnPage track by $index" class=" card">
-    <div class="card-header header-sticky" id="heading{{$index}}">
+  <div ng-repeat="article in data.articlesOnPage track by $index" class=" card" >
+    <div class="card-header header-sticky">
       <span class ="btn btn-link float-right" ng-click="showContent(article.no)">{{article.isShow?"Hide":"Show"}}</span>
       <span>{{article.title}}</span>
     </div>
-    <div class="card-body" id="heading{{$index}}">
+    <div class="card-body"  id="heading{{article.no}}">
       <div ng-if="article.isShow">
           <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="article.content"></div>
           <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="article.contentRuby"></div>
       </div>
     </div>
-
+    <div ng-if="article.isShow" ng-class="{'m-4':($index == data.articlesOnPage.length-1)}"></div>
   </div>
 
 

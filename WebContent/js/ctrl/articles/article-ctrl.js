@@ -1,4 +1,4 @@
-myApp.controller("articleCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout){
+myApp.controller("articleCtrl", function($scope, $stateParams, localStorageService, dialogService, $timeout, $location, $anchorScroll){
     var myarticle = _getDataByKey('myarticle');
 
 
@@ -46,9 +46,19 @@ myApp.controller("articleCtrl", function($scope, $stateParams, localStorageServi
 
     }
     $scope.showContent = function(no) {
-        $scope.data.articles.forEach(function(x){x.isShow = false;});
         var item = $scope.data.articles.find(function(x){return x.no == no});
         item.isShow = !item.isShow;
+        $scope.data.articles.forEach(function(x){if(x.no != item.no) x.isShow = false;});
+
+        scrolTo("heading"+item.no);
+    }
+
+    function scrolTo(element){
+
+        // set the location.hash to the id of the element you wish to scroll to.
+        $location.hash(element);
+        $anchorScroll();
+
     }
 
 
