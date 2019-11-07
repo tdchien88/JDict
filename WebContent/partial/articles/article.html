@@ -27,7 +27,7 @@
       <span>{{article.title}}</span>
     </div>
     <div class="card-body"  id="heading{{article.no}}">
-      <div dynamic-html="article.link"></div>
+      <div ng-if="article.link" class="videoWrapper" dynamic-html="article.link"></div>
       <div ng-if="article.isShow">
           <div class="span-nonewline line-h2" ng-if="!isShowRuby" dynamic-html="article.content"></div>
           <div class="span-nonewline line-h2" ng-if="isShowRuby" dynamic-html="article.contentRuby"></div>
