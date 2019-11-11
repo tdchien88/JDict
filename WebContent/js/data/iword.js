@@ -6102,6 +6102,9 @@ _listData[9].value = [
 {no:6094, tag:`耳から`, word:`｢彼女、先日お父さんを事故で亡くされたそうだよ」「お気の毒に・・」`, mean:`Cô ấy hôm trước bố bị chết vì tại nạn đấy. Thật là đáng thương`},
 {no:6095, tag:`耳から`, word:`｢静」・司会者は騒がしい場内を一言で静めた。`, mean:`Chủ tịch đã làm yên lặng hội trường ồn ào bằng 1 câu`},
 {no:6096, tag:`耳から`, word:`｢（名）邪魔をする」・「どうぞお入りください」「お邪魔します」 `, mean:`xin mời vào. xin làm phiền. `},
+{no:6097, tag:`生活`, word:`荷物を預かってもらえますか？`, mean:`Can you hold my bags for me?`},
+{no:6098, tag:`mail`, word:`返事遅くなってごめんなさ。`, mean:`Sorry for the late reply.`},
+{no:6099, tag:`mail`, word:`メールが届かない。`, mean:`I do not receive an email`},
 
 
 
