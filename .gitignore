@@ -4,3 +4,4 @@
 #ignore all img file
 WebContent/img
 WebContent/mimikara/images
+/build/
