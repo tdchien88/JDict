@@ -113,7 +113,7 @@ _listData[7].value = [
 {no:112, week:1, day:3, unit:3, word:`Chất vấn, thẩm vẫn`, kana2:`けんもん`, han:`KIỂM VẤN`, mean:`検問`},
 {no:113, week:1, day:4, unit:4, word:`Tàu điện ngầm`, kana2:`ちかてつ`, han:`ĐỊA HẠ THIẾT`, mean:`地下鉄`},
 {no:114, week:1, day:4, unit:4, word:`Tàu tư nhân`, kana2:`してつ`, han:`TƯ THIẾT`, mean:`私鉄`},
-{no:115, week:1, day:4, unit:4, word:`Hội học sinh cùng trường/lớp`, kana2:`おうそうかい`, han:`ĐỒNG SONG HỘI`, mean:`同窓会`},
+{no:115, week:1, day:4, unit:4, word:`Hội học sinh cùng trường/lớp`, kana2:`どうそうかい`, han:`ĐỒNG SONG HỘI`, mean:`同窓会`},
 {no:116, week:1, day:4, unit:4, word:`Cửa sổ`, kana2:`まど`, han:`SONG`, mean:`窓`},
 {no:117, week:1, day:4, unit:4, word:`Cửa bán vé, quầy thông tin tại văn phòng`, kana2:`まどぐち`, han:`SONG KHẨU`, mean:`窓口`},
 {no:118, week:1, day:4, unit:4, word:`Vé`, kana2:`きっぷ`, han:`THIẾT PHÙ`, mean:`切符`},
