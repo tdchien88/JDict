@@ -296,7 +296,7 @@ _listData[7].value = [
 {no:295, week:2, day:3, unit:9, word:`Đươc gửi`, kana2:`あずかる`, han:`DỰ`, mean:`預かる`},
 {no:296, week:2, day:3, unit:9, word:`Quay lại`, kana2:`もどる`, han:`YẾT`, mean:`戻る`},
 {no:297, week:2, day:3, unit:9, word:`Hoàn trả lại`, kana2:`はらいもどし`, han:`PHÁT YẾT`, mean:`払い戻し`},
-{no:298, week:2, day:3, unit:9, word:`Điều tra cân đối tài chính`, kana2:`ざんだかしょうかい`, han:`TÀN CAO CHIẾU HỘI`, mean:`残高照会`},
+{no:298, week:2, day:3, unit:9, word:`Truy vấn số dư`, kana2:`ざんだかしょうかい`, han:`TÀN CAO CHIẾU HỘI`, mean:`残高照会`},
 {no:299, week:2, day:3, unit:9, word:`Sót lại, còn lại (tự động từ)`, kana2:`のこる`, han:`TÀN`, mean:`残る`},
 {no:300, week:2, day:3, unit:9, word:`Chừa lại (tha động từ)`, kana2:`のこす`, han:`TÀN`, mean:`残す`},
 {no:301, week:2, day:3, unit:9, word:`Chiếu sáng`, kana2:`しょうめい`, han:`CHIẾU MINH`, mean:`照明`},
