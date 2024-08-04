@@ -358,7 +358,6 @@ _listData[7].value = [
 {no:357, week:2, day:4, unit:10, word:`Khoa nhi`, kana2:`しょうにか`, han:`TIỂU NHI KHOA`, mean:`小児科`},
 {no:358, week:2, day:4, unit:10, word:`Nhi đồng`, kana2:`じどう`, han:`NHI ĐỒNG`, mean:`児童`},
 {no:359, week:2, day:4, unit:10, word:`~ tuổi`, kana2:`～さい`, han:`TUẾ`, mean:`～歳`},
-{no:360, week:2, day:4, unit:10, word:`20 tuổi`, kana2:`にじゅうさい`, han:`NHỊ THẬP TUẾ`, mean:`二十歳`},
 {no:361, week:2, day:4, unit:10, word:`20 tuổi`, kana2:`はたち`, han:`NHỊ THẬP TUẾ`, mean:`二十歳`},
 {no:362, week:2, day:4, unit:10, word:`Chưa được quyết định`, kana2:`みてい`, han:`VỊ ĐỊNH`, mean:`未定`},
 {no:363, week:2, day:4, unit:10, word:`Tương lai`, kana2:`みらい`, han:`VỊ LAI`, mean:`未来`},
