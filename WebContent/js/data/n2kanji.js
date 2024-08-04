@@ -342,7 +342,7 @@ _listData[7].value = [
 {no:341, week:2, day:4, unit:10, word:`Son môi`, kana2:`くちべに`, han:`KHẨU HỒNG`, mean:`口紅`},
 {no:342, week:2, day:4, unit:10, word:`Giọt nước`, kana2:`みずたま`, han:`THỦY NGỌC`, mean:`水玉`},
 {no:343, week:2, day:4, unit:10, word:`Ngọc, viên`, kana2:`たま`, han:`NGỌC`, mean:`玉`},
-{no:344, week:2, day:4, unit:10, word:`Đồng 10 yên`, kana2:`じゅえんだま`, han:`THẬP YÊN NGỌC`, mean:`十円玉`},
+{no:344, week:2, day:4, unit:10, word:`Đồng 10 yên`, kana2:`じゅうえんだま`, han:`THẬP YÊN NGỌC`, mean:`十円玉`},
 {no:345, week:2, day:4, unit:10, word:`Trả lời`, kana2:`へんじ`, han:`PHẢN SỰ`, mean:`返事`},
 {no:346, week:2, day:4, unit:10, word:`Trả lại, hoàn lại`, kana2:`へんきゃく`, han:`PHẢN KHƯỚC`, mean:`返却`},
 {no:347, week:2, day:4, unit:10, word:`Trả tiền`, kana2:`へんきん`, han:`PHẢN KIM`, mean:`返金`},
